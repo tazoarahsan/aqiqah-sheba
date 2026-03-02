@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="bn" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>আকীকাহ সেবা | Aqiqah Sheba</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5CQPC90ZXh0Pjwvc3ZnPg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -204,6 +204,36 @@
     animation: bounce 2s infinite;
   }
   .scroll-hint span { display: block; font-size: 1.5rem; margin-top: 0.3rem; }
+
+  .hero-goat {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: clamp(250px, 30vw, 420px);
+    z-index: 1;
+    pointer-events: none;
+    animation: goatPeek 1.2s ease-out 0.8s both;
+    mix-blend-mode: lighten;
+  }
+
+  .hero-goat img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  @keyframes goatPeek {
+    from { opacity: 0; transform: translateX(80px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @media (max-width: 768px) {
+    .hero-goat {
+      width: 180px;
+      opacity: 0.5;
+    }
+  }
 
   @keyframes bounce {
     0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -670,6 +700,10 @@
   <div class="scroll-hint">
     নিচে স্ক্রল করুন
     <span>↓</span>
+  </div>
+
+  <div class="hero-goat">
+    <img src="goat%20picture.png" alt="ছাগল" loading="eager">
   </div>
 </section>
 
