@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>আকীকাহ সেবা | Aqiqah Sheba</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1a3a2a;
+    --forest-deep: #0f2419;
+    --emerald: #2d8a5e;
+    --emerald-light: #3aab76;
+    --gold: #d4a843;
+    --gold-light: #e8c76a;
+    --cream: #faf6ed;
+    --cream-warm: #f5eddc;
+    --sand: #e8dcc8;
+    --text-dark: #1a1a17;
+    --text-body: #3d3a33;
+    --text-muted: #7a7568;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans Bengali', sans-serif;
+    background: var(--cream);
+    color: var(--text-body);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(165deg, var(--forest-deep) 0%, var(--forest) 40%, #1e4a35 70%, var(--emerald) 100%);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(212,168,67,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(45,138,94,0.12) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 70%);
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Decorative crescents */
+  .crescent {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(212,168,67,0.12);
+  }
+  .crescent-1 { width: 400px; height: 400px; top: -100px; right: -100px; }
+  .crescent-2 { width: 300px; height: 300px; bottom: -80px; left: -80px; border-color: rgba(255,255,255,0.05); }
+  .crescent-3 { width: 200px; height: 200px; top: 30%; left: 8%; border-color: rgba(212,168,67,0.06); }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+    animation: fadeUp 1s ease-out;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 0.4rem 1.4rem;
+    border: 1px solid rgba(212,168,67,0.35);
+    border-radius: 100px;
+    color: var(--gold-light);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    margin-bottom: 2rem;
+    animation: fadeUp 1s ease-out 0.2s both;
+  }
+
+  .hero-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 1s ease-out 0.3s both;
+    filter: drop-shadow(0 4px 20px rgba(212,168,67,0.3));
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 6vw, 4.2rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+    animation: fadeUp 1s ease-out 0.4s both;
+  }
+
+  .hero h1 .highlight {
+    color: var(--gold);
+    position: relative;
+  }
+
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: rgba(212,168,67,0.7);
+    margin-bottom: 1.5rem;
+    animation: fadeUp 1s ease-out 0.5s both;
+  }
+
+  .hero p {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+    animation: fadeUp 1s ease-out 0.6s both;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 1s ease-out 0.7s both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2.2rem;
+    background: var(--gold);
+    color: var(--forest-deep);
+    font-family: 'Noto Sans Bengali', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(212,168,67,0.3);
+  }
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(212,168,67,0.4);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2.2rem;
+    background: transparent;
+    color: var(--white);
+    font-family: 'Noto Sans Bengali', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  .btn-secondary:hover {
+    border-color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.05);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.3);
+    font-size: 0.8rem;
+    text-align: center;
+    animation: bounce 2s infinite;
+  }
+  .scroll-hint span { display: block; font-size: 1.5rem; margin-top: 0.3rem; }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* ===== TRUST BAR ===== */
+  .trust-bar {
+    background: var(--forest-deep);
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+  .trust-item span { font-size: 1.1rem; }
+
+  /* ===== SECTIONS COMMON ===== */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 1000px; margin: 0 auto; }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--emerald);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.8rem;
+    padding: 0.3rem 1rem;
+    background: rgba(45,138,94,0.08);
+    border-radius: 100px;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .section-desc {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 650px;
+    font-weight: 300;
+  }
+
+  /* ===== HOW IT WORKS ===== */
+  .how-section { background: var(--cream); }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .step-card {
+    position: relative;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+  }
+  .step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  }
+
+  .step-number {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 28px;
+    background: var(--emerald);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .step-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .step-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.6rem;
+  }
+
+  .step-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* connector line between steps */
+  @media (min-width: 768px) {
+    .steps-grid { position: relative; }
+    .step-card:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -1.4rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--sand);
+      font-size: 1.3rem;
+    }
+  }
+
+  /* ===== PACKAGES ===== */
+  .packages-section {
+    background: linear-gradient(180deg, var(--cream-warm) 0%, var(--cream) 100%);
+  }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .package-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .package-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.07);
+  }
+
+  .package-card.featured {
+    border: 2px solid var(--gold);
+    background: linear-gradient(180deg, #fffdf5 0%, var(--white) 100%);
+  }
+
+  .package-card.featured::before {
+    content: '⭐ জনপ্রিয়';
+    position: absolute;
+    top: 16px;
+    right: -28px;
+    background: var(--gold);
+    color: var(--forest-deep);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.3rem 2.5rem;
+    transform: rotate(45deg);
+  }
+
+  .package-emoji { font-size: 2.2rem; margin-bottom: 1rem; }
+
+  .package-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.3rem;
+  }
+
+  .package-for {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+  }
+
+  .package-price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--emerald);
+    margin-bottom: 0.2rem;
+  }
+  .package-price small {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  .package-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .package-features {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+  .package-features li {
+    padding: 0.5rem 0;
+    font-size: 0.92rem;
+    color: var(--text-body);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .package-features li:last-child { border: none; }
+  .check { color: var(--emerald); font-weight: bold; }
+
+  .package-btn {
+    display: block;
+    width: 100%;
+    padding: 0.9rem;
+    background: var(--forest);
+    color: var(--white);
+    font-family: 'Noto Sans Bengali', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+  }
+  .package-btn:hover { background: var(--emerald); }
+  .package-card.featured .package-btn {
+    background: var(--gold);
+    color: var(--forest-deep);
+  }
+  .package-card.featured .package-btn:hover { background: var(--gold-light); }
+
+  /* ===== WHY US ===== */
+  .why-section { background: var(--forest-deep); color: var(--white); }
+  .why-section .section-label { color: var(--gold-light); background: rgba(212,168,67,0.1); }
+  .why-section .section-title { color: var(--white); }
+  .why-section .section-desc { color: rgba(255,255,255,0.6); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .why-card {
+    padding: 1.8rem;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.3s ease;
+  }
+  .why-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(212,168,67,0.2);
+  }
+
+  .why-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .why-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .why-desc {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+
+  /* ===== FAQ ===== */
+  .faq-section { background: var(--cream); }
+
+  .faq-list {
+    margin-top: 2.5rem;
+    max-width: 700px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--sand);
+    padding: 1.3rem 0;
+  }
+
+  .faq-q {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .faq-q::after {
+    content: '+';
+    font-size: 1.3rem;
+    color: var(--emerald);
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+  .faq-item.open .faq-q::after {
+    content: '−';
+  }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+  .faq-item.open .faq-a {
+    max-height: 300px;
+    padding-top: 0.8rem;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--emerald) 100%);
+    text-align: center;
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(212,168,67,0.08) 0%, transparent 60%);
+  }
+  .cta-content { position: relative; z-index: 2; }
+  .cta-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .cta-section h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .cta-section p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.05rem;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2.5rem;
+    background: #25D366;
+    color: var(--white);
+    font-family: 'Noto Sans Bengali', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+  }
+  .btn-whatsapp:hover {
+    background: #1ebe5a;
+    transform: translateY(-2px);
+  }
+
+  .btn-call {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--white);
+    font-family: 'Noto Sans Bengali', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  .btn-call:hover {
+    border-color: var(--white);
+    background: rgba(255,255,255,0.08);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--forest-deep);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.85rem;
+  }
+  footer .brand {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 600px) {
+    section { padding: 3.5rem 1.2rem; }
+    .trust-bar { gap: 1.5rem; padding: 1rem; }
+    .trust-item { font-size: 0.8rem; }
+    .steps-grid { grid-template-columns: 1fr 1fr; }
+    .step-card:not(:last-child)::after { display: none; }
+    .packages-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="crescent crescent-1"></div>
+  <div class="crescent crescent-2"></div>
+  <div class="crescent crescent-3"></div>
+  
+  <div class="hero-content">
+    <div class="hero-badge">🌙 ঢাকায় বিশ্বস্ত আকীকাহ সেবা</div>
+    <div class="hero-icon">🐐</div>
+    <h1>সন্তানের <span class="highlight">আকীকাহ</span> দিন<br>সুন্নাহ অনুযায়ী, সহজেই</h1>
+    <div class="hero-subtitle">Aqiqah Sheba</div>
+    <p>ছাগল কেনা, জবাই, কাটাকাটি, প্যাকেজিং থেকে শুরু করে বাসায় ডেলিভারি — সবকিছু আমরা করবো। আপনি শুধু অর্ডার দিন।</p>
+    <div class="hero-cta">
+      <a href="#packages" class="btn-primary">📦 প্যাকেজ দেখুন</a>
+      <a href="tel:+8801631010772" class="btn-secondary">📞 কল করুন</a>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    নিচে স্ক্রল করুন
+    <span>↓</span>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar">
+  <div class="trust-item"><span>☪️</span> সম্পূর্ণ শরীয়াহ সম্মত</div>
+  <div class="trust-item"><span>✅</span> প্রতিটি জবাইয়ের ভিডিও প্রমাণ</div>
+  <div class="trust-item"><span>🏠</span> বাসায় ডেলিভারি</div>
+  <div class="trust-item"><span>📞</span> ২৪ ঘণ্টা আগে অর্ডার</div>
+  <div class="trust-item"><span>📱</span> <a href="tel:+8801631010772" style="color:rgba(255,255,255,0.7);text-decoration:none;">+৮৮০ ১৬৩১ ০১০৭৭২</a></div>
+</div>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="how-section">
+  <div class="container">
+    <span class="section-label">কিভাবে কাজ করে</span>
+    <h2 class="section-title">মাত্র ৪ ধাপে আকীকাহ সম্পন্ন</h2>
+    <p class="section-desc">বাজারে যাওয়া, কসাই খোঁজা, মাংস কাটানো — এসব ঝামেলা আর নয়। আমাদের কাছে সবকিছু সহজ।</p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">১</div>
+        <span class="step-icon">📱</span>
+        <h3 class="step-title">অর্ডার দিন</h3>
+        <p class="step-desc">WhatsApp, ফোন বা ওয়েবসাইটের মাধ্যমে অর্ডার করুন। বাচ্চার নাম ও ডেলিভারি তারিখ জানান।</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">২</div>
+        <span class="step-icon">🐐</span>
+        <h3 class="step-title">ছাগল সংগ্রহ</h3>
+        <p class="step-desc">আমরা সুস্থ, শরীয়াহ সম্মত বয়সের ছাগল বাছাই করে সংগ্রহ করি।</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">৩</div>
+        <span class="step-icon">🔪</span>
+        <h3 class="step-title">জবাই ও কাটাকাটি</h3>
+        <p class="step-desc">ইসলামী রীতি অনুসারে জবাই এবং পেশাদার কসাই দিয়ে সুন্দর করে মাংস কাটা হয়।</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">৪</div>
+        <span class="step-icon">🚚</span>
+        <h3 class="step-title">প্যাকেজিং ও ডেলিভারি</h3>
+        <p class="step-desc">পরিষ্কার প্যাকেজিং করে আপনার বাসায় পৌঁছে দেওয়া হয়। ফ্রেশ ও হাইজেনিক।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PACKAGES ===== -->
+<section class="packages-section" id="packages">
+  <div class="container">
+    <span class="section-label">প্যাকেজসমূহ</span>
+    <h2 class="section-title">আপনার জন্য সঠিক প্যাকেজ বেছে নিন</h2>
+    <p class="section-desc">মেয়ে সন্তানের জন্য ১টি ছাগল, ছেলে সন্তানের জন্য ২টি ছাগল — সুন্নাহ অনুযায়ী।</p>
+
+    <div class="packages-grid">
+      <!-- Package 1 -->
+      <div class="package-card">
+        <div class="package-emoji">🐐</div>
+        <div class="package-name">মেয়ে সন্তান</div>
+        <div class="package-for">১টি ছাগল</div>
+        <div class="package-price">৳১২,০০০ <small>থেকে</small></div>
+        <div class="package-note">ছাগলের সাইজ অনুযায়ী দাম পরিবর্তনশীল</div>
+        <ul class="package-features">
+          <li><span class="check">✓</span> সুস্থ ও শরীয়াহ সম্মত ছাগল</li>
+          <li><span class="check">✓</span> ইসলামী রীতিতে জবাই</li>
+          <li><span class="check">✓</span> স্ট্যান্ডার্ড কাট ও প্যাকেজিং</li>
+          <li><span class="check">✓</span> বাসায় ডেলিভারি</li>
+          <li><span class="check">✓</span> জবাইয়ের ভিডিও</li>
+        </ul>
+        <a href="https://wa.me/8801631010772?text=%E0%A6%86%E0%A6%B8%E0%A6%B8%E0%A6%BE%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A7%81%20%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%95%E0%A7%81%E0%A6%AE%21%20%F0%9F%90%90%0A%0A%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%86%E0%A6%AE%E0%A6%BE%E0%A6%B0%20%E0%A6%B8%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A6%BE%E0%A6%A8%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%95%E0%A7%80%E0%A6%95%E0%A6%BE%E0%A6%B9%E0%A6%B0%20%E0%A6%9C%E0%A6%A8%E0%A7%8D%E0%A6%AF%20%E0%A7%A7%E0%A6%9F%E0%A6%BF%20%E0%A6%9B%E0%A6%BE%E0%A6%97%E0%A6%B2%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4%0A%0A%E0%A6%86%E0%A6%AE%E0%A6%BE%E0%A6%B0%20%E0%A6%A8%E0%A6%BE%E0%A6%AE%3A%0A%E0%A6%AB%E0%A7%8B%E0%A6%A8%20%E0%A6%A8%E0%A6%AE%E0%A7%8D%E0%A6%AC%E0%A6%B0%3A%0A%E0%A6%9B%E0%A6%BE%E0%A6%97%E0%A6%B2%E0%A6%B0%20%E0%A6%B8%E0%A6%82%E0%A6%96%E0%A7%8D%E0%A6%AF%E0%A6%BE%3A%20%E0%A7%A7%E0%A6%9F%E0%A6%BF%0A%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A7%8D%E0%A6%9A%E0%A6%BE%E0%A6%B0%20%E0%A6%A8%E0%A6%BE%E0%A6%AE%3A%0A%E0%A6%95%E0%A6%AC%E0%A7%87%20%E0%A6%86%E0%A6%95%E0%A7%80%E0%A6%95%E0%A6%BE%E0%A6%B9%E0%A6%B0%20%E0%A6%AE%E0%A6%BE%E0%A6%82%E0%A6%B8%20%E0%A6%A6%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B0%3A%0A%E0%A6%A0%E0%A6%BF%E0%A6%95%E0%A6%BE%E0%A6%A8%E0%A6%BE%3A" class="package-btn">অর্ডার করুন</a>
+      </div>
+
+      <!-- Package 2 -->
+      <div class="package-card">
+        <div class="package-emoji">🐐🐐</div>
+        <div class="package-name">ছেলে সন্তান</div>
+        <div class="package-for">২টি ছাগল</div>
+        <div class="package-price">৳২৪,০০০ <small>থেকে</small></div>
+        <div class="package-note">ছাগলের সাইজ অনুযায়ী দাম পরিবর্তনশীল</div>
+        <ul class="package-features">
+          <li><span class="check">✓</span> ২টি সুস্থ ও শরীয়াহ সম্মত ছাগল</li>
+          <li><span class="check">✓</span> ইসলামী রীতিতে জবাই</li>
+          <li><span class="check">✓</span> স্ট্যান্ডার্ড কাট ও প্যাকেজিং</li>
+          <li><span class="check">✓</span> বাসায় ডেলিভারি</li>
+          <li><span class="check">✓</span> জবাইয়ের ভিডিও</li>
+        </ul>
+        <a href="https://wa.me/8801631010772?text=%E0%A6%86%E0%A6%B8%E0%A6%B8%E0%A6%BE%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A7%81%20%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%95%E0%A7%81%E0%A6%AE%21%20%F0%9F%90%90%F0%9F%90%90%0A%0A%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%86%E0%A6%AE%E0%A6%BE%E0%A6%B0%20%E0%A6%B8%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A6%BE%E0%A6%A8%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%95%E0%A7%80%E0%A6%95%E0%A6%BE%E0%A6%B9%E0%A6%B0%20%E0%A6%9C%E0%A6%A8%E0%A7%8D%E0%A6%AF%20%E0%A7%A8%E0%A6%9F%E0%A6%BF%20%E0%A6%9B%E0%A6%BE%E0%A6%97%E0%A6%B2%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4%0A%0A%E0%A6%86%E0%A6%AE%E0%A6%BE%E0%A6%B0%20%E0%A6%A8%E0%A6%BE%E0%A6%AE%3A%0A%E0%A6%AB%E0%A7%8B%E0%A6%A8%20%E0%A6%A8%E0%A6%AE%E0%A7%8D%E0%A6%AC%E0%A6%B0%3A%0A%E0%A6%9B%E0%A6%BE%E0%A6%97%E0%A6%B2%E0%A6%B0%20%E0%A6%B8%E0%A6%82%E0%A6%96%E0%A7%8D%E0%A6%AF%E0%A6%BE%3A%20%E0%A7%A8%E0%A6%9F%E0%A6%BF%0A%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A7%8D%E0%A6%9A%E0%A6%BE%E0%A6%B0%20%E0%A6%A8%E0%A6%BE%E0%A6%AE%3A%0A%E0%A6%95%E0%A6%AC%E0%A7%87%20%E0%A6%86%E0%A6%95%E0%A7%80%E0%A6%95%E0%A6%BE%E0%A6%B9%E0%A6%B0%20%E0%A6%AE%E0%A6%BE%E0%A6%82%E0%A6%B8%20%E0%A6%A6%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B0%3A%0A%E0%A6%A0%E0%A6%BF%E0%A6%95%E0%A6%BE%E0%A6%A8%E0%A6%BE%3A" class="package-btn">অর্ডার করুন</a>
+      </div>
+
+      <!-- Package 3 -->
+      <div class="package-card">
+        <div class="package-emoji">✨</div>
+        <div class="package-name">প্রিমিয়াম প্যাকেজ</div>
+        <div class="package-for">ছেলে/মেয়ে — কাস্টম প্যাকেজ</div>
+        <div class="package-price">৳১৮,০০০ <small>থেকে</small></div>
+        <div class="package-note">কাস্টমাইজেশন অনুযায়ী দাম নির্ধারিত</div>
+        <ul class="package-features">
+          <li><span class="check">✓</span> বড় সাইজের প্রিমিয়াম ছাগল</li>
+          <li><span class="check">✓</span> বিভিন্ন ছাগলের অপশন থেকে বেছে নিন</li>
+          <li><span class="check">✓</span> ৩-ভাগ প্যাকেজিং (পরিবার, আত্মীয়, গরিব)</li>
+          <li><span class="check">✓</span> প্রয়োজনে ২ দিন পর্যন্ত কোল্ড স্টোরেজ</li>
+          <li><span class="check">✓</span> ১/৩ মাংস আমাদের হাতে গরিবদের মাঝে বিতরণ</li>
+          <li><span class="check">✓</span> প্রায়োরিটি ডেলিভারি</li>
+        </ul>
+        <a href="https://wa.me/8801631010772?text=%E0%A6%86%E0%A6%B8%E0%A6%B8%E0%A6%BE%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A7%81%20%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%95%E0%A7%81%E0%A6%AE%21%20%E2%9C%A8%0A%0A%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%AE%E0%A6%BF%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%AE%20%E0%A6%AA%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A7%87%E0%A6%9C%E0%A7%87%20%E0%A6%86%E0%A6%95%E0%A7%80%E0%A6%95%E0%A6%BE%E0%A6%B9%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4%0A%0A%E0%A6%86%E0%A6%AE%E0%A6%BE%E0%A6%B0%20%E0%A6%A8%E0%A6%BE%E0%A6%AE%3A%0A%E0%A6%AB%E0%A7%8B%E0%A6%A8%20%E0%A6%A8%E0%A6%AE%E0%A7%8D%E0%A6%AC%E0%A6%B0%3A%0A%E0%A6%9B%E0%A6%BE%E0%A6%97%E0%A6%B2%E0%A6%B0%20%E0%A6%B8%E0%A6%82%E0%A6%96%E0%A7%8D%E0%A6%AF%E0%A6%BE%3A%0A%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A7%8D%E0%A6%9A%E0%A6%BE%E0%A6%B0%20%E0%A6%A8%E0%A6%BE%E0%A6%AE%3A%0A%E0%A6%9B%E0%A7%87%E0%A6%B2%E0%A7%87%2F%E0%A6%AE%E0%A7%87%E0%A6%AF%E0%A6%BC%E0%A7%87%3A%0A%E0%A6%95%E0%A6%AC%E0%A7%87%20%E0%A6%86%E0%A6%95%E0%A7%80%E0%A6%95%E0%A6%BE%E0%A6%B9%E0%A6%B0%20%E0%A6%AE%E0%A6%BE%E0%A6%82%E0%A6%B8%20%E0%A6%A6%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B0%3A%0A%E0%A6%A0%E0%A6%BF%E0%A6%95%E0%A6%BE%E0%A6%A8%E0%A6%BE%3A" class="package-btn">অর্ডার করুন</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY US ===== -->
+<section class="why-section">
+  <div class="container">
+    <span class="section-label">কেন আমরা</span>
+    <h2 class="section-title">আকীকাহ সেবায় আমাদের প্রতিশ্রুতি</h2>
+    <p class="section-desc">আমরা জানি, আপনার সন্তানের আকীকাহ একটি পবিত্র ইবাদত। তাই আমরা প্রতিটি ধাপে সর্বোচ্চ যত্ন নিই।</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">☪️</div>
+        <h3 class="why-title">সম্পূর্ণ শরীয়াহ সম্মত</h3>
+        <p class="why-desc">কিবলামুখী জবাই, তাসমিয়া পাঠ, ইসলামী নিয়ম অনুসারে সম্পূর্ণ প্রক্রিয়া পরিচালিত।</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎥</div>
+        <h3 class="why-title">ভিডিও প্রমাণ</h3>
+        <p class="why-desc">প্রতিটি আকীকাহর জবাইয়ের ভিডিও আপনাকে পাঠানো হবে — সম্পূর্ণ স্বচ্ছতা।</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔪</div>
+        <h3 class="why-title">পেশাদার কাটিং</h3>
+        <p class="why-desc">বাজারের এলোমেলো কাটা নয় — অভিজ্ঞ কসাই দিয়ে সুন্দর, পরিষ্কার ও সমান কাট।</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📦</div>
+        <h3 class="why-title">হাইজেনিক প্যাকেজিং</h3>
+        <p class="why-desc">ফুড-গ্রেড ব্যাগে প্যাক করা, তারিখ লেবেলসহ। বাসায় এসে সরাসরি ফ্রিজে রাখতে পারবেন।</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🚚</div>
+        <h3 class="why-title">বাসায় ডেলিভারি</h3>
+        <p class="why-desc">ঢাকার যেকোনো এলাকায় আমরা মাংস পৌঁছে দিই। আপনার বাসা থেকে বের হতে হবে না।</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <h3 class="why-title">ন্যায্য মূল্য</h3>
+        <p class="why-desc">বাজারমূল্যের উপর ভিত্তি করে স্বচ্ছ প্রাইসিং। কোনো লুকানো খরচ নেই।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section">
+  <div class="container">
+    <span class="section-label">সচরাচর জিজ্ঞাসা</span>
+    <h2 class="section-title">আপনার প্রশ্ন, আমাদের উত্তর</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">আকীকাহ কি এবং কখন করতে হয়?</div>
+        <div class="faq-a">আকীকাহ হলো সন্তান জন্মের পর আল্লাহর শুকরিয়া আদায়ে পশু জবাই করা। সুন্নাহ অনুযায়ী জন্মের ৭ম দিনে করা উত্তম। তবে পরে যেকোনো সময়ও করা যায়।</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">ছেলে ও মেয়ের জন্য কয়টি ছাগল লাগে?</div>
+        <div class="faq-a">হাদীস অনুযায়ী ছেলে সন্তানের জন্য ২টি ছাগল এবং মেয়ে সন্তানের জন্য ১টি ছাগল জবাই করা সুন্নাহ।</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">কত আগে অর্ডার দিতে হবে?</div>
+        <div class="faq-a">ডেলিভারির তারিখের অন্তত ২৪-৪৮ ঘণ্টা আগে অর্ডার দিলে ভালো হয়। তবে জরুরি প্রয়োজনে আমাদের সাথে কথা বলুন।</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">ঢাকার কোন কোন এলাকায় ডেলিভারি দেন?</div>
+        <div class="faq-a">বর্তমানে ঢাকা শহরের সকল এলাকায় আমরা ডেলিভারি দিই। অর্ডারের সময় আপনার ঠিকানা জানালে আমরা ডেলিভারি নিশ্চিত করবো।</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">পেমেন্ট কিভাবে করবো?</div>
+        <div class="faq-a">বিকাশ, নগদ, রকেট অথবা ক্যাশ অন ডেলিভারি — যেভাবে আপনার সুবিধা। অর্ডার কনফার্ম করার সময় অগ্রিম পেমেন্ট প্রয়োজন।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="cta-content">
+    <div class="cta-icon">🤲</div>
+    <h2>সন্তানের আকীকাহ দিন<br>সুন্নাহ অনুযায়ী, সহজেই</h2>
+    <p>এখনই অর্ডার করুন। আমরা বাকি সব সামলে নেবো।</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/8801631010772?text=আসসালামু আলাইকুম, আকীকাহ সম্পর্কে জানতে চাই" class="btn-whatsapp">💬 WhatsApp এ মেসেজ করুন</a>
+      <a href="tel:+8801631010772" class="btn-call">📞 কল করুন</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="brand">🐐 আকীকাহ সেবা | Aqiqah Sheba</div>
+  <p>ঢাকায় বিশ্বস্ত আকীকাহ ডেলিভারি সেবা</p>
+  <p style="margin-top: 0.5rem;"><a href="tel:+8801631010772" style="color:var(--gold-light);text-decoration:none;">📞 +৮৮০ ১৬৩১ ০১০৭৭২</a> &nbsp;|&nbsp; <a href="https://wa.me/8801631010772" style="color:#25D366;text-decoration:none;">💬 WhatsApp</a></p>
+  <p style="margin-top: 0.5rem;">© ২০২৬ Aqiqah Sheba। সর্বস্বত্ব সংরক্ষিত।</p>
+</footer>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Simple scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.step-card, .package-card, .why-card, .faq-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
