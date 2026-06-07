@@ -568,28 +568,28 @@
     margin-bottom: 40px;
   }
   .price-card {
-    background: rgba(247, 241, 227, 0.04);
-    border: 1px solid rgba(212, 169, 74, 0.25);
+    background: var(--cream);
+    color: var(--green-900);
+    border: 1px solid rgba(200, 155, 60, 0.3);
     padding: 40px 32px;
     border-radius: 4px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
   }
   .price-card:hover {
-    background: rgba(247, 241, 227, 0.07);
-    border-color: var(--gold-500);
+    border-color: var(--gold-600);
     transform: translateY(-4px);
+    box-shadow: 0 12px 32px -12px rgba(26, 61, 46, 0.12);
   }
   .price-name {
     font-family: 'Cormorant Garamond', serif;
     font-size: 34px;
-    color: var(--cream);
+    color: var(--green-900);
     font-weight: 600;
     margin-bottom: 6px;
   }
   .price-sub {
     font-size: 13px;
-    color: var(--gold-500);
+    color: var(--muted);
     margin-bottom: 22px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -598,10 +598,10 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: 16px;
-    color: var(--gold-500);
+    color: var(--gold-600);
     margin-bottom: 24px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(212, 169, 74, 0.2);
+    border-bottom: 1px solid rgba(200, 155, 60, 0.25);
     line-height: 1.5;
   }
   .price-amount-wrap {
@@ -613,26 +613,26 @@
   .price-currency {
     font-family: 'Cormorant Garamond', serif;
     font-size: 32px;
-    color: var(--gold-500);
+    color: var(--gold-600);
     font-weight: 500;
   }
   .price-amount {
     font-family: 'Cormorant Garamond', serif;
     font-size: 56px;
     font-weight: 600;
-    color: var(--cream);
+    color: var(--green-900);
     line-height: 1;
     letter-spacing: -0.02em;
   }
   .price-local {
     font-size: 13px;
-    color: rgba(212, 169, 74, 0.7);
+    color: var(--muted);
     margin-top: 2px;
     font-style: italic;
   }
   .price-fixed {
     font-size: 12px;
-    color: var(--gold-500);
+    color: var(--gold-600);
     margin: 14px 0 26px;
     letter-spacing: 0.03em;
   }
@@ -640,16 +640,16 @@
   .price-features li {
     padding: 10px 0;
     font-size: 15px;
-    color: rgba(247, 241, 227, 0.85);
+    color: var(--ink);
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    border-bottom: 1px solid rgba(212, 169, 74, 0.1);
+    border-bottom: 1px solid rgba(26, 61, 46, 0.08);
     line-height: 1.5;
   }
   .price-features li::before {
     content: '✓';
-    color: var(--gold-500);
+    color: var(--gold-600);
     font-weight: 700;
     flex-shrink: 0;
     margin-top: 2px;
@@ -659,8 +659,8 @@
     padding: 14px;
     text-align: center;
     background: transparent;
-    color: var(--cream);
-    border: 1px solid var(--gold-500);
+    color: var(--green-900);
+    border: 1.5px solid var(--green-900);
     border-radius: 999px;
     text-decoration: none;
     font-size: 14px;
@@ -668,7 +668,32 @@
     transition: all 0.3s;
     letter-spacing: 0.03em;
   }
-  .price-cta:hover { background: var(--gold-500); color: var(--green-900); }
+  .price-cta:hover { background: var(--green-900); color: var(--cream); }
+  .price-card.featured {
+    border: 2px solid var(--gold-600);
+    transform: scale(1.05);
+    box-shadow:
+      0 0 0 4px rgba(200, 155, 60, 0.15),
+      0 20px 48px -8px rgba(200, 155, 60, 0.4),
+      0 8px 24px -8px rgba(26, 61, 46, 0.2);
+    z-index: 2;
+  }
+  .price-card.featured:hover {
+    transform: scale(1.05) translateY(-4px);
+    box-shadow:
+      0 0 0 4px rgba(200, 155, 60, 0.22),
+      0 28px 56px -8px rgba(200, 155, 60, 0.5),
+      0 12px 32px -8px rgba(26, 61, 46, 0.25);
+  }
+  .price-card.featured .price-cta {
+    background: var(--green-900);
+    color: var(--cream);
+    border-color: var(--green-900);
+  }
+  .price-card.featured .price-cta:hover {
+    background: var(--gold-600);
+    border-color: var(--gold-600);
+  }
 
   .pricing-note {
     text-align: center;
