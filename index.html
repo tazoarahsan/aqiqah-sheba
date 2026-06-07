@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -636,26 +637,44 @@
     margin-bottom: 40px;
   }
   .price-card {
-    background: rgba(247, 241, 227, 0.04);
-    border: 1px solid rgba(212, 169, 74, 0.25);
+    background: var(--cream);
+    color: var(--green-900);
+    border: 1px solid rgba(200, 155, 60, 0.3);
     padding: 40px 32px;
     border-radius: 4px;
     position: relative;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
   }
+  .price-card .price-name { color: var(--green-900); }
+  .price-card .price-amount { color: var(--green-900); }
+  .price-card .price-currency { color: var(--gold-600); }
+  .price-card .price-sub { color: var(--muted); }
+  .price-card .price-fixed { color: var(--gold-600); }
+  .price-card .price-features li { color: var(--ink); border-bottom-color: rgba(26,61,46,0.08); }
+  .price-card .price-features li::before { color: var(--gold-600); }
   .price-card:hover {
-    background: rgba(247, 241, 227, 0.07);
-    border-color: var(--gold-500);
+    border-color: var(--gold-600);
     transform: translateY(-4px);
+    box-shadow: 0 12px 32px -12px rgba(26, 61, 46, 0.12);
   }
   .price-card.featured {
     background: var(--cream);
     color: var(--green-900);
-    border-color: var(--gold-500);
-    transform: scale(1.02);
+    border: 2px solid var(--gold-600);
+    transform: scale(1.05);
+    box-shadow:
+      0 0 0 4px rgba(200, 155, 60, 0.15),
+      0 20px 48px -8px rgba(200, 155, 60, 0.4),
+      0 8px 24px -8px rgba(26, 61, 46, 0.2);
+    z-index: 2;
   }
-  .price-card.featured:hover { transform: scale(1.02) translateY(-4px); }
+  .price-card.featured:hover {
+    transform: scale(1.05) translateY(-4px);
+    box-shadow:
+      0 0 0 4px rgba(200, 155, 60, 0.22),
+      0 28px 56px -8px rgba(200, 155, 60, 0.5),
+      0 12px 32px -8px rgba(26, 61, 46, 0.25);
+  }
   .price-card.featured .price-sub { color: var(--muted); }
   .price-card.featured .price-features li { color: var(--ink); }
   .price-card.featured .price-features li::before { color: var(--gold-600); }
@@ -680,23 +699,23 @@
   .price-name {
     font-family: 'Sabina Shorolipi', serif;
     font-size: 32px;
-    color: var(--cream);
+    color: var(--green-900);
     font-weight: 600;
     margin-bottom: 6px;
   }
   .price-sub {
     font-size: 13px;
-    color: var(--gold-500);
+    color: var(--muted);
     margin-bottom: 22px;
   }
   .price-goat-size {
     font-family: 'Sabina Shorolipi', serif;
     font-style: italic;
     font-size: 15px;
-    color: var(--gold-500);
+    color: var(--gold-600);
     margin-bottom: 24px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(212, 169, 74, 0.2);
+    border-bottom: 1px solid rgba(200, 155, 60, 0.25);
     line-height: 1.6;
   }
   .price-card.featured .price-goat-size {
@@ -712,19 +731,19 @@
   .price-currency {
     font-family: 'Cormorant Garamond', serif;
     font-size: 32px;
-    color: var(--gold-500);
+    color: var(--gold-600);
     font-weight: 500;
   }
   .price-amount {
     font-family: 'Sabina Shorolipi', serif;
     font-size: 48px;
     font-weight: 600;
-    color: var(--cream);
+    color: var(--green-900);
     line-height: 1;
   }
   .price-fixed {
     font-size: 12px;
-    color: var(--gold-500);
+    color: var(--gold-600);
     margin-bottom: 26px;
   }
   .price-card.featured .price-fixed { color: var(--gold-600); }
@@ -735,16 +754,16 @@
   .price-features li {
     padding: 10px 0;
     font-size: 15px;
-    color: rgba(247, 241, 227, 0.85);
+    color: var(--ink);
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    border-bottom: 1px solid rgba(212, 169, 74, 0.1);
+    border-bottom: 1px solid rgba(26, 61, 46, 0.08);
     line-height: 1.5;
   }
   .price-features li::before {
     content: '✓';
-    color: var(--gold-500);
+    color: var(--gold-600);
     font-weight: 700;
     flex-shrink: 0;
     margin-top: 2px;
@@ -757,8 +776,8 @@
     padding: 14px;
     text-align: center;
     background: transparent;
-    color: var(--cream);
-    border: 1px solid var(--gold-500);
+    color: var(--green-900);
+    border: 1.5px solid var(--green-900);
     border-radius: 999px;
     text-decoration: none;
     font-size: 14px;
@@ -767,8 +786,8 @@
     font-family: 'Hind Siliguri', sans-serif;
   }
   .price-cta:hover {
-    background: var(--gold-500);
-    color: var(--green-900);
+    background: var(--green-900);
+    color: var(--cream);
   }
   .price-card.featured .price-cta {
     background: var(--green-900);
