@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>প্যাকেজ ও মূল্য · Packages & Pricing — আকিকাহ শেবা</title>
-<meta name="description" content="আকিকাহ শেবার তিনটি প্যাকেজ: শুকরানা ৳১৫,০০০ · সুন্নাহ ৳২০,০০০ · বরকত ৳২৮,০০০। আপনার আয়োজনের উপযুক্ত প্যাকেজ বেছে নিন।" />
+<title>প্যাকেজ ও মূল্য — আকিকাহ শেবা</title>
+<meta name="description" content="আকিকাহ শেবার তিনটি প্যাকেজ: শুকরানা ৳১৫,০০০ · সুন্নাহ ৳২০,০০০ · বারাকাহ ৳২৮,০০০। আপনার আয়োজনের উপযুক্ত প্যাকেজ বেছে নিন।" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" href="/favicon.png">
 
 <link rel="alternate" hreflang="bn" href="https://aqiqahsheba.com/packages.html" />
 <link rel="alternate" hreflang="en" href="https://aqiqahsheba.com/en/packages.html" />
@@ -69,8 +71,6 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
   }
 
-  .en { font-family: 'Inter', sans-serif; }
-  .en-serif { font-family: 'Cormorant Garamond', serif; }
 
   /* === NAV === */
   .nav {
@@ -411,142 +411,7 @@
   }
 
   /* === TWO-GOAT BUNDLE === */
-  .bundle {
-    background: var(--cream-light);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-  .bundle-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-  .bundle-visual {
-    aspect-ratio: 1;
-    position: relative;
-    border-radius: 4px;
-    overflow: hidden;
-    background: var(--green-900);
-  }
-  .bundle-visual-img {
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(135deg, rgba(26, 61, 46, 0.6), rgba(26, 61, 46, 0.3)),
-      url('https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=800&q=80') center/cover;
-  }
-  .bundle-visual .arabic-mark {
-    position: absolute;
-    top: 32px;
-    left: 32px;
-    font-family: 'Amiri', serif;
-    font-size: 42px;
-    color: var(--gold-400);
-    line-height: 1.3;
-  }
-  .bundle-visual .badge {
-    position: absolute;
-    bottom: 32px;
-    right: 32px;
-    background: var(--gold-600);
-    color: var(--cream);
-    padding: 10px 20px;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 13px;
-  }
-  .bundle-content .eyebrow-sm {
-    font-size: 13px;
-    color: var(--gold-600);
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    margin-bottom: 16px;
-  }
-  .bundle-content h2 {
-    font-family: 'Sabina Shorolipi', serif;
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
-    line-height: 1.25;
-    color: var(--green-900);
-    margin-bottom: 12px;
-    font-weight: 400;
-  }
-  .bundle-content h2 em { font-style: italic; color: var(--gold-600); }
-  .bundle-content .subtitle-en {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 22px;
-    color: var(--muted);
-    margin-bottom: 28px;
-  }
-  .bundle-content p {
-    color: var(--muted);
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 16px;
-  }
-  .bundle-hadith {
-    background: var(--cream);
-    padding: 28px 32px;
-    border-left: 3px solid var(--gold-600);
-    margin: 28px 0;
-  }
-  .bundle-hadith .arabic {
-    font-family: 'Amiri', serif;
-    font-size: 20px;
-    color: var(--green-900);
-    direction: rtl;
-    margin-bottom: 10px;
-    line-height: 1.7;
-  }
-  .bundle-hadith .translation {
-    font-family: 'Sabina Shorolipi', serif;
-    font-style: italic;
-    font-size: 17px;
-    color: var(--ink);
-    margin-bottom: 10px;
-  }
-  .bundle-hadith .source {
-    font-size: 12px;
-    color: var(--gold-600);
-  }
 
-  .bundle-options {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin: 28px 0;
-  }
-  .bundle-option {
-    padding: 20px;
-    background: var(--cream);
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    transition: all 0.2s;
-  }
-  .bundle-option:hover {
-    border-color: var(--gold-600);
-    transform: translateY(-2px);
-  }
-  .bundle-option .combo {
-    font-family: 'Sabina Shorolipi', serif;
-    font-size: 18px;
-    color: var(--green-900);
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-  .bundle-option .combo-en {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 10px;
-  }
-  .bundle-option .price {
-    font-family: 'Sabina Shorolipi', serif;
-    font-size: 22px;
-    color: var(--gold-600);
-    font-weight: 600;
-  }
 
   /* === COMPARISON TABLE === */
   .comparison {
@@ -887,9 +752,6 @@
     .package-right h4 { text-align: center; }
     .package-includes li { text-align: left; }
 
-    .bundle-inner { grid-template-columns: 1fr; gap: 48px; }
-    .bundle-options { grid-template-columns: 1fr; }
-
     .compare-table thead th { padding: 14px 8px; font-size: 16px; }
     .compare-table thead th .price-mini { font-size: 18px; }
     .compare-table thead th .sub { display: none; }
@@ -922,10 +784,8 @@
   <div class="breadcrumb">
     <a href="/">হোম</a> · প্যাকেজ ও মূল্য
   </div>
-  <div class="page-eyebrow">প্যাকেজ ও মূল্য · Packages & Pricing</div>
+  <div class="page-eyebrow">প্যাকেজ ও মূল্য</div>
   <h1 class="page-title">তিনটি প্যাকেজ। <em>আপনার আয়োজনের জন্য।</em></h1>
-  <div class="page-subtitle-en">Three packages — Shukrana, Sunnah, and Barakat.</div>
-  <p class="page-intro">No kg-based surprises. No negotiation. Every package is all-inclusive from goat sourcing to home delivery. Pick the size that fits your family — WhatsApp us to confirm in minutes.</p>
 </section>
 
 <!-- PACKAGES EXPANDED -->
@@ -936,131 +796,110 @@
       <div class="package-card">
         
         <div class="package-left">
-          <div class="package-name-bn">বরকত</div>
-          <div class="package-name-en">Barakat — A Generous Gathering</div>
+          <div class="package-name-bn">বারাকাহ</div>
           <div class="package-price-wrap">
             <span class="package-currency">৳</span>
             <span class="package-price">২৮,০০০</span>
           </div>
-          <div class="package-price-en">৳28,000 · all-inclusive</div>
-          <div class="package-fixed">নির্দিষ্ট মূল্য · No hidden costs</div>
+          <div class="package-fixed">নির্দিষ্ট মূল্য — কোনো লুকানো খরচ নেই</div>
         </div>
         <div class="package-right">
           <h4>বড় ও মুবারক আয়োজন</h4>
-          <p class="package-desc-en">A premium 26–30 kg goat with everything: video proof, 3-part split for family/relatives/charity, priority delivery slot, and an aqiqah certificate.</p>
           <ul class="package-includes">
             <li>
               <div>
                 <span class="primary-line">শরিয়তসম্মত ছাগল সোর্সিং</span>
-                <span class="sub-line">26–30 kg live weight, hand-picked from Kaptan Bazar, inspected for health & age</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">শরিয়তসম্মত যবাই</span>
-                <span class="sub-line">Qibla-facing slaughter with Bismillah, performed per the sunnah</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">পেশাদার কসাই সেবা</span>
-                <span class="sub-line">Cleanly butchered into standard curry pieces by experienced butchers</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">পরিষ্কার প্যাকেজিং</span>
-                <span class="sub-line">Hygienically sealed in clean food-grade bags with date labels</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">পুরো ঢাকায় ফ্রি হোম ডেলিভারি</span>
-                <span class="sub-line">Doorstep delivery anywhere within Dhaka — no extra charge</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">যবাইয়ের ভিডিও প্রমাণ</span>
-                <span class="sub-line">Short video of the slaughter sent to you via WhatsApp as proof</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">৩ ভাগে বণ্টন (পরিবার / আত্মীয় / গরিব)</span>
-                <span class="sub-line">Separately packaged in 3 portions following the Sunnah method</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">অগ্রাধিকার ডেলিভারি স্লট</span>
-                <span class="sub-line">Priority time-slot selection — pick morning, afternoon, or evening</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">আকিকা সার্টিফিকেট</span>
-                <span class="sub-line">A printed certificate of the aqiqah with your child's name and date</span>
               </div>
             </li>
           </ul>
           <div class="package-ctas">
-            <a href="order.html?pkg=barakat" class="package-btn package-btn-primary">বরকত অর্ডার করুন</a>
-            <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20বরকত%20প্যাকেজ%20সম্পর্কে%20জানতে%20চাই" class="package-btn package-btn-secondary">WhatsApp-এ জিজ্ঞেস করুন</a>
+            <a href="order.html?pkg=barakat" class="package-btn package-btn-primary">বারাকাহ অর্ডার করুন</a>
+            <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20বারাকাহ%20প্যাকেজ%20সম্পর্কে%20জানতে%20চাই" class="package-btn package-btn-secondary">WhatsApp-এ জিজ্ঞেস করুন</a>
           </div>
         </div>
       </div>
 
       <div class="package-card featured">
-        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold-600); color: var(--cream); padding: 6px 18px; font-size: 12px; font-weight: 700; border-radius: 999px; letter-spacing: 0.02em;">সবচেয়ে জনপ্রিয় · Most Popular</div>
+        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold-600); color: var(--cream); padding: 6px 18px; font-size: 12px; font-weight: 700; border-radius: 999px; letter-spacing: 0.02em;">সবচেয়ে জনপ্রিয়</div>
         <div class="package-left">
           <div class="package-name-bn">সুন্নাহ</div>
-          <div class="package-name-en">Sunnah — For Family & Relatives</div>
           <div class="package-price-wrap">
             <span class="package-currency">৳</span>
             <span class="package-price">২০,০০০</span>
           </div>
-          <div class="package-price-en">৳20,000 · all-inclusive</div>
-          <div class="package-fixed">নির্দিষ্ট মূল্য · No hidden costs</div>
+          <div class="package-fixed">নির্দিষ্ট মূল্য — কোনো লুকানো খরচ নেই</div>
         </div>
         <div class="package-right">
           <h4>পরিবার ও আত্মীয়দের জন্য</h4>
-          <p class="package-desc-en">A larger 20–25 kg goat with full doorstep delivery and video proof of the slaughter — our most popular package, sized for family and relatives.</p>
           <ul class="package-includes">
             <li>
               <div>
                 <span class="primary-line">শরিয়তসম্মত ছাগল সোর্সিং</span>
-                <span class="sub-line">20–25 kg live weight, hand-picked from Kaptan Bazar, inspected for health & age</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">শরিয়তসম্মত যবাই</span>
-                <span class="sub-line">Qibla-facing slaughter with Bismillah, performed per the sunnah</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">পেশাদার কসাই সেবা</span>
-                <span class="sub-line">Cleanly butchered into standard curry pieces by experienced butchers</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">পরিষ্কার প্যাকেজিং</span>
-                <span class="sub-line">Hygienically sealed in clean food-grade bags with date labels</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">পুরো ঢাকায় ফ্রি হোম ডেলিভারি</span>
-                <span class="sub-line">Doorstep delivery anywhere within Dhaka — no extra charge</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">যবাইয়ের ভিডিও প্রমাণ</span>
-                <span class="sub-line">Short video of the slaughter sent to you via WhatsApp as proof</span>
               </div>
             </li>
           </ul>
@@ -1075,46 +914,38 @@
         
         <div class="package-left">
           <div class="package-name-bn">শুকরানা</div>
-          <div class="package-name-en">Shukrana — A Token of Gratitude</div>
           <div class="package-price-wrap">
             <span class="package-currency">৳</span>
             <span class="package-price">১৫,০০০</span>
           </div>
-          <div class="package-price-en">৳15,000 · all-inclusive</div>
-          <div class="package-fixed">নির্দিষ্ট মূল্য · No hidden costs</div>
+          <div class="package-fixed">নির্দিষ্ট মূল্য — কোনো লুকানো খরচ নেই</div>
         </div>
         <div class="package-right">
           <h4>সাশ্রয়ী আয়োজন</h4>
-          <p class="package-desc-en">A healthy 15–19 kg goat for families who want a simple, fully-Shariah-compliant aqiqah without the doorstep delivery and video extras.</p>
           <ul class="package-includes">
             <li>
               <div>
                 <span class="primary-line">শরিয়তসম্মত ছাগল সোর্সিং</span>
-                <span class="sub-line">15–19 kg live weight, hand-picked from Kaptan Bazar, inspected for health & age</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">শরিয়তসম্মত যবাই</span>
-                <span class="sub-line">Qibla-facing slaughter with Bismillah, performed per the sunnah</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">পেশাদার কসাই সেবা</span>
-                <span class="sub-line">Cleanly butchered into standard curry pieces by experienced butchers</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">পরিষ্কার প্যাকেজিং</span>
-                <span class="sub-line">Hygienically sealed in clean food-grade bags with date labels</span>
               </div>
             </li>
             <li>
               <div>
                 <span class="primary-line">হোম ডেলিভারি — অ্যাড-অন</span>
-                <span class="sub-line">Doorstep delivery available as an add-on (location-based charge)</span>
               </div>
             </li>
           </ul>
@@ -1129,140 +960,84 @@
   </div>
 </section>
 
-<!-- TWO-GOAT BUNDLE -->
-<section class="bundle">
-  <div class="container">
-    <div class="bundle-inner">
-      <div class="bundle-visual">
-        <div class="bundle-visual-img"></div>
-        <div class="arabic-mark">عَنِ الْغُلَامِ<br/>شَاتَانِ</div>
-        <div class="badge">ছেলে সন্তানের জন্য</div>
-      </div>
-      <div class="bundle-content">
-        <div class="eyebrow-sm">ছেলে সন্তানের সুন্নাহ · Sunnah for a Son</div>
-        <h2>২টি ছাগলের <em>বান্ডেল</em></h2>
-        <div class="subtitle-en">Two-Goat Bundle</div>
-        <p>সুন্নাহ অনুযায়ী ছেলে সন্তানের আকিকায় ২টি ছাগল যবাই করা হয়। আমরা এই বান্ডেলের উপর ছাড় অফার করি — ছাগলের সাইজের সব কম্বিনেশন পাওয়া যায়।</p>
-
-        <div class="bundle-hadith">
-          <div class="arabic">عَنِ الْغُلَامِ شَاتَانِ مُكَافِئَتَانِ، وَعَنِ الْجَارِيَةِ شَاةٌ</div>
-          <div class="translation">"ছেলে সন্তানের জন্য সমমানের দুটি ছাগল এবং মেয়ে সন্তানের জন্য একটি ছাগল।"</div>
-          <div class="source">— সুনান তিরমিযী ১৫১৩ · সুনান আবু দাউদ ২৮৩৪ (সহীহ)</div>
-        </div>
-
-        <div class="bundle-options">
-          <div class="bundle-option">
-            <div class="combo">শুকরানা + শুকরানা</div>
-            <div class="combo-en">Shukrana + Shukrana · 15–19 kg each</div>
-            <div class="price">৳২৮,০০০</div>
-          </div>
-          <div class="bundle-option">
-            <div class="combo">শুকরানা + সুন্নাহ</div>
-            <div class="combo-en">Shukrana + Sunnah</div>
-            <div class="price">৳৩৩,০০০</div>
-          </div>
-          <div class="bundle-option">
-            <div class="combo">সুন্নাহ + সুন্নাহ</div>
-            <div class="combo-en">Sunnah + Sunnah · 20–25 kg each</div>
-            <div class="price">৳৩৬,০০০</div>
-          </div>
-          <div class="bundle-option">
-            <div class="combo">সুন্নাহ + বরকত</div>
-            <div class="combo-en">Sunnah + Barakat</div>
-            <div class="price">৳৪৩,০০০</div>
-          </div>
-        </div>
-
-        <div class="package-ctas">
-          <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20আমি%20ছেলে%20সন্তানের%20আকিকার%20জন্য%20২-ছাগলের%20বান্ডেল%20সম্পর্কে%20জানতে%20চাই" class="package-btn package-btn-primary">বান্ডেল অর্ডার করুন</a>
-          <a href="#" class="package-btn package-btn-secondary">সব কম্বিনেশন দেখুন</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- COMPARISON TABLE -->
 <section class="comparison">
   <div class="container">
     <div class="section-header">
-      <div class="section-eyebrow">বিস্তারিত তুলনা · Detailed Comparison</div>
+      <div class="section-eyebrow">বিস্তারিত তুলনা</div>
       <h2 class="section-title">প্যাকেজগুলোর <em>সম্পূর্ণ তুলনা।</em></h2>
-      <div class="section-title-en">Side-by-side feature comparison across all three packages.</div>
     </div>
 
         <table class="compare-table">
       <thead>
         <tr>
-          <th>বৈশিষ্ট্য<br/><span style="font-family: 'Inter', sans-serif; font-weight: 400; text-transform: none; letter-spacing: 0;">Feature</span></th>
+          <th>বৈশিষ্ট্য<br/></th>
           <th>
-            বরকত
-            <span class="sub">Barakat</span>
+            বারাকাহ
             <span class="price-mini">৳২৮,০০০</span>
           </th>
           <th class="featured">
             সুন্নাহ
-            <span class="sub">Sunnah · Most Popular</span>
             <span class="price-mini">৳২০,০০০</span>
           </th>
           <th>
             শুকরানা
-            <span class="sub">Shukrana</span>
             <span class="price-mini">৳১৫,০০০</span>
           </th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>শরিয়তসম্মত ছাগল সোর্সিং <span class="sub-en">Shariah-compliant sourcing</span></td>
+          <td>শরিয়তসম্মত ছাগল সোর্সিং</td>
           <td><span class="check">✓</span></td>
           <td><span class="check">✓</span></td>
           <td><span class="check">✓</span></td>
         </tr>
         <tr>
-          <td>শরিয়তসম্মত যবাই <span class="sub-en">Shariah-compliant slaughter</span></td>
+          <td>শরিয়তসম্মত যবাই</td>
           <td><span class="check">✓</span></td>
           <td><span class="check">✓</span></td>
           <td><span class="check">✓</span></td>
         </tr>
         <tr>
-          <td>পেশাদার কসাই সেবা <span class="sub-en">Professional butchering</span></td>
+          <td>পেশাদার কসাই সেবা</td>
           <td><span class="check">✓</span></td>
           <td><span class="check">✓</span></td>
           <td><span class="check">✓</span></td>
         </tr>
         <tr>
-          <td>পরিষ্কার প্যাকেজিং <span class="sub-en">Hygienic packaging</span></td>
+          <td>পরিষ্কার প্যাকেজিং</td>
           <td><span class="check">✓</span></td>
           <td><span class="check">✓</span></td>
           <td><span class="check">✓</span></td>
         </tr>
         <tr>
-          <td>হোম ডেলিভারি <span class="sub-en">Doorstep delivery</span></td>
+          <td>হোম ডেলিভারি</td>
           <td><span class="check">✓</span></td>
           <td><span class="check">✓</span></td>
-          <td class="addon-cell">অ্যাড-অন · Add-on</td>
+          <td class="addon-cell">অ্যাড-অন</td>
         </tr>
         <tr>
-          <td>যবাইয়ের ভিডিও প্রমাণ <span class="sub-en">Slaughter video proof</span></td>
+          <td>যবাইয়ের ভিডিও প্রমাণ</td>
           <td><span class="check">✓</span></td>
           <td><span class="check">✓</span></td>
           <td><span class="cross">✕</span></td>
         </tr>
         <tr>
-          <td>৩ ভাগে বণ্টন (পরিবার / আত্মীয় / গরিব) <span class="sub-en">3-part split packaging</span></td>
+          <td>৩ ভাগে বণ্টন (পরিবার / আত্মীয় / গরিব)</td>
           <td><span class="check">✓</span></td>
           <td><span class="cross">✕</span></td>
           <td><span class="cross">✕</span></td>
         </tr>
         <tr>
-          <td>অগ্রাধিকার ডেলিভারি স্লট <span class="sub-en">Priority delivery slot</span></td>
+          <td>অগ্রাধিকার ডেলিভারি স্লট</td>
           <td><span class="check">✓</span></td>
           <td><span class="cross">✕</span></td>
           <td><span class="cross">✕</span></td>
         </tr>
         <tr>
-          <td>আকিকা সার্টিফিকেট <span class="sub-en">Certificate of Aqiqah</span></td>
+          <td>আকিকা সার্টিফিকেট</td>
           <td><span class="check">✓</span></td>
           <td><span class="cross">✕</span></td>
           <td><span class="cross">✕</span></td>
@@ -1277,9 +1052,8 @@
   <div class="container">
     <div class="nc-inner">
       <div class="nc-left">
-        <div class="nc-eyebrow">আমরা যে খরচ নিই না · What We Never Charge Extra For</div>
+        <div class="nc-eyebrow">আমরা যে খরচ নিই না</div>
         <h2>যা দেখছেন, <em>তাই দিবেন।</em></h2>
-        <div class="sub-en">What you see is what you pay.</div>
         <p>কেজি-ভিত্তিক লুকানো খরচ, ডেলিভারি ফি, সার্ভিস চার্জ, প্যাকেজিং ফি — এসব কিছুই নেই। প্যাকেজের মূল্যের বাইরে কখনোই অতিরিক্ত টাকা চাওয়া হবে না।</p>
       </div>
       <div class="nc-right">
@@ -1288,35 +1062,30 @@
             <div class="icon">✕</div>
             <div>
               <div class="main">কোনো কেজি-ভিত্তিক সারপ্রাইজ নেই</div>
-              <div class="sub">No post-slaughter weight surprises — price is locked at order</div>
             </div>
           </li>
           <li>
             <div class="icon">✕</div>
             <div>
               <div class="main">কোনো ডেলিভারি ফি নেই (ঢাকার মধ্যে)</div>
-              <div class="sub">Free delivery anywhere within Dhaka city, including all areas</div>
             </div>
           </li>
           <li>
             <div class="icon">✕</div>
             <div>
               <div class="main">কোনো সার্ভিস চার্জ নেই</div>
-              <div class="sub">No hidden service fees, platform fees, or convenience charges</div>
             </div>
           </li>
           <li>
             <div class="icon">✕</div>
             <div>
               <div class="main">কোনো প্যাকেজিং ফি নেই</div>
-              <div class="sub">Food-grade bags, labels, dua card (Large) — all included</div>
             </div>
           </li>
           <li>
             <div class="icon">✕</div>
             <div>
               <div class="main">কোনো দোয়া কার্ড ফি নেই</div>
-              <div class="sub">Personalised dua card with your baby's name — always free, every package</div>
             </div>
           </li>
         </ul>
@@ -1327,18 +1096,16 @@
 
 <div style="background: var(--cream-light); padding: 32px 40px; text-align: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
   <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: var(--green-900); max-width: 720px; margin: 0 auto; line-height: 1.5;">
-    নিশ্চিত নন কোনটি বেছে নেবেন? <span style="color: var(--gold-600); font-weight: 600;">বেশিরভাগ পরিবার সুন্নাহ অথবা বরকত বেছে নেন।</span>
-    <span style="display: block; font-size: 16px; color: var(--muted); margin-top: 6px;">Not sure which to choose? Most families choose Sunnah or Barakat.</span>
+    নিশ্চিত নন কোনটি বেছে নেবেন? <span style="color: var(--gold-600); font-weight: 600;">বেশিরভাগ পরিবার সুন্নাহ অথবা বারাকাহ বেছে নেন।</span>
   </p>
 </div>
 
 <!-- FINAL CTA -->
 <section class="cta-band">
   <h2>প্যাকেজ বেছে নিয়েছেন? <em>তাহলে অর্ডার দিন।</em></h2>
-  <div class="sub-en">Made up your mind? Order in two minutes.</div>
   <div class="cta-buttons">
     <a href="order.html" class="btn btn-primary">
-      অর্ডার ফর্মে যান · Start Order
+      অর্ডার ফর্মে যান
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
     <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20আমি%20আকিকার%20অর্ডার%20দিতে%20চাই" class="btn" style="background: #25D366; color: white;">
@@ -1379,7 +1146,7 @@
         <li><a>bKash</a></li>
         <li><a>Nagad / Rocket</a></li>
         <li><a>ব্যাংক ট্রান্সফার</a></li>
-        <li><a>ক্যাশ অন ডেলিভারি</a></li>
+        
       </ul>
     </div>
   </div>
