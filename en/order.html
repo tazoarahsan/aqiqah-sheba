@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Place Your Order — Aqiqah Sheba</title>
+<meta name="description" content="Order your aqiqah in three simple steps. Select gender, pick a package, provide details — send via WhatsApp." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="alternate" hreflang="bn" href="https://aqiqahsheba.com/order.html" />
+<link rel="alternate" hreflang="en" href="https://aqiqahsheba.com/en/order.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --green-900: #1a3d2e;
+    --green-800: #1f4a37;
+    --green-700: #2a5a43;
+    --gold-600: #c89b3c;
+    --gold-500: #d4a94a;
+    --gold-400: #e0bb5f;
+    --cream: #f7f1e3;
+    --cream-light: #fbf7ec;
+    --cream-dark: #efe6d0;
+    --ink: #0f1e17;
+    --muted: #5a6b61;
+    --line: rgba(26, 61, 46, 0.15);
+    --error: #c53030;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.08;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+  }
+
+  /* === NAV === */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 14px 40px;
+    background: rgba(247, 241, 227, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo { height: 52px; display: block; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    color: var(--green-900);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-600); }
+  .lang-toggle {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.08em;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+  }
+
+  /* === PAGE LAYOUT === */
+  .order-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 130px 24px 80px;
+  }
+
+  /* === HEADER === */
+  .order-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .order-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold-600);
+    margin-bottom: 16px;
+  }
+  .order-eyebrow::before, .order-eyebrow::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold-600);
+  }
+  h1.order-title {
+    font-family: 'Sabina Shorolipi', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--green-900);
+    margin-bottom: 12px;
+  }
+  h1.order-title em { font-style: italic; color: var(--gold-600); }
+  .order-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .order-intro {
+    max-width: 580px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  /* === PROGRESS === */
+  .progress-wrap {
+    margin: 48px 0 40px;
+    position: relative;
+  }
+  .progress-bar-track {
+    position: absolute;
+    top: 22px;
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    background: var(--line);
+    z-index: 1;
+  }
+  .progress-bar-fill {
+    position: absolute;
+    top: 22px;
+    left: 12%;
+    height: 2px;
+    background: var(--gold-600);
+    transition: width 0.5s ease;
+    z-index: 2;
+  }
+  .progress-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+  }
+  .progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+  }
+  .progress-dot {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 2px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sabina Shorolipi', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--muted);
+    transition: all 0.3s;
+  }
+  .progress-step.active .progress-dot {
+    background: var(--green-900);
+    color: var(--cream);
+    border-color: var(--green-900);
+    box-shadow: 0 4px 12px -4px rgba(26, 61, 46, 0.4);
+  }
+  .progress-step.complete .progress-dot {
+    background: var(--gold-600);
+    color: var(--cream);
+    border-color: var(--gold-600);
+  }
+  .progress-step .label {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.3;
+  }
+  .progress-step.active .label { color: var(--green-900); font-weight: 600; }
+  .progress-step .label-en {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+    font-weight: 400;
+  }
+
+  /* === FORM CARD === */
+  .form-card {
+    background: var(--cream-light);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 48px;
+    position: relative;
+  }
+  .form-step { display: none; animation: fadeIn 0.4s; }
+  .form-step.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .step-header {
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--gold-600);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .step-title {
+    font-family: 'Sabina Shorolipi', serif;
+    font-size: 28px;
+    color: var(--green-900);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .step-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--muted);
+  }
+
+  /* === PACKAGE CARDS IN FORM === */
+  .pkg-choices {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .pkg-choice {
+    border: 1.5px solid var(--line);
+    border-radius: 6px;
+    padding: 20px 24px;
+    cursor: pointer;
+    transition: all 0.25s;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 20px;
+    align-items: center;
+    background: var(--cream);
+  }
+  .pkg-choice:hover {
+    border-color: var(--gold-500);
+    background: var(--cream-light);
+  }
+  .pkg-choice.selected {
+    border-color: var(--gold-600);
+    background: var(--cream-light);
+    box-shadow: 0 4px 16px -6px rgba(200, 155, 60, 0.3);
+  }
+  .pkg-radio {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--line);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+  .pkg-choice.selected .pkg-radio {
+    border-color: var(--gold-600);
+  }
+  .pkg-choice.selected .pkg-radio::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: var(--gold-600);
+    border-radius: 50%;
+  }
+  .pkg-info .pkg-name {
+    font-family: 'Sabina Shorolipi', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--green-900);
+    margin-bottom: 2px;
+  }
+  .pkg-info .pkg-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .pkg-price {
+    font-family: 'Sabina Shorolipi', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--gold-600);
+    text-align: right;
+  }
+  .pkg-price .pkg-price-en {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  /* === TWO-GOAT TOGGLE === */
+  .bundle-toggle {
+    background: var(--cream);
+    border: 1px dashed var(--gold-500);
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 16px;
+  }
+  .bundle-toggle-label .main {
+    font-family: 'Sabina Shorolipi', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--green-900);
+    margin-bottom: 2px;
+  }
+  .bundle-toggle-label .sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .switch {
+    position: relative;
+    width: 48px;
+    height: 26px;
+    background: var(--line);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  .switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    transition: left 0.25s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  }
+  .switch.on { background: var(--gold-600); }
+  .switch.on::after { left: 24px; }
+
+  /* === FORM FIELDS === */
+  .field-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .field-full { grid-column: 1 / -1; }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .field-label {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green-900);
+  }
+  .field-label-en {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-left: 8px;
+  }
+  .field-label .req { color: var(--error); margin-left: 2px; }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="date"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--cream);
+    border: 1.5px solid var(--line);
+    border-radius: 6px;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    transition: all 0.2s;
+  }
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--gold-600);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.1);
+  }
+  textarea { resize: vertical; min-height: 88px; font-family: 'Hind Siliguri', sans-serif; }
+
+  .field-hint {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: -2px;
+  }
+
+  /* === RADIO GROUPS === */
+  .radio-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .radio-option {
+    padding: 14px 16px;
+    border: 1.5px solid var(--line);
+    border-radius: 6px;
+    cursor: pointer;
+    background: var(--cream);
+    transition: all 0.2s;
+    text-align: center;
+  }
+  .radio-option:hover { border-color: var(--gold-500); }
+  .radio-option.selected {
+    border-color: var(--gold-600);
+    background: var(--cream-light);
+    box-shadow: 0 2px 8px -4px rgba(200, 155, 60, 0.3);
+  }
+  .radio-option .label-main {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--green-900);
+    margin-bottom: 2px;
+  }
+  .radio-option .label-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* === CHECKBOX === */
+  .checkbox-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px 16px;
+    background: var(--cream);
+    border: 1.5px solid var(--line);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 10px;
+  }
+  .checkbox-row:hover { border-color: var(--gold-500); }
+  .checkbox-row.checked {
+    border-color: var(--gold-600);
+    background: var(--cream-light);
+  }
+  .cb-box {
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid var(--line);
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    transition: all 0.2s;
+  }
+  .checkbox-row.checked .cb-box {
+    background: var(--gold-600);
+    border-color: var(--gold-600);
+  }
+  .checkbox-row.checked .cb-box::after {
+    content: '✓';
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .cb-label .main {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--green-900);
+    margin-bottom: 2px;
+  }
+  .cb-label .sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* === REVIEW SUMMARY === */
+  .review-summary {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+  }
+  .review-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+  }
+  .review-row:last-child { border-bottom: none; }
+  .review-label {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .review-label-en {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 1px;
+  }
+  .review-value {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .review-value.price {
+    font-family: 'Sabina Shorolipi', serif;
+    font-size: 20px;
+    color: var(--gold-600);
+    font-weight: 600;
+  }
+  .review-value.empty { color: var(--muted); font-style: italic; font-weight: 400; }
+
+  /* === TOTAL BAR === */
+  .total-bar {
+    background: var(--green-900);
+    color: var(--cream);
+    padding: 24px 32px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+  }
+  .total-label {
+    font-family: 'Sabina Shorolipi', serif;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .total-label-en {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--gold-500);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+  .total-amount {
+    font-family: 'Sabina Shorolipi', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--gold-500);
+  }
+
+  /* === NAV BUTTONS === */
+  .form-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .btn {
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 999px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+    font-family: 'Hind Siliguri', sans-serif;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-primary {
+    background: var(--green-900);
+    color: var(--cream);
+  }
+  .btn-primary:hover:not(:disabled) {
+    background: var(--gold-600);
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--green-900);
+    border: 1.5px solid var(--line);
+  }
+  .btn-secondary:hover {
+    border-color: var(--green-900);
+  }
+  .btn-whatsapp {
+    background: #25D366;
+    color: white;
+    font-size: 16px;
+    padding: 18px 36px;
+  }
+  .btn-whatsapp:hover {
+    background: #20bc5a;
+    transform: translateY(-1px);
+  }
+
+  /* === ERROR === */
+  .field-error {
+    color: var(--error);
+    font-size: 12px;
+    margin-top: 4px;
+    display: none;
+  }
+  .field.has-error input,
+  .field.has-error textarea,
+  .field.has-error select {
+    border-color: var(--error);
+  }
+  .field.has-error .field-error { display: block; }
+
+  /* === SECURITY BADGE === */
+  .security-badge {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+  }
+  .security-badge .item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 12px;
+  }
+  .security-badge svg { width: 14px; height: 14px; color: var(--green-700); }
+
+  /* === HELP BOX === */
+  .help-box {
+    background: rgba(200, 155, 60, 0.08);
+    border-left: 3px solid var(--gold-600);
+    padding: 18px 22px;
+    margin-bottom: 28px;
+    border-radius: 0 6px 6px 0;
+  }
+  .help-box .arabic {
+    font-family: 'Amiri', serif;
+    color: var(--gold-600);
+    font-size: 16px;
+    margin-bottom: 6px;
+    direction: rtl;
+    text-align: right;
+  }
+  .help-box p {
+    font-family: 'Sabina Shorolipi', serif;
+    font-style: italic;
+    color: var(--green-900);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .help-box p .en {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    .nav { padding: 12px 20px; }
+    .nav-logo { height: 42px; }
+    .nav-links { gap: 12px; }
+    .nav-links a:not(.lang-toggle) { display: none; }
+
+    .order-page { padding: 110px 16px 60px; }
+    .form-card { padding: 28px 22px; }
+
+    .progress-step .label { font-size: 11px; }
+    .progress-dot { width: 36px; height: 36px; font-size: 14px; }
+    .progress-bar-track, .progress-bar-fill { top: 18px; }
+
+    .field-grid { grid-template-columns: 1fr; gap: 16px; }
+    .review-row { grid-template-columns: 1fr; gap: 6px; }
+    .review-label { font-size: 12px; }
+
+    .form-nav { flex-direction: column-reverse; }
+    .form-nav .btn { width: 100%; justify-content: center; }
+
+    .pkg-choice { grid-template-columns: auto 1fr; }
+    .pkg-price { grid-column: 1 / -1; text-align: left; padding-left: 42px; }
+
+    .total-bar { padding: 18px 22px; flex-direction: column; align-items: flex-start; gap: 8px; }
+
+    .step-title { font-size: 22px; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/en/"><img src="/logo-english.png" alt="Aqiqah Sheba" class="nav-logo"></a>
+  <div class="nav-links">
+    <a href="/en/">Home</a>
+    <a href="/en/packages.html">Packages</a>
+    <a href="/en/order.html" class="active">Order</a>
+    <a href="/order.html" class="lang-toggle">বাং</a>
+  </div>
+</nav>
+
+<div class="order-wrap">
+  <div class="order-header">
+    <h1 class="order-title">Three steps, <em>two minutes.</em></h1>
+    <p style="font-family: 'Inter', sans-serif; color: var(--muted); font-size: 15px; max-width: 560px; margin: 10px auto 0;">
+      Fill in the form, send via WhatsApp, we'll confirm.
+    </p>
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+    <div class="progress-steps">
+      <div class="progress-step active" data-step="1">
+        <div class="progress-dot"></div>
+        <div class="label">Gender</div>
+      </div>
+      <div class="progress-step" data-step="2">
+        <div class="progress-dot"></div>
+        <div class="label">Package</div>
+      </div>
+      <div class="progress-step" data-step="3">
+        <div class="progress-dot"></div>
+        <div class="label">Details</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-card">
+
+    <!-- STEP 1: GENDER -->
+    <div class="form-step active" data-step="1">
+      <div class="step-header">
+        <div class="step-num">— Step 1 —</div>
+        <div class="step-title">Child's Gender</div>
+      </div>
+
+      <div class="help-box">
+        <div class="arabic">عَنِ الْغُلَامِ شَاتَانِ، وَعَنِ الْجَارِيَةِ شَاةٌ</div>
+        <p style="font-family: 'Inter', sans-serif;">The sunnah is two goats for a boy and one goat for a girl.</p>
+      </div>
+
+      <div class="field field-full">
+        <div class="radio-group" id="genderGroup">
+          <div class="radio-option" data-value="girl">
+            <div class="label-main">♀ Girl</div>
+            <div class="label-sub">1 goat — sunnah</div>
+          </div>
+          <div class="radio-option" data-value="boy">
+            <div class="label-main">♂ Boy</div>
+            <div class="label-sub">2 goats — sunnah</div>
+          </div>
+        </div>
+        <div class="field-error" id="genderError" style="display:none;">Please select gender</div>
+      </div>
+
+      <div class="form-nav">
+        <div></div>
+        <button class="btn btn-primary" onclick="nextStep()">Next
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2: PACKAGE -->
+    <div class="form-step" data-step="2">
+      <div class="step-header">
+        <div class="step-num">— Step 2 —</div>
+        <div class="step-title">Pick Your Package</div>
+      </div>
+
+      <div id="pkgNote" class="help-box" style="border-color: var(--gold-500);">
+        <p id="pkgNoteText" style="font-family: 'Inter', sans-serif;">Aqiqah for a girl — showing price for 1 goat.</p>
+      </div>
+
+      <div class="pkg-choices" id="singleChoices">
+        <label class="pkg-choice" data-pkg="barakah" data-base="28000">
+          <div class="pkg-radio"></div>
+          <div class="pkg-info">
+            <div class="pkg-name">Barakah</div>
+            <div class="pkg-desc" data-girl="26–30 kg · everything in Sunnah + priority delivery + 3-way split + aqiqah certificate" data-boy="26–30 kg per goat · everything in Sunnah + priority delivery + 3-way split + aqiqah certificate">26–30 kg · everything in Sunnah + priority delivery + 3-way split + aqiqah certificate</div>
+          </div>
+          <div class="pkg-price"><span class="pkg-price-val"></span></div>
+        </label>
+        <label class="pkg-choice selected" data-pkg="sunnah" data-base="20000">
+          <div class="pkg-radio"></div>
+          <div class="pkg-info">
+            <div class="pkg-name">Sunnah <span style="font-size: 11px; color: var(--gold-600); margin-left: 6px;">— most popular</span></div>
+            <div class="pkg-desc" data-girl="20–25 kg · everything in Shukrana + video proof + free Dhaka delivery" data-boy="20–25 kg per goat · everything in Shukrana + video proof + free Dhaka delivery">20–25 kg · everything in Shukrana + video proof + free Dhaka delivery</div>
+          </div>
+          <div class="pkg-price"><span class="pkg-price-val"></span></div>
+        </label>
+        <label class="pkg-choice" data-pkg="shukrana" data-base="15000">
+          <div class="pkg-radio"></div>
+          <div class="pkg-info">
+            <div class="pkg-name">Shukrana</div>
+            <div class="pkg-desc" data-girl="15–19 kg · sourcing + slaughter + butchering + packaging" data-boy="15–19 kg per goat · sourcing + slaughter + butchering + packaging">15–19 kg · sourcing + slaughter + butchering + packaging</div>
+          </div>
+          <div class="pkg-price"><span class="pkg-price-val"></span></div>
+        </label>
+      </div>
+
+      <div class="form-nav">
+        <button class="btn btn-secondary" onclick="prevStep()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back
+        </button>
+        <button class="btn btn-primary" onclick="nextStep()">Next
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 3: DETAILS & CONFIRM -->
+    <div class="form-step" data-step="3">
+      <div class="step-header">
+        <div class="step-num">— Step 3 —</div>
+        <div class="step-title">Details & Confirm</div>
+      </div>
+
+      <div class="field-grid">
+        <div class="field">
+          <label class="field-label">Child's name</label>
+          <input type="text" id="babyName" placeholder="e.g. Ahmed, Fatima" />
+        </div>
+        <div class="field">
+          <label class="field-label">Date of birth</label>
+          <input type="date" id="babyDob" />
+        </div>
+      </div>
+
+      <div class="field field-full" style="margin-bottom: 20px;">
+        <label class="field-label">Preferred delivery date <span class="req">*</span></label>
+        <input type="date" id="deliveryDate" required />
+        <div class="field-hint">Please allow at least 24 hours notice</div>
+        <div class="field-error">Please select a delivery date</div>
+      </div>
+
+      <div class="field-grid">
+        <div class="field">
+          <label class="field-label">Parent's name <span class="req">*</span></label>
+          <input type="text" id="parentName" required placeholder="e.g. Muhammad Ahmed" />
+          <div class="field-error">Please enter your name</div>
+        </div>
+        <div class="field">
+          <label class="field-label">Phone number <span class="req">*</span></label>
+          <input type="tel" id="phone" required placeholder="+880 1XXX-XXXXXX" />
+          <div class="field-error">Please enter a valid phone number</div>
+        </div>
+      </div>
+
+      <div class="field field-full" style="margin-bottom: 24px;">
+        <label class="field-label">Delivery address <span class="req">*</span></label>
+        <textarea id="address" required placeholder="House, road, block, area, Dhaka"></textarea>
+        <div class="field-error">Please enter your delivery address</div>
+      </div>
+
+      <div class="field field-full" style="margin-bottom: 24px;">
+        <label class="field-label">Meat distribution <span class="req">*</span></label>
+        <div class="radio-group" id="distributionGroup">
+          <div class="radio-option" data-value="full-charity">
+            <div class="label-main">Distribute full goat among the poor</div>
+            <div class="label-sub">We will distribute all the meat to the needy on your behalf</div>
+          </div>
+          <div class="radio-option selected" data-value="one-third-charity">
+            <div class="label-main">1/3 to the poor, rest delivered to me</div>
+            <div class="label-sub">Sunnah method — one-third to the needy, the rest delivered to your door</div>
+          </div>
+          <div class="radio-option" data-value="full-delivery">
+            <div class="label-main">Deliver full goat to me, I will distribute myself</div>
+            <div class="label-sub">All meat delivered to your address</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REVIEW SUMMARY -->
+      <div style="margin-top: 32px;">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--green-900); font-weight: 600; margin-bottom: 16px;">Order Summary</div>
+        <div class="review-summary">
+          <div class="review-row">
+            <div class="review-label">Gender</div>
+            <div class="review-value" id="reviewGender">—</div>
+          </div>
+          <div class="review-row">
+            <div class="review-label">Package</div>
+            <div class="review-value" id="reviewPackage">—</div>
+          </div>
+          <div class="review-row">
+            <div class="review-label">Child's name</div>
+            <div class="review-value" id="reviewBabyName">—</div>
+          </div>
+          <div class="review-row">
+            <div class="review-label">Delivery date</div>
+            <div class="review-value" id="reviewDate">—</div>
+          </div>
+          <div class="review-row">
+            <div class="review-label">Distribution</div>
+            <div class="review-value" id="reviewDistribution">—</div>
+          </div>
+        </div>
+
+        <div class="total-bar">
+          <div>
+            <div class="total-label">Total</div>
+            
+          </div>
+          <div class="total-amount" id="reviewTotal">৳20,000</div>
+        </div>
+
+        <button class="btn btn-whatsapp" onclick="submitOrder()" style="width: 100%; justify-content: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Send Order via WhatsApp
+        </button>
+
+        <p style="text-align: center; font-size: 13px; color: var(--muted); margin-top: 14px; font-family: 'Inter', sans-serif;">
+          Payment details shared after WhatsApp confirmation
+        </p>
+      </div>
+
+      <div class="form-nav">
+        <button class="btn btn-secondary" onclick="prevStep()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back
+        </button>
+        <div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="security-badge">
+    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Shariah-compliant</span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> Video proof</span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Fixed price</span>
+  </div>
+</div>
+
+<script>
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwdiFxHiiepL0RlM6_406Xx5tE2t2I4CSAdPYdxZ_dBX8KAUwvLXnimPTLVv7L4aApO/exec'; // ← paste your Google Apps Script web app URL here
+
+  const fmt = (n) => n.toLocaleString('en-US');
+
+  const state = {
+    currentStep: 1,
+    totalSteps: 3,
+    gender: null,
+    goatCount: 1,
+    package: { name: 'Sunnah', key: 'sunnah', base: 20000, price: 20000 },
+    distribution: 'one-third-charity',
+    babyName: '',
+    babyDob: '',
+    deliveryDate: '',
+    parent: { name: '', phone: '', address: '' }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const pkgParam = params.get('pkg');
+
+  function updatePrices() {
+    state.goatCount = state.gender === 'boy' ? 2 : 1;
+    document.querySelectorAll('.pkg-choice').forEach(el => {
+      const base = parseInt(el.dataset.base);
+      const total = base * state.goatCount;
+      el.querySelector('.pkg-price-val').textContent = '৳' + fmt(total);
+    });
+    const sel = document.querySelector('.pkg-choice.selected');
+    if (sel) {
+      state.package.base = parseInt(sel.dataset.base);
+      state.package.price = state.package.base * state.goatCount;
+    }
+    document.getElementById('pkgNoteText').textContent = state.gender === 'boy'
+      ? 'Aqiqah for a boy — showing price for 2 goats.'
+      : 'Aqiqah for a girl — showing price for 1 goat.';
+    document.querySelectorAll('.pkg-desc[data-girl]').forEach(el => {
+      el.textContent = state.gender === 'boy' ? el.dataset.boy : el.dataset.girl;
+    });
+  }
+
+  document.getElementById('genderGroup').querySelectorAll('.radio-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      document.getElementById('genderGroup').querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      state.gender = opt.dataset.value;
+      document.getElementById('genderError').style.display = 'none';
+      updatePrices();
+    });
+  });
+
+  document.querySelectorAll('.pkg-choice').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.pkg-choice').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      state.package.name = el.querySelector('.pkg-name').childNodes[0].nodeValue.trim();
+      state.package.key = el.dataset.pkg;
+      state.package.base = parseInt(el.dataset.base);
+      state.package.price = state.package.base * state.goatCount;
+    });
+  });
+
+  document.getElementById('distributionGroup').querySelectorAll('.radio-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      document.getElementById('distributionGroup').querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      state.distribution = opt.dataset.value;
+    });
+  });
+
+  if (pkgParam) {
+    const target = document.querySelector('[data-pkg="' + pkgParam + '"]');
+    if (target) {
+      document.querySelectorAll('.pkg-choice').forEach(c => c.classList.remove('selected'));
+      target.classList.add('selected');
+      state.package.name = target.querySelector('.pkg-name').childNodes[0].nodeValue.trim();
+      state.package.key = pkgParam;
+      state.package.base = parseInt(target.dataset.base);
+    }
+  }
+
+  updatePrices();
+
+  function updateProgress() {
+    document.querySelectorAll('.progress-step').forEach(s => {
+      const n = parseInt(s.dataset.step);
+      s.classList.toggle('active', n === state.currentStep);
+      s.classList.toggle('complete', n < state.currentStep);
+    });
+    document.querySelectorAll('.form-step').forEach(s => {
+      s.classList.toggle('active', parseInt(s.dataset.step) === state.currentStep);
+    });
+    document.getElementById('progressFill').style.width = ((state.currentStep - 1) / (state.totalSteps - 1)) * 76 + '%';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function nextStep() {
+    if (!validateStep(state.currentStep)) return;
+    if (state.currentStep < state.totalSteps) {
+      state.currentStep++;
+      updateProgress();
+      if (state.currentStep === 2) updatePrices();
+      if (state.currentStep === 3) updateReview();
+    }
+  }
+  function prevStep() {
+    if (state.currentStep > 1) { state.currentStep--; updateProgress(); }
+  }
+
+  function validateStep(step) {
+    if (step === 1 && !state.gender) {
+      document.getElementById('genderError').style.display = 'block';
+      return false;
+    }
+    if (step === 3) {
+      state.babyName = document.getElementById('babyName').value.trim();
+      state.babyDob = document.getElementById('babyDob').value;
+      state.deliveryDate = document.getElementById('deliveryDate').value;
+      state.parent.name = document.getElementById('parentName').value.trim();
+      state.parent.phone = document.getElementById('phone').value.trim();
+      state.parent.address = document.getElementById('address').value.trim();
+      let valid = true;
+      ['deliveryDate','parentName','phone','address'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el.value.trim()) { el.parentElement.classList.add('has-error'); valid = false; }
+        else { el.parentElement.classList.remove('has-error'); }
+      });
+      return valid;
+    }
+    return true;
+  }
+
+  const distLabels = {
+    'full-charity': 'Full goat distributed to the poor',
+    'one-third-charity': '1/3 to the poor, rest delivered',
+    'full-delivery': 'Full goat delivered to me'
+  };
+
+  function updateReview() {
+    document.getElementById('reviewGender').textContent = state.gender === 'boy' ? 'Boy (2 goats)' : 'Girl (1 goat)';
+    document.getElementById('reviewPackage').textContent = state.package.name + ' — ৳' + fmt(state.package.price);
+    document.getElementById('reviewBabyName').textContent = state.babyName || '—';
+    const d = state.deliveryDate ? new Date(state.deliveryDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : '—';
+    document.getElementById('reviewDate').textContent = d;
+    document.getElementById('reviewDistribution').textContent = distLabels[state.distribution] || '—';
+    document.getElementById('reviewTotal').textContent = '৳' + fmt(state.package.price);
+  }
+
+  function collectData() {
+    if (!SHEET_URL) return;
+    const payload = {
+      lang: 'en',
+      gender: state.gender,
+      goats: state.goatCount,
+      package: state.package.name,
+      price: state.package.price,
+      babyName: state.babyName,
+      babyDob: state.babyDob,
+      deliveryDate: state.deliveryDate,
+      parentName: state.parent.name,
+      phone: state.parent.phone,
+      address: state.parent.address,
+      distribution: state.distribution,
+      source: 'order-form-en'
+    };
+    try { navigator.sendBeacon(SHEET_URL, JSON.stringify(payload)); } catch(e) {
+      fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(payload) }).catch(() => {});
+    }
+  }
+
+  function submitOrder() {
+    if (!validateStep(3)) return;
+    updateReview();
+    collectData();
+    const goatText = state.gender === 'boy' ? '2 goats' : '1 goat';
+
+    const lines = [];
+    lines.push("As-salaamu alaikum! I'd like to place an aqiqah order.");
+    lines.push('');
+    lines.push('━━━━━━━━━━━━━━━━━━━');
+    lines.push('📋 ORDER DETAILS');
+    lines.push('━━━━━━━━━━━━━━━━━━━');
+    lines.push('');
+    lines.push('👶 Gender: ' + (state.gender === 'boy' ? 'Boy' : 'Girl') + ' (' + goatText + ')');
+    if (state.babyName) lines.push('   Name: ' + state.babyName);
+    if (state.babyDob) lines.push('   DOB: ' + state.babyDob);
+    lines.push('');
+    lines.push('🐐 Package: ' + state.package.name);
+    lines.push('   Price: ৳' + fmt(state.package.price));
+    lines.push('');
+    lines.push('📦 Delivery date: ' + state.deliveryDate);
+    lines.push('');
+    lines.push('🍖 Distribution: ' + distLabels[state.distribution]);
+    lines.push('');
+    lines.push('━━━━━━━━━━━━━━━━━━━');
+    lines.push('👤 CONTACT');
+    lines.push('━━━━━━━━━━━━━━━━━━━');
+    lines.push('   Name: ' + state.parent.name);
+    lines.push('   Phone: ' + state.parent.phone);
+    lines.push('   Address: ' + state.parent.address);
+    lines.push('');
+    lines.push('━━━━━━━━━━━━━━━━━━━');
+    lines.push('💰 Total: ৳' + fmt(state.package.price) + '');
+    lines.push('━━━━━━━━━━━━━━━━━━━');
+    lines.push('');
+    lines.push('Please confirm. JazakAllahu khayran.');
+
+    window.open('https://wa.me/8801973371019?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+  }
+</script>
+
+</body>
+</html>
