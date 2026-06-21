@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>অর্ডার করুন · Start Your Order — আকিকাহ শেবা</title>
-<meta name="description" content="চার ধাপে আপনার আকিকার অর্ডার দিন। প্যাকেজ বেছে নিন (শুকরানা · সুন্নাহ · বরকত), বিস্তারিত দিন, WhatsApp-এ পাঠান।" />
-
+<title>অর্ডার করুন — আকিকাহ শেবা</title>
+<meta name="description" content="তিন ধাপে আপনার আকিকার অর্ডার দিন। লিঙ্গ বেছে নিন, প্যাকেজ বেছে নিন, বিস্তারিত দিন — WhatsApp-এ পাঠান।" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="alternate" hreflang="bn" href="https://aqiqahsheba.com/order.html" />
+<link rel="alternate" hreflang="en" href="https://aqiqahsheba.com/en/order.html" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
-
 <style>
+
 @font-face {
   font-family: 'Sabina Shorolipi';
   src: url('fonts/SabinaShorolipi-Regular.ttf') format('truetype');
@@ -25,8 +28,10 @@
   font-style: italic;
   font-display: swap;
 }
+
 </style>
 <style>
+
   :root {
     --green-900: #1a3d2e;
     --green-800: #1f4a37;
@@ -764,6 +769,7 @@
 
     .step-title { font-size: 22px; }
   }
+
 </style>
 </head>
 <body>
@@ -772,344 +778,216 @@
 <nav class="nav">
   <a href="/"><img src="logo-bangla.png" alt="আকিকাহ শেবা" class="nav-logo"></a>
   <div class="nav-links">
-    <a href="index.html#why">কেন আমরা</a>
-    <a href="index.html#process">প্রক্রিয়া</a>
-    <a href="packages.html">প্যাকেজ</a>
-    <a href="index.html#faq">প্রশ্নোত্তর</a>
-    <a href="en/order.html" class="lang-toggle">EN</a>
+    <a href="/">হোম</a>
+    <a href="/packages.html">প্যাকেজ</a>
+    <a href="/order.html" class="active">অর্ডার</a>
+    <a href="/en/order.html" class="lang-toggle">EN</a>
   </div>
 </nav>
 
-<!-- ORDER PAGE -->
-<div class="order-page">
-
+<div class="order-wrap">
   <div class="order-header">
-    <div class="order-eyebrow">অর্ডার ফর্ম · Order Form</div>
-    <h1 class="order-title">চার ধাপে, <em>দুই মিনিটে।</em></h1>
-    <div class="order-subtitle">Four steps, two minutes, done.</div>
-    <p class="order-intro">
-      পূরণ করুন → WhatsApp-এ পাঠান → আমরা কনফার্ম করব। কোনো পেমেন্ট এখনই নেই — ডেলিভারির সময় দিবেন।
+    <h1 class="order-title">তিন ধাপে, <em>দুই মিনিটে।</em></h1>
+    <p style="font-family: 'Hind Siliguri', sans-serif; color: var(--muted); font-size: 15px; max-width: 560px; margin: 10px auto 0;">
+      পূরণ করুন → WhatsApp-এ পাঠান → আমরা কনফার্ম করব।
     </p>
   </div>
 
-  <!-- PROGRESS -->
-  <div class="progress-wrap">
-    <div class="progress-bar-track"></div>
-    <div class="progress-bar-fill" id="progressFill" style="width: 0%;"></div>
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
     <div class="progress-steps">
       <div class="progress-step active" data-step="1">
-        <div class="progress-dot">১</div>
-        <div class="label">প্যাকেজ<span class="label-en">Package</span></div>
+        <div class="progress-dot"></div>
+        <div class="label">লিঙ্গ</div>
       </div>
       <div class="progress-step" data-step="2">
-        <div class="progress-dot">২</div>
-        <div class="label">শিশু<span class="label-en">Baby</span></div>
+        <div class="progress-dot"></div>
+        <div class="label">প্যাকেজ</div>
       </div>
       <div class="progress-step" data-step="3">
-        <div class="progress-dot">৩</div>
-        <div class="label">পছন্দ<span class="label-en">Preferences</span></div>
-      </div>
-      <div class="progress-step" data-step="4">
-        <div class="progress-dot">৪</div>
-        <div class="label">কনফার্ম<span class="label-en">Confirm</span></div>
+        <div class="progress-dot"></div>
+        <div class="label">বিস্তারিত</div>
       </div>
     </div>
   </div>
 
-  <!-- FORM -->
   <div class="form-card">
 
-    <!-- STEP 1: PACKAGE -->
+    <!-- STEP 1: GENDER -->
     <div class="form-step active" data-step="1">
       <div class="step-header">
-        <div class="step-num">— ধাপ ১ · Step 1 —</div>
-        <div class="step-title">প্যাকেজ বেছে নিন</div>
-        <div class="step-subtitle">Pick your package</div>
+        <div class="step-num">— ধাপ ১ —</div>
+        <div class="step-title">সন্তানের লিঙ্গ</div>
       </div>
 
       <div class="help-box">
         <div class="arabic">عَنِ الْغُلَامِ شَاتَانِ، وَعَنِ الْجَارِيَةِ شَاةٌ</div>
-        <p>
-          ছেলে সন্তানের জন্য ২টি ছাগল, মেয়ে সন্তানের জন্য ১টি ছাগল — সুন্নাহ।
-          <span class="en">Sunnah: 2 goats for a son, 1 goat for a daughter. If you want a 2-goat bundle, toggle below.</span>
-        </p>
+        <p>সুন্নাহ অনুযায়ী ছেলে সন্তানের জন্য ২টি ছাগল এবং মেয়ে সন্তানের জন্য ১টি ছাগল।</p>
       </div>
 
-      <div class="bundle-toggle" id="bundleToggle">
-        <div class="bundle-toggle-label">
-          <div class="main">২-ছাগলের বান্ডেল (ছেলে সন্তানের জন্য)</div>
-          <div class="sub">Two-goat bundle for a son — shows bundle pricing combos</div>
+      <div class="field field-full">
+        <div class="radio-group" id="genderGroup">
+          <div class="radio-option" data-value="girl">
+            <div class="label-main">♀ মেয়ে</div>
+            <div class="label-sub">১টি ছাগল — সুন্নাহ</div>
+          </div>
+          <div class="radio-option" data-value="boy">
+            <div class="label-main">♂ ছেলে</div>
+            <div class="label-sub">২টি ছাগল — সুন্নাহ</div>
+          </div>
         </div>
-        <div class="switch" id="bundleSwitch"></div>
-      </div>
-
-            <div class="pkg-choices" id="singleChoices">
-        <label class="pkg-choice" data-pkg="barakat" data-price="28000" data-price-display="২৮,০০০">
-          <div class="pkg-radio"></div>
-          <div class="pkg-info">
-            <div class="pkg-name">বরকত · Barakat</div>
-            <div class="pkg-desc">26–30 kg · video + 3-way split + priority + certificate</div>
-          </div>
-          <div class="pkg-price">৳২৮,০০০<span class="pkg-price-en">৳28,000</span></div>
-        </label>
-        <label class="pkg-choice selected" data-pkg="sunnah" data-price="20000" data-price-display="২০,০০০">
-          <div class="pkg-radio"></div>
-          <div class="pkg-info">
-            <div class="pkg-name">সুন্নাহ · Sunnah <span style="font-size: 11px; color: var(--gold-600); margin-left: 6px;">— সবচেয়ে জনপ্রিয়</span></div>
-            <div class="pkg-desc">20–25 kg · with video + free Dhaka delivery</div>
-          </div>
-          <div class="pkg-price">৳২০,০০০<span class="pkg-price-en">৳20,000</span></div>
-        </label>
-        <label class="pkg-choice" data-pkg="shukrana" data-price="15000" data-price-display="১৫,০০০">
-          <div class="pkg-radio"></div>
-          <div class="pkg-info">
-            <div class="pkg-name">শুকরানা · Shukrana</div>
-            <div class="pkg-desc">15–19 kg · sourcing + slaughter + butchering + packaging</div>
-          </div>
-          <div class="pkg-price">৳১৫,০০০<span class="pkg-price-en">৳15,000</span></div>
-        </label>
-      </div>
-
-      <div class="pkg-choices" id="bundleChoices" style="display: none;">
-        <label class="pkg-choice" data-pkg="bundle-shsh" data-price="28000" data-price-display="২৮,০০০">
-          <div class="pkg-radio"></div>
-          <div class="pkg-info">
-            <div class="pkg-name">শুকরানা + শুকরানা</div>
-            <div class="pkg-desc">Shukrana + Shukrana · two 15–19 kg goats</div>
-          </div>
-          <div class="pkg-price">৳২৮,০০০<span class="pkg-price-en">৳28,000</span></div>
-        </label>
-        <label class="pkg-choice" data-pkg="bundle-shsu" data-price="33000" data-price-display="৩৩,০০০">
-          <div class="pkg-radio"></div>
-          <div class="pkg-info">
-            <div class="pkg-name">শুকরানা + সুন্নাহ</div>
-            <div class="pkg-desc">Shukrana + Sunnah · one of each</div>
-          </div>
-          <div class="pkg-price">৳৩৩,০০০<span class="pkg-price-en">৳33,000</span></div>
-        </label>
-        <label class="pkg-choice selected" data-pkg="bundle-susu" data-price="36000" data-price-display="৩৬,০০০">
-          <div class="pkg-radio"></div>
-          <div class="pkg-info">
-            <div class="pkg-name">সুন্নাহ + সুন্নাহ</div>
-            <div class="pkg-desc">Sunnah + Sunnah · two 20–25 kg goats</div>
-          </div>
-          <div class="pkg-price">৳৩৬,০০০<span class="pkg-price-en">৳36,000</span></div>
-        </label>
-        <label class="pkg-choice" data-pkg="bundle-sub" data-price="43000" data-price-display="৪৩,০০০">
-          <div class="pkg-radio"></div>
-          <div class="pkg-info">
-            <div class="pkg-name">সুন্নাহ + বরকত</div>
-            <div class="pkg-desc">Sunnah + Barakat · generous spread</div>
-          </div>
-          <div class="pkg-price">৳৪৩,০০০<span class="pkg-price-en">৳43,000</span></div>
-        </label>
+        <div class="field-error" id="genderError" style="display:none;">সন্তানের লিঙ্গ নির্বাচন করুন</div>
       </div>
 
       <div class="form-nav">
         <div></div>
-        <button class="btn btn-primary" onclick="nextStep()">পরবর্তী · Next
+        <button class="btn btn-primary" onclick="nextStep()">পরবর্তী
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
       </div>
     </div>
 
-    <!-- STEP 2: BABY & DELIVERY -->
+    <!-- STEP 2: PACKAGE -->
     <div class="form-step" data-step="2">
       <div class="step-header">
-        <div class="step-num">— ধাপ ২ · Step 2 —</div>
-        <div class="step-title">শিশু ও ডেলিভারির বিস্তারিত</div>
-        <div class="step-subtitle">Baby & delivery details</div>
+        <div class="step-num">— ধাপ ২ —</div>
+        <div class="step-title">প্যাকেজ বেছে নিন</div>
       </div>
 
-      <div class="field field-full" style="margin-bottom: 20px;">
-        <label class="field-label">শিশুর লিঙ্গ <span class="req">*</span> <span class="field-label-en">· Baby's gender</span></label>
-        <div class="radio-group" id="genderGroup">
-          <div class="radio-option" data-value="boy">
-            <div class="label-main">ছেলে</div>
-            <div class="label-sub">Boy · 2 goats is Sunnah</div>
-          </div>
-          <div class="radio-option" data-value="girl">
-            <div class="label-main">মেয়ে</div>
-            <div class="label-sub">Girl · 1 goat is Sunnah</div>
-          </div>
-        </div>
+      <div id="pkgNote" class="help-box" style="border-color: var(--gold-500);">
+        <p id="pkgNoteText">মেয়ের আকিকা — ১টি ছাগলের দাম দেখানো হচ্ছে।</p>
       </div>
 
-      <div class="field-grid">
-        <div class="field">
-          <label class="field-label">শিশুর নাম <span class="field-label-en">· Baby's name (optional)</span></label>
-          <input type="text" id="babyName" placeholder="যেমন: আহমেদ, ফাতিমা" />
-          <div class="field-hint">For the dua card (Large package) or personalised packaging</div>
-        </div>
-
-        <div class="field">
-          <label class="field-label">জন্ম তারিখ <span class="field-label-en">· Baby's date of birth (optional)</span></label>
-          <input type="date" id="babyDob" />
-          <div class="field-hint">Helps us suggest the 7th / 14th / 21st day</div>
-        </div>
-      </div>
-
-      <div class="field field-full" style="margin-bottom: 20px;">
-        <label class="field-label">পছন্দের ডেলিভারির তারিখ <span class="req">*</span> <span class="field-label-en">· Preferred delivery date</span></label>
-        <input type="date" id="deliveryDate" required />
-        <div class="field-hint">কমপক্ষে ২৪ ঘণ্টা আগে অর্ডার দেওয়া ভালো · Please allow at least 24 hours notice</div>
-        <div class="field-error">ডেলিভারির তারিখ দিতে হবে · Please select a delivery date</div>
-      </div>
-
-      <div class="field field-full">
-        <label class="field-label">পছন্দের সময় স্লট <span class="field-label-en">· Preferred time slot</span></label>
-        <div class="radio-group" id="timeSlotGroup">
-          <div class="radio-option" data-value="morning">
-            <div class="label-main">সকাল</div>
-            <div class="label-sub">Morning · 9am–12pm</div>
+      <div class="pkg-choices" id="singleChoices">
+        <label class="pkg-choice" data-pkg="barakah" data-base="28000">
+          <div class="pkg-radio"></div>
+          <div class="pkg-info">
+            <div class="pkg-name">বারাকাহ</div>
+            <div class="pkg-desc" data-girl="২৬–৩০ কেজি · সুন্নাহর সবকিছু + অগ্রাধিকার ডেলিভারি + ৩ ভাগে বণ্টন + আকিকা সার্টিফিকেট" data-boy="প্রতিটি ছাগল ২৬–৩০ কেজি · সুন্নাহর সবকিছু + অগ্রাধিকার ডেলিভারি + ৩ ভাগে বণ্টন + আকিকা সার্টিফিকেট">২৬–৩০ কেজি · সুন্নাহর সবকিছু + অগ্রাধিকার ডেলিভারি + ৩ ভাগে বণ্টন + আকিকা সার্টিফিকেট</div>
           </div>
-          <div class="radio-option selected" data-value="afternoon">
-            <div class="label-main">দুপুর</div>
-            <div class="label-sub">Afternoon · 12–4pm</div>
+          <div class="pkg-price"><span class="pkg-price-val"></span></div>
+        </label>
+        <label class="pkg-choice selected" data-pkg="sunnah" data-base="20000">
+          <div class="pkg-radio"></div>
+          <div class="pkg-info">
+            <div class="pkg-name">সুন্নাহ <span style="font-size: 11px; color: var(--gold-600); margin-left: 6px;">— সবচেয়ে জনপ্রিয়</span></div>
+            <div class="pkg-desc" data-girl="২০–২৫ কেজি · শুকরানার সবকিছু + ভিডিও প্রমাণ + ফ্রি ঢাকা ডেলিভারি" data-boy="প্রতিটি ছাগল ২০–২৫ কেজি · শুকরানার সবকিছু + ভিডিও প্রমাণ + ফ্রি ঢাকা ডেলিভারি">২০–২৫ কেজি · শুকরানার সবকিছু + ভিডিও প্রমাণ + ফ্রি ঢাকা ডেলিভারি</div>
           </div>
-          <div class="radio-option" data-value="evening">
-            <div class="label-main">বিকাল/সন্ধ্যা</div>
-            <div class="label-sub">Evening · 4–8pm</div>
+          <div class="pkg-price"><span class="pkg-price-val"></span></div>
+        </label>
+        <label class="pkg-choice" data-pkg="shukrana" data-base="15000">
+          <div class="pkg-radio"></div>
+          <div class="pkg-info">
+            <div class="pkg-name">শুকরানা</div>
+            <div class="pkg-desc" data-girl="১৫–১৯ কেজি · সোর্সিং + যবাই + কসাই + প্যাকেজিং" data-boy="প্রতিটি ছাগল ১৫–১৯ কেজি · সোর্সিং + যবাই + কসাই + প্যাকেজিং">১৫–১৯ কেজি · সোর্সিং + যবাই + কসাই + প্যাকেজিং</div>
           </div>
-          <div class="radio-option" data-value="flexible">
-            <div class="label-main">যেকোনো সময়</div>
-            <div class="label-sub">Flexible · any time</div>
-          </div>
-        </div>
+          <div class="pkg-price"><span class="pkg-price-val"></span></div>
+        </label>
       </div>
 
       <div class="form-nav">
         <button class="btn btn-secondary" onclick="prevStep()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          পূর্ববর্তী · Back
+          পূর্ববর্তী
         </button>
-        <button class="btn btn-primary" onclick="nextStep()">পরবর্তী · Next
+        <button class="btn btn-primary" onclick="nextStep()">পরবর্তী
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
       </div>
     </div>
 
-    <!-- STEP 3: DISTRIBUTION PREFERENCES -->
+    <!-- STEP 3: DETAILS & CONFIRM -->
     <div class="form-step" data-step="3">
       <div class="step-header">
-        <div class="step-num">— ধাপ ৩ · Step 3 —</div>
-        <div class="step-title">বণ্টন ও পছন্দ</div>
-        <div class="step-subtitle">Distribution & preferences</div>
+        <div class="step-num">— ধাপ ৩ —</div>
+        <div class="step-title">বিস্তারিত ও কনফার্ম</div>
       </div>
 
-      <div class="help-box">
-        <div class="arabic">فَكُلُوا مِنْهَا وَأَطْعِمُوا الْبَائِسَ الْفَقِيرَ</div>
-        <p>
-          সুন্নাহ অনুযায়ী মাংস ৩ ভাগে বণ্টন করা হয় — পরিবার, আত্মীয়, গরিব-মিসকিন।
-          <span class="en">By default, we cut meat into standard curry pieces and package it in 3 separate portions (family, relatives, charity) — Sunnah method.</span>
-        </p>
+      <div class="field-grid">
+        <div class="field">
+          <label class="field-label">শিশুর নাম</label>
+          <input type="text" id="babyName" placeholder="যেমন: আহমেদ, ফাতিমা" />
+        </div>
+        <div class="field">
+          <label class="field-label">জন্ম তারিখ</label>
+          <input type="date" id="babyDob" />
+        </div>
+      </div>
+
+      <div class="field field-full" style="margin-bottom: 20px;">
+        <label class="field-label">পছন্দের ডেলিভারির তারিখ <span class="req">*</span></label>
+        <input type="date" id="deliveryDate" required />
+        <div class="field-hint">কমপক্ষে ২৪ ঘণ্টা আগে অর্ডার দেওয়া ভালো</div>
+        <div class="field-error">ডেলিভারির তারিখ দিতে হবে</div>
+      </div>
+
+      <div class="field-grid">
+        <div class="field">
+          <label class="field-label">অভিভাবকের নাম <span class="req">*</span></label>
+          <input type="text" id="parentName" required placeholder="যেমন: মোহাম্মদ আহমেদ" />
+          <div class="field-error">অভিভাবকের নাম দিতে হবে</div>
+        </div>
+        <div class="field">
+          <label class="field-label">ফোন নম্বর <span class="req">*</span></label>
+          <input type="tel" id="phone" required placeholder="01XXX-XXXXXX" />
+          <div class="field-error">সঠিক ফোন নম্বর দিন</div>
+        </div>
       </div>
 
       <div class="field field-full" style="margin-bottom: 24px;">
-        <label class="field-label">বণ্টনের পছন্দ <span class="field-label-en">· Distribution preferences</span></label>
-        <div class="checkbox-row" data-value="charity-help">
-          <div class="cb-box"></div>
-          <div class="cb-label">
-            <div class="main">গরিবদের অংশ আমরাই বিতরণ করে দেব</div>
-            <div class="sub">We'll distribute the charity portion directly to the poor on your behalf — free, photo proof shared</div>
+        <label class="field-label">ডেলিভারির ঠিকানা <span class="req">*</span></label>
+        <textarea id="address" required placeholder="বাসা, রোড, ব্লক, এলাকা, ঢাকা"></textarea>
+        <div class="field-error">ডেলিভারির ঠিকানা দিতে হবে</div>
+      </div>
+
+      <div class="field field-full" style="margin-bottom: 24px;">
+        <label class="field-label">মাংস বণ্টন <span class="req">*</span></label>
+        <div class="radio-group" id="distributionGroup">
+          <div class="radio-option" data-value="full-charity">
+            <div class="label-main">পুরো ছাগল গরিবদের মাঝে বিতরণ</div>
+            <div class="label-sub">আমরা পুরো মাংস গরিব-মিসকিনদের মাঝে আপনার পক্ষ থেকে বিতরণ করব</div>
+          </div>
+          <div class="radio-option selected" data-value="one-third-charity">
+            <div class="label-main">১/৩ গরিবদের মাঝে, বাকিটা ডেলিভারি</div>
+            <div class="label-sub">সুন্নাহ পদ্ধতি — এক-তৃতীয়াংশ গরিবদের, বাকিটা আপনার কাছে পৌঁছে যাবে</div>
+          </div>
+          <div class="radio-option" data-value="full-delivery">
+            <div class="label-main">পুরো ছাগল ডেলিভারি নিব, নিজে বিতরণ করব</div>
+            <div class="label-sub">সম্পূর্ণ মাংস আপনার ঠিকানায় পৌঁছে যাবে</div>
           </div>
         </div>
-        <div class="checkbox-row checked" data-value="dua-card">
-          <div class="cb-box"></div>
-          <div class="cb-label">
-            <div class="main">শিশুর নামসহ দোয়া কার্ড পাঠান (ফ্রি)</div>
-            <div class="sub">Include the free printed dua card with your baby's name (included in all packages)</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="field field-full">
-        <label class="field-label">বিশেষ অনুরোধ <span class="field-label-en">· Special instructions (optional)</span></label>
-        <textarea id="specialRequest" placeholder="যেমন: ডেলিভারির সময় বাড়িতে কেউ থাকবে না, ফোনে জানাবেন, অন্য কোনো বিশেষ অনুরোধ..."></textarea>
-      </div>
-
-      <div class="form-nav">
-        <button class="btn btn-secondary" onclick="prevStep()">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          পূর্ববর্তী · Back
-        </button>
-        <button class="btn btn-primary" onclick="nextStep()">পরবর্তী · Next
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- STEP 4: CONTACT & REVIEW -->
-    <div class="form-step" data-step="4">
-      <div class="step-header">
-        <div class="step-num">— ধাপ ৪ · Step 4 —</div>
-        <div class="step-title">যোগাযোগ ও কনফার্ম</div>
-        <div class="step-subtitle">Contact & confirm</div>
-      </div>
-
-      <div class="field-grid">
-        <div class="field">
-          <label class="field-label">আপনার নাম <span class="req">*</span> <span class="field-label-en">· Your name</span></label>
-          <input type="text" id="customerName" required placeholder="যেমন: মোহাম্মদ আহমেদ" />
-          <div class="field-error">আপনার নাম দিতে হবে · Please enter your name</div>
-        </div>
-
-        <div class="field">
-          <label class="field-label">WhatsApp নম্বর <span class="req">*</span> <span class="field-label-en">· WhatsApp number</span></label>
-          <input type="tel" id="customerPhone" required placeholder="01XXX-XXXXXX" />
-          <div class="field-error">সঠিক WhatsApp নম্বর দিন · Please enter a valid WhatsApp number</div>
-        </div>
-      </div>
-
-      <div class="field field-full" style="margin-bottom: 20px;">
-        <label class="field-label">ডেলিভারির ঠিকানা <span class="req">*</span> <span class="field-label-en">· Full delivery address</span></label>
-        <textarea id="deliveryAddress" required placeholder="যেমন: বাসা ১২, রোড ৫, ব্লক এ, বসুন্ধরা আবাসিক, ঢাকা-১২২৯&#10;House 12, Road 5, Block A, Bashundhara, Dhaka-1229"></textarea>
-        <div class="field-hint">House/flat number, road, area, landmark</div>
-        <div class="field-error">ডেলিভারির ঠিকানা দিতে হবে · Please enter your delivery address</div>
-      </div>
-
-      <div class="field field-full">
-        <label class="field-label">ইমেইল <span class="field-label-en">· Email (optional)</span></label>
-        <input type="email" id="customerEmail" placeholder="you@example.com" />
-        <div class="field-hint">Only if you want an email confirmation; WhatsApp is enough</div>
       </div>
 
       <!-- REVIEW SUMMARY -->
       <div style="margin-top: 32px;">
-        <div style="font-family: 'Sabina Shorolipi', serif; font-size: 22px; color: var(--green-900); font-weight: 600; margin-bottom: 4px;">অর্ডার সারাংশ</div>
-        <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: var(--muted); margin-bottom: 20px;">Order summary</div>
-
+        <div style="font-family: 'Sabina Shorolipi', serif; font-size: 22px; color: var(--green-900); font-weight: 600; margin-bottom: 16px;">অর্ডার সারাংশ</div>
         <div class="review-summary">
           <div class="review-row">
-            <div class="review-label">প্যাকেজ<span class="review-label-en">Package</span></div>
-            <div class="review-value" id="reviewPackage">—</div>
-          </div>
-          <div class="review-row">
-            <div class="review-label">শিশুর লিঙ্গ<span class="review-label-en">Baby's gender</span></div>
+            <div class="review-label">লিঙ্গ</div>
             <div class="review-value" id="reviewGender">—</div>
           </div>
           <div class="review-row">
-            <div class="review-label">শিশুর নাম<span class="review-label-en">Baby's name</span></div>
+            <div class="review-label">প্যাকেজ</div>
+            <div class="review-value" id="reviewPackage">—</div>
+          </div>
+          <div class="review-row">
+            <div class="review-label">শিশুর নাম</div>
             <div class="review-value" id="reviewBabyName">—</div>
           </div>
           <div class="review-row">
-            <div class="review-label">ডেলিভারির তারিখ<span class="review-label-en">Delivery date</span></div>
+            <div class="review-label">ডেলিভারির তারিখ</div>
             <div class="review-value" id="reviewDate">—</div>
           </div>
           <div class="review-row">
-            <div class="review-label">সময় স্লট<span class="review-label-en">Time slot</span></div>
-            <div class="review-value" id="reviewTime">—</div>
-          </div>
-          <div class="review-row">
-            <div class="review-label">বিশেষ অনুরোধ<span class="review-label-en">Special requests</span></div>
-            <div class="review-value" id="reviewRequests">—</div>
+            <div class="review-label">বণ্টন</div>
+            <div class="review-value" id="reviewDistribution">—</div>
           </div>
         </div>
 
         <div class="total-bar">
           <div>
             <div class="total-label">মোট</div>
-            <div class="total-label-en">Total · paid on delivery</div>
+            
           </div>
           <div class="total-amount" id="reviewTotal">৳২০,০০০</div>
         </div>
@@ -1118,19 +996,18 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
-          WhatsApp-এ অর্ডার পাঠান · Send Order via WhatsApp
+          WhatsApp-এ অর্ডার পাঠান
         </button>
 
-        <p style="text-align: center; font-size: 13px; color: var(--muted); margin-top: 14px; font-family: 'Inter', sans-serif;">
-          কোনো পেমেন্ট এখনই নেই — WhatsApp-এ কনফার্ম করার পর ডেলিভারির সময় দিবেন<br/>
-          <em style="font-style: italic;">No payment yet — pay upon delivery after WhatsApp confirmation</em>
+        <p style="text-align: center; font-size: 13px; color: var(--muted); margin-top: 14px;">
+          WhatsApp-এ কনফার্ম করার পর পেমেন্টের বিস্তারিত জানানো হবে
         </p>
       </div>
 
       <div class="form-nav">
         <button class="btn btn-secondary" onclick="prevStep()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          পূর্ববর্তী · Back
+          পূর্ববর্তী
         </button>
         <div></div>
       </div>
@@ -1139,127 +1016,110 @@
   </div>
 
   <div class="security-badge">
-    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Shariah-compliant</span>
-    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> Video proof</span>
-    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Pay on delivery</span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> শরিয়তসম্মত</span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> ভিডিও প্রমাণ</span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> নির্দিষ্ট মূল্য</span>
   </div>
-
 </div>
 
 <script>
-  // === STATE ===
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwdiFxHiiepL0RlM6_406Xx5tE2t2I4CSAdPYdxZ_dBX8KAUwvLXnimPTLVv7L4aApO/exec'; // ← paste your Google Apps Script web app URL here
+
+  const bnDigits = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
+  const toBangla = (s) => String(s).replace(/[0-9]/g, d => bnDigits[+d]);
+  const fmt = (n) => n.toLocaleString('en-US');
+  const fmtBn = (n) => toBangla(fmt(n));
+
   const state = {
     currentStep: 1,
-    totalSteps: 4,
-    isBundle: false,
-    package: { name: 'সুন্নাহ · Sunnah', nameShort: 'sunnah', price: 20000, priceDisplay: '২০,০০০', priceEn: '20,000' },
+    totalSteps: 3,
     gender: null,
+    goatCount: 1,
+    package: { name: 'সুন্নাহ', key: 'sunnah', base: 20000, price: 20000 },
+    distribution: 'one-third-charity',
     babyName: '',
     babyDob: '',
     deliveryDate: '',
-    timeSlot: 'afternoon',
-    distribution: ['dua-card'],
-    specialRequest: '',
-    customer: { name: '', phone: '', address: '', email: '' }
+    parent: { name: '', phone: '', address: '' }
   };
 
-  // Read ?pkg= from URL to pre-select
+  // Pre-select from URL param
   const params = new URLSearchParams(window.location.search);
   const pkgParam = params.get('pkg');
+
+  function updatePrices() {
+    state.goatCount = state.gender === 'boy' ? 2 : 1;
+    document.querySelectorAll('.pkg-choice').forEach(el => {
+      const base = parseInt(el.dataset.base);
+      const total = base * state.goatCount;
+      el.querySelector('.pkg-price-val').textContent = '৳' + fmtBn(total);
+    });
+    const sel = document.querySelector('.pkg-choice.selected');
+    if (sel) {
+      state.package.base = parseInt(sel.dataset.base);
+      state.package.price = state.package.base * state.goatCount;
+    }
+    const noteEl = document.getElementById('pkgNoteText');
+    noteEl.textContent = state.gender === 'boy'
+      ? 'ছেলের আকিকা — ২টি ছাগলের দাম দেখানো হচ্ছে।'
+      : 'মেয়ের আকিকা — ১টি ছাগলের দাম দেখানো হচ্ছে।';
+    document.querySelectorAll('.pkg-desc[data-girl]').forEach(el => {
+      el.textContent = state.gender === 'boy' ? el.dataset.boy : el.dataset.girl;
+    });
+  }
+
+  // Gender selection
+  const genderGroup = document.getElementById('genderGroup');
+  genderGroup.querySelectorAll('.radio-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      genderGroup.querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      state.gender = opt.dataset.value;
+      document.getElementById('genderError').style.display = 'none';
+      updatePrices();
+    });
+  });
+
+  // Package selection
+  document.querySelectorAll('.pkg-choice').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.pkg-choice').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      const nameEl = el.querySelector('.pkg-name');
+      state.package.name = nameEl.childNodes[0].nodeValue.trim();
+      state.package.key = el.dataset.pkg;
+      state.package.base = parseInt(el.dataset.base);
+      state.package.price = state.package.base * state.goatCount;
+    });
+  });
+
+  // Distribution selection
+  const distGroup = document.getElementById('distributionGroup');
+  distGroup.querySelectorAll('.radio-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      distGroup.querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      state.distribution = opt.dataset.value;
+    });
+  });
+
+  // Pre-select package from URL
   if (pkgParam) {
-    const map = {
-      shukrana: { selector: '[data-pkg="shukrana"]' },
-      sunnah: { selector: '[data-pkg="sunnah"]' },
-      barakat: { selector: '[data-pkg="barakat"]' },
-      // legacy aliases
-      small: { selector: '[data-pkg="shukrana"]' },
-      medium: { selector: '[data-pkg="sunnah"]' },
-      large: { selector: '[data-pkg="barakat"]' }
-    };
-    if (map[pkgParam]) {
-      document.querySelectorAll('#singleChoices .pkg-choice').forEach(c => c.classList.remove('selected'));
-      const target = document.querySelector('#singleChoices ' + map[pkgParam].selector);
-      if (target) {
-        target.classList.add('selected');
-        updatePkgFromElement(target);
-      }
+    const target = document.querySelector('[data-pkg="' + pkgParam + '"]');
+    if (target) {
+      document.querySelectorAll('.pkg-choice').forEach(c => c.classList.remove('selected'));
+      target.classList.add('selected');
+      state.package.name = target.querySelector('.pkg-name').childNodes[0].nodeValue.trim();
+      state.package.key = pkgParam;
+      state.package.base = parseInt(target.dataset.base);
     }
   }
 
-  function updatePkgFromElement(el) {
-    const pkgKey = el.dataset.pkg;
-    const price = parseInt(el.dataset.price);
-    const priceDisplay = el.dataset.priceDisplay;
-    const nameText = el.querySelector('.pkg-name').childNodes[0].nodeValue.trim();
-    const descText = el.querySelector('.pkg-desc').textContent;
+  // Init prices (default girl)
+  updatePrices();
 
-    state.package = {
-      name: nameText + ' · ' + descText.split('·')[0].trim(),
-      nameShort: pkgKey,
-      price: price,
-      priceDisplay: priceDisplay,
-      priceEn: price.toLocaleString('en-US')
-    };
-  }
-
-  // === PACKAGE SELECTION ===
-  function attachPkgListeners() {
-    document.querySelectorAll('.pkg-choice').forEach(el => {
-      el.addEventListener('click', (e) => {
-        e.preventDefault();
-        const parent = el.parentElement;
-        parent.querySelectorAll('.pkg-choice').forEach(c => c.classList.remove('selected'));
-        el.classList.add('selected');
-        updatePkgFromElement(el);
-      });
-    });
-  }
-  attachPkgListeners();
-
-  // === BUNDLE TOGGLE ===
-  const bundleSwitch = document.getElementById('bundleSwitch');
-  const singleChoices = document.getElementById('singleChoices');
-  const bundleChoices = document.getElementById('bundleChoices');
-  bundleSwitch.addEventListener('click', () => {
-    state.isBundle = !state.isBundle;
-    bundleSwitch.classList.toggle('on', state.isBundle);
-    singleChoices.style.display = state.isBundle ? 'none' : 'grid';
-    bundleChoices.style.display = state.isBundle ? 'grid' : 'none';
-    // update state to selected in visible group
-    const visible = state.isBundle ? bundleChoices : singleChoices;
-    const selected = visible.querySelector('.pkg-choice.selected');
-    if (selected) updatePkgFromElement(selected);
-  });
-
-  // === RADIO GROUPS ===
-  function attachRadioGroup(groupId, stateKey) {
-    const group = document.getElementById(groupId);
-    if (!group) return;
-    group.querySelectorAll('.radio-option').forEach(opt => {
-      opt.addEventListener('click', () => {
-        group.querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
-        opt.classList.add('selected');
-        state[stateKey] = opt.dataset.value;
-      });
-    });
-  }
-  attachRadioGroup('genderGroup', 'gender');
-  attachRadioGroup('timeSlotGroup', 'timeSlot');
-
-  // === CHECKBOX ROWS ===
-  document.querySelectorAll('.checkbox-row').forEach(row => {
-    row.addEventListener('click', () => {
-      row.classList.toggle('checked');
-      const val = row.dataset.value;
-      if (row.classList.contains('checked')) {
-        if (!state.distribution.includes(val)) state.distribution.push(val);
-      } else {
-        state.distribution = state.distribution.filter(v => v !== val);
-      }
-    });
-  });
-
-  // === STEP NAVIGATION ===
+  // Step navigation
   function updateProgress() {
     document.querySelectorAll('.progress-step').forEach(s => {
       const n = parseInt(s.dataset.step);
@@ -1279,7 +1139,8 @@
     if (state.currentStep < state.totalSteps) {
       state.currentStep++;
       updateProgress();
-      if (state.currentStep === 4) updateReview();
+      if (state.currentStep === 2) updatePrices();
+      if (state.currentStep === 3) updateReview();
     }
   }
   function prevStep() {
@@ -1290,145 +1151,108 @@
   }
 
   function validateStep(step) {
-    let valid = true;
-    if (step === 2) {
+    if (step === 1 && !state.gender) {
+      document.getElementById('genderError').style.display = 'block';
+      return false;
+    }
+    if (step === 3) {
       state.babyName = document.getElementById('babyName').value.trim();
       state.babyDob = document.getElementById('babyDob').value;
       state.deliveryDate = document.getElementById('deliveryDate').value;
-      const dateField = document.getElementById('deliveryDate').parentElement;
-      if (!state.deliveryDate) {
-        dateField.classList.add('has-error');
-        valid = false;
-      } else {
-        dateField.classList.remove('has-error');
-      }
-    }
-    if (step === 3) {
-      state.specialRequest = document.getElementById('specialRequest').value.trim();
-    }
-    if (step === 4) {
-      state.customer.name = document.getElementById('customerName').value.trim();
-      state.customer.phone = document.getElementById('customerPhone').value.trim();
-      state.customer.address = document.getElementById('deliveryAddress').value.trim();
-      state.customer.email = document.getElementById('customerEmail').value.trim();
-      ['customerName', 'customerPhone', 'deliveryAddress'].forEach(id => {
+      state.parent.name = document.getElementById('parentName').value.trim();
+      state.parent.phone = document.getElementById('phone').value.trim();
+      state.parent.address = document.getElementById('address').value.trim();
+      let valid = true;
+      ['deliveryDate','parentName','phone','address'].forEach(id => {
         const el = document.getElementById(id);
         const field = el.parentElement;
-        if (!el.value.trim()) {
-          field.classList.add('has-error');
-          valid = false;
-        } else {
-          field.classList.remove('has-error');
-        }
+        if (!el.value.trim()) { field.classList.add('has-error'); valid = false; }
+        else { field.classList.remove('has-error'); }
       });
+      return valid;
     }
-    return valid;
+    return true;
   }
 
-  // === REVIEW UPDATE ===
+  const distLabels = {
+    'full-charity': 'পুরো ছাগল গরিবদের মাঝে বিতরণ',
+    'one-third-charity': '১/৩ গরিবদের মাঝে, বাকিটা ডেলিভারি',
+    'full-delivery': 'পুরো ছাগল ডেলিভারি'
+  };
+
   function updateReview() {
-    document.getElementById('reviewPackage').textContent = state.package.name + ' — ৳' + state.package.priceDisplay;
-    document.getElementById('reviewPackage').classList.remove('empty');
-
-    const genderText = state.gender === 'boy' ? 'ছেলে · Boy' : state.gender === 'girl' ? 'মেয়ে · Girl' : null;
-    setReview('reviewGender', genderText);
-
-    setReview('reviewBabyName', state.babyName || null);
-
-    const d = state.deliveryDate ? new Date(state.deliveryDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : null;
-    setReview('reviewDate', d);
-
-    const timeLabels = { morning: 'সকাল · Morning (9am–12pm)', afternoon: 'দুপুর · Afternoon (12–4pm)', evening: 'বিকাল/সন্ধ্যা · Evening (4–8pm)', flexible: 'যেকোনো সময় · Flexible' };
-    setReview('reviewTime', timeLabels[state.timeSlot]);
-
-    const reqs = [];
-    if (state.distribution.includes('charity-help')) reqs.push('গরিবদের অংশ বিতরণ · Charity distribution help');
-    if (state.distribution.includes('dua-card')) reqs.push('দোয়া কার্ড · Dua card with baby\'s name');
-    if (state.specialRequest) reqs.push(state.specialRequest);
-    setReview('reviewRequests', reqs.length ? reqs.join(' · ') : null);
-
-    document.getElementById('reviewTotal').textContent = '৳' + state.package.priceDisplay;
+    document.getElementById('reviewGender').textContent = state.gender === 'boy' ? 'ছেলে (২টি ছাগল)' : 'মেয়ে (১টি ছাগল)';
+    document.getElementById('reviewPackage').textContent = state.package.name + ' — ৳' + fmtBn(state.package.price);
+    document.getElementById('reviewBabyName').textContent = state.babyName || '—';
+    const d = state.deliveryDate ? new Date(state.deliveryDate).toLocaleDateString('bn-BD', { day: 'numeric', month: 'long', year: 'numeric' }) : '—';
+    document.getElementById('reviewDate').textContent = d;
+    document.getElementById('reviewDistribution').textContent = distLabels[state.distribution] || '—';
+    document.getElementById('reviewTotal').textContent = '৳' + fmtBn(state.package.price);
   }
-  function setReview(id, value) {
-    const el = document.getElementById(id);
-    if (value) {
-      el.textContent = value;
-      el.classList.remove('empty');
-    } else {
-      el.textContent = '— (খালি)';
-      el.classList.add('empty');
+
+  function collectData() {
+    if (!SHEET_URL) return;
+    const payload = {
+      lang: 'bn',
+      gender: state.gender,
+      goats: state.goatCount,
+      package: state.package.name,
+      price: state.package.price,
+      babyName: state.babyName,
+      babyDob: state.babyDob,
+      deliveryDate: state.deliveryDate,
+      parentName: state.parent.name,
+      phone: state.parent.phone,
+      address: state.parent.address,
+      distribution: state.distribution,
+      source: 'order-form-bn'
+    };
+    try { navigator.sendBeacon(SHEET_URL, JSON.stringify(payload)); } catch(e) {
+      fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(payload) }).catch(() => {});
     }
   }
 
-  // === SUBMIT TO WHATSAPP ===
   function submitOrder() {
-    if (!validateStep(4)) return;
+    if (!validateStep(3)) return;
+    updateReview();
+    collectData();
+
+    const goatText = state.gender === 'boy' ? '২টি ছাগল' : '১টি ছাগল';
+    const genderText = state.gender === 'boy' ? 'ছেলে' : 'মেয়ে';
 
     const lines = [];
     lines.push('আসসালামু আলাইকুম! আমি আকিকার অর্ডার দিতে চাই।');
-    lines.push('As-salaamu alaikum! I\'d like to place an aqiqah order.');
     lines.push('');
     lines.push('━━━━━━━━━━━━━━━━━━━');
-    lines.push('📋 অর্ডার বিস্তারিত · ORDER DETAILS');
+    lines.push('📋 অর্ডার বিস্তারিত');
     lines.push('━━━━━━━━━━━━━━━━━━━');
     lines.push('');
-    lines.push('🐐 প্যাকেজ · Package:');
-    lines.push('   ' + state.package.name);
-    lines.push('   মূল্য · Price: ৳' + state.package.priceDisplay + ' (৳' + state.package.priceEn + ')');
+    lines.push('👶 সন্তানের লিঙ্গ: ' + genderText + ' (' + goatText + ')');
+    if (state.babyName) lines.push('   নাম: ' + state.babyName);
+    if (state.babyDob) lines.push('   জন্ম তারিখ: ' + state.babyDob);
     lines.push('');
-
-    if (state.gender) {
-      lines.push('👶 শিশু · Baby:');
-      lines.push('   লিঙ্গ · Gender: ' + (state.gender === 'boy' ? 'ছেলে · Boy' : 'মেয়ে · Girl'));
-      if (state.babyName) lines.push('   নাম · Name: ' + state.babyName);
-      if (state.babyDob) lines.push('   জন্ম তারিখ · DOB: ' + state.babyDob);
-      lines.push('');
-    }
-
-    lines.push('📦 ডেলিভারি · Delivery:');
-    lines.push('   তারিখ · Date: ' + state.deliveryDate);
-    const timeLabels = { morning: 'সকাল · Morning (9am–12pm)', afternoon: 'দুপুর · Afternoon (12–4pm)', evening: 'বিকাল/সন্ধ্যা · Evening (4–8pm)', flexible: 'যেকোনো সময় · Flexible' };
-    lines.push('   সময় · Time: ' + timeLabels[state.timeSlot]);
+    lines.push('🐐 প্যাকেজ: ' + state.package.name);
+    lines.push('   মূল্য: ৳' + fmtBn(state.package.price));
     lines.push('');
-
-    lines.push('🍖 মাংস · Meat: কারি-পিস (হাড়সহ), ৩ ভাগে আলাদা প্যাকেট করা');
-    lines.push('   Standard curry-cut, separated into 3 portions (family / relatives / charity)');
-
-    if (state.distribution.length) {
-      lines.push('');
-      lines.push('📝 পছন্দ · Preferences:');
-      if (state.distribution.includes('charity-help')) lines.push('   ✓ গরিবদের অংশ আমরাই বিতরণ করে দেব · We distribute charity portion');
-      if (state.distribution.includes('dua-card')) lines.push('   ✓ শিশুর নামসহ দোয়া কার্ড · Dua card with baby\'s name');
-    }
-
-    if (state.specialRequest) {
-      lines.push('');
-      lines.push('💬 বিশেষ অনুরোধ · Special request:');
-      lines.push('   ' + state.specialRequest);
-    }
-
+    lines.push('📦 ডেলিভারি তারিখ: ' + state.deliveryDate);
+    lines.push('');
+    lines.push('🍖 বণ্টন: ' + distLabels[state.distribution]);
     lines.push('');
     lines.push('━━━━━━━━━━━━━━━━━━━');
-    lines.push('👤 যোগাযোগ · CONTACT');
+    lines.push('👤 যোগাযোগ');
     lines.push('━━━━━━━━━━━━━━━━━━━');
-    lines.push('   নাম · Name: ' + state.customer.name);
-    lines.push('   WhatsApp: ' + state.customer.phone);
-    lines.push('   ঠিকানা · Address:');
-    lines.push('   ' + state.customer.address);
-    if (state.customer.email) lines.push('   ইমেইল · Email: ' + state.customer.email);
-
+    lines.push('   নাম: ' + state.parent.name);
+    lines.push('   ফোন: ' + state.parent.phone);
+    lines.push('   ঠিকানা: ' + state.parent.address);
     lines.push('');
     lines.push('━━━━━━━━━━━━━━━━━━━');
-    lines.push('💰 মোট · Total: ৳' + state.package.priceDisplay + ' (pay on delivery)');
+    lines.push('💰 মোট: ৳' + fmtBn(state.package.price) + '');
     lines.push('━━━━━━━━━━━━━━━━━━━');
     lines.push('');
     lines.push('অনুগ্রহ করে কনফার্ম করুন। জাযাকাল্লাহু খাইরান।');
-    lines.push('Please confirm. JazakAllahu khayran.');
 
-    const message = lines.join('\n');
-    const encoded = encodeURIComponent(message);
-    const url = 'https://wa.me/8801973371019?text=' + encoded;
-    window.open(url, '_blank');
+    const msg = lines.join('\n');
+    window.open('https://wa.me/8801973371019?text=' + encodeURIComponent(msg), '_blank');
   }
 </script>
 
