@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Aqiqah Sheba — Aqiqah Service from Bangladesh for the Global Muslim Diaspora</title>
 <meta name="description" content="Fulfil your child's aqiqah from abroad. We handle Shariah-compliant slaughter in Bangladesh and distribute meat to orphans, madrasa students, and families in need — with full video proof sent to you." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" href="/favicon.png">
 <meta name="keywords" content="aqiqah from abroad, aqiqah service Bangladesh, online aqiqah, aqiqah for diaspora, charity aqiqah, aqiqah Dhaka" />
 
 <meta property="og:title" content="Aqiqah Sheba — Follow the Sunnah with Ease" />
@@ -34,7 +36,7 @@
     "addressLocality": "Dhaka",
     "addressCountry": "BD"
   },
-  "priceRange": "$140 - $255",
+  "priceRange": "$140 - $510",
   "description": "A delivery-first aqiqah service based in Dhaka, Bangladesh. Serves both local families and the global Muslim diaspora with Shariah-compliant slaughter, video proof, and charity distribution."
 }
 </script>
@@ -559,6 +561,65 @@
   .pricing .section-eyebrow { color: var(--gold-500); }
   .pricing .section-eyebrow::before, .pricing .section-eyebrow::after { background: var(--gold-500); }
 
+  /* === GENDER TOGGLE === */
+  .gender-toggle-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 44px;
+    position: relative;
+    z-index: 2;
+  }
+  .gender-toggle {
+    display: inline-flex;
+    background: rgba(247, 241, 227, 0.08);
+    border: 1px solid rgba(212, 169, 74, 0.35);
+    border-radius: 999px;
+    padding: 5px;
+    position: relative;
+  }
+  .gender-toggle button {
+    appearance: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 11px 30px;
+    border-radius: 999px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: rgba(247, 241, 227, 0.75);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .gender-toggle button .gt-sym {
+    font-size: 19px;
+    line-height: 1;
+    opacity: 0.9;
+  }
+  .gender-toggle button.active {
+    background: var(--gold-600);
+    color: var(--green-900);
+    box-shadow: 0 4px 14px -4px rgba(200, 155, 60, 0.6);
+  }
+  .gender-toggle button:not(.active):hover {
+    color: var(--cream);
+  }
+  .gender-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: rgba(247, 241, 227, 0.6);
+    text-align: center;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+
   .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -926,71 +987,6 @@
   }
   .charity-points p { color: var(--muted); font-size: 15px; line-height: 1.7; }
 
-  /* === TESTIMONIALS === */
-  .testimonials { background: var(--cream); position: relative; }
-  .testimonials-quote {
-    position: absolute;
-    top: 40px; left: 50%; transform: translateX(-50%);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 240px;
-    color: var(--gold-500);
-    opacity: 0.15;
-    line-height: 1;
-    font-style: italic;
-    pointer-events: none;
-  }
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin-top: 60px;
-    position: relative;
-    z-index: 2;
-  }
-  .testimonial-card {
-    background: var(--cream-light);
-    padding: 40px 32px;
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    transition: all 0.3s;
-  }
-  .testimonial-card:hover {
-    border-color: var(--gold-600);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px -20px rgba(26, 61, 46, 0.15);
-  }
-  .stars { color: var(--gold-600); font-size: 16px; letter-spacing: 2px; margin-bottom: 20px; }
-  .testimonial-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
-    line-height: 1.6;
-    color: var(--ink);
-    font-style: italic;
-    margin-bottom: 28px;
-  }
-  .testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .author-avatar {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    background: var(--green-900);
-    color: var(--cream);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: 20px;
-    flex-shrink: 0;
-  }
-  .author-name { font-weight: 600; color: var(--green-900); font-size: 15px; }
-  .author-detail { font-size: 13px; color: var(--muted); margin-top: 2px; }
-
   /* === FAQ === */
   .faq { background: var(--cream-light); border-top: 1px solid var(--line); }
   .faq-grid { max-width: 860px; margin: 60px auto 0; }
@@ -1219,12 +1215,11 @@
     .process-grid::before { display: none; }
 
     .pricing-grid { grid-template-columns: 1fr; }
+    .gender-toggle button { padding: 11px 22px; font-size: 16px; }
 
     .charity-grid { grid-template-columns: 1fr; gap: 48px; }
     .charity-content .section-title { text-align: left; }
 
-    .testimonials-grid { grid-template-columns: 1fr; }
-    .testimonials-quote { font-size: 160px; top: 20px; }
 
     .hero-proof { gap: 24px; flex-wrap: wrap; }
     .hero-ctas { flex-direction: column; width: 100%; }
@@ -1434,17 +1429,26 @@
       <p class="section-intro">No weight-based surprises, no negotiations. Pick the one that fits your family — every package is fully inclusive.</p>
     </div>
 
+    <!-- GENDER TOGGLE -->
+    <div class="gender-toggle-wrap">
+      <div class="gender-toggle" role="radiogroup" aria-label="Select child's gender">
+        <button type="button" class="gender-btn active" data-gender="girl" role="radio" aria-checked="true"><span class="gt-sym" aria-hidden="true">♀</span>Girl</button>
+        <button type="button" class="gender-btn" data-gender="boy" role="radio" aria-checked="false"><span class="gt-sym" aria-hidden="true">♂</span>Boy</button>
+      </div>
+      <p class="gender-note" data-girl="The sunnah is one goat for a girl. Prices shown are for one goat." data-boy="The sunnah is two goats for a boy. Prices shown are for two goats.">The sunnah is one goat for a girl. Prices shown are for one goat.</p>
+    </div>
+
     <div class="pricing-grid">
       <div class="price-card">
         
-        <div class="price-name">Barakat</div>
+        <div class="price-name">Barakah</div>
         <div class="price-sub">For a generous gathering</div>
-        <div class="price-goat-size">One healthy goat — 26–30 kg live weight</div>
+        <div class="price-goat-size" data-girl="One healthy goat — 26–30 kg live weight" data-boy="Two healthy goats — 26–30 kg live weight each">One healthy goat — 26–30 kg live weight</div>
         <div class="price-amount-wrap">
           <span class="price-currency">৳</span>
-          <span class="price-amount">28,000</span>
+          <span class="price-amount" data-base="28000">28,000</span>
         </div>
-        <div class="price-local">≈ $255 USD</div>
+        <div class="price-local" data-base-usd="255">≈ $255 USD</div>
         <div class="price-fixed">All-inclusive · no extras</div>
         <ul class="price-features">
           <li>Shariah-compliant sourcing</li>
@@ -1455,19 +1459,19 @@
           <li>Slaughter video proof</li>
           <li>3-part split · priority slot · certificate</li>
         </ul>
-        <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20order%20the%20Barakat%20package" class="price-cta">Order Barakat</a>
+        <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20order%20the%20Barakah%20package" class="price-cta">Order Barakah</a>
       </div>
 
       <div class="price-card featured">
         <div class="popular-tag">Most Popular</div>
         <div class="price-name">Sunnah</div>
         <div class="price-sub">For family, relatives & neighbours</div>
-        <div class="price-goat-size">One healthy goat — 20–25 kg live weight</div>
+        <div class="price-goat-size" data-girl="One healthy goat — 20–25 kg live weight" data-boy="Two healthy goats — 20–25 kg live weight each">One healthy goat — 20–25 kg live weight</div>
         <div class="price-amount-wrap">
           <span class="price-currency">৳</span>
-          <span class="price-amount">20,000</span>
+          <span class="price-amount" data-base="20000">20,000</span>
         </div>
-        <div class="price-local">≈ $180 USD</div>
+        <div class="price-local" data-base-usd="180">≈ $180 USD</div>
         <div class="price-fixed">All-inclusive · no extras</div>
         <ul class="price-features">
           <li>Shariah-compliant sourcing</li>
@@ -1484,12 +1488,12 @@
         
         <div class="price-name">Shukrana</div>
         <div class="price-sub">A token of gratitude</div>
-        <div class="price-goat-size">One healthy goat — 15–19 kg live weight</div>
+        <div class="price-goat-size" data-girl="One healthy goat — 15–19 kg live weight" data-boy="Two healthy goats — 15–19 kg live weight each">One healthy goat — 15–19 kg live weight</div>
         <div class="price-amount-wrap">
           <span class="price-currency">৳</span>
-          <span class="price-amount">15,000</span>
+          <span class="price-amount" data-base="15000">15,000</span>
         </div>
-        <div class="price-local">≈ $140 USD</div>
+        <div class="price-local" data-base-usd="140">≈ $140 USD</div>
         <div class="price-fixed">All-inclusive · no extras</div>
         <ul class="price-features">
           <li>Shariah-compliant sourcing</li>
@@ -1504,7 +1508,7 @@
     </div>
 
     <p class="pricing-note">
-      Not sure which to choose? <em style="color: var(--gold-500);">Most families choose Sunnah or Barakat.</em>
+      Not sure which to choose? <em style="color: var(--gold-500);">Most families choose Sunnah or Barakah.</em>
     </p>
 
     <div class="compare-wrap">
@@ -1514,9 +1518,9 @@
           <thead>
             <tr>
               <th>Feature</th>
-              <th>Barakat<span class="th-en">৳28,000</span></th>
-              <th class="th-featured">Sunnah<span class="th-en">৳20,000</span></th>
-              <th>Shukrana<span class="th-en">৳15,000</span></th>
+              <th>Barakah<span class="th-en">৳<span class="th-price" data-base="28000">28,000</span></span></th>
+              <th class="th-featured">Sunnah<span class="th-en">৳<span class="th-price" data-base="20000">20,000</span></span></th>
+              <th>Shukrana<span class="th-en">৳<span class="th-price" data-base="15000">15,000</span></span></th>
             </tr>
           </thead>
           <tbody>
@@ -1634,56 +1638,6 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="testimonials-quote">"</div>
-  <div class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">Family Testimonials</div>
-      <h2 class="section-title">From families, <em>for families.</em></h2>
-      <p class="section-intro">Muslim families in the diaspora who performed their child's aqiqah through us.</p>
-    </div>
-
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="stars">★ ★ ★ ★ ★</div>
-        <p class="testimonial-text">"We were in London and couldn't travel back to Bangladesh for our daughter's aqiqah. Aqiqah Sheba handled everything. The video of the slaughter came within hours. The photos of the orphans receiving the meat brought tears to my wife's eyes. Alhamdulillah."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">S</div>
-          <div>
-            <div class="author-name">Sadia R.</div>
-            <div class="author-detail">London, UK</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars">★ ★ ★ ★ ★</div>
-        <p class="testimonial-text">"Paid from Toronto via Wise, had the WhatsApp confirmation in minutes, and got the video the next morning. The cost was less than half what I'd have paid in Canada — and more importantly, the meat actually reached families who needed it. Cleanest process I've used for any Islamic service."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">A</div>
-          <div>
-            <div class="author-name">Ahmed K.</div>
-            <div class="author-detail">Toronto, Canada</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars">★ ★ ★ ★ ★</div>
-        <p class="testimonial-text">"For our son we did 2 goats as per the sunnah. I've done qurbani through other services before and was worried about authenticity. Aqiqah Sheba sent me scholar credentials, a clear method video, and follow-up photos — every step visible. I recommend them to every diaspora parent I know."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">M</div>
-          <div>
-            <div class="author-name">Mahir H.</div>
-            <div class="author-detail">New Jersey, USA</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section id="faq" class="faq">
   <div class="container">
@@ -1706,17 +1660,6 @@
 
       <div class="faq-item">
         <button class="faq-question">
-          How many goats for a boy vs. a girl?
-          <span class="faq-toggle"></span>
-        </button>
-        <div class="faq-answer">
-          The sunnah is two goats for a boy and one goat for a girl. This is narrated from Aisha (RA) that the Prophet ﷺ said: "Two similar goats for a boy and one goat for a girl." Some Hanafi scholars hold that one goat is permissible for a boy if two is not affordable. We offer discounted 2-goat bundles — message us on WhatsApp.
-          <span class="citation">Source: Sunan Tirmidhi 1513, Abu Dawud 2834 (Sahih)</span>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
           What if we've already missed the 7th day?
           <span class="faq-toggle"></span>
         </button>
@@ -1732,7 +1675,7 @@
           <span class="faq-toggle"></span>
         </button>
         <div class="faq-answer">
-          We offer three fixed-price packages: Shukrana ($140 / ~৳15,000), Sunnah ($180 / ~৳20,000), and Barakat ($255 / ~৳28,000). All three include Shariah-compliant sourcing, slaughter, butchering, and packaging; Sunnah and Barakat additionally include video proof and free Dhaka delivery, while Barakat further adds 3-part split packaging, a priority delivery slot, and an aqiqah certificate. No weight-based surprises, no hidden fees.
+          We offer three fixed-price packages: Shukrana ($140 / ~৳15,000), Sunnah ($180 / ~৳20,000), and Barakah ($255 / ~৳28,000). All three include Shariah-compliant sourcing, slaughter, butchering, and packaging; Sunnah and Barakah additionally include video proof and free Dhaka delivery, while Barakah further adds 3-part split packaging, a priority delivery slot, and an aqiqah certificate. These prices are for one goat (a girl's aqiqah) — for a boy the sunnah is two goats, so the package price is double. Use the Girl/Boy toggle in the pricing section to see both. No weight-based surprises, no hidden fees.
         </div>
       </div>
 
@@ -1856,6 +1799,51 @@
       nav.style.boxShadow = 'none';
     }
   });
+
+  /* === GENDER PRICE TOGGLE === */
+  (function () {
+    const fmt = (n) => n.toLocaleString('en-US'); // thousands commas
+
+    const buttons = document.querySelectorAll('.gender-btn');
+    const note = document.querySelector('.gender-note');
+    const ctas = document.querySelectorAll('.price-cta');
+    const boySuffix = ' for a boy (2 goats)';
+
+    ctas.forEach(a => { a.dataset.baseHref = a.getAttribute('href'); });
+
+    function apply(gender) {
+      const count = gender === 'boy' ? 2 : 1;
+
+      document.querySelectorAll('.price-amount[data-base]').forEach(el => {
+        el.textContent = fmt(+el.dataset.base * count);
+      });
+      document.querySelectorAll('.th-price[data-base]').forEach(el => {
+        el.textContent = fmt(+el.dataset.base * count);
+      });
+      document.querySelectorAll('.price-local[data-base-usd]').forEach(el => {
+        el.textContent = '≈ $' + fmt(+el.dataset.baseUsd * count) + ' USD';
+      });
+      document.querySelectorAll('.price-goat-size[data-girl][data-boy]').forEach(el => {
+        el.textContent = gender === 'boy' ? el.dataset.boy : el.dataset.girl;
+      });
+      if (note) note.textContent = gender === 'boy' ? note.dataset.boy : note.dataset.girl;
+
+      ctas.forEach(a => {
+        a.setAttribute('href', gender === 'boy'
+          ? a.dataset.baseHref + encodeURIComponent(boySuffix)
+          : a.dataset.baseHref);
+      });
+
+      buttons.forEach(b => {
+        const on = b.dataset.gender === gender;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-checked', on ? 'true' : 'false');
+      });
+    }
+
+    buttons.forEach(b => b.addEventListener('click', () => apply(b.dataset.gender)));
+    apply('girl'); // default
+  })();
 </script>
 
 </body>
