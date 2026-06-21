@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -6,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>আকিকাহ শেবা — ঢাকায় সম্পূর্ণ শরিয়তসম্মত আকিকা সেবা | হোম ডেলিভারি</title>
 <meta name="description" content="ঢাকায় নবজাতকের আকিকার জন্য সম্পূর্ণ সেবা। শরিয়তসম্মত ছাগল, সঠিক পদ্ধতিতে যবাই, পরিষ্কার প্যাকেজিং ও বাসায় ডেলিভারি। ভিডিও প্রমাণসহ।" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" href="/favicon.png">
 <meta name="keywords" content="আকিকা ঢাকা, আকিকার দাম, আকিকা সেবা, ছাগল আকিকা, হোম ডেলিভারি আকিকা, শরিয়তসম্মত আকিকা, আকিকার নিয়ম" />
 
 <meta property="og:title" content="আকিকাহ শেবা — সুন্নাহ পালন হোক সহজে" />
@@ -35,7 +36,7 @@
     "addressLocality": "Dhaka",
     "addressCountry": "BD"
   },
-  "priceRange": "৳12,000 - ৳25,000",
+  "priceRange": "৳15,000 - ৳56,000",
   "description": "ঢাকার ডেলিভারি-ভিত্তিক আকিকা সেবা। শরিয়তসম্মত ছাগল, সঠিক যবাই, হোম ডেলিভারি।"
 }
 </script>
@@ -628,6 +629,64 @@
   .pricing .section-eyebrow { color: var(--gold-500); }
   .pricing .section-eyebrow::before, .pricing .section-eyebrow::after { background: var(--gold-500); }
 
+  /* === GENDER TOGGLE === */
+  .gender-toggle-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 44px;
+    position: relative;
+    z-index: 2;
+  }
+  .gender-toggle {
+    display: inline-flex;
+    background: rgba(247, 241, 227, 0.08);
+    border: 1px solid rgba(212, 169, 74, 0.35);
+    border-radius: 999px;
+    padding: 5px;
+    position: relative;
+  }
+  .gender-toggle button {
+    appearance: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 11px 30px;
+    border-radius: 999px;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(247, 241, 227, 0.75);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .gender-toggle button .gt-sym {
+    font-size: 18px;
+    line-height: 1;
+    opacity: 0.9;
+  }
+  .gender-toggle button.active {
+    background: var(--gold-600);
+    color: var(--green-900);
+    box-shadow: 0 4px 14px -4px rgba(200, 155, 60, 0.6);
+  }
+  .gender-toggle button:not(.active):hover {
+    color: var(--cream);
+  }
+  .gender-note {
+    font-family: 'Sabina Shorolipi', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(247, 241, 227, 0.6);
+    text-align: center;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+
   .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1028,89 +1087,6 @@
   }
   .promise-points p { color: var(--muted); font-size: 15px; line-height: 1.7; }
 
-  /* === TESTIMONIALS === */
-  .testimonials { background: var(--cream); position: relative; }
-  .testimonials-quote {
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 240px;
-    color: var(--gold-500);
-    opacity: 0.15;
-    line-height: 1;
-    font-style: italic;
-    pointer-events: none;
-  }
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin-top: 60px;
-    position: relative;
-    z-index: 2;
-  }
-  .testimonial-card {
-    background: var(--cream-light);
-    padding: 40px 32px;
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    transition: all 0.3s;
-    position: relative;
-  }
-  .testimonial-card:hover {
-    border-color: var(--gold-600);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px -20px rgba(26, 61, 46, 0.15);
-  }
-  .stars {
-    color: var(--gold-600);
-    font-size: 16px;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-  }
-  .testimonial-text {
-    font-family: 'Sabina Shorolipi', serif;
-    font-size: 18px;
-    line-height: 1.7;
-    color: var(--ink);
-    font-style: italic;
-    margin-bottom: 28px;
-    font-weight: 400;
-  }
-  .testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-  }
-  .author-avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--green-900);
-    color: var(--cream);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Sabina Shorolipi', serif;
-    font-weight: 600;
-    font-size: 20px;
-    flex-shrink: 0;
-  }
-  .author-name {
-    font-weight: 600;
-    color: var(--green-900);
-    font-size: 15px;
-  }
-  .author-detail {
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
-
   /* === FAQ === */
   .faq { background: var(--cream-light); border-top: 1px solid var(--line); }
   .faq-grid {
@@ -1371,12 +1347,11 @@
     .pricing-grid { grid-template-columns: 1fr; }
     .price-card.featured { transform: scale(1); }
     .price-card.featured:hover { transform: translateY(-4px); }
+    .gender-toggle button { padding: 11px 22px; font-size: 14px; }
 
     .promise-grid { grid-template-columns: 1fr; gap: 48px; }
     .promise-content .section-title { text-align: left; }
 
-    .testimonials-grid { grid-template-columns: 1fr; }
-    .testimonials-quote { font-size: 160px; top: 20px; }
 
     .hero-proof { gap: 24px; flex-wrap: wrap; }
     .hero-ctas { flex-direction: column; width: 100%; }
@@ -1508,7 +1483,7 @@
     <div class="section-header">
       <div class="section-eyebrow">কেন আকিকাহ শেবা</div>
       <h2 class="section-title">ক্লান্ত বাবা-মায়ের জন্য, <em>সঠিকভাবে</em> সব কিছু।</h2>
-      <p class="section-intro">সন্তান ঘরে এসেছে। এই মুহূর্তে নবজাতককে রেখে কাপ্তান বাজারে ছাগল খুঁজতে যাওয়া অসম্ভব। সেই কাজটাই আমরা করি।</p>
+      <p class="section-intro">সন্তান ঘরে এসেছে। এই মুহূর্তে নবজাতককে রেখে গরু-ছাগলের হাটে ছাগল খুঁজতে যাওয়া অসম্ভব। সেই কাজটাই আমরা করি।</p>
     </div>
 
     <div class="why-grid">
@@ -1588,15 +1563,24 @@
       <p class="section-intro">কেজি-ভিত্তিক দাম নয়, দরদাম নয়। আপনার পরিবার ও আয়োজনের উপযুক্ত প্যাকেজ বেছে নিন।</p>
     </div>
 
+    <!-- GENDER TOGGLE -->
+    <div class="gender-toggle-wrap">
+      <div class="gender-toggle" role="radiogroup" aria-label="সন্তানের লিঙ্গ নির্বাচন করুন">
+        <button type="button" class="gender-btn active" data-gender="girl" role="radio" aria-checked="true"><span class="gt-sym" aria-hidden="true">♀</span>মেয়ে</button>
+        <button type="button" class="gender-btn" data-gender="boy" role="radio" aria-checked="false"><span class="gt-sym" aria-hidden="true">♂</span>ছেলে</button>
+      </div>
+      <p class="gender-note" data-girl="সুন্নাহ অনুযায়ী মেয়ের জন্য একটি ছাগল। দাম একটি ছাগলের জন্য দেখানো হচ্ছে।" data-boy="সুন্নাহ অনুযায়ী ছেলের জন্য দুটি ছাগল। দাম দুটি ছাগলের জন্য দেখানো হচ্ছে।">সুন্নাহ অনুযায়ী মেয়ের জন্য একটি ছাগল। দাম একটি ছাগলের জন্য দেখানো হচ্ছে।</p>
+    </div>
+
     <div class="pricing-grid">
       <div class="price-card">
         
-        <div class="price-name">বরকত</div>
+        <div class="price-name">বারাকাহ</div>
         <div class="price-sub">বড় আয়োজনের জন্য</div>
-        <div class="price-goat-size">একটি সুস্থ ছাগল — ২৬–৩০ কেজি লাইভ ওজন</div>
+        <div class="price-goat-size" data-girl="একটি সুস্থ ছাগল — ২৬–৩০ কেজি লাইভ ওজন" data-boy="দুটি সুস্থ ছাগল — প্রতিটি ২৬–৩০ কেজি লাইভ ওজন">একটি সুস্থ ছাগল — ২৬–৩০ কেজি লাইভ ওজন</div>
         <div class="price-amount-wrap">
           <span class="price-currency">৳</span>
-          <span class="price-amount">২৮,০০০</span>
+          <span class="price-amount" data-base="28000">২৮,০০০</span>
         </div>
         <div class="price-fixed">নির্দিষ্ট — সব কিছু অন্তর্ভুক্ত</div>
         <ul class="price-features">
@@ -1608,17 +1592,17 @@
           <li>যবাইয়ের ভিডিও প্রমাণ</li>
           <li>৩ ভাগে বণ্টন · অগ্রাধিকার স্লট · সার্টিফিকেট</li>
         </ul>
-        <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20আমি%20বরকত%20প্যাকেজ%20অর্ডার%20করতে%20চাই" class="price-cta">বরকত অর্ডার করুন</a>
+        <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20আমি%20বারাকাহ%20প্যাকেজ%20অর্ডার%20করতে%20চাই" class="price-cta">বারাকাহ অর্ডার করুন</a>
       </div>
 
       <div class="price-card featured">
         <div class="popular-tag">সবচেয়ে জনপ্রিয়</div>
         <div class="price-name">সুন্নাহ</div>
         <div class="price-sub">পরিবার, আত্মীয় ও প্রতিবেশী</div>
-        <div class="price-goat-size">একটি সুস্থ ছাগল — ২০–২৫ কেজি লাইভ ওজন</div>
+        <div class="price-goat-size" data-girl="একটি সুস্থ ছাগল — ২০–২৫ কেজি লাইভ ওজন" data-boy="দুটি সুস্থ ছাগল — প্রতিটি ২০–২৫ কেজি লাইভ ওজন">একটি সুস্থ ছাগল — ২০–২৫ কেজি লাইভ ওজন</div>
         <div class="price-amount-wrap">
           <span class="price-currency">৳</span>
-          <span class="price-amount">২০,০০০</span>
+          <span class="price-amount" data-base="20000">২০,০০০</span>
         </div>
         <div class="price-fixed">নির্দিষ্ট — সব কিছু অন্তর্ভুক্ত</div>
         <ul class="price-features">
@@ -1637,10 +1621,10 @@
         
         <div class="price-name">শুকরানা</div>
         <div class="price-sub">কৃতজ্ঞতার উপহার</div>
-        <div class="price-goat-size">একটি সুস্থ ছাগল — ১৫–১৯ কেজি লাইভ ওজন</div>
+        <div class="price-goat-size" data-girl="একটি সুস্থ ছাগল — ১৫–১৯ কেজি লাইভ ওজন" data-boy="দুটি সুস্থ ছাগল — প্রতিটি ১৫–১৯ কেজি লাইভ ওজন">একটি সুস্থ ছাগল — ১৫–১৯ কেজি লাইভ ওজন</div>
         <div class="price-amount-wrap">
           <span class="price-currency">৳</span>
-          <span class="price-amount">১৫,০০০</span>
+          <span class="price-amount" data-base="15000">১৫,০০০</span>
         </div>
         <div class="price-fixed">নির্দিষ্ট — সব কিছু অন্তর্ভুক্ত</div>
         <ul class="price-features">
@@ -1657,7 +1641,7 @@
     </div>
 
     <p class="pricing-note">
-      নিশ্চিত নন কোনটি বেছে নেবেন? <em style="color: var(--gold-500);">বেশিরভাগ পরিবার সুন্নাহ অথবা বরকত বেছে নেন।</em>
+      নিশ্চিত নন কোনটি বেছে নেবেন? <em style="color: var(--gold-500);">বেশিরভাগ পরিবার সুন্নাহ অথবা বারাকাহ বেছে নেন।</em>
     </p>
 
     <!-- COMPARISON TABLE -->
@@ -1668,9 +1652,9 @@
           <thead>
             <tr>
               <th>বৈশিষ্ট্য<span class="th-en">Feature</span></th>
-              <th>বরকত<span class="th-en">Barakat · ৳২৮,০০০</span></th>
-              <th class="th-featured">সুন্নাহ<span class="th-en">Sunnah · ৳২০,০০০</span></th>
-              <th>শুকরানা<span class="th-en">Shukrana · ৳১৫,০০০</span></th>
+              <th>বারাকাহ<span class="th-en">Barakah · ৳<span class="th-price" data-base="28000">২৮,০০০</span></span></th>
+              <th class="th-featured">সুন্নাহ<span class="th-en">Sunnah · ৳<span class="th-price" data-base="20000">২০,০০০</span></span></th>
+              <th>শুকরানা<span class="th-en">Shukrana · ৳<span class="th-price" data-base="15000">১৫,০০০</span></span></th>
             </tr>
           </thead>
           <tbody>
@@ -1788,56 +1772,6 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="testimonials-quote">"</div>
-  <div class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">পরিবারের প্রতিক্রিয়া</div>
-      <h2 class="section-title">পরিবারের কাছ থেকে, <em>পরিবারের জন্য।</em></h2>
-      <p class="section-intro">যেসব পরিবার তাদের সন্তানের আকিকা আমাদের দিয়ে করিয়েছেন।</p>
-    </div>
-
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="stars">★ ★ ★ ★ ★</div>
-        <p class="testimonial-text">"আমার মেয়ের জন্মের ৭ম দিন, বাজারে যাওয়ার শক্তি ছিল না। এরা পুরো দায়িত্ব নিল। ভিডিও প্রমাণ দেখে মনে শান্তি এসেছে। মাংস পরিষ্কার, সুন্দর কাটা, সময়মতো পৌঁছেছে। আল্লাহ এই সেবার বরকত দিন।"</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">র</div>
-          <div>
-            <div class="author-name">রাকিবুল হাসান</div>
-            <div class="author-detail">ধানমন্ডি, ঢাকা</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars">★ ★ ★ ★ ★</div>
-        <p class="testimonial-text">"ছেলের জন্য ২টি ছাগলের আকিকা। তিন ভাগে সুন্দর করে প্যাক করে দিয়েছে — একভাগ আমাদের, একভাগ আত্মীয়দের, একভাগ গরিবদের। এত সুন্দর সার্ভিস ঢাকায় আর পাইনি। দাম-ও সৎ।"</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">শ</div>
-          <div>
-            <div class="author-name">শামীমা আক্তার</div>
-            <div class="author-detail">গুলশান, ঢাকা</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars">★ ★ ★ ★ ★</div>
-        <p class="testimonial-text">"নবজাতক ঘরে, বাবা-মা দুজনেই ক্লান্ত। WhatsApp-এ মেসেজ দিয়েছি, পরের দিন বাসায় সব পৌঁছে গেছে। কাপ্তান বাজারের কষ্ট নেই, হিসাব-নিকাশ নেই, শুধু সুন্নাহ পালন। আলহামদুলিল্লাহ।"</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">ম</div>
-          <div>
-            <div class="author-name">মাহমুদুল ইসলাম</div>
-            <div class="author-detail">উত্তরা, ঢাকা</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section id="faq" class="faq">
   <div class="container">
@@ -1860,17 +1794,6 @@
 
       <div class="faq-item">
         <button class="faq-question">
-          ছেলে সন্তানের জন্য কি ২টি ছাগল দিতে হবে?
-          <span class="faq-toggle"></span>
-        </button>
-        <div class="faq-answer">
-          সুন্নাহ হল ছেলের জন্য ২টি ছাগল এবং মেয়ের জন্য ১টি ছাগল। উম্মুল মুমিনীন আয়েশা (রাঃ) থেকে বর্ণিত যে রাসূলুল্লাহ (সাঃ) বলেছেন — "ছেলে সন্তানের জন্য দুইটি ছাগল এবং মেয়ে সন্তানের জন্য একটি ছাগল।" তবে হানাফী মাযহাবের কিছু ফকীহদের মতে সক্ষমতা না থাকলে ছেলের জন্যেও একটি ছাগল দেওয়া জায়েজ। আমরা ২-ছাগলের ছাড়যুক্ত বান্ডেল অফার করি — WhatsApp-এ মেসেজ দিয়ে জিজ্ঞেস করুন।
-          <span class="citation">সূত্র: সুনান তিরমিযী ১৫১৩, সুনান আবু দাউদ ২৮৩৪ (সহীহ)</span>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
           ৭ম দিনে আকিকা না দিতে পারলে কী হবে?
           <span class="faq-toggle"></span>
         </button>
@@ -1886,7 +1809,7 @@
           <span class="faq-toggle"></span>
         </button>
         <div class="faq-answer">
-          আমরা তিনটি নির্দিষ্ট মূল্যের প্যাকেজ অফার করি — শুকরানা (৳১৫,০০০), সুন্নাহ (৳২০,০০০), এবং বরকত (৳২৮,০০০)। তিনটি প্যাকেজেরই ভিত্তি সেবা একই (শরিয়তসম্মত সোর্সিং, যবাই, কসাই সেবা ও প্যাকেজিং), তবে সুন্নাহ ও বরকতে অতিরিক্ত হিসেবে আছে ফ্রি হোম ডেলিভারি ও ভিডিও প্রমাণ; বরকত প্যাকেজে আরও আছে ৩ ভাগে বণ্টন, অগ্রাধিকার স্লট ও আকিকা সার্টিফিকেট। কেজি-ভিত্তিক কোনো সারপ্রাইজ নেই, কোনো হিডেন খরচ নেই।
+          আমরা তিনটি নির্দিষ্ট মূল্যের প্যাকেজ অফার করি — শুকরানা (৳১৫,০০০), সুন্নাহ (৳২০,০০০), এবং বারাকাহ (৳২৮,০০০)। তিনটি প্যাকেজেরই ভিত্তি সেবা একই (শরিয়তসম্মত সোর্সিং, যবাই, কসাই সেবা ও প্যাকেজিং), তবে সুন্নাহ ও বারাকাহতে অতিরিক্ত হিসেবে আছে ফ্রি হোম ডেলিভারি ও ভিডিও প্রমাণ; বারাকাহ প্যাকেজে আরও আছে ৩ ভাগে বণ্টন, অগ্রাধিকার স্লট ও আকিকা সার্টিফিকেট। উপরের দাম একটি ছাগলের (মেয়ের আকিকা) জন্য — ছেলের আকিকায় সুন্নাহ অনুযায়ী দুটি ছাগল লাগে, তাই দাম দ্বিগুণ। প্রাইসিং সেকশনে মেয়ে/ছেলে টগল দিয়ে দেখে নিতে পারেন। কেজি-ভিত্তিক কোনো সারপ্রাইজ নেই, কোনো হিডেন খরচ নেই।
         </div>
       </div>
 
@@ -1976,7 +1899,7 @@
         <li><a>bKash</a></li>
         <li><a>Nagad / Rocket</a></li>
         <li><a>ব্যাংক ট্রান্সফার</a></li>
-        <li><a>ক্যাশ অন ডেলিভারি</a></li>
+        
       </ul>
     </div>
   </div>
@@ -2011,6 +1934,51 @@
       nav.style.boxShadow = 'none';
     }
   });
+
+  /* === GENDER PRICE TOGGLE === */
+  (function () {
+    const bnDigits = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
+    const toBangla = (str) => String(str).replace(/[0-9]/g, d => bnDigits[+d]);
+    const fmt = (n) => n.toLocaleString('en-US'); // adds thousands commas
+
+    const buttons = document.querySelectorAll('.gender-btn');
+    const note = document.querySelector('.gender-note');
+    const ctas = document.querySelectorAll('.price-cta');
+    const boySuffix = ' (ছেলের জন্য — ২টি ছাগল)';
+
+    // store the original (girl / default) href so we can rebuild it
+    ctas.forEach(a => { a.dataset.baseHref = a.getAttribute('href'); });
+
+    function apply(gender) {
+      const count = gender === 'boy' ? 2 : 1;
+
+      document.querySelectorAll('.price-amount[data-base]').forEach(el => {
+        el.textContent = toBangla(fmt(+el.dataset.base * count));
+      });
+      document.querySelectorAll('.th-price[data-base]').forEach(el => {
+        el.textContent = toBangla(fmt(+el.dataset.base * count));
+      });
+      document.querySelectorAll('.price-goat-size[data-girl][data-boy]').forEach(el => {
+        el.textContent = gender === 'boy' ? el.dataset.boy : el.dataset.girl;
+      });
+      if (note) note.textContent = gender === 'boy' ? note.dataset.boy : note.dataset.girl;
+
+      ctas.forEach(a => {
+        a.setAttribute('href', gender === 'boy'
+          ? a.dataset.baseHref + encodeURIComponent(boySuffix)
+          : a.dataset.baseHref);
+      });
+
+      buttons.forEach(b => {
+        const on = b.dataset.gender === gender;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-checked', on ? 'true' : 'false');
+      });
+    }
+
+    buttons.forEach(b => b.addEventListener('click', () => apply(b.dataset.gender)));
+    apply('girl'); // default
+  })();
 </script>
 
 </body>
