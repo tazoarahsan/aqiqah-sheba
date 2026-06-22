@@ -1241,10 +1241,12 @@
   <div class="nav-links">
     <a href="#why">Why Us</a>
     <a href="#process">Process</a>
-    <a href="#pricing">Pricing</a>
+    <a href="/en/packages.html">Packages</a>
+    <a href="/en/sadaqah.html">Sadaqah</a>
+    <a href="/en/kaffara.html">Kaffara</a>
     <a href="#faq">FAQ</a>
     <a href="/" class="lang-toggle bn">বাংলা</a>
-    <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad" class="nav-cta">Start Order</a>
+    <a href="/en/order.html" class="nav-cta">Start Order</a>
   </div>
 </nav>
 
@@ -1262,12 +1264,12 @@
       You pay from your home country. We source a Shariah-compliant goat in Dhaka, perform the aqiqah per Islamic guidelines, and distribute the meat to orphans, madrasa students, and families in need — with full video proof sent to you.
     </p>
     <div class="hero-ctas">
-      <a href="#pricing" class="btn btn-primary">
-        View Pricing
+      <a href="/en/packages.html" class="btn btn-primary">
+        View Packages
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad" class="btn btn-secondary">
-        Message on WhatsApp
+      <a href="/en/order.html" class="btn btn-secondary">
+        Start Order
       </a>
     </div>
     <div class="hero-proof">
@@ -1459,7 +1461,7 @@
           <li>Slaughter video proof</li>
           <li>3-part split · priority slot · certificate</li>
         </ul>
-        <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20order%20the%20Barakah%20package" class="price-cta">Order Barakah</a>
+        <a href="/en/order.html?pkg=barakah" class="price-cta">Order Barakah</a>
       </div>
 
       <div class="price-card featured">
@@ -1481,7 +1483,7 @@
           <li>Free doorstep delivery</li>
           <li>Slaughter video proof</li>
         </ul>
-        <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20order%20the%20Sunnah%20package" class="price-cta">Order Sunnah</a>
+        <a href="/en/order.html?pkg=sunnah" class="price-cta">Order Sunnah</a>
       </div>
 
       <div class="price-card">
@@ -1503,7 +1505,7 @@
           <li>Doorstep delivery (add-on)</li>
 
         </ul>
-        <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20order%20the%20Shukrana%20package" class="price-cta">Order Shukrana</a>
+        <a href="/en/order.html?pkg=shukrana" class="price-cta">Order Shukrana</a>
       </div>
     </div>
 
@@ -1744,7 +1746,9 @@
       <ul>
         <li><a href="#why">Why Us</a></li>
         <li><a href="#process">How It Works</a></li>
-        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="/en/packages.html">Packages</a></li>
+        <li><a href="/en/sadaqah.html">Sadaqah</a></li>
+        <li><a href="/en/kaffara.html">Kaffara</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="/" class="bn">বাংলা সাইট</a></li>
       </ul>
@@ -1807,7 +1811,6 @@
     const buttons = document.querySelectorAll('.gender-btn');
     const note = document.querySelector('.gender-note');
     const ctas = document.querySelectorAll('.price-cta');
-    const boySuffix = ' for a boy (2 goats)';
 
     ctas.forEach(a => { a.dataset.baseHref = a.getAttribute('href'); });
 
@@ -1829,9 +1832,10 @@
       if (note) note.textContent = gender === 'boy' ? note.dataset.boy : note.dataset.girl;
 
       ctas.forEach(a => {
+        const base = a.dataset.baseHref;
         a.setAttribute('href', gender === 'boy'
-          ? a.dataset.baseHref + encodeURIComponent(boySuffix)
-          : a.dataset.baseHref);
+          ? base + (base.includes('?') ? '&' : '?') + 'gender=boy'
+          : base);
       });
 
       buttons.forEach(b => {
