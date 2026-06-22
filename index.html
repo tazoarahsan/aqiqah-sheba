@@ -1374,6 +1374,8 @@
     <a href="#why">কেন আমরা</a>
     <a href="#process">প্রক্রিয়া</a>
     <a href="packages.html">প্যাকেজ</a>
+    <a href="sadaqah.html">সাদাকাহ</a>
+    <a href="kaffara.html">কাফফারা</a>
     <a href="#faq">প্রশ্নোত্তর</a>
     <a href="en/" class="lang-toggle">EN</a>
     <a href="order.html" class="nav-cta">অর্ডার করুন</a>
@@ -1592,7 +1594,7 @@
           <li>যবাইয়ের ভিডিও প্রমাণ</li>
           <li>৩ ভাগে বণ্টন · অগ্রাধিকার স্লট · সার্টিফিকেট</li>
         </ul>
-        <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20আমি%20বারাকাহ%20প্যাকেজ%20অর্ডার%20করতে%20চাই" class="price-cta">বারাকাহ অর্ডার করুন</a>
+        <a href="/order.html?pkg=barakah" class="price-cta">বারাকাহ অর্ডার করুন</a>
       </div>
 
       <div class="price-card featured">
@@ -1614,7 +1616,7 @@
           <li>যবাইয়ের ভিডিও প্রমাণ</li>
           
         </ul>
-        <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20আমি%20সুন্নাহ%20প্যাকেজ%20অর্ডার%20করতে%20চাই" class="price-cta">সুন্নাহ অর্ডার করুন</a>
+        <a href="/order.html?pkg=sunnah" class="price-cta">সুন্নাহ অর্ডার করুন</a>
       </div>
 
       <div class="price-card">
@@ -1636,7 +1638,7 @@
           
           
         </ul>
-        <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20আমি%20শুকরানা%20প্যাকেজ%20অর্ডার%20করতে%20চাই" class="price-cta">শুকরানা অর্ডার করুন</a>
+        <a href="/order.html?pkg=shukrana" class="price-cta">শুকরানা অর্ডার করুন</a>
       </div>
     </div>
 
@@ -1880,6 +1882,8 @@
         <li><a href="#why">কেন আমরা</a></li>
         <li><a href="#process">যেভাবে কাজ করে</a></li>
         <li><a href="packages.html">প্যাকেজসমূহ</a></li>
+        <li><a href="sadaqah.html">সাদাকাহ</a></li>
+        <li><a href="kaffara.html">কাফফারা</a></li>
         <li><a href="shariah.html">শরিয়তের আলোকে</a></li>
         <li><a href="#faq">প্রশ্নোত্তর</a></li>
       </ul>
@@ -1944,7 +1948,6 @@
     const buttons = document.querySelectorAll('.gender-btn');
     const note = document.querySelector('.gender-note');
     const ctas = document.querySelectorAll('.price-cta');
-    const boySuffix = ' (ছেলের জন্য — ২টি ছাগল)';
 
     // store the original (girl / default) href so we can rebuild it
     ctas.forEach(a => { a.dataset.baseHref = a.getAttribute('href'); });
@@ -1964,9 +1967,10 @@
       if (note) note.textContent = gender === 'boy' ? note.dataset.boy : note.dataset.girl;
 
       ctas.forEach(a => {
+        const base = a.dataset.baseHref;
         a.setAttribute('href', gender === 'boy'
-          ? a.dataset.baseHref + encodeURIComponent(boySuffix)
-          : a.dataset.baseHref);
+          ? base + (base.includes('?') ? '&' : '?') + 'gender=boy'
+          : base);
       });
 
       buttons.forEach(b => {
