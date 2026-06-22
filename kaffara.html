@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>কাফফারা ছাগল — আকিকাহ শেবা</title>
+<meta name="description" content="কাফফারা আদায়ের জন্য ছাগল কিনুন। আমরা শরিয়তসম্মতভাবে যবাই করে গরিবদের মাঝে বিতরণ করব।" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+<style>@font-face{font-family:'Sabina Shorolipi';src:url('/fonts/SabinaShorolipi-Regular.ttf') format('truetype');font-weight:400;}@font-face{font-family:'Sabina Shorolipi';src:url('/fonts/SabinaShorolipi-Italic.ttf') format('truetype');font-weight:400;font-style:italic;}</style>
+<style>
+  :root { --green-900:#1a3d2e; --gold-600:#c89b3c; --gold-500:#d4a94a; --cream:#f7f1e3; --cream-light:#fbf7ec; --ink:#0f1e17; --muted:#5a6b61; --line:#ddd5c5; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--cream); color:var(--ink); font-family:'Hind Siliguri', sans-serif; }
+
+  /* NAV */
+  .nav { position:sticky; top:0; z-index:100; background:rgba(251,247,236,0.95); backdrop-filter:blur(12px); padding:16px 40px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); }
+  .nav-logo { height:38px; }
+  .nav-links { display:flex; gap:28px; align-items:center; }
+  .nav-links a { text-decoration:none; font-size:14px; font-weight:500; color:var(--green-900); }
+  .nav-links a:hover { color:var(--gold-600); }
+  .lang-toggle { border:1px solid var(--line); padding:5px 14px; border-radius:999px; font-size:13px !important; }
+
+  /* HERO */
+  .hero { background:var(--green-900); color:var(--cream); text-align:center; padding:80px 24px 60px; }
+  .hero-eyebrow { font-family:'Sabina Shorolipi', serif; font-size:14px; text-transform:uppercase; letter-spacing:3px; color:var(--gold-500); margin-bottom:20px; }
+  .hero h1 { font-family:'Sabina Shorolipi', serif; font-size:clamp(28px,5vw,44px); font-weight:600; line-height:1.25; max-width:700px; margin:0 auto 20px; }
+  .hero h1 em { font-style:italic; color:var(--gold-500); }
+  .hero-desc { font-size:16px; line-height:1.7; max-width:600px; margin:0 auto; color:rgba(247,241,227,0.8); }
+
+  /* ZIGZAG SECTIONS */
+  .zz-section { padding:60px 0; background:var(--cream); }
+  .zz-row { display:grid; grid-template-columns:1fr 1fr; align-items:center; }
+  .zz-row.reverse { direction:rtl; }
+  .zz-row.reverse > * { direction:ltr; }
+  .zz-visual { background:var(--cream-light); border:1px solid var(--line); border-radius:12px; margin:12px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:48px 32px; position:relative; overflow:hidden; }
+  .zz-visual::before { content:''; position:absolute; width:300px; height:300px; border:1px solid rgba(200,155,60,0.15); border-radius:50%; top:50%; left:50%; transform:translate(-50%,-50%); }
+  .zz-visual::after { content:''; position:absolute; width:200px; height:200px; border:1px solid rgba(200,155,60,0.1); border-radius:50%; top:50%; left:50%; transform:translate(-50%,-50%); }
+  .zz-arabic { font-family:'Amiri', serif; font-size:clamp(22px,3vw,30px); color:var(--green-900); text-align:center; direction:rtl; line-height:2; position:relative; z-index:1; max-width:400px; }
+  .zz-translation { font-size:14px; color:var(--ink); line-height:1.7; text-align:center; margin-top:14px; font-style:italic; padding:0 8px; }
+  .zz-ref { font-size:12px; color:var(--muted); margin-top:16px; position:relative; z-index:1; text-align:center; }
+  .zz-content { display:flex; flex-direction:column; justify-content:center; padding:48px 44px; }
+  
+  .zz-tag { font-size:12px; text-transform:uppercase; letter-spacing:2px; color:var(--gold-600); font-weight:600; margin-bottom:12px; }
+  .zz-content h3 { font-family:'Sabina Shorolipi', serif; font-size:clamp(22px,3vw,28px); font-weight:600; color:var(--green-900); line-height:1.3; margin-bottom:16px; }
+  .zz-content h3 em { font-style:italic; color:var(--gold-600); }
+  .zz-content p { font-size:15px; line-height:1.8; color:var(--muted); }
+
+  /* ORDER SECTION */
+  .order-section { max-width:680px; margin:60px auto; padding:0 20px; }
+  .card { background:white; border:1px solid var(--line); border-radius:12px; padding:36px 32px; box-shadow:0 8px 30px -12px rgba(26,61,46,0.12); }
+  .card-title { font-family:'Sabina Shorolipi', serif; font-size:22px; font-weight:600; color:var(--green-900); margin-bottom:24px; text-align:center; }
+  .size-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:28px; }
+  .size-card { border:2px solid var(--line); border-radius:10px; padding:20px 14px; text-align:center; cursor:pointer; transition:all 0.25s; background:var(--cream-light); }
+  .size-card:hover { border-color:var(--gold-500); }
+  .size-card.selected { border-color:var(--gold-600); background:white; box-shadow:0 4px 14px -4px rgba(200,155,60,0.3); }
+  .size-name { font-family:'Sabina Shorolipi', serif; font-size:20px; font-weight:600; color:var(--green-900); margin-bottom:4px; }
+  .size-weight { font-size:13px; color:var(--muted); margin-bottom:10px; }
+  .size-price { font-size:18px; font-weight:700; color:var(--gold-600); }
+  .qty-row { display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:28px; padding:16px; background:var(--cream-light); border-radius:8px; }
+  .qty-label { font-weight:600; font-size:15px; color:var(--green-900); }
+  .qty-btn { width:38px; height:38px; border-radius:50%; border:2px solid var(--line); background:white; font-size:20px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--green-900); transition:all 0.2s; }
+  .qty-btn:hover { border-color:var(--gold-600); background:var(--gold-600); color:white; }
+  .qty-val { font-size:22px; font-weight:700; min-width:40px; text-align:center; color:var(--green-900); }
+  .divider { height:1px; background:var(--line); margin:24px 0; }
+  .field { margin-bottom:16px; }
+  .field label { display:block; font-size:14px; font-weight:600; color:var(--green-900); margin-bottom:6px; }
+  .field input,.field textarea { width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:8px; font-size:15px; font-family:inherit; background:var(--cream-light); transition:border 0.2s; }
+  .field input:focus,.field textarea:focus { outline:none; border-color:var(--gold-600); }
+  .field textarea { resize:vertical; min-height:70px; }
+  .field .req { color:#c44; }
+  .field-error { font-size:12px; color:#c44; margin-top:4px; display:none; }
+  .field.has-error .field-error { display:block; }
+  .field.has-error input { border-color:#c44; }
+  .field-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .total-bar { display:flex; justify-content:space-between; align-items:center; padding:18px 20px; background:var(--green-900); border-radius:10px; margin:24px 0 20px; }
+  .total-label { color:rgba(247,241,227,0.7); font-size:14px; }
+  .total-amount { font-family:'Sabina Shorolipi', serif; font-size:28px; font-weight:700; color:var(--gold-500); }
+  .btn-whatsapp { display:flex; align-items:center; justify-content:center; gap:10px; width:100%; padding:16px; background:#25D366; color:white; border:none; border-radius:10px; font-size:17px; font-weight:600; font-family:inherit; cursor:pointer; transition:all 0.2s; }
+  .btn-whatsapp:hover { background:#1fb855; transform:translateY(-1px); box-shadow:0 6px 20px -6px rgba(37,211,102,0.5); }
+  .btn-sub { text-align:center; font-size:13px; color:var(--muted); margin-top:14px; }
+  .trust-bar { display:flex; justify-content:center; gap:28px; margin-top:32px; flex-wrap:wrap; }
+  .trust-bar .item { display:flex; align-items:center; gap:6px; font-size:13px; color:var(--muted); font-weight:500; }
+  .trust-bar .item svg { width:16px; height:16px; }
+
+  @media (max-width:768px) {
+    .nav { padding:12px 16px; }
+    .hero { padding:60px 20px 50px; }
+    .zz-row,.zz-row.reverse { grid-template-columns:1fr; direction:ltr; }
+    .zz-visual { min-height:200px; padding:32px 24px; }
+    .zz-content { padding:32px 24px; }
+    .order-section { padding:0 12px; }
+    .card { padding:24px 18px; }
+    .size-grid { grid-template-columns:1fr; gap:10px; }
+    .size-card { display:flex; align-items:center; justify-content:space-between; padding:16px; text-align:left; }
+    .size-card .size-name { margin-bottom:0; }
+    .size-card .size-weight { margin-bottom:0; }
+    .field-grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/"><img src="logo-bangla.png" alt="আকিকাহ শেবা" class="nav-logo"></a>
+  <div class="nav-links">
+    <a href="/">হোম</a>
+    <a href="/en/kaffara.html" class="lang-toggle">EN</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">কাফফারা</div>
+  <h1>কসম ভঙ্গ বা রোযা ছুটে গেলে, <em>কাফফারা আদায় করুন।</em></h1>
+  <p class="hero-desc">কাফফারা হিসেবে ছাগল কিনুন — আমরা শরিয়তসম্মতভাবে যবাই করে সম্পূর্ণ মাংস গরিব-মিসকিনদের মাঝে বিতরণ করব। ভিডিও প্রমাণ পাবেন।</p>
+</section>
+
+<section class="zz-section">
+
+    <div class="zz-row ">
+      <div class="zz-visual">
+        <div class="zz-arabic">فَكَفَّارَتُهُ إِطْعَامُ عَشَرَةِ مَسَاكِينَ</div>
+        <div class="zz-translation">"তার কাফফারা হলো দশজন মিসকিনকে খাওয়ানো।"</div>
+        <div class="zz-ref">সূরা আল-মায়িদাহ ৫:৮৯</div>
+      </div>
+      <div class="zz-content">
+        <div class="zz-tag">কসমের কাফফারা</div>
+        <h3>কসম ভঙ্গ হলে <em>কাফফারা ওয়াজিব।</em></h3>
+        <p>ইসলামে কসম একটি গুরুত্বপূর্ণ বিষয়। আল্লাহর নামে কসম করে তা ভঙ্গ করলে কাফফারা দিতে হয় — দশজন মিসকিনকে খাওয়ানো। একটি ছাগলের মাংস দিয়ে দশটিরও বেশি পরিবার খেতে পারে। আমাদের মাধ্যমে সহজেই আদায় করুন।</p>
+      </div>
+    </div>
+    <div class="zz-row reverse">
+      <div class="zz-visual">
+        <div class="zz-arabic">وَعَلَى الَّذِينَ يُطِيقُونَهُ فِدْيَةٌ طَعَامُ مِسْكِينٍ</div>
+        <div class="zz-translation">"যাদের পক্ষে রোযা কষ্টকর, তারা ফিদইয়া হিসেবে একজন মিসকিনকে খাওয়াবে।"</div>
+        <div class="zz-ref">সূরা আল-বাকারাহ ২:১৮৪</div>
+      </div>
+      <div class="zz-content">
+        <div class="zz-tag">রোযার ফিদইয়া</div>
+        <h3>রোযা রাখতে না পারলে <em>ফিদইয়া দিন।</em></h3>
+        <p>বার্ধক্য, দীর্ঘমেয়াদী অসুস্থতা বা অন্য কোনো কারণে রোযা রাখা সম্ভব না হলে ফিদইয়া হিসেবে মিসকিনদের খাওয়াতে হয়। একটি ছাগলের মাংস বিতরণ করে একাধিক দিনের ফিদইয়া আদায় করুন — আমরা পুরো দায়িত্ব নেব।</p>
+      </div>
+    </div>
+    <div class="zz-row ">
+      <div class="zz-visual">
+        <div class="zz-arabic">فَلْيُكَفِّرْ عَنْ يَمِينِهِ وَلْيَفْعَلِ الَّذِي هُوَ خَيْرٌ</div>
+        <div class="zz-translation">"সে যেন তার কসমের কাফফারা দেয় এবং যেটি উত্তম সেটি করে।"</div>
+        <div class="zz-ref">সহীহ মুসলিম ১৬৫০</div>
+      </div>
+      <div class="zz-content">
+        <div class="zz-tag">ভালোটা করুন</div>
+        <h3>উত্তম কাজটি করুন, <em>কাফফারা দিয়ে দিন।</em></h3>
+        <p>রাসূলুল্লাহ ﷺ বলেছেন — যে ব্যক্তি কসম করে তারপর তার চেয়ে উত্তম কিছু দেখতে পায়, সে যেন কাফফারা দিয়ে উত্তম কাজটি করে। কাফফারা বোঝা নয় — এটি আল্লাহর রহমতের দরজা। গরিবদের খাওয়ানোর মাধ্যমে নিজেকে মুক্ত করুন।</p>
+      </div>
+    </div>
+    <div class="zz-row reverse">
+      <div class="zz-visual">
+        <div class="zz-arabic">فَمَن لَّمْ يَسْتَطِعْ فَإِطْعَامُ سِتِّينَ مِسْكِينًا</div>
+        <div class="zz-translation">"যে সক্ষম না হয়, সে ষাটজন মিসকিনকে খাওয়াবে।"</div>
+        <div class="zz-ref">সূরা আল-মুজাদালাহ ৫৮:৪</div>
+      </div>
+      <div class="zz-content">
+        <div class="zz-tag">বিলম্ব করবেন না</div>
+        <h3>কাফফারা আদায়ে <em>দেরি করবেন না।</em></h3>
+        <p>আল্লাহ তাআলা কাফফারার বিভিন্ন স্তর রেখেছেন — দাস মুক্তি, একাধারে দুই মাস রোযা, অথবা ষাটজন মিসকিনকে খাওয়ানো। সবচেয়ে সহজ পথ হলো মিসকিনদের খাওয়ানো। আমাদের মাধ্যমে আজই আদায় করুন — WhatsApp-এ দুই মিনিটে অর্ডার দিন।</p>
+      </div>
+    </div>
+</section>
+
+<div class="order-section">
+  <div class="card">
+    <div class="card-title">ছাগলের সাইজ বেছে নিন</div>
+    <div class="size-grid">
+        <div class="size-card" data-key="large" data-price="28000">
+          <div class="size-name">বড়</div>
+          <div class="size-weight">২৬–৩০ কেজি</div>
+          <div class="size-price">৳২৮,০০০</div>
+        </div>
+        <div class="size-card selected" data-key="medium" data-price="20000">
+          <div class="size-name">মাঝারি</div>
+          <div class="size-weight">২০–২৫ কেজি</div>
+          <div class="size-price">৳২০,০০০</div>
+        </div>
+        <div class="size-card" data-key="small" data-price="15000">
+          <div class="size-name">ছোট</div>
+          <div class="size-weight">১৫–১৯ কেজি</div>
+          <div class="size-price">৳১৫,০০০</div>
+        </div>
+    </div>
+    <div class="qty-row">
+      <span class="qty-label">সংখ্যা</span>
+      <button class="qty-btn" onclick="changeQty(-1)">&#8722;</button>
+      <span class="qty-val" id="qtyVal">1</span>
+      <button class="qty-btn" onclick="changeQty(1)">+</button>
+    </div>
+    <div class="divider"></div>
+    <div class="field-grid">
+      <div class="field">
+        <label>আপনার নাম <span class="req">*</span></label>
+        <input type="text" id="userName" required placeholder="যেমন: মোহাম্মদ আহমেদ" />
+        <div class="field-error">নাম দিতে হবে</div>
+      </div>
+      <div class="field">
+        <label>ফোন নম্বর <span class="req">*</span></label>
+        <input type="tel" id="userPhone" required placeholder="01XXX-XXXXXX" />
+        <div class="field-error">ফোন নম্বর দিতে হবে</div>
+      </div>
+    </div>
+    <div class="field">
+      <label>বিশেষ নির্দেশনা (ঐচ্ছিক)</label>
+      <textarea id="userNote" placeholder="কোনো বিশেষ অনুরোধ থাকলে লিখুন"></textarea>
+    </div>
+    <div class="total-bar">
+      <div class="total-label">মোট</div>
+      <div class="total-amount" id="totalDisplay">৳২০,০০০</div>
+    </div>
+    <button class="btn-whatsapp" onclick="submitOrder()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp-এ অর্ডার পাঠান
+    </button>
+    <p class="btn-sub">WhatsApp-এ কনফার্ম করার পর পেমেন্টের বিস্তারিত জানানো হবে</p>
+  </div>
+  <div class="trust-bar">
+    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> শরিয়তসম্মত</span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> ভিডিও প্রমাণ</span>
+    <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> সম্পূর্ণ বিতরণ</span>
+  </div>
+</div>
+
+<script>
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwdiFxHiiepL0RlM6_406Xx5tE2t2I4CSAdPYdxZ_dBX8KAUwvLXnimPTLVv7L4aApO/exec';
+  const sizes = [{"name": "বড়", "weight": "২৬–৩০ কেজি", "pd": "২৮,০০০", "p": 28000, "k": "large"}, {"name": "মাঝারি", "weight": "২০–২৫ কেজি", "pd": "২০,০০০", "p": 20000, "k": "medium"}, {"name": "ছোট", "weight": "১৫–১৯ কেজি", "pd": "১৫,০০০", "p": 15000, "k": "small"}];
+  const useBn = true;
+  const bnD = ['\u09E6','\u09E7','\u09E8','\u09E9','\u09EA','\u09EB','\u09EC','\u09ED','\u09EE','\u09EF'];
+  const toBn = s => String(s).replace(/[0-9]/g, d => bnD[+d]);
+  const fmt = n => n.toLocaleString('en-US');
+  const fmtP = n => useBn ? '\u09F3' + toBn(fmt(n)) : '\u09F3' + fmt(n);
+  let selectedSize = sizes[1]; let qty = 1;
+  document.querySelectorAll('.size-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.size-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      selectedSize = sizes.find(s => s.k === card.dataset.key);
+      updateTotal();
+    });
+  });
+  function changeQty(d) { qty = Math.max(1, Math.min(20, qty + d)); document.getElementById('qtyVal').textContent = useBn ? toBn(qty) : qty; updateTotal(); }
+  function updateTotal() { document.getElementById('totalDisplay').textContent = fmtP(selectedSize.p * qty); }
+  function validate() { let ok = true; ['userName','userPhone'].forEach(id => { const el = document.getElementById(id); if (!el.value.trim()) { el.parentElement.classList.add('has-error'); ok = false; } else { el.parentElement.classList.remove('has-error'); } }); return ok; }
+  function collectData(name, phone, note) { if (!SHEET_URL) return; const payload = { lang:'bn', gender:'', goats:qty, package:selectedSize.name+' ('+selectedSize.k+')', price:selectedSize.p*qty, babyName:'', babyDob:'', deliveryDate:'', parentName:name, phone:phone, address:note, distribution:'full-charity', source:'kaffara-bn' }; try { navigator.sendBeacon(SHEET_URL, JSON.stringify(payload)); } catch(e) { fetch(SHEET_URL, { method:'POST', mode:'no-cors', body:JSON.stringify(payload) }).catch(() => {}); } }
+  function submitOrder() { if (!validate()) return; const name = document.getElementById('userName').value.trim(); const phone = document.getElementById('userPhone').value.trim(); const note = document.getElementById('userNote').value.trim(); const total = selectedSize.p * qty; collectData(name, phone, note); const L = []; L.push('আসসালামু আলাইকুম! আমি কাফফারা হিসেবে ছাগল অর্ডার করতে চাই।'); L.push(''); L.push('\u2501'.repeat(19)); L.push('📋 কাফফারা অর্ডার'); L.push('\u2501'.repeat(19)); L.push(''); L.push('🐐 সাইজ: ' + selectedSize.name + ' (' + selectedSize.weight + ')'); L.push('📦 সংখ্যা: ' + qty); L.push('💰 মোট: ' + fmtP(total)); L.push(''); L.push('👤 নাম: ' + name); L.push('📞 ফোন: ' + phone); if (note) L.push('📝 নোট: ' + note); L.push(''); L.push('\u2501'.repeat(19)); L.push('অনুগ্রহ করে কনফার্ম করুন। জাযাকাল্লাহু খাইরান।'); window.open('https://wa.me/8801973371019?text=' + encodeURIComponent(L.join('\n')), '_blank'); }
+</script>
+</body>
+</html>
