@@ -1,0 +1,14 @@
+# Blog topics. In a post, write the key on the left, e.g.  topic: rulings
+# Each topic has its English name (used on /blog) and Bangla name (used on Bangla posts).
+rulings:
+  en: Aqiqah Rulings
+  bn: আকিকার মাসায়েল
+newborn-sunnah:
+  en: Newborn Sunnah
+  bn: নবজাতকের সুন্নাহ
+sadaqah-kaffara:
+  en: Sadaqah & Kaffara
+  bn: সাদাকাহ ও কাফফারা
+news:
+  en: From Aqiqah Sheba
+  bn: আমাদের কথা

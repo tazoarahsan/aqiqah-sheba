@@ -1,12 +1,20 @@
 ---
 layout: base
 body_class: page-blog
+lang: en
 ---
-{%- assign posts = site.posts -%}
-{%- assign topics = posts | map: "topic" | compact | uniq -%}
+{%- comment -%}
+  Archive list: every post, except a Bangla post that has an English translation
+  (that pair is shown once, as the English card with an "Also available in Bangla" link).
+{%- endcomment -%}
+{%- assign solo = site.posts | where_exp: "p", "p.translation == nil" -%}
+{%- assign paired_en = site.posts | where: "lang", "en" | where_exp: "p", "p.translation != nil" -%}
+{%- assign posts = solo | concat: paired_en | sort: "date" | reverse -%}
+{%- assign topic_keys = posts | map: "topic" | compact | uniq -%}
+{%- assign langs = posts | map: "lang" | uniq -%}
 <header class="blog-hero">
   <div class="wrap">
-    <nav class="crumbs" aria-label="breadcrumb"><a href="/">হোম</a><span aria-hidden="true">›</span><span>ব্লগ</span></nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/en/" class="ui-en-i">Home</a><a href="/" class="ui-bn-i">Home</a><span aria-hidden="true">›</span><span>Blog</span></nav>
     <h1 class="blog-hero-title">{{ page.title }}</h1>
     <p class="blog-hero-intro">{{ page.intro }}</p>
   </div>
@@ -16,35 +24,52 @@ body_class: page-blog
   <div class="wrap">
   {%- if posts.size == 0 %}
     <div class="empty">
-      <p class="empty-title">প্রথম লেখা শীঘ্রই আসছে</p>
-      <p>ততক্ষণ আমাদের <a href="/packages.html">প্যাকেজগুলো</a> দেখে নিতে পারেন, অথবা <a href="https://wa.me/{{ site.whatsapp }}">WhatsApp-এ</a> প্রশ্ন করুন।</p>
+      <p class="empty-title">Our first article is on its way</p>
+      <p>In the meantime, see our <a href="/en/packages.html">aqiqah packages</a> or <a href="https://wa.me/{{ site.whatsapp }}">ask us on WhatsApp</a>.</p>
     </div>
   {%- else %}
-    {%- if topics.size > 1 %}
-    <div class="topic-filter" role="toolbar" aria-label="বিষয় অনুযায়ী দেখুন">
-      <button type="button" class="chip is-active" data-filter="">সব লেখা</button>
-      {%- for t in topics %}
-      <button type="button" class="chip" data-filter="{{ t }}">{{ t }}</button>
-      {%- endfor %}
+    {%- if topic_keys.size > 1 or langs.size > 1 %}
+    <div class="filters">
+      {%- if topic_keys.size > 1 %}
+      <div class="topic-filter" role="toolbar" aria-label="Filter by topic">
+        <button type="button" class="chip is-active" data-filter-topic="">All topics</button>
+        {%- for k in topic_keys %}
+        <button type="button" class="chip" data-filter-topic="{{ k }}">{{ site.data.topics[k].en | default: k }}</button>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+      {%- if langs.size > 1 %}
+      <div class="lang-filter" role="toolbar" aria-label="Filter by language">
+        <button type="button" class="chip is-active" data-filter-lang="">All languages</button>
+        <button type="button" class="chip" data-filter-lang="en">English</button>
+        <button type="button" class="chip" data-filter-lang="bn">Bangla</button>
+      </div>
+      {%- endif %}
     </div>
     {%- endif %}
 
-    {% include post-card.html post=posts.first featured=true %}
-
-    {%- if posts.size > 1 %}
     <div class="card-grid">
-      {%- for p in posts offset:1 %}
-      {% include post-card.html post=p %}
+      {%- for p in posts %}
+      {%- if forloop.first %}
+      {% include post-card.html post=p display="en" featured=true %}
+      {%- else %}
+      {% include post-card.html post=p display="en" %}
+      {%- endif %}
       {%- endfor %}
     </div>
-    {%- endif %}
-    <p class="filter-empty" hidden>এই বিষয়ে এখনো কোনো লেখা নেই।</p>
+    <p class="filter-empty" hidden>No articles match these filters yet.</p>
   {%- endif %}
   </div>
 </section>
 
-<section class="cta-band cta-band--slim">
+<section class="cta-band cta-band--slim ui-en">
+  <h2>Planning your child's aqiqah?</h2>
+  <p>From choosing the animal to delivering the meat, we handle every step according to the Shariah, with video proof.</p>
+  <a href="/en/order.html" class="btn btn-primary">Start Order</a>
+</section>
+
+<section class="cta-band cta-band--slim ui-bn" lang="bn">
   <h2>আকিকার আয়োজন নিয়ে ভাবছেন?</h2>
-  <p>পশু বাছাই থেকে মাংস বাসায় পৌঁছানো পর্যন্ত পুরো কাজটা আমরা শরিয়ত মেনে করি।</p>
+  <p>পশু বাছাই থেকে মাংস বাসায় পৌঁছানো পর্যন্ত পুরো কাজটা আমরা শরিয়ত মেনে করি, ভিডিও প্রমাণসহ।</p>
   <a href="/order.html" class="btn btn-primary">অর্ডার করুন</a>
 </section>

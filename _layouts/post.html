@@ -2,18 +2,25 @@
 layout: base
 body_class: page-post
 ---
+{%- assign L = page.lang | default: "bn" -%}
+{%- assign t = site.data.i18n[L] -%}
 {%- assign abs_url = page.url | absolute_url -%}
 {%- assign share_text = page.title | append: " " | append: abs_url -%}
+{%- assign topic_label = site.data.topics[page.topic][L] | default: page.topic -%}
+{%- if L == "en" -%}{%- assign home_url = "/en/" -%}{%- else -%}{%- assign home_url = "/" -%}{%- endif -%}
 <article class="post">
   <header class="post-head wrap">
-    <nav class="crumbs" aria-label="breadcrumb"><a href="/">হোম</a><span aria-hidden="true">›</span><a href="/blog/">ব্লগ</a><span aria-hidden="true">›</span><span class="crumb-current">{{ page.title }}</span></nav>
-    {%- if page.topic %}<p class="post-topic"><a href="/blog/?topic={{ page.topic | url_encode }}">{{ page.topic }}</a></p>{% endif %}
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ home_url }}">{{ t.home }}</a><span aria-hidden="true">›</span><a href="/blog/?ui={{ L }}">{{ t.blog }}</a><span aria-hidden="true">›</span><span class="crumb-current">{{ page.title }}</span></nav>
+    {%- if topic_label %}<p class="post-topic"><a href="/blog/?ui={{ L }}&amp;topic={{ page.topic | url_encode }}">{{ topic_label }}</a></p>{% endif %}
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{% include bn-date.html date=page.date %}</time>
-      <span>{% include read-time.html content=content %}</span>
-      <span>{{ page.author }}</span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{% include date.html date=page.date lang=L %}</time>
+      <span>{% include read-time.html content=content lang=L %}</span>
+      <span>{{ page.author | default: t.author }}</span>
     </p>
+    {%- if page.translation %}
+    <p class="post-translation"><a href="{{ page.translation }}" hreflang="{% if L == 'en' %}bn{% else %}en{% endif %}">{{ t.read_translation }}</a></p>
+    {%- endif %}
   </header>
 
   {%- if page.image %}
@@ -22,30 +29,32 @@ body_class: page-post
 
   <div class="post-body{% if page.toc %} has-toc{% endif %}">
     {%- if page.toc %}
-    <details class="toc" open><summary>এই লেখায় যা আছে</summary><ol class="toc-list"></ol></details>
+    <details class="toc" open><summary>{{ t.toc }}</summary><ol class="toc-list"></ol></details>
     {%- endif %}
     {{ content }}
     {%- unless page.hide_cta %}
     {% include cta.html %}
     {%- endunless %}
     <div class="share">
-      <span class="share-label">লেখাটি শেয়ার করুন</span>
+      <span class="share-label">{{ t.share }}</span>
       <a class="share-btn" href="https://wa.me/?text={{ share_text | url_encode }}" target="_blank" rel="noopener">WhatsApp</a>
       <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u={{ abs_url | url_encode }}" target="_blank" rel="noopener">Facebook</a>
-      <button type="button" class="share-btn" data-copy="{{ abs_url }}">লিংক কপি করুন</button>
+      <button type="button" class="share-btn" data-copy="{{ abs_url }}" data-copied="{{ t.copied }}">{{ t.copy }}</button>
     </div>
   </div>
 </article>
 
-{%- assign related = site.posts | where: "topic", page.topic | where_exp: "p", "p.url != page.url" -%}
-{%- if related.size == 0 -%}{%- assign related = site.posts | where_exp: "p", "p.url != page.url" -%}{%- endif -%}
+{%- comment -%} Related: same language only, same topic first {%- endcomment -%}
+{%- assign same_lang = site.posts | where: "lang", L | where_exp: "p", "p.url != page.url" -%}
+{%- assign related = same_lang | where: "topic", page.topic -%}
+{%- if related.size == 0 -%}{%- assign related = same_lang -%}{%- endif -%}
 {%- if related.size > 0 %}
 <section class="related">
   <div class="wrap">
-    <h2 class="related-title">আরও পড়ুন</h2>
+    <h2 class="related-title">{{ t.related }}</h2>
     <div class="card-grid">
       {%- for p in related limit:3 %}
-      {% include post-card.html post=p h="h3" %}
+      {% include post-card.html post=p display=L h="h3" %}
       {%- endfor %}
     </div>
   </div>

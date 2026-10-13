@@ -1,3 +1,3 @@
 {%- assign _words = include.content | strip_html | number_of_words -%}
 {%- assign _mins = _words | divided_by: 180 | plus: 1 -%}
-{%- include bn-num.html n=_mins %} মিনিটে পড়ুন
+{%- if include.lang == "en" -%}{{ _mins }} {{ site.data.i18n.en.min_read }}{%- else -%}{%- include bn-num.html n=_mins %} {{ site.data.i18n.bn.min_read }}{%- endif -%}

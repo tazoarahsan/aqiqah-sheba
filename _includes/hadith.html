@@ -1,8 +1,9 @@
+{%- assign _hl = page.lang | default: "bn" -%}{%- assign _ht = site.data.i18n[_hl] -%}
 <figure class="hadith{% if include.weak %} hadith--weak{% endif %}">
-{%- if include.weak %}<div class="hadith-flag">দুর্বল বর্ণনা</div>{% endif -%}
+{%- if include.weak %}<div class="hadith-flag">{{ _ht.weak }}</div>{% endif -%}
 {%- if include.narrator %}<figcaption class="hadith-narrator">{{ include.narrator }}</figcaption>{% endif -%}
 <blockquote class="hadith-arabic" lang="ar" dir="rtl">{{ include.arabic }}</blockquote>
 <p class="hadith-meaning">{{ include.meaning }}</p>
-<p class="hadith-source">{% if include.link %}<a href="{{ include.link }}" target="_blank" rel="noopener">{{ include.source }}</a>{% else %}{{ include.source }}{% endif %}{% if include.grade %}<span class="hadith-grade">মান: {{ include.grade }}</span>{% endif %}</p>
+<p class="hadith-source">{% if include.link %}<a href="{{ include.link }}" target="_blank" rel="noopener">{{ include.source }}</a>{% else %}{{ include.source }}{% endif %}{% if include.grade %}<span class="hadith-grade">{{ _ht.grade }}: {{ include.grade }}</span>{% endif %}</p>
 {%- if include.note %}<p class="hadith-note">{{ include.note }}</p>{% endif -%}
 </figure>

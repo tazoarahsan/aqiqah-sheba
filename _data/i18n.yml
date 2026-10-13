@@ -1,0 +1,43 @@
+# Interface text for blog pages, by language. Edit wording here.
+bn:
+  site_name: আকিকাহ শেবা
+  locale: bn_BD
+  home: হোম
+  blog: ব্লগ
+  min_read: মিনিটে পড়ুন
+  toc: এই লেখায় যা আছে
+  share: লেখাটি শেয়ার করুন
+  copy: লিংক কপি করুন
+  copied: লিংক কপি হয়েছে
+  related: আরও পড়ুন
+  author: আকিকাহ শেবা টিম
+  grade: মান
+  weak: দুর্বল বর্ণনা
+  read_translation: এই লেখাটি ইংরেজিতে পড়ুন
+  cta_title: আপনার সন্তানের আকিকা আমাদের হাতে দিন
+  cta_text: শরিয়তসম্মত পশু, যবাইয়ের ভিডিও প্রমাণ এবং পরিষ্কারভাবে প্যাকেট করা মাংস আপনার বাসায়।
+  cta_packages: প্যাকেজ দেখুন
+  cta_ask: WhatsApp-এ প্রশ্ন করুন
+  wa_text: "আসসালামু%20আলাইকুম%2C%20আকিকা%20সম্পর্কে%20জানতে%20চাই"
+  packages_url: /packages.html
+en:
+  site_name: Aqiqah Sheba
+  locale: en_US
+  home: Home
+  blog: Blog
+  min_read: min read
+  toc: In this article
+  share: Share this article
+  copy: Copy link
+  copied: Link copied
+  related: Keep reading
+  author: Aqiqah Sheba Team
+  grade: Grade
+  weak: Weak narration
+  read_translation: Read this article in Bangla
+  cta_title: Let us take care of your child's aqiqah
+  cta_text: Shariah-compliant animals, video proof of the slaughter, and cleanly packed meat delivered to your family.
+  cta_packages: View packages
+  cta_ask: Ask on WhatsApp
+  wa_text: "Assalamu%20alaikum%2C%20I%20have%20a%20question%20about%20aqiqah"
+  packages_url: /en/packages.html

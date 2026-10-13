@@ -1,3 +1,20 @@
+{%- if L == "en" -%}
+{%- assign _toggle = page.translation | default: "/" -%}
+<nav class="nav">
+  <a href="/en/"><img src="/logo-english.png" alt="Aqiqah Sheba" class="nav-logo"></a>
+  <div class="nav-links">
+    <a href="/en/#why">Why Us</a>
+    <a href="/en/packages.html">Packages</a>
+    <a href="/en/sadaqah.html">Sadaqah</a>
+    <a href="/en/kaffara.html">Kaffara</a>
+    <a href="/blog/?ui=en" class="active">Blog</a>
+    <a href="/en/#faq">FAQ</a>
+    {% if page.dual_ui %}<a href="/blog/?ui=bn" class="lang-toggle bn" lang="bn" data-ui-switch="bn">বাংলা</a>{% else %}<a href="{{ _toggle }}" class="lang-toggle bn" lang="bn">বাংলা</a>{% endif %}
+    <a href="/en/order.html" class="nav-cta">Start Order</a>
+  </div>
+</nav>
+{%- else -%}
+{%- assign _toggle = page.translation | default: "/en/" -%}
 <nav class="nav">
   <a href="/"><img src="/logo-bangla.png" alt="আকিকাহ শেবা" class="nav-logo"></a>
   <div class="nav-links">
@@ -5,9 +22,10 @@
     <a href="/packages.html">প্যাকেজ</a>
     <a href="/sadaqah.html">সাদাকাহ</a>
     <a href="/kaffara.html">কাফফারা</a>
-    <a href="/blog/" class="active">ব্লগ</a>
+    <a href="/blog/?ui=bn" class="active">ব্লগ</a>
     <a href="/#faq">প্রশ্নোত্তর</a>
-    <a href="/en/" class="lang-toggle">EN</a>
+    {% if page.dual_ui %}<a href="/blog/?ui=en" class="lang-toggle" lang="en" data-ui-switch="en">EN</a>{% else %}<a href="{{ _toggle }}" class="lang-toggle" lang="en">EN</a>{% endif %}
     <a href="/order.html" class="nav-cta">অর্ডার করুন</a>
   </div>
 </nav>
+{%- endif -%}

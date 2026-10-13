@@ -1,14 +1,30 @@
+{%- assign L = page.lang | default: layout.lang | default: "bn" -%}
+{%- if L == "en" -%}{%- assign OTHER = "bn" -%}{%- else -%}{%- assign OTHER = "en" -%}{%- endif -%}
+{%- assign t = site.data.i18n[L] -%}
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="{{ L }}">
 <head>
 {% include head.html %}
 </head>
 <body class="{{ layout.body_class }}">
+{%- if page.dual_ui -%}
+<div class="ui-en">{% include nav.html %}</div>
+{%- assign L = "bn" -%}{%- assign t = site.data.i18n.bn -%}
+<div class="ui-bn" lang="bn">{% include nav.html %}</div>
+{%- assign L = "en" -%}{%- assign t = site.data.i18n.en -%}
+{%- else -%}
 {% include nav.html %}
+{%- endif %}
 <main id="main">
 {{ content }}
 </main>
+{%- if page.dual_ui -%}
+<div class="ui-en">{% include footer.html %}</div>
+{%- assign L = "bn" -%}{%- assign t = site.data.i18n.bn -%}
+<div class="ui-bn" lang="bn">{% include footer.html %}</div>
+{%- else -%}
 {% include footer.html %}
+{%- endif %}
 <script src="/assets/blog.js" defer></script>
 </body>
 </html>

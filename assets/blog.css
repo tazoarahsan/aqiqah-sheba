@@ -56,7 +56,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 
 /* ---------- Topic filter ---------- */
 .blog-list { padding: 0 0 110px; }
-.topic-filter { display: flex; flex-wrap: wrap; gap: 10px; padding: 22px 0; margin-bottom: 44px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.filters { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 32px; padding: 22px 0; margin-bottom: 44px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.topic-filter, .lang-filter { display: flex; flex-wrap: wrap; gap: 10px; }
+.lang-filter .chip { font-size: 13px; padding: 5px 14px; }
 .chip { font: inherit; font-size: 14px; font-weight: 500; color: var(--green-900); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 7px 18px; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
 .chip:hover { border-color: var(--green-900); }
 .chip.is-active { background: var(--green-900); border-color: var(--green-900); color: var(--cream); }
@@ -80,7 +82,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .card-meta, .post-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13.5px; color: var(--muted); }
 .card-meta > * + *::before, .post-meta > * + *::before { content: ''; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--gold-500); margin-right: 18px; vertical-align: middle; }
 
-.card--featured { grid-template-columns: 1.25fr 1fr; gap: 48px; align-items: center; padding-bottom: 56px; margin-bottom: 56px; border-bottom: 1px solid var(--line); }
+.card--featured { grid-column: 1 / -1; grid-template-columns: 1.25fr 1fr; gap: 48px; align-items: center; padding-bottom: 56px; border-bottom: 1px solid var(--line); }
 .card--featured .card-title { font-size: clamp(1.9rem, 3.2vw, 2.7rem); line-height: 1.25; }
 .card--featured .card-excerpt { font-size: 17px; }
 .card--featured .cover-fallback span { font-size: clamp(1.8rem, 3.4vw, 2.8rem); }
@@ -185,6 +187,46 @@ footer { background: var(--cream-dark); padding: 80px 40px 40px; border-top: 1px
 .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 99; background: #25D366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37,211,102,.4); transition: transform .3s; }
 .whatsapp-float:hover { transform: scale(1.1); }
 
+/* ---------- Language bits ---------- */
+.lang-badge { font-weight: 600; color: var(--green-700); }
+.card-alt { font-size: 14px; margin-top: 6px; }
+.card-alt a, .post-translation a { color: var(--green-800); text-decoration: underline; text-decoration-color: var(--gold-500); text-underline-offset: 4px; }
+.post-translation { font-size: 15px; margin: -18px 0 30px; }
+.lang-toggle.bn, .bn { font-family: 'Sabina Shorolipi', 'Hind Siliguri', serif; letter-spacing: 0; }
+.lang-toggle.bn { font-size: 14px !important; font-weight: 500 !important; }
+
+html[lang="bn"] .post-body ol { list-style-type: bengali; }
+
+/* ---------- English pages ---------- */
+html[lang="en"] { --display: 'Cormorant Garamond', Georgia, serif; }
+html[lang="en"] body { font-family: 'Inter', sans-serif; }
+html[lang="en"] .btn, html[lang="en"] .chip, html[lang="en"] .share-btn { font-family: 'Inter', sans-serif; }
+html[lang="en"] .blog-hero-title { font-weight: 500; letter-spacing: -0.02em; }
+html[lang="en"] .card-title { font-weight: 600; font-size: 1.75rem; line-height: 1.2; letter-spacing: -0.01em; }
+html[lang="en"] .card--featured .card-title { font-size: clamp(2.2rem, 3.6vw, 3rem); line-height: 1.12; }
+html[lang="en"] .card-excerpt { font-size: 15px; line-height: 1.7; }
+html[lang="en"] .card-topic, html[lang="en"] .post-topic a { letter-spacing: 0.02em; }
+html[lang="en"] .cover-fallback span { font-weight: 500; font-style: italic; }
+html[lang="en"] .post-title { font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; max-width: 22ch; }
+html[lang="en"] .post-body { font-size: 17.5px; line-height: 1.8; }
+html[lang="en"] .post-body h2 { font-weight: 600; font-size: 2.2rem; line-height: 1.2; }
+html[lang="en"] .post-body > blockquote { font-size: 1.35rem; }
+html[lang="en"] .post-body .hadith-meaning { font-size: 22px; line-height: 1.6; }
+html[lang="en"] .post-body .cta-box-title { font-weight: 600; font-size: 2rem; line-height: 1.2; }
+html[lang="en"] .related-title, html[lang="en"] .cta-band h2, html[lang="en"] .empty-title { font-weight: 500; }
+html[lang="en"] .footer-tagline { font-size: 21px; }
+
+/* ---------- /blog: Bangla or English header & footer on the same page ---------- */
+.ui-bn, .ui-bn-i { display: none; }
+html[data-ui="bn"] .ui-bn { display: block; }
+html[data-ui="bn"] .ui-bn-i { display: inline; }
+html[data-ui="bn"] .ui-en, html[data-ui="bn"] .ui-en-i { display: none; }
+.ui-bn[lang="bn"] { --display: 'Sabina Shorolipi', 'Hind Siliguri', serif; font-family: 'Hind Siliguri', sans-serif; }
+.ui-bn[lang="bn"] .btn, .ui-bn[lang="bn"] .lang-toggle:not(.bn) { font-family: 'Hind Siliguri', sans-serif; }
+.ui-bn[lang="bn"] .lang-toggle[lang="en"] { font-family: 'Inter', sans-serif; }
+.ui-bn[lang="bn"] .footer-tagline { font-size: 19px; }
+.ui-bn[lang="bn"] .cta-band h2, .cta-band.ui-bn h2 { font-weight: 400; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 968px) {
   .nav { padding: 12px 20px; }
@@ -194,7 +236,7 @@ footer { background: var(--cream-dark); padding: 80px 40px 40px; border-top: 1px
   .wrap { padding: 0 20px; }
   .blog-hero { padding: 116px 0 40px; }
   .blog-hero::after, .blog-hero::before { display: none; }
-  .card--featured { grid-template-columns: 1fr; gap: 22px; padding-bottom: 44px; margin-bottom: 44px; }
+  .card--featured { grid-template-columns: 1fr; gap: 22px; padding-bottom: 44px; }
   .card-grid { grid-template-columns: 1fr 1fr; gap: 44px 24px; }
   .post-head { padding-top: 110px; padding-left: 20px; padding-right: 20px; }
   .post-body { padding: 32px 20px; font-size: 17px; }
@@ -209,7 +251,7 @@ footer { background: var(--cream-dark); padding: 80px 40px 40px; border-top: 1px
 }
 @media (max-width: 600px) {
   .card-grid { grid-template-columns: 1fr; }
-  .topic-filter { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; }
+  .topic-filter { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; width: calc(100% + 40px); }
   .chip { flex: none; }
   .crumb-current, .crumbs > span[aria-hidden]:has(+ .crumb-current) { display: none; }
 }

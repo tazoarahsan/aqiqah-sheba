@@ -3,7 +3,7 @@
 #  Existing pages (index.html, packages.html, …) are NOT changed by this file.
 # ─────────────────────────────────────────────
 title: আকিকাহ শেবা
-description: আকিকা, নবজাতকের সুন্নাহ, সাদাকাহ ও কাফফারা নিয়ে দলিলভিত্তিক লেখা — আকিকাহ শেবা।
+description: Evidence-based writing on aqiqah, newborn sunnah, sadaqah and kaffara, in English and Bangla.
 url: "https://aqiqahsheba.com"
 baseurl: ""
 lang: bn
@@ -14,6 +14,7 @@ timezone: Asia/Dhaka
 whatsapp: "8801631010772"
 phone_tel: "+8801631010772"
 phone_display: "০১৯৭৩-৩৭১০১৯"
+phone_display_en: "+880 1973-371019"
 email: "hello@aqiqahsheba.com"
 facebook: "https://facebook.com/aqiqahsheba"
 
@@ -37,7 +38,8 @@ defaults:
     values:
       layout: post
       permalink: /blog/:slug/
-      author: আকিকাহ শেবা টিম
+      lang: bn
 
 exclude:
   - README.md
+  - assets/blog/README.md
