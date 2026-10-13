@@ -1,0 +1,53 @@
+---
+layout: base
+body_class: page-post
+---
+{%- assign abs_url = page.url | absolute_url -%}
+{%- assign share_text = page.title | append: " " | append: abs_url -%}
+<article class="post">
+  <header class="post-head wrap">
+    <nav class="crumbs" aria-label="breadcrumb"><a href="/">হোম</a><span aria-hidden="true">›</span><a href="/blog/">ব্লগ</a><span aria-hidden="true">›</span><span class="crumb-current">{{ page.title }}</span></nav>
+    {%- if page.topic %}<p class="post-topic"><a href="/blog/?topic={{ page.topic | url_encode }}">{{ page.topic }}</a></p>{% endif %}
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{% include bn-date.html date=page.date %}</time>
+      <span>{% include read-time.html content=content %}</span>
+      <span>{{ page.author }}</span>
+    </p>
+  </header>
+
+  {%- if page.image %}
+  <figure class="post-cover wrap"><img src="{{ page.image }}" alt="{{ page.image_alt | default: page.title | escape }}"></figure>
+  {%- endif %}
+
+  <div class="post-body{% if page.toc %} has-toc{% endif %}">
+    {%- if page.toc %}
+    <details class="toc" open><summary>এই লেখায় যা আছে</summary><ol class="toc-list"></ol></details>
+    {%- endif %}
+    {{ content }}
+    {%- unless page.hide_cta %}
+    {% include cta.html %}
+    {%- endunless %}
+    <div class="share">
+      <span class="share-label">লেখাটি শেয়ার করুন</span>
+      <a class="share-btn" href="https://wa.me/?text={{ share_text | url_encode }}" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u={{ abs_url | url_encode }}" target="_blank" rel="noopener">Facebook</a>
+      <button type="button" class="share-btn" data-copy="{{ abs_url }}">লিংক কপি করুন</button>
+    </div>
+  </div>
+</article>
+
+{%- assign related = site.posts | where: "topic", page.topic | where_exp: "p", "p.url != page.url" -%}
+{%- if related.size == 0 -%}{%- assign related = site.posts | where_exp: "p", "p.url != page.url" -%}{%- endif -%}
+{%- if related.size > 0 %}
+<section class="related">
+  <div class="wrap">
+    <h2 class="related-title">আরও পড়ুন</h2>
+    <div class="card-grid">
+      {%- for p in related limit:3 %}
+      {% include post-card.html post=p h="h3" %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}

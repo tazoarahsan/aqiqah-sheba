@@ -1,0 +1,50 @@
+---
+layout: base
+body_class: page-blog
+---
+{%- assign posts = site.posts -%}
+{%- assign topics = posts | map: "topic" | compact | uniq -%}
+<header class="blog-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="breadcrumb"><a href="/">হোম</a><span aria-hidden="true">›</span><span>ব্লগ</span></nav>
+    <h1 class="blog-hero-title">{{ page.title }}</h1>
+    <p class="blog-hero-intro">{{ page.intro }}</p>
+  </div>
+</header>
+
+<section class="blog-list">
+  <div class="wrap">
+  {%- if posts.size == 0 %}
+    <div class="empty">
+      <p class="empty-title">প্রথম লেখা শীঘ্রই আসছে</p>
+      <p>ততক্ষণ আমাদের <a href="/packages.html">প্যাকেজগুলো</a> দেখে নিতে পারেন, অথবা <a href="https://wa.me/{{ site.whatsapp }}">WhatsApp-এ</a> প্রশ্ন করুন।</p>
+    </div>
+  {%- else %}
+    {%- if topics.size > 1 %}
+    <div class="topic-filter" role="toolbar" aria-label="বিষয় অনুযায়ী দেখুন">
+      <button type="button" class="chip is-active" data-filter="">সব লেখা</button>
+      {%- for t in topics %}
+      <button type="button" class="chip" data-filter="{{ t }}">{{ t }}</button>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+
+    {% include post-card.html post=posts.first featured=true %}
+
+    {%- if posts.size > 1 %}
+    <div class="card-grid">
+      {%- for p in posts offset:1 %}
+      {% include post-card.html post=p %}
+      {%- endfor %}
+    </div>
+    {%- endif %}
+    <p class="filter-empty" hidden>এই বিষয়ে এখনো কোনো লেখা নেই।</p>
+  {%- endif %}
+  </div>
+</section>
+
+<section class="cta-band cta-band--slim">
+  <h2>আকিকার আয়োজন নিয়ে ভাবছেন?</h2>
+  <p>পশু বাছাই থেকে মাংস বাসায় পৌঁছানো পর্যন্ত পুরো কাজটা আমরা শরিয়ত মেনে করি।</p>
+  <a href="/order.html" class="btn btn-primary">অর্ডার করুন</a>
+</section>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+{% include head.html %}
+</head>
+<body class="{{ layout.body_class }}">
+{% include nav.html %}
+<main id="main">
+{{ content }}
+</main>
+{% include footer.html %}
+<script src="/assets/blog.js" defer></script>
+</body>
+</html>
