@@ -5,7 +5,7 @@ description: "What is aqiqah? A clear explanation of the Islamic newborn sacrifi
 topic: rulings
 image: /assets/blog/what-is-aqiqah.png
 # Describe the photo inside the quotes, e.g. "A goat at the Aqiqah Sheba farm"
-image_alt: ""
+image_alt: a person holding a baby with goat in background for aqiqah
 ---
 
 Aqiqah is the sacrifice of a permissible animal — usually a sheep or goat — offered in gratitude to Allah for the birth of a child. It is one of the first acts of worship a parent carries out on a newborn's behalf, and it revives a cherished practice of the Prophet Muhammad ﷺ. If you have just welcomed a baby and are hearing the word "aqiqah" for the first time, this article explains exactly what it is.
