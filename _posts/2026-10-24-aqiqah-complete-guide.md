@@ -1,4 +1,6 @@
 ---
+image: /assets/blog/aqiqah-explained.png
+image_alt: A new born baby in cradle and a healthy goat 
 lang: en
 title: "Aqiqah Explained: The Complete Guide to the Islamic Newborn Sacrifice"
 description: "A complete guide to aqiqah: its meaning, ruling across the madhabs, timing, the animal, the accompanying Sunnah acts and its authentic proofs."
