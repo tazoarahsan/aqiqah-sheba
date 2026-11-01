@@ -3,7 +3,7 @@ lang: en
 title: "The Spiritual Benefits of Performing Aqiqah"
 description: "What are the spiritual benefits of aqiqah? Discover how this Sunnah brings gratitude, protection, reward, and blessing to your newborn and family."
 topic: rulings
-image: /assets/blog/spiritual-benefits-of-aqiqah.png
+image: /assets/blog/the-spiritual-benefits-of-aqiqah.png
 image_alt: A prayer rug on a stone terrace at sunrise overlooking misty hills
 toc: true
 ---
