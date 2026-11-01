@@ -3,6 +3,8 @@ lang: en
 title: "Aqiqah Meaning and Its Importance in Islam"
 description: "What does aqiqah mean, and why is it important in Islam? Understand the word's root, its spiritual significance, and its place in the Sunnah."
 topic: rulings
+image: /assets/blog/aqiqah-meaning-importance.jpg
+image_alt: Wrapped gifts, a bowl of dates, and a folded baby garment on a warm table
 toc: true
 ---
 
