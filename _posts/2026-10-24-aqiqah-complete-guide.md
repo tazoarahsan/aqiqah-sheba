@@ -1,6 +1,4 @@
 ---
-image: /assets/blog/aqiqah-explained.png
-image_alt: A new born baby in cradle and a healthy goat 
 lang: en
 title: "Aqiqah Explained: The Complete Guide to the Islamic Newborn Sacrifice"
 description: "A complete guide to aqiqah: its meaning, ruling across the madhabs, timing, the animal, the accompanying Sunnah acts and its authentic proofs."
@@ -22,7 +20,7 @@ One of the first questions parents ask is whether aqiqah is compulsory. The hone
 
 The majority — the **Maliki, Shafi'i, and Hanbali** schools — hold that aqiqah is a *Sunnah mu'akkadah*, an emphasised and strongly recommended practice. This is stated by al-Nawawi in *al-Majmu'* (8/411) and Ibn Qudamah in *al-Mughni* (9/364), and it is the preponderant view because it reconciles the Prophet's ﷺ clear encouragement of aqiqah with the absence of any text declaring the one who leaves it to be sinful.
 
-The **Hanafi** school, which predominates in Bangladesh and South Asia, holds on the well-known view of Imam Abu Hanifah that aqiqah is *mubah* — permissible and commendable — rather than a binding Sunnah. Many later Hanafi scholars gave it a higher standing: Imam al-Tahawi called it desirable, and Mawlana Abd al-Hayy al-Lakhnawi agreed. A minority, notably the **Zahiri** school (Ibn Hazm), held it to be obligatory.
+The **Hanafi** school, which predominates in Bangladesh and South Asia, holds on the well-known view of Imam Abu Hanifah that aqiqah is *mubah* — permissible and commendable — rather than a binding Sunnah. Many later Hanafi scholars gave it a higher standing: Imam al-Tahawi called it desirable, and Mawlana Abd al-Hai Lakhnawi agreed. A minority, notably the **Zahiri** school (Ibn Hazm), held it to be obligatory.
 
 The practical takeaway across every school is the same: performing aqiqah is virtuous and rewarding, no school criticises the family who performs it, and — for the majority — no sin falls on a family genuinely unable to do so.
 
@@ -78,6 +76,21 @@ Aqiqah matters because it combines several of the values a parent hopes to insti
 ## Performing Your Aqiqah: Yourself or Through a Service
 
 Families can fulfil this Sunnah in two valid ways: performing the aqiqah themselves, or appointing a trustworthy party to carry it out on their behalf. Delegation is entirely legitimate in Islam, and for many families — especially those living abroad or without the facilities to slaughter at home — a [reputable service](/en/packages.html) that sources a healthy animal, performs genuine halal slaughter, and distributes the meat to the poor is a sound and convenient way to honour the Sunnah correctly.
+
+## Explore Aqiqah in Detail
+
+This guide is the overview. Each topic below has its own in-depth article:
+
+* [What Is Aqiqah? The Islamic Newborn Sacrifice Explained](/blog/what-is-aqiqah/)
+* [Aqiqah Meaning and Its Importance in Islam](/blog/aqiqah-meaning-importance/)
+* [Is Aqiqah Fard, Wajib, or Sunnah?](/blog/is-aqiqah-fard-wajib-sunnah/)
+* [Aqiqah vs Qurbani: What's the Difference?](/blog/aqiqah-vs-qurbani/)
+* [The Spiritual Benefits of Performing Aqiqah](/blog/spiritual-benefits-of-aqiqah/)
+* [Aqiqah in the Quran and Hadith: Every Reference Explained](/blog/aqiqah-in-quran-and-hadith/)
+* [A Complete Aqiqah Checklist for New Parents](/blog/aqiqah-checklist-new-parents/)
+* [Aqiqah for Beginners: Everything You Need to Know](/blog/aqiqah-for-beginners/)
+* [Why Aqiqah Matters: Blessing and Protecting Your Newborn](/blog/why-aqiqah-matters/)
+* [The History and Origin of Aqiqah](/blog/history-and-origin-of-aqiqah/)
 
 ## Conclusion
 
