@@ -3,7 +3,7 @@ lang: en
 title: "A Complete Aqiqah Checklist for New Parents"
 description: "A step-by-step aqiqah checklist for new parents — timing, choosing the animal, naming, shaving, and distributing the meat, each backed by the Sunnah."
 topic: rulings
-image: /assets/blog/aqiqah-checklist-new-parents.png
+image: /assets/blog/aqiqah-checklist.png
 image_alt: A checklist notebook with gold ticks and a pen beside baby booties on a blue table
 toc: true
 ---
