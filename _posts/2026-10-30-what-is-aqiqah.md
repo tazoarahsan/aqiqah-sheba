@@ -4,7 +4,7 @@ title: "What Is Aqiqah? The Islamic Newborn Sacrifice Explained"
 description: "What is aqiqah? A clear explanation of the Islamic newborn sacrifice — what it is, when it is done, how many animals, and its proof from the Sunnah."
 topic: rulings
 toc: true
-img: what-is-aqiqah.png
+img: assets/blog/what-is-aqiqah.png
 img alt: a baby in cradle
 ---
 
