@@ -3,7 +3,7 @@ lang: en
 title: "Aqiqah Explained: The Complete Guide to the Islamic Newborn Sacrifice"
 description: "A complete guide to aqiqah: its meaning, ruling across the madhabs, timing, the animal, the accompanying Sunnah acts and its authentic proofs."
 topic: rulings
-image: /assets/blog/aqiqah-complete-guide.jpg
+image: /assets/blog/aqiqah-complete-guide.png
 image_alt: A newborn sleeping in a woven basket with a sheep grazing in a sunlit garden beyond
 toc: true
 ---
