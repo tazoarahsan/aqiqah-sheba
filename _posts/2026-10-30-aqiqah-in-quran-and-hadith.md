@@ -3,7 +3,7 @@ lang: en
 title: "Aqiqah in the Quran and Hadith: Every Reference Explained"
 description: "Is aqiqah in the Quran? An honest, sourced guide to the Quranic basis and the authentic hadith that establish aqiqah in Islam."
 topic: rulings
-image: /assets/blog/aqiqah-in-quran-and-hadith.png
+image: /assets/blog/aqiqah-in-quran-hadith.png
 image_alt: A copy of the Quran on a carved wooden stand beside a brass lamp
 toc: true
 ---
