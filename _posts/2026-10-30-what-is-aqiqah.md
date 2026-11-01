@@ -4,6 +4,8 @@ title: "What Is Aqiqah? The Islamic Newborn Sacrifice Explained"
 description: "What is aqiqah? A clear explanation of the Islamic newborn sacrifice — what it is, when it is done, how many animals, and its proof from the Sunnah."
 topic: rulings
 toc: true
+img: what-is-aqiqah.png
+img alt: a baby in cradle
 ---
 
 Aqiqah is the sacrifice of a permissible animal — usually a sheep or goat — offered in gratitude to Allah for the birth of a child. It is one of the first acts of worship a parent carries out on a newborn's behalf, and it revives a cherished practice of the Prophet Muhammad ﷺ. If you are hearing the word "aqiqah" for the first time, this article explains exactly what it is. For the full picture, see our [complete guide to aqiqah](/blog/aqiqah-complete-guide/).
