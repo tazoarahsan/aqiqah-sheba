@@ -3,7 +3,7 @@ lang: en
 title: "The History and Origin of Aqiqah"
 description: "Where did aqiqah come from? Trace its origin from pre-Islamic Arabia to the Prophet's ﷺ reform and the practice of the Companions, with evidence."
 topic: rulings
-image: /assets/blog/history-and-origin-of-aqiqah.png
+image: /assets/blog/the-history-and-origin-of-aqiqah.png
 image_alt: A traditional desert oasis village at golden hour with a wooden chest and saffron
 toc: true
 ---
