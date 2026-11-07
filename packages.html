@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>প্যাকেজ ও মূল্য — আকিকাহ শেবা</title>
-<meta name="description" content="আকিকাহ শেবার তিনটি প্যাকেজ: শুকরানা ৳১৫,০০০ · সুন্নাহ ৳২০,০০০ · বারাকাহ ৳২৮,০০০। আপনার আয়োজনের উপযুক্ত প্যাকেজ বেছে নিন।" />
+<meta name="description" content="আকিকাহ শেবার তিনটি প্যাকেজ: ছোট ৳১৬,০০০ · মাঝারি ৳২২,০০০ · বড় ৳২৮,০০০। আপনার আয়োজনের উপযুক্ত প্যাকেজ বেছে নিন।" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" href="/favicon.png">
 
@@ -13,19 +13,21 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet"></noscript>
 
 <style>
 @font-face {
   font-family: 'Sabina Shorolipi';
-  src: url('fonts/SabinaShorolipi-Regular.ttf') format('truetype');
+  src: url('fonts/SabinaShorolipi-Regular.woff2') format('woff2'), url('fonts/SabinaShorolipi-Regular.ttf') format('truetype');
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Sabina Shorolipi';
-  src: url('fonts/SabinaShorolipi-Italic.ttf') format('truetype');
+  src: url('fonts/SabinaShorolipi-Italic.woff2') format('woff2'), url('fonts/SabinaShorolipi-Italic.ttf') format('truetype');
   font-weight: 400 700;
   font-style: italic;
   font-display: swap;
@@ -36,7 +38,7 @@
     --green-900: #1a3d2e;
     --green-800: #1f4a37;
     --green-700: #2a5a43;
-    --gold-600: #c89b3c;
+    --gold-600: #7f6018;
     --gold-500: #d4a94a;
     --gold-400: #e0bb5f;
     --cream: #f7f1e3;
@@ -85,7 +87,7 @@
     align-items: center;
     justify-content: space-between;
   }
-  .nav-logo { height: 52px; display: block; }
+  .nav-logo { height: 52px; width: auto; display: block; }
   .nav-links { display: flex; gap: 28px; align-items: center; }
   .nav-links a {
     color: var(--green-900);
@@ -298,14 +300,14 @@
     padding: 16px 20px 0;
   }
 
-  .package-right h4 {
+  .package-right h2 {
     font-family: 'Sabina Shorolipi', serif;
     font-size: 26px;
     color: var(--green-900);
     margin-bottom: 8px;
     font-weight: 600;
   }
-  .package-card.featured .package-right h4 { color: var(--cream); }
+  .package-card.featured .package-right h2 { color: var(--cream); }
   .package-desc-en {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -661,7 +663,7 @@
     max-width: 1240px;
     margin: 0 auto 60px;
   }
-  .footer-logo { height: 72px; margin-bottom: 20px; }
+  .footer-logo { height: 72px; width: auto; margin-bottom: 20px; }
   .footer-tagline {
     font-family: 'Sabina Shorolipi', serif;
     font-size: 19px;
@@ -670,7 +672,7 @@
     max-width: 340px;
     line-height: 1.5;
   }
-  .footer-col h6 {
+  .footer-col h2 {
     font-size: 13px;
     color: var(--gold-600);
     margin-bottom: 20px;
@@ -736,7 +738,7 @@
   }
   @media (max-width: 968px) {
     .nav { padding: 12px 20px; }
-    .nav-logo { height: 42px; }
+    .nav-logo { height: 42px; width: auto; }
     .nav-links { gap: 14px; }
     .nav-links a:not(.nav-cta):not(.lang-toggle) { display: none; }
 
@@ -749,7 +751,7 @@
       padding: 40px 28px;
       text-align: center;
     }
-    .package-right h4 { text-align: center; }
+    .package-right h2 { text-align: center; }
     .package-includes li { text-align: left; }
 
     .compare-table thead th { padding: 14px 8px; font-size: 16px; }
@@ -762,13 +764,24 @@
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   }
+
+  /* === Contrast fix ===
+     Darker gold (--gold-600) is for text on cream backgrounds.
+     On dark green areas, use the original lighter gold instead. */
+  .ticker, .hero-visual-caption, .promise-visual, .charity-visual, .never-charged,
+  .total-bar, .package-card.featured, .compare-table thead { --gold-600: #d4a94a; }
+  .gender-toggle button.active,
+  .compare-table thead th.th-featured,
+  .package-card.featured .package-btn-primary { background: var(--gold-500); }
+  .cta-band .btn-primary, .popular-tag { background: var(--gold-500); color: var(--green-900); }
+  .compare-table thead th.featured { background: #7f6018; }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="/"><img src="logo-bangla.png" alt="আকিকাহ শেবা" class="nav-logo"></a>
+  <a href="/"><img src="logo-bangla.png" alt="আকিকাহ শেবা" class="nav-logo" width="285" height="160"></a>
   <div class="nav-links">
     <a href="index.html#why">কেন আমরা</a>
     <a href="index.html#process">প্রক্রিয়া</a>
@@ -779,6 +792,7 @@
     <a href="order.html" class="nav-cta">অর্ডার করুন</a>
   </div>
 </nav>
+<main>
 
 <!-- PAGE HEADER -->
 <section class="page-header">
@@ -797,7 +811,7 @@
       <div class="package-card">
         
         <div class="package-left">
-          <div class="package-name-bn">বারাকাহ</div>
+          <div class="package-name-bn">বড়</div>
           <div class="package-price-wrap">
             <span class="package-currency">৳</span>
             <span class="package-price">২৮,০০০</span>
@@ -805,7 +819,7 @@
           <div class="package-fixed">নির্দিষ্ট মূল্য — কোনো লুকানো খরচ নেই</div>
         </div>
         <div class="package-right">
-          <h4>বড় ও মুবারক আয়োজন</h4>
+          <h2>বড় ও মুবারক আয়োজন</h2>
           <ul class="package-includes">
             <li>
               <div>
@@ -854,24 +868,24 @@
             </li>
           </ul>
           <div class="package-ctas">
-            <a href="order.html?pkg=barakat" class="package-btn package-btn-primary">বারাকাহ অর্ডার করুন</a>
-            <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20বারাকাহ%20প্যাকেজ%20সম্পর্কে%20জানতে%20চাই" class="package-btn package-btn-secondary">WhatsApp-এ জিজ্ঞেস করুন</a>
+            <a href="order.html?pkg=large" class="package-btn package-btn-primary">বড় প্যাকেজ অর্ডার করুন</a>
+            <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20বড়%20প্যাকেজ%20সম্পর্কে%20জানতে%20চাই" class="package-btn package-btn-secondary">WhatsApp-এ জিজ্ঞেস করুন</a>
           </div>
         </div>
       </div>
 
       <div class="package-card featured">
-        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold-600); color: var(--cream); padding: 6px 18px; font-size: 12px; font-weight: 700; border-radius: 999px; letter-spacing: 0.02em;">সবচেয়ে জনপ্রিয়</div>
+        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #7f6018; color: var(--cream); padding: 6px 18px; font-size: 12px; font-weight: 700; border-radius: 999px; letter-spacing: 0.02em;">সবচেয়ে জনপ্রিয়</div>
         <div class="package-left">
-          <div class="package-name-bn">সুন্নাহ</div>
+          <div class="package-name-bn">মাঝারি</div>
           <div class="package-price-wrap">
             <span class="package-currency">৳</span>
-            <span class="package-price">২০,০০০</span>
+            <span class="package-price">২২,০০০</span>
           </div>
           <div class="package-fixed">নির্দিষ্ট মূল্য — কোনো লুকানো খরচ নেই</div>
         </div>
         <div class="package-right">
-          <h4>পরিবার ও আত্মীয়দের জন্য</h4>
+          <h2>পরিবার ও আত্মীয়দের জন্য</h2>
           <ul class="package-includes">
             <li>
               <div>
@@ -905,8 +919,8 @@
             </li>
           </ul>
           <div class="package-ctas">
-            <a href="order.html?pkg=sunnah" class="package-btn package-btn-primary">সুন্নাহ অর্ডার করুন</a>
-            <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20সুন্নাহ%20প্যাকেজ%20সম্পর্কে%20জানতে%20চাই" class="package-btn package-btn-secondary">WhatsApp-এ জিজ্ঞেস করুন</a>
+            <a href="order.html?pkg=medium" class="package-btn package-btn-primary">মাঝারি প্যাকেজ অর্ডার করুন</a>
+            <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20মাঝারি%20প্যাকেজ%20সম্পর্কে%20জানতে%20চাই" class="package-btn package-btn-secondary">WhatsApp-এ জিজ্ঞেস করুন</a>
           </div>
         </div>
       </div>
@@ -914,15 +928,15 @@
       <div class="package-card">
         
         <div class="package-left">
-          <div class="package-name-bn">শুকরানা</div>
+          <div class="package-name-bn">ছোট</div>
           <div class="package-price-wrap">
             <span class="package-currency">৳</span>
-            <span class="package-price">১৫,০০০</span>
+            <span class="package-price">১৬,০০০</span>
           </div>
           <div class="package-fixed">নির্দিষ্ট মূল্য — কোনো লুকানো খরচ নেই</div>
         </div>
         <div class="package-right">
-          <h4>সাশ্রয়ী আয়োজন</h4>
+          <h2>সাশ্রয়ী আয়োজন</h2>
           <ul class="package-includes">
             <li>
               <div>
@@ -951,8 +965,8 @@
             </li>
           </ul>
           <div class="package-ctas">
-            <a href="order.html?pkg=shukrana" class="package-btn package-btn-primary">শুকরানা অর্ডার করুন</a>
-            <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20শুকরানা%20প্যাকেজ%20সম্পর্কে%20জানতে%20চাই" class="package-btn package-btn-secondary">WhatsApp-এ জিজ্ঞেস করুন</a>
+            <a href="order.html?pkg=small" class="package-btn package-btn-primary">ছোট প্যাকেজ অর্ডার করুন</a>
+            <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20ছোট%20প্যাকেজ%20সম্পর্কে%20জানতে%20চাই" class="package-btn package-btn-secondary">WhatsApp-এ জিজ্ঞেস করুন</a>
           </div>
         </div>
       </div>
@@ -975,16 +989,16 @@
         <tr>
           <th>বৈশিষ্ট্য<br/></th>
           <th>
-            বারাকাহ
+            বড়
             <span class="price-mini">৳২৮,০০০</span>
           </th>
           <th class="featured">
-            সুন্নাহ
-            <span class="price-mini">৳২০,০০০</span>
+            মাঝারি
+            <span class="price-mini">৳২২,০০০</span>
           </th>
           <th>
-            শুকরানা
-            <span class="price-mini">৳১৫,০০০</span>
+            ছোট
+            <span class="price-mini">৳১৬,০০০</span>
           </th>
         </tr>
       </thead>
@@ -1097,7 +1111,7 @@
 
 <div style="background: var(--cream-light); padding: 32px 40px; text-align: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
   <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: var(--green-900); max-width: 720px; margin: 0 auto; line-height: 1.5;">
-    নিশ্চিত নন কোনটি বেছে নেবেন? <span style="color: var(--gold-600); font-weight: 600;">বেশিরভাগ পরিবার সুন্নাহ অথবা বারাকাহ বেছে নেন।</span>
+    নিশ্চিত নন কোনটি বেছে নেবেন? <span style="color: var(--gold-600); font-weight: 600;">বেশিরভাগ পরিবার মাঝারি অথবা বড় প্যাকেজ বেছে নেন।</span>
   </p>
 </div>
 
@@ -1109,21 +1123,23 @@
       অর্ডার ফর্মে যান
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
-    <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20আমি%20আকিকার%20অর্ডার%20দিতে%20চাই" class="btn" style="background: #25D366; color: white;">
+    <a href="https://wa.me/8801973371019?text=আসসালামু%20আলাইকুম%2C%20আমি%20আকিকার%20অর্ডার%20দিতে%20চাই" class="btn" style="background: #0e7c5a; color: white;">
       WhatsApp-এ বলুন
     </a>
   </div>
 </section>
 
 <!-- FOOTER -->
+</main>
+
 <footer>
   <div class="footer-grid">
     <div>
-      <img src="logo-bangla.png" alt="আকিকাহ শেবা" class="footer-logo">
+      <img src="logo-bangla.png" alt="আকিকাহ শেবা" class="footer-logo" width="285" height="160" loading="lazy">
       <p class="footer-tagline">ঢাকার বিশ্বস্ত ডেলিভারি-ভিত্তিক আকিকা সেবা। নবজাতকের সুন্নাহ পালন হোক সহজে।</p>
     </div>
     <div class="footer-col">
-      <h6>সেবা</h6>
+      <h2>সেবা</h2>
       <ul>
         <li><a href="index.html#why">কেন আমরা</a></li>
         <li><a href="index.html#process">যেভাবে কাজ করে</a></li>
@@ -1134,7 +1150,7 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h6>অর্ডার করুন</h6>
+      <h2>অর্ডার করুন</h2>
       <ul>
         <li><a href="https://wa.me/8801973371019">WhatsApp</a></li>
         <li><a href="https://facebook.com/aqiqahsheba">Facebook</a></li>
@@ -1143,7 +1159,7 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h6>পেমেন্ট</h6>
+      <h2>পেমেন্ট</h2>
       <ul>
         <li><a>bKash</a></li>
         <li><a>Nagad / Rocket</a></li>

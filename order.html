@@ -11,19 +11,21 @@
 <link rel="alternate" hreflang="en" href="https://aqiqahsheba.com/en/order.html" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet"></noscript>
 <style>
 
 @font-face {
   font-family: 'Sabina Shorolipi';
-  src: url('fonts/SabinaShorolipi-Regular.ttf') format('truetype');
+  src: url('fonts/SabinaShorolipi-Regular.woff2') format('woff2'), url('fonts/SabinaShorolipi-Regular.ttf') format('truetype');
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Sabina Shorolipi';
-  src: url('fonts/SabinaShorolipi-Italic.ttf') format('truetype');
+  src: url('fonts/SabinaShorolipi-Italic.woff2') format('woff2'), url('fonts/SabinaShorolipi-Italic.ttf') format('truetype');
   font-weight: 400 700;
   font-style: italic;
   font-display: swap;
@@ -36,7 +38,7 @@
     --green-900: #1a3d2e;
     --green-800: #1f4a37;
     --green-700: #2a5a43;
-    --gold-600: #c89b3c;
+    --gold-600: #7f6018;
     --gold-500: #d4a94a;
     --gold-400: #e0bb5f;
     --cream: #f7f1e3;
@@ -85,7 +87,7 @@
     align-items: center;
     justify-content: space-between;
   }
-  .nav-logo { height: 52px; display: block; }
+  .nav-logo { height: 52px; width: auto; display: block; }
   .nav-links { display: flex; gap: 28px; align-items: center; }
   .nav-links a {
     color: var(--green-900);
@@ -669,7 +671,7 @@
     border-color: var(--green-900);
   }
   .btn-whatsapp {
-    background: #25D366;
+    background: #0e7c5a;
     color: white;
     font-size: 16px;
     padding: 18px 36px;
@@ -744,7 +746,7 @@
   /* === RESPONSIVE === */
   @media (max-width: 768px) {
     .nav { padding: 12px 20px; }
-    .nav-logo { height: 42px; }
+    .nav-logo { height: 42px; width: auto; }
     .nav-links { gap: 12px; }
     .nav-links a:not(.lang-toggle) { display: none; }
 
@@ -770,13 +772,24 @@
     .step-title { font-size: 22px; }
   }
 
+
+  /* === Contrast fix ===
+     Darker gold (--gold-600) is for text on cream backgrounds.
+     On dark green areas, use the original lighter gold instead. */
+  .ticker, .hero-visual-caption, .promise-visual, .charity-visual, .never-charged,
+  .total-bar, .package-card.featured, .compare-table thead { --gold-600: #d4a94a; }
+  .gender-toggle button.active,
+  .compare-table thead th.th-featured,
+  .package-card.featured .package-btn-primary { background: var(--gold-500); }
+  .cta-band .btn-primary, .popular-tag { background: var(--gold-500); color: var(--green-900); }
+  .compare-table thead th.featured { background: #7f6018; }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="/"><img src="logo-bangla.png" alt="আকিকাহ শেবা" class="nav-logo"></a>
+  <a href="/"><img src="logo-bangla.png" alt="আকিকাহ শেবা" class="nav-logo" width="285" height="160"></a>
   <div class="nav-links">
     <a href="/">হোম</a>
     <a href="/packages.html">প্যাকেজ</a>
@@ -784,6 +797,7 @@
     <a href="/en/order.html" class="lang-toggle">EN</a>
   </div>
 </nav>
+<main>
 
 <div class="order-wrap">
   <div class="order-header">
@@ -859,26 +873,26 @@
       </div>
 
       <div class="pkg-choices" id="singleChoices">
-        <label class="pkg-choice" data-pkg="barakah" data-base="28000">
+        <label class="pkg-choice" data-pkg="large" data-base="28000">
           <div class="pkg-radio"></div>
           <div class="pkg-info">
-            <div class="pkg-name">বারাকাহ</div>
-            <div class="pkg-desc" data-girl="২৬–৩০ কেজি · সুন্নাহর সবকিছু + অগ্রাধিকার ডেলিভারি + ৩ ভাগে বণ্টন + আকিকা সার্টিফিকেট" data-boy="প্রতিটি ছাগল ২৬–৩০ কেজি · সুন্নাহর সবকিছু + অগ্রাধিকার ডেলিভারি + ৩ ভাগে বণ্টন + আকিকা সার্টিফিকেট">২৬–৩০ কেজি · সুন্নাহর সবকিছু + অগ্রাধিকার ডেলিভারি + ৩ ভাগে বণ্টন + আকিকা সার্টিফিকেট</div>
+            <div class="pkg-name">বড়</div>
+            <div class="pkg-desc" data-girl="২৬–৩০ কেজি · মাঝারি প্যাকেজের সবকিছু + অগ্রাধিকার ডেলিভারি + ৩ ভাগে বণ্টন + আকিকা সার্টিফিকেট" data-boy="প্রতিটি ছাগল ২৬–৩০ কেজি · মাঝারি প্যাকেজের সবকিছু + অগ্রাধিকার ডেলিভারি + ৩ ভাগে বণ্টন + আকিকা সার্টিফিকেট">২৬–৩০ কেজি · মাঝারি প্যাকেজের সবকিছু + অগ্রাধিকার ডেলিভারি + ৩ ভাগে বণ্টন + আকিকা সার্টিফিকেট</div>
           </div>
           <div class="pkg-price"><span class="pkg-price-val"></span></div>
         </label>
-        <label class="pkg-choice selected" data-pkg="sunnah" data-base="20000">
+        <label class="pkg-choice selected" data-pkg="medium" data-base="22000">
           <div class="pkg-radio"></div>
           <div class="pkg-info">
-            <div class="pkg-name">সুন্নাহ <span style="font-size: 11px; color: var(--gold-600); margin-left: 6px;">— সবচেয়ে জনপ্রিয়</span></div>
-            <div class="pkg-desc" data-girl="২০–২৫ কেজি · শুকরানার সবকিছু + ভিডিও প্রমাণ + ফ্রি ঢাকা ডেলিভারি" data-boy="প্রতিটি ছাগল ২০–২৫ কেজি · শুকরানার সবকিছু + ভিডিও প্রমাণ + ফ্রি ঢাকা ডেলিভারি">২০–২৫ কেজি · শুকরানার সবকিছু + ভিডিও প্রমাণ + ফ্রি ঢাকা ডেলিভারি</div>
+            <div class="pkg-name">মাঝারি <span style="font-size: 11px; color: var(--gold-600); margin-left: 6px;">— সবচেয়ে জনপ্রিয়</span></div>
+            <div class="pkg-desc" data-girl="২০–২৫ কেজি · ছোট প্যাকেজের সবকিছু + ভিডিও প্রমাণ + ফ্রি ঢাকা ডেলিভারি" data-boy="প্রতিটি ছাগল ২০–২৫ কেজি · ছোট প্যাকেজের সবকিছু + ভিডিও প্রমাণ + ফ্রি ঢাকা ডেলিভারি">২০–২৫ কেজি · ছোট প্যাকেজের সবকিছু + ভিডিও প্রমাণ + ফ্রি ঢাকা ডেলিভারি</div>
           </div>
           <div class="pkg-price"><span class="pkg-price-val"></span></div>
         </label>
-        <label class="pkg-choice" data-pkg="shukrana" data-base="15000">
+        <label class="pkg-choice" data-pkg="small" data-base="16000">
           <div class="pkg-radio"></div>
           <div class="pkg-info">
-            <div class="pkg-name">শুকরানা</div>
+            <div class="pkg-name">ছোট</div>
             <div class="pkg-desc" data-girl="১৫–১৯ কেজি · সোর্সিং + যবাই + কসাই + প্যাকেজিং" data-boy="প্রতিটি ছাগল ১৫–১৯ কেজি · সোর্সিং + যবাই + কসাই + প্যাকেজিং">১৫–১৯ কেজি · সোর্সিং + যবাই + কসাই + প্যাকেজিং</div>
           </div>
           <div class="pkg-price"><span class="pkg-price-val"></span></div>
@@ -989,7 +1003,7 @@
             <div class="total-label">মোট</div>
             
           </div>
-          <div class="total-amount" id="reviewTotal">৳২০,০০০</div>
+          <div class="total-amount" id="reviewTotal">৳২২,০০০</div>
         </div>
 
         <button class="btn btn-whatsapp" onclick="submitOrder()" style="width: 100%; justify-content: center;">
@@ -1022,6 +1036,8 @@
   </div>
 </div>
 
+</main>
+
 <script>
   const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwdiFxHiiepL0RlM6_406Xx5tE2t2I4CSAdPYdxZ_dBX8KAUwvLXnimPTLVv7L4aApO/exec'; // ← paste your Google Apps Script web app URL here
 
@@ -1035,7 +1051,7 @@
     totalSteps: 3,
     gender: null,
     goatCount: 1,
-    package: { name: 'সুন্নাহ', key: 'sunnah', base: 20000, price: 20000 },
+    package: { name: 'মাঝারি', key: 'medium', base: 22000, price: 22000 },
     distribution: 'one-third-charity',
     babyName: '',
     babyDob: '',
@@ -1045,7 +1061,10 @@
 
   // Pre-select from URL param
   const params = new URLSearchParams(window.location.search);
-  const pkgParam = params.get('pkg');
+  // Old package links (from ads, WhatsApp, etc.) still work after the rename
+  const legacyPkg = { shukrana: 'small', sunnah: 'medium', barakah: 'large', barakat: 'large' };
+  const pkgParam = legacyPkg[params.get('pkg')] || params.get('pkg');
+  const genderParam = params.get('gender');
 
   function updatePrices() {
     state.goatCount = state.gender === 'boy' ? 2 : 1;
@@ -1118,6 +1137,12 @@
 
   // Init prices (default girl)
   updatePrices();
+
+  // Gender chosen on the homepage price toggle carries over
+  if (genderParam === 'boy' || genderParam === 'girl') {
+    const g = genderGroup.querySelector('.radio-option[data-value="' + genderParam + '"]');
+    if (g) g.click();
+  }
 
   // Step navigation
   function updateProgress() {

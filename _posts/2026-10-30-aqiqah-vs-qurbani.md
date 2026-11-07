@@ -3,7 +3,7 @@ lang: en
 title: "Aqiqah vs Qurbani: What's the Difference?"
 description: "Aqiqah vs Qurbani — what's the difference? Learn how these two Islamic sacrifices differ in purpose, timing, frequency, and rulings, with evidence."
 topic: rulings
-image: assets/blog/difference-between-aqiqah-and-qurbani.png
+image: /assets/blog/difference-between-aqiqah-and-qurbani.jpg
 image_alt: baby stuffs
 toc: true
 ---

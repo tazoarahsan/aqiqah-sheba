@@ -11,14 +11,16 @@
 <link rel="alternate" hreflang="en" href="https://aqiqahsheba.com/en/order.html" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet"></noscript>
 <style>
 
   :root {
     --green-900: #1a3d2e;
     --green-800: #1f4a37;
     --green-700: #2a5a43;
-    --gold-600: #c89b3c;
+    --gold-600: #7f6018;
     --gold-500: #d4a94a;
     --gold-400: #e0bb5f;
     --cream: #f7f1e3;
@@ -67,7 +69,7 @@
     align-items: center;
     justify-content: space-between;
   }
-  .nav-logo { height: 52px; display: block; }
+  .nav-logo { height: 52px; width: auto; display: block; }
   .nav-links { display: flex; gap: 28px; align-items: center; }
   .nav-links a {
     color: var(--green-900);
@@ -651,7 +653,7 @@
     border-color: var(--green-900);
   }
   .btn-whatsapp {
-    background: #25D366;
+    background: #0e7c5a;
     color: white;
     font-size: 16px;
     padding: 18px 36px;
@@ -726,7 +728,7 @@
   /* === RESPONSIVE === */
   @media (max-width: 768px) {
     .nav { padding: 12px 20px; }
-    .nav-logo { height: 42px; }
+    .nav-logo { height: 42px; width: auto; }
     .nav-links { gap: 12px; }
     .nav-links a:not(.lang-toggle) { display: none; }
 
@@ -752,13 +754,24 @@
     .step-title { font-size: 22px; }
   }
 
+
+  /* === Contrast fix ===
+     Darker gold (--gold-600) is for text on cream backgrounds.
+     On dark green areas, use the original lighter gold instead. */
+  .ticker, .hero-visual-caption, .promise-visual, .charity-visual, .never-charged,
+  .total-bar, .package-card.featured, .compare-table thead { --gold-600: #d4a94a; }
+  .gender-toggle button.active,
+  .compare-table thead th.th-featured,
+  .package-card.featured .package-btn-primary { background: var(--gold-500); }
+  .cta-band .btn-primary, .popular-tag { background: var(--gold-500); color: var(--green-900); }
+  .compare-table thead th.featured { background: #7f6018; }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="/en/"><img src="/logo-english.png" alt="Aqiqah Sheba" class="nav-logo"></a>
+  <a href="/en/"><img src="/logo-english.png" alt="Aqiqah Sheba" class="nav-logo" width="253" height="160"></a>
   <div class="nav-links">
     <a href="/en/">Home</a>
     <a href="/en/packages.html">Packages</a>
@@ -766,6 +779,7 @@
     <a href="/order.html" class="lang-toggle">বাং</a>
   </div>
 </nav>
+<main>
 
 <div class="order-wrap">
   <div class="order-header">
@@ -841,26 +855,26 @@
       </div>
 
       <div class="pkg-choices" id="singleChoices">
-        <label class="pkg-choice" data-pkg="barakah" data-base="28000">
+        <label class="pkg-choice" data-pkg="large" data-base="28000">
           <div class="pkg-radio"></div>
           <div class="pkg-info">
-            <div class="pkg-name">Barakah</div>
-            <div class="pkg-desc" data-girl="26–30 kg · everything in Sunnah + priority delivery + 3-way split + aqiqah certificate" data-boy="26–30 kg per goat · everything in Sunnah + priority delivery + 3-way split + aqiqah certificate">26–30 kg · everything in Sunnah + priority delivery + 3-way split + aqiqah certificate</div>
+            <div class="pkg-name">Large</div>
+            <div class="pkg-desc" data-girl="26–30 kg · everything in Medium + priority delivery + 3-way split + aqiqah certificate" data-boy="26–30 kg per goat · everything in Medium + priority delivery + 3-way split + aqiqah certificate">26–30 kg · everything in Medium + priority delivery + 3-way split + aqiqah certificate</div>
           </div>
           <div class="pkg-price"><span class="pkg-price-val"></span></div>
         </label>
-        <label class="pkg-choice selected" data-pkg="sunnah" data-base="20000">
+        <label class="pkg-choice selected" data-pkg="medium" data-base="22000">
           <div class="pkg-radio"></div>
           <div class="pkg-info">
-            <div class="pkg-name">Sunnah <span style="font-size: 11px; color: var(--gold-600); margin-left: 6px;">— most popular</span></div>
-            <div class="pkg-desc" data-girl="20–25 kg · everything in Shukrana + video proof + free Dhaka delivery" data-boy="20–25 kg per goat · everything in Shukrana + video proof + free Dhaka delivery">20–25 kg · everything in Shukrana + video proof + free Dhaka delivery</div>
+            <div class="pkg-name">Medium <span style="font-size: 11px; color: var(--gold-600); margin-left: 6px;">— most popular</span></div>
+            <div class="pkg-desc" data-girl="20–25 kg · everything in Small + video proof + free Dhaka delivery" data-boy="20–25 kg per goat · everything in Small + video proof + free Dhaka delivery">20–25 kg · everything in Small + video proof + free Dhaka delivery</div>
           </div>
           <div class="pkg-price"><span class="pkg-price-val"></span></div>
         </label>
-        <label class="pkg-choice" data-pkg="shukrana" data-base="15000">
+        <label class="pkg-choice" data-pkg="small" data-base="16000">
           <div class="pkg-radio"></div>
           <div class="pkg-info">
-            <div class="pkg-name">Shukrana</div>
+            <div class="pkg-name">Small</div>
             <div class="pkg-desc" data-girl="15–19 kg · sourcing + slaughter + butchering + packaging" data-boy="15–19 kg per goat · sourcing + slaughter + butchering + packaging">15–19 kg · sourcing + slaughter + butchering + packaging</div>
           </div>
           <div class="pkg-price"><span class="pkg-price-val"></span></div>
@@ -971,7 +985,7 @@
             <div class="total-label">Total</div>
             
           </div>
-          <div class="total-amount" id="reviewTotal">৳20,000</div>
+          <div class="total-amount" id="reviewTotal">৳22,000</div>
         </div>
 
         <button class="btn btn-whatsapp" onclick="submitOrder()" style="width: 100%; justify-content: center;">
@@ -1004,6 +1018,8 @@
   </div>
 </div>
 
+</main>
+
 <script>
   const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwdiFxHiiepL0RlM6_406Xx5tE2t2I4CSAdPYdxZ_dBX8KAUwvLXnimPTLVv7L4aApO/exec'; // ← paste your Google Apps Script web app URL here
 
@@ -1014,7 +1030,7 @@
     totalSteps: 3,
     gender: null,
     goatCount: 1,
-    package: { name: 'Sunnah', key: 'sunnah', base: 20000, price: 20000 },
+    package: { name: 'Medium', key: 'medium', base: 22000, price: 22000 },
     distribution: 'one-third-charity',
     babyName: '',
     babyDob: '',
@@ -1023,7 +1039,10 @@
   };
 
   const params = new URLSearchParams(window.location.search);
-  const pkgParam = params.get('pkg');
+  // Old package links (from ads, WhatsApp, etc.) still work after the rename
+  const legacyPkg = { shukrana: 'small', sunnah: 'medium', barakah: 'large', barakat: 'large' };
+  const pkgParam = legacyPkg[params.get('pkg')] || params.get('pkg');
+  const genderParam = params.get('gender');
 
   function updatePrices() {
     state.goatCount = state.gender === 'boy' ? 2 : 1;
@@ -1087,6 +1106,12 @@
   }
 
   updatePrices();
+
+  // Gender chosen on the homepage price toggle carries over
+  if (genderParam === 'boy' || genderParam === 'girl') {
+    const g = document.getElementById('genderGroup').querySelector('.radio-option[data-value="' + genderParam + '"]');
+    if (g) g.click();
+  }
 
   function updateProgress() {
     document.querySelectorAll('.progress-step').forEach(s => {

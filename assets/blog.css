@@ -2,8 +2,8 @@
    Aqiqah Sheba — Blog styles (/blog and /blog/<slug>)
    Matches the main site's tokens, nav and footer.
    ========================================================== */
-@font-face { font-family: 'Sabina Shorolipi'; src: url('/fonts/SabinaShorolipi-Regular.ttf') format('truetype'); font-weight: 400 700; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Sabina Shorolipi'; src: url('/fonts/SabinaShorolipi-Italic.ttf') format('truetype'); font-weight: 400 700; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Sabina Shorolipi'; src: url('/fonts/SabinaShorolipi-Regular.woff2') format('woff2'), url('/fonts/SabinaShorolipi-Regular.ttf') format('truetype'); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Sabina Shorolipi'; src: url('/fonts/SabinaShorolipi-Italic.woff2') format('woff2'), url('/fonts/SabinaShorolipi-Italic.ttf') format('truetype'); font-weight: 400 700; font-style: italic; font-display: swap; }
 
 :root {
   --green-900: #1a3d2e; --green-800: #1f4a37; --green-700: #2a5a43; --green-600: #3d6b52;

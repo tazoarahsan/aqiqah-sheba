@@ -3,7 +3,7 @@ lang: en
 title: "Is Aqiqah Fard, Wajib, or Sunnah?"
 description: "Is aqiqah compulsory in Islam? A clear overview of the Hanafi, Shafi'i, Maliki, and Hanbali rulings on whether aqiqah is fard, wajib, or Sunnah."
 topic: rulings
-image: /assets/blog/is-aqiqah-fard-wajib-sunnah.png
+image: /assets/blog/is-aqiqah-fard-wajib-sunnah.jpg
 image_alt: Ornate Islamic books on a wooden desk beneath a brass study lamp
 toc: true
 ---

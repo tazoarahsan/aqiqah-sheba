@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Packages & Pricing — Aqiqah Sheba</title>
-<meta name="description" content="Three all-inclusive aqiqah packages: Shukrana (৳15,000), Sunnah (৳20,000), Barakah (৳28,000). Pick the one that fits your family." />
+<meta name="description" content="Three all-inclusive aqiqah packages: Small (৳16,000), Medium (৳22,000), Large (৳28,000). Pick the one that fits your family." />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" href="/favicon.png">
 
@@ -13,19 +13,21 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet"></noscript>
 
 <style>
 @font-face {
   font-family: 'Sabina Shorolipi';
-  src: url('/fonts/SabinaShorolipi-Regular.ttf') format('truetype');
+  src: url('/fonts/SabinaShorolipi-Regular.woff2') format('woff2'), url('/fonts/SabinaShorolipi-Regular.ttf') format('truetype');
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Sabina Shorolipi';
-  src: url('/fonts/SabinaShorolipi-Italic.ttf') format('truetype');
+  src: url('/fonts/SabinaShorolipi-Italic.woff2') format('woff2'), url('/fonts/SabinaShorolipi-Italic.ttf') format('truetype');
   font-weight: 400 700;
   font-style: italic;
   font-display: swap;
@@ -36,7 +38,7 @@
     --green-900: #1a3d2e;
     --green-800: #1f4a37;
     --green-700: #2a5a43;
-    --gold-600: #c89b3c;
+    --gold-600: #7f6018;
     --gold-500: #d4a94a;
     --gold-400: #e0bb5f;
     --cream: #f7f1e3;
@@ -87,7 +89,7 @@
     align-items: center;
     justify-content: space-between;
   }
-  .nav-logo { height: 52px; display: block; }
+  .nav-logo { height: 52px; width: auto; display: block; }
   .nav-links { display: flex; gap: 28px; align-items: center; }
   .nav-links a {
     color: var(--green-900);
@@ -300,14 +302,14 @@
     padding: 16px 20px 0;
   }
 
-  .package-right h4 {
+  .package-right h2 {
     font-family: 'Sabina Shorolipi', serif;
     font-size: 26px;
     color: var(--green-900);
     margin-bottom: 8px;
     font-weight: 600;
   }
-  .package-card.featured .package-right h4 { color: var(--cream); }
+  .package-card.featured .package-right h2 { color: var(--cream); }
   .package-desc-en {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -663,7 +665,7 @@
     max-width: 1240px;
     margin: 0 auto 60px;
   }
-  .footer-logo { height: 72px; margin-bottom: 20px; }
+  .footer-logo { height: 72px; width: auto; margin-bottom: 20px; }
   .footer-tagline {
     font-family: 'Sabina Shorolipi', serif;
     font-size: 19px;
@@ -672,7 +674,7 @@
     max-width: 340px;
     line-height: 1.5;
   }
-  .footer-col h6 {
+  .footer-col h2 {
     font-size: 13px;
     color: var(--gold-600);
     margin-bottom: 20px;
@@ -738,7 +740,7 @@
   }
   @media (max-width: 968px) {
     .nav { padding: 12px 20px; }
-    .nav-logo { height: 42px; }
+    .nav-logo { height: 42px; width: auto; }
     .nav-links { gap: 14px; }
     .nav-links a:not(.nav-cta):not(.lang-toggle) { display: none; }
 
@@ -751,7 +753,7 @@
       padding: 40px 28px;
       text-align: center;
     }
-    .package-right h4 { text-align: center; }
+    .package-right h2 { text-align: center; }
     .package-includes li { text-align: left; }
 
     .compare-table thead th { padding: 14px 8px; font-size: 16px; }
@@ -764,13 +766,24 @@
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   }
+
+  /* === Contrast fix ===
+     Darker gold (--gold-600) is for text on cream backgrounds.
+     On dark green areas, use the original lighter gold instead. */
+  .ticker, .hero-visual-caption, .promise-visual, .charity-visual, .never-charged,
+  .total-bar, .package-card.featured, .compare-table thead { --gold-600: #d4a94a; }
+  .gender-toggle button.active,
+  .compare-table thead th.th-featured,
+  .package-card.featured .package-btn-primary { background: var(--gold-500); }
+  .cta-band .btn-primary, .popular-tag { background: var(--gold-500); color: var(--green-900); }
+  .compare-table thead th.featured { background: #7f6018; }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="/en/"><img src="/logo-english.png" alt="Aqiqah Sheba" class="nav-logo"></a>
+  <a href="/en/"><img src="/logo-english.png" alt="Aqiqah Sheba" class="nav-logo" width="253" height="160"></a>
   <div class="nav-links">
     <a href="/en/#why">Why Us</a>
     <a href="/en/#process">Process</a>
@@ -781,6 +794,7 @@
     <a href="/en/order.html" class="nav-cta">Start Order</a>
   </div>
 </nav>
+<main>
 
 <!-- PAGE HEADER -->
 <section class="page-header">
@@ -800,7 +814,7 @@
         
         <div class="package-left">
           
-          <div class="package-name-bn">Barakah</div><div class="package-name-en">A Generous Gathering</div>
+          <div class="package-name-bn">Large</div><div class="package-name-en">A Generous Gathering</div>
           <div class="package-price-wrap">
             <span class="package-currency">৳</span>
             <span class="package-price">28,000</span>
@@ -808,7 +822,7 @@
           <div class="package-fixed">Fixed price — all-inclusive</div>
         </div>
         <div class="package-right">
-          <h4>A Generous Gathering</h4>
+          <h2>A Generous Gathering</h2>
           <p class="package-desc-en">A premium 26–30 kg goat with everything: video proof, 3-part split for family/relatives/charity, priority delivery slot, and an aqiqah certificate.</p>
           <ul class="package-includes">
             <li>
@@ -867,25 +881,25 @@
             </li>
           </ul>
           <div class="package-ctas">
-            <a href="/en/order.html?pkg=barakah" class="package-btn package-btn-primary">Order Barakah</a>
-            <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I'd%20like%20to%20know%20about%20the%20Barakah%20package" class="package-btn package-btn-secondary">Ask on WhatsApp</a>
+            <a href="/en/order.html?pkg=large" class="package-btn package-btn-primary">Order Large</a>
+            <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I'd%20like%20to%20know%20about%20the%20Large%20package" class="package-btn package-btn-secondary">Ask on WhatsApp</a>
           </div>
         </div>
       </div>
 
       <div class="package-card featured">
-        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold-600); color: var(--cream); padding: 6px 18px; font-size: 12px; font-weight: 700; border-radius: 999px; letter-spacing: 0.02em;">Most Popular</div>
+        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #7f6018; color: var(--cream); padding: 6px 18px; font-size: 12px; font-weight: 700; border-radius: 999px; letter-spacing: 0.02em;">Most Popular</div>
         <div class="package-left">
           
-          <div class="package-name-bn">Sunnah</div><div class="package-name-en">For Family & Relatives</div>
+          <div class="package-name-bn">Medium</div><div class="package-name-en">For Family & Relatives</div>
           <div class="package-price-wrap">
             <span class="package-currency">৳</span>
-            <span class="package-price">20,000</span>
+            <span class="package-price">22,000</span>
           </div>
           <div class="package-fixed">Fixed price — all-inclusive</div>
         </div>
         <div class="package-right">
-          <h4>For Family & Relatives</h4>
+          <h2>For Family & Relatives</h2>
           <p class="package-desc-en">A larger 20–25 kg goat with full doorstep delivery and video proof of the slaughter — our most popular package, sized for family and relatives.</p>
           <ul class="package-includes">
             <li>
@@ -926,8 +940,8 @@
             </li>
           </ul>
           <div class="package-ctas">
-            <a href="/en/order.html?pkg=sunnah" class="package-btn package-btn-primary">Order Sunnah</a>
-            <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I'd%20like%20to%20know%20about%20the%20Sunnah%20package" class="package-btn package-btn-secondary">Ask on WhatsApp</a>
+            <a href="/en/order.html?pkg=medium" class="package-btn package-btn-primary">Order Medium</a>
+            <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I'd%20like%20to%20know%20about%20the%20Medium%20package" class="package-btn package-btn-secondary">Ask on WhatsApp</a>
           </div>
         </div>
       </div>
@@ -936,15 +950,15 @@
         
         <div class="package-left">
           
-          <div class="package-name-bn">Shukrana</div><div class="package-name-en">A Token of Gratitude</div>
+          <div class="package-name-bn">Small</div><div class="package-name-en">A Token of Gratitude</div>
           <div class="package-price-wrap">
             <span class="package-currency">৳</span>
-            <span class="package-price">15,000</span>
+            <span class="package-price">16,000</span>
           </div>
           <div class="package-fixed">Fixed price — all-inclusive</div>
         </div>
         <div class="package-right">
-          <h4>A Token of Gratitude</h4>
+          <h2>A Token of Gratitude</h2>
           <p class="package-desc-en">A healthy 15–19 kg goat for families who want a simple, fully-Shariah-compliant aqiqah without the doorstep delivery and video extras.</p>
           <ul class="package-includes">
             <li>
@@ -979,8 +993,8 @@
             </li>
           </ul>
           <div class="package-ctas">
-            <a href="/en/order.html?pkg=shukrana" class="package-btn package-btn-primary">Order Shukrana</a>
-            <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I'd%20like%20to%20know%20about%20the%20Shukrana%20package" class="package-btn package-btn-secondary">Ask on WhatsApp</a>
+            <a href="/en/order.html?pkg=small" class="package-btn package-btn-primary">Order Small</a>
+            <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I'd%20like%20to%20know%20about%20the%20Small%20package" class="package-btn package-btn-secondary">Ask on WhatsApp</a>
           </div>
         </div>
       </div>
@@ -1003,17 +1017,16 @@
         <tr>
           <th>Feature</th>
           <th>
-            Barakah
-            <span class="sub">Barakah</span>
+            Large
             <span class="price-mini">৳28,000</span>
           </th>
           <th class="featured">
-            Sunnah
-            <span class="price-mini">৳20,000</span>
+            Medium
+            <span class="price-mini">৳22,000</span>
           </th>
           <th>
-            Shukrana
-            <span class="price-mini">৳15,000</span>
+            Small
+            <span class="price-mini">৳16,000</span>
           </th>
         </tr>
       </thead>
@@ -1132,7 +1145,7 @@
 
 <div style="background: var(--cream-light); padding: 32px 40px; text-align: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
   <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: var(--green-900); max-width: 720px; margin: 0 auto; line-height: 1.5;">
-    Not sure which to choose? <span style="color: var(--gold-600); font-weight: 600;">Most families choose Sunnah or Barakah.</span>
+    Not sure which to choose? <span style="color: var(--gold-600); font-weight: 600;">Most families choose Medium or Large.</span>
     
   </p>
 </div>
@@ -1146,21 +1159,23 @@
       Start Order
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
-    <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I'd%20like%20to%20place%20an%20aqiqah%20order" class="btn" style="background: #25D366; color: white;">
+    <a href="https://wa.me/8801973371019?text=As-salaamu%20alaikum%2C%20I'd%20like%20to%20place%20an%20aqiqah%20order" class="btn" style="background: #0e7c5a; color: white;">
       Message on WhatsApp
     </a>
   </div>
 </section>
 
 <!-- FOOTER -->
+</main>
+
 <footer>
   <div class="footer-grid">
     <div>
-      <img src="/logo-english.png" alt="Aqiqah Sheba" class="footer-logo">
+      <img src="/logo-english.png" alt="Aqiqah Sheba" class="footer-logo" width="253" height="160" loading="lazy">
       <p class="footer-tagline">Dhaka's trusted delivery-based aqiqah service. Making the sunnah easy for new parents.</p>
     </div>
     <div class="footer-col">
-      <h6>Service</h6>
+      <h2>Service</h2>
       <ul>
         <li><a href="/en/#why">Why Us</a></li>
         <li><a href="/en/#process">How It Works</a></li>
@@ -1171,7 +1186,7 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h6>Order</h6>
+      <h2>Order</h2>
       <ul>
         <li><a href="https://wa.me/8801973371019">WhatsApp</a></li>
         <li><a href="https://facebook.com/aqiqahsheba">Facebook</a></li>
@@ -1180,7 +1195,7 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h6>Payment</h6>
+      <h2>Payment</h2>
       <ul>
         <li><a>bKash</a></li>
         <li><a>Nagad / Rocket</a></li>

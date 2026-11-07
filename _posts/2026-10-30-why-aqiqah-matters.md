@@ -3,7 +3,7 @@ lang: en
 title: "Why Aqiqah Matters: Blessing and Protecting Your Newborn"
 description: "Why perform aqiqah for your child? Understand how this Sunnah protects and blesses your newborn, and why it is worth prioritising, with evidence."
 topic: rulings
-image: /assets/blog/why-aqiqah-matters.png
+image: /assets/blog/why-aqiqah-matters.jpg
 image_alt: Knitted cream baby booties and mittens on a soft pink blanket
 toc: true
 ---

@@ -3,7 +3,7 @@ lang: en
 title: "Aqiqah for Beginners: Everything You Need to Know"
 description: "New to aqiqah? A simple beginner's guide answering what it is, when to do it, how many animals, the cost, and what to do with the meat."
 topic: rulings
-image: /assets/blog/aqiqah-for-beginners.png
+image: /assets/blog/aqiqah-for-beginners.jpg
 image_alt: A book, a knitted baby hat, and a plant on a wooden sideboard in warm light
 toc: true
 ---
