@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-578K6CLB');</script>
+<!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aqiqah from Abroad — Done in Bangladesh, Proof Sent to You | Aqiqah Sheba</title>
 <meta name="description" content="Living abroad? We perform your child's aqiqah in Dhaka the Islamic way, give the meat to families in need, and send you video proof. Fixed price from ৳16,000 (about $130).">
@@ -161,6 +168,10 @@
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-578K6CLB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <header>
   <div class="wrap">
@@ -441,13 +452,6 @@
       try { fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(payload) }); } catch (e2) {}
     }
 
-    // Conversion hook for Google Ads / Analytics (fires only if a Google tag is installed)
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'aqiqah_order_submit', value: total, currency: 'BDT', package: p.name });
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'generate_lead', { value: total, currency: 'BDT', items: [{ item_name: p.name, quantity: g }] });
-    }
-
     var lines = [
       'As-salaamu alaikum! I would like to book an aqiqah from abroad.',
       '',
@@ -462,9 +466,13 @@
       '',
       'Please confirm and share payment options. JazakAllahu khairan.'
     ];
-    setTimeout(function () {
-      window.location.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(lines.join('\n'));
-    }, 150);
+    var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(lines.join('\n'));
+    var gone = false;
+    function go() { if (!gone) { gone = true; window.location.href = url; } }
+    // Tell Google Tag Manager about the order, then open WhatsApp (waits at most 1.5s for tags)
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'order_submit', form: 'aqiqah-funnel', lang: 'en', package: p.name, value: total, currency: 'BDT', eventCallback: go, eventTimeout: 1500 });
+    setTimeout(go, 1500);
   });
 
   render();

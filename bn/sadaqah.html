@@ -2,6 +2,13 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-578K6CLB');</script>
+<!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>সাদাকাহ ছাগল — আকিকাহ শেবা</title>
 <meta name="description" content="আল্লাহর সন্তুষ্টির জন্য সাদাকাহ হিসেবে ছাগল কিনুন। আমরা যবাই করে গরিবদের মাঝে বিতরণ করব।" />
@@ -116,6 +123,10 @@
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-578K6CLB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <nav class="nav">
   <a href="/bn/"><img src="/logo-bangla.png" alt="আকিকাহ শেবা" class="nav-logo" width="285" height="160"></a>
@@ -267,7 +278,7 @@
   function updateTotal() { document.getElementById('totalDisplay').textContent = fmtP(selectedSize.p * qty); }
   function validate() { let ok = true; ['userName','userPhone'].forEach(id => { const el = document.getElementById(id); if (!el.value.trim()) { el.parentElement.classList.add('has-error'); ok = false; } else { el.parentElement.classList.remove('has-error'); } }); return ok; }
   function collectData(name, phone, note) { if (!SHEET_URL) return; const payload = { lang:'bn', gender:'', goats:qty, package:selectedSize.name+' ('+selectedSize.k+')', price:selectedSize.p*qty, babyName:'', babyDob:'', deliveryDate:'', parentName:name, phone:phone, address:note, distribution:'full-charity', source:'sadaqah-bn' }; try { navigator.sendBeacon(SHEET_URL, JSON.stringify(payload)); } catch(e) { fetch(SHEET_URL, { method:'POST', mode:'no-cors', body:JSON.stringify(payload) }).catch(() => {}); } }
-  function submitOrder() { if (!validate()) return; const name = document.getElementById('userName').value.trim(); const phone = document.getElementById('userPhone').value.trim(); const note = document.getElementById('userNote').value.trim(); const total = selectedSize.p * qty; collectData(name, phone, note); const L = []; L.push('আসসালামু আলাইকুম! আমি সাদাকাহ হিসেবে ছাগল অর্ডার করতে চাই।'); L.push(''); L.push('\u2501'.repeat(19)); L.push('📋 সাদাকাহ অর্ডার'); L.push('\u2501'.repeat(19)); L.push(''); L.push('🐐 সাইজ: ' + selectedSize.name + ' (' + selectedSize.weight + ')'); L.push('📦 সংখ্যা: ' + qty); L.push('💰 মোট: ' + fmtP(total)); L.push(''); L.push('👤 নাম: ' + name); L.push('📞 ফোন: ' + phone); if (note) L.push('📝 নোট: ' + note); L.push(''); L.push('\u2501'.repeat(19)); L.push('অনুগ্রহ করে কনফার্ম করুন। জাযাকাল্লাহু খাইরান।'); window.open('https://wa.me/8801733311019?text=' + encodeURIComponent(L.join('\n')), '_blank'); }
+  function submitOrder() { if (!validate()) return; const name = document.getElementById('userName').value.trim(); const phone = document.getElementById('userPhone').value.trim(); const note = document.getElementById('userNote').value.trim(); const total = selectedSize.p * qty; collectData(name, phone, note); window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'order_submit', form: 'sadaqah', lang: 'bn', package: selectedSize.name, quantity: qty, value: total, currency: 'BDT' }); const L = []; L.push('আসসালামু আলাইকুম! আমি সাদাকাহ হিসেবে ছাগল অর্ডার করতে চাই।'); L.push(''); L.push('\u2501'.repeat(19)); L.push('📋 সাদাকাহ অর্ডার'); L.push('\u2501'.repeat(19)); L.push(''); L.push('🐐 সাইজ: ' + selectedSize.name + ' (' + selectedSize.weight + ')'); L.push('📦 সংখ্যা: ' + qty); L.push('💰 মোট: ' + fmtP(total)); L.push(''); L.push('👤 নাম: ' + name); L.push('📞 ফোন: ' + phone); if (note) L.push('📝 নোট: ' + note); L.push(''); L.push('\u2501'.repeat(19)); L.push('অনুগ্রহ করে কনফার্ম করুন। জাযাকাল্লাহু খাইরান।'); window.open('https://wa.me/8801733311019?text=' + encodeURIComponent(L.join('\n')), '_blank'); }
 </script>
 </body>
 </html>

@@ -2,6 +2,13 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-578K6CLB');</script>
+<!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>অর্ডার করুন — আকিকাহ শেবা</title>
 <meta name="description" content="তিন ধাপে আপনার আকিকার অর্ডার দিন। লিঙ্গ বেছে নিন, প্যাকেজ বেছে নিন, বিস্তারিত দিন — WhatsApp-এ পাঠান।" />
@@ -787,6 +794,10 @@
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-578K6CLB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- NAV -->
 <nav class="nav">
@@ -1242,6 +1253,9 @@
     if (!validateStep(3)) return;
     updateReview();
     collectData();
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'order_submit', form: 'aqiqah-order', lang: 'bn', package: state.package.name, value: state.package.price, currency: 'BDT' });
 
     const goatText = state.gender === 'boy' ? '২টি ছাগল' : '১টি ছাগল';
     const genderText = state.gender === 'boy' ? 'ছেলে' : 'মেয়ে';
