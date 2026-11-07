@@ -7,7 +7,7 @@ body_class: page-post
 {%- assign abs_url = page.url | absolute_url -%}
 {%- assign share_text = page.title | append: " " | append: abs_url -%}
 {%- assign topic_label = site.data.topics[page.topic][L] | default: page.topic -%}
-{%- if L == "en" -%}{%- assign home_url = "/en/" -%}{%- else -%}{%- assign home_url = "/" -%}{%- endif -%}
+{%- if L == "en" -%}{%- assign home_url = "/" -%}{%- else -%}{%- assign home_url = "/bn/" -%}{%- endif -%}
 <article class="post">
   <header class="post-head wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ home_url }}">{{ t.home }}</a><span aria-hidden="true">›</span><a href="/blog/?ui={{ L }}">{{ t.blog }}</a><span aria-hidden="true">›</span><span class="crumb-current">{{ page.title }}</span></nav>
