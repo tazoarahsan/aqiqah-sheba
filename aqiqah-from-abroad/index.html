@@ -11,21 +11,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aqiqah from Abroad — Done in Bangladesh, Proof Sent to You | Aqiqah Sheba</title>
-<meta name="description" content="Living abroad? We perform your child's aqiqah in Dhaka the Islamic way, give the meat to families in need, and send you video proof. Fixed price from ৳16,000 (about $130).">
+<meta name="description" content="Living abroad? We perform your child's aqiqah in Dhaka the Islamic way, deliver the meat to your family or give it to families in need, and send you video proof. Fixed price from ৳16,000.">
 <link rel="canonical" href="https://aqiqahsheba.com/aqiqah-from-abroad/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Aqiqah from Abroad — Done in Bangladesh, Proof Sent to You">
-<meta property="og:description" content="Fixed price from ৳16,000 (about $130). Shariah-compliant slaughter, meat given to families in need, video proof on WhatsApp.">
+<meta property="og:description" content="Fixed price from ৳16,000. Shariah-compliant slaughter, home delivery in Dhaka or distribution to the poor, video proof on WhatsApp.">
 <meta property="og:url" content="https://aqiqahsheba.com/aqiqah-from-abroad/">
 <meta property="og:image" content="https://aqiqahsheba.com/preview.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1719563643669-6b3856b4f930?auto=format&fit=crop&q=60&w=800" media="(max-width: 900px)" fetchpriority="high">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1719563643669-6b3856b4f930?auto=format&fit=crop&q=60&w=1400" media="(min-width: 901px)" fetchpriority="high">
 <style>
   :root {
     --green-900: #1a3d2e;
     --green-700: #2a5a43;
     --gold: #d4a94a;
+    --gold-light: #e0bb5f;
     --gold-text: #7f6018;
     --cream: #f7f1e3;
     --cream-light: #fbf7ec;
@@ -42,60 +46,100 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   h1, h2 { font-family: Georgia, "Times New Roman", serif; color: var(--green-900); line-height: 1.15; }
   a { color: inherit; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  .wa-icon { width: 22px; height: 22px; flex: none; }
   .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
     min-height: 52px; padding: 0 26px; border-radius: 10px; font-weight: 700; font-size: 17px;
-    text-decoration: none; border: 0; cursor: pointer; font-family: inherit;
+    text-decoration: none; border: 0; cursor: pointer; font-family: inherit; text-align: center;
   }
   .btn-main { background: var(--green-900); color: var(--cream); }
   .btn-main:hover { background: var(--green-700); }
   .btn-wa { background: var(--wa); color: #fff; }
   .btn-wa:hover { filter: brightness(1.1); }
-  .btn:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .btn:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
   /* Header */
-  header { background: var(--cream); border-bottom: 1px solid var(--line); }
-  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  header { background: var(--cream); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 40; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 66px; }
   header img { height: 44px; width: auto; display: block; }
-  header .head-wa { font-weight: 700; color: var(--wa); text-decoration: none; font-size: 15px; }
+  .head-wa { min-height: 42px; padding: 0 16px; font-size: 15px; border-radius: 999px; }
+  .head-wa .wa-icon { width: 18px; height: 18px; }
 
-  /* Hero */
-  .hero { background: var(--cream); padding: 48px 0 56px; }
-  .hero h1 { font-size: clamp(32px, 5.5vw, 52px); max-width: 760px; }
-  .hero .sub { margin-top: 18px; font-size: 19px; max-width: 640px; color: var(--muted); }
-  .hero .ctas { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
-  .hero .price-line { margin-top: 16px; font-size: 15px; color: var(--muted); }
+  /* Hero (image section matches the homepage) */
+  .hero {
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(200, 155, 60, 0.08), transparent 50%),
+      radial-gradient(ellipse at 20% 80%, rgba(26, 61, 46, 0.05), transparent 50%),
+      var(--cream);
+    padding: 48px 0 64px;
+  }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  .hero h1 { font-size: clamp(32px, 4.6vw, 50px); }
+  .hero .sub { margin-top: 18px; font-size: 19px; color: var(--muted); }
+  .hero .ctas { margin-top: 28px; }
+  .hero .price-line { margin-top: 16px; font-size: 16px; color: var(--muted); }
   .hero .price-line strong { color: var(--green-900); }
-  .trust { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-  .trust div { background: var(--cream-light); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; font-size: 15px; }
-  .trust strong { display: block; color: var(--green-900); font-size: 16px; }
+  .trust { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .trust div { background: var(--cream-light); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-size: 14px; color: var(--muted); }
+  .trust strong { display: block; color: var(--green-900); font-size: 15px; margin-bottom: 2px; }
 
-  section { padding: 56px 0; }
-  section h2 { font-size: clamp(26px, 4vw, 36px); margin-bottom: 10px; }
-  .lead { color: var(--muted); margin-bottom: 28px; max-width: 640px; }
+  .hero-visual { position: relative; aspect-ratio: 4/5; border-radius: 8px; overflow: hidden; background: var(--green-900); }
+  .hero-visual-inner {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(136deg, rgb(255 237 0 / 0%) 0%, rgb(0 0 0 / 15%) 150%),
+      url(https://images.unsplash.com/photo-1719563643669-6b3856b4f930?auto=format&fit=crop&q=60&w=800) center / cover;
+  }
+  @media (min-width: 901px) {
+    .hero-visual-inner { background-image: linear-gradient(136deg, rgb(255 237 0 / 0%) 0%, rgb(0 0 0 / 15%) 150%), url(https://images.unsplash.com/photo-1719563643669-6b3856b4f930?auto=format&fit=crop&q=60&w=1400); }
+  }
+  .trust-badge {
+    position: absolute; top: 24px; right: 24px; z-index: 3;
+    background: var(--cream); border: 1px solid var(--gold-text); border-radius: 50%;
+    width: 124px; height: 124px; display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 14px; animation: slowSpin 40s linear infinite;
+  }
+  .trust-badge-inner { animation: slowSpinReverse 40s linear infinite; }
+  .trust-badge .shariah { font-family: Georgia, serif; font-size: 14px; font-weight: 600; color: var(--green-900); line-height: 1.3; }
+  .trust-badge .compliant { font-size: 10px; color: var(--gold-text); margin-top: 4px; letter-spacing: 0.05em; font-weight: 700; }
+  .hero-visual-caption { position: absolute; bottom: 28px; left: 28px; right: 28px; color: var(--cream); z-index: 2; }
+  .hero-visual-caption .tag { font-size: 12px; color: var(--gold-light); margin-bottom: 8px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+  .hero-visual-caption .text { font-family: Georgia, serif; font-style: italic; font-size: 21px; line-height: 1.4; text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35); }
+  @keyframes slowSpin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+  @keyframes slowSpinReverse { from { transform: rotate(0); } to { transform: rotate(-360deg); } }
+
+  /* Sections: centered headings */
+  section { padding: 60px 0; scroll-margin-top: 66px; }
+  .sec-head { text-align: center; max-width: 720px; margin: 0 auto 30px; }
+  .sec-head h2 { font-size: clamp(26px, 4vw, 36px); margin-bottom: 10px; }
+  .sec-head p { color: var(--muted); }
+  .center { text-align: center; }
 
   /* Steps */
-  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; counter-reset: s; }
-  .step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
-  .step::before { counter-increment: s; content: counter(s); display: inline-flex; width: 34px; height: 34px; border-radius: 50%; background: var(--green-900); color: var(--cream); align-items: center; justify-content: center; font-weight: 700; margin-bottom: 12px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: s; }
+  .step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 22px; text-align: center; }
+  .step::before { counter-increment: s; content: counter(s); display: inline-flex; width: 36px; height: 36px; border-radius: 50%; background: var(--green-900); color: var(--cream); align-items: center; justify-content: center; font-weight: 700; margin-bottom: 12px; }
   .step h3 { font-size: 18px; color: var(--green-900); margin-bottom: 6px; }
   .step p { font-size: 15px; color: var(--muted); }
+  .ask-wa { margin-top: 32px; text-align: center; }
+  .ask-wa p { font-size: 15px; color: var(--muted); margin-top: 10px; }
 
   /* Packages */
   .packages { background: var(--cream); }
+  .toggle-wrap { text-align: center; }
   .toggle { display: inline-flex; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 4px; margin-bottom: 8px; }
-  .toggle button { border: 0; background: transparent; padding: 10px 22px; border-radius: 999px; font: inherit; font-weight: 700; cursor: pointer; color: var(--green-900); }
+  .toggle button { border: 0; background: transparent; padding: 10px 24px; border-radius: 999px; font: inherit; font-weight: 700; cursor: pointer; color: var(--green-900); }
   .toggle button[aria-checked="true"] { background: var(--green-900); color: var(--cream); }
-  .toggle-note { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; align-items: start; }
+  .toggle-note { font-size: 14px; color: var(--muted); margin-bottom: 26px; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; }
   .card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 24px; position: relative; }
   .card.featured { border: 2px solid var(--green-900); }
   .card .tag { position: absolute; top: -13px; left: 24px; background: var(--gold); color: var(--green-900); font-size: 13px; font-weight: 700; padding: 4px 12px; border-radius: 999px; }
   .card h3 { font-size: 22px; color: var(--green-900); }
   .card .size { font-size: 14px; color: var(--muted); margin-top: 2px; }
   .card .price { margin-top: 14px; font-size: 34px; font-weight: 800; color: var(--green-900); }
-  .card .usd { font-size: 15px; color: var(--muted); }
+  .card .local { font-size: 15px; color: var(--muted); min-height: 1.4em; }
   .card ul { list-style: none; margin: 16px 0 20px; font-size: 15px; }
   .card li { padding: 6px 0 6px 26px; position: relative; border-top: 1px solid var(--line); }
   .card li::before { content: "✓"; position: absolute; left: 2px; color: var(--gold-text); font-weight: 800; }
@@ -104,24 +148,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .card .btn { width: 100%; }
   .card:not(.featured) .btn-main { background: #fff; color: var(--green-900); border: 2px solid var(--green-900); }
 
-  /* Proof */
-  .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
-  .proof-grid div { border-left: 4px solid var(--gold); padding: 6px 0 6px 16px; }
-  .proof-grid h3 { font-size: 18px; color: var(--green-900); margin-bottom: 4px; }
+  /* Why */
+  .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .proof-grid div { background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--gold); border-radius: 12px; padding: 18px; text-align: center; }
+  .proof-grid h3 { font-size: 17px; color: var(--green-900); margin-bottom: 6px; }
   .proof-grid p { font-size: 15px; color: var(--muted); }
 
-  /* Form */
-  .order { background: var(--green-900); color: var(--cream); }
-  .order h2 { color: var(--cream); }
-  .order .lead { color: rgba(247, 241, 227, 0.85); }
-  form { background: #fff; color: var(--ink); border-radius: 14px; padding: 24px; max-width: 680px; }
+  /* Order form (centered) */
+  .order { background: var(--green-900); }
+  .order .sec-head h2 { color: var(--cream); }
+  .order .sec-head p { color: rgba(247, 241, 227, 0.85); }
+  form { background: #fff; color: var(--ink); border-radius: 14px; padding: 28px; max-width: 680px; margin: 0 auto; }
   fieldset { border: 0; margin-bottom: 18px; }
   legend, label.lbl { display: block; font-weight: 700; font-size: 15px; margin-bottom: 8px; color: var(--green-900); }
   .opt-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
-  .opt { display: flex; align-items: center; gap: 10px; border: 1.5px solid var(--line); border-radius: 10px; padding: 12px 14px; cursor: pointer; font-size: 15px; }
-  .opt input { accent-color: var(--green-900); width: 18px; height: 18px; }
+  .opt { display: flex; align-items: center; gap: 10px; border: 1.5px solid var(--line); border-radius: 10px; padding: 12px 14px; cursor: pointer; font-size: 15px; font-weight: 600; }
+  .opt input { accent-color: var(--green-900); width: 18px; height: 18px; flex: none; }
   .opt:has(input:checked) { border-color: var(--green-900); background: var(--cream-light); }
-  .opt small { display: block; color: var(--muted); font-size: 13px; }
+  .opt small { display: block; color: var(--muted); font-size: 13px; font-weight: 400; }
   .field { margin-bottom: 16px; }
   .field input, .field select, .field textarea {
     width: 100%; min-height: 48px; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 10px;
@@ -129,34 +173,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .field textarea { min-height: 80px; }
   .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .phone-row { display: grid; grid-template-columns: minmax(130px, 42%) 1fr; gap: 8px; }
   .hint { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .note { font-size: 14px; color: var(--green-900); background: var(--cream-light); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin: -6px 0 14px; }
   .err { display: none; color: #a4161a; font-size: 14px; margin-top: 4px; font-weight: 600; }
   .has-error .err { display: block; }
-  .has-error input, .has-error select { border-color: #a4161a; }
+  .has-error input, .has-error select, .has-error textarea { border-color: #a4161a; }
   .total { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--line); padding: 16px 0; margin-top: 4px; }
   .total span { font-weight: 700; color: var(--green-900); }
   .total strong { font-size: 26px; color: var(--green-900); }
   .total small { display: block; text-align: right; color: var(--muted); font-size: 14px; font-weight: 400; }
+  .pay { border-top: 1px solid var(--line); padding-top: 14px; margin-bottom: 18px; }
+  .pay-title { font-size: 14px; font-weight: 700; color: var(--green-900); margin-bottom: 8px; text-align: center; }
+  .pay-list { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; list-style: none; }
+  .pay-list li { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--cream-light); font-size: 14px; font-weight: 700; color: var(--ink); }
+  .pay-list img { height: 20px; width: auto; display: block; }
+  .pay-list svg { width: 18px; height: 18px; }
   form .btn { width: 100%; }
   .after { font-size: 14px; color: var(--muted); margin-top: 10px; text-align: center; }
-  .hidden { display: none; }
+  .hidden { display: none !important; }
 
   /* FAQ */
-  details { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin-bottom: 10px; max-width: 760px; }
+  .faq { max-width: 760px; margin: 0 auto; }
+  details { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin-bottom: 10px; }
   summary { font-weight: 700; cursor: pointer; color: var(--green-900); }
   details p { margin-top: 10px; color: var(--muted); font-size: 15px; }
 
   footer { background: var(--cream); border-top: 1px solid var(--line); padding: 28px 0; font-size: 14px; color: var(--muted); }
-  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: center; text-align: center; }
   footer a { color: var(--green-900); }
 
-  /* Mobile bar */
   .mobile-bar { display: none; }
+  @media (max-width: 900px) {
+    .hero .wrap { grid-template-columns: 1fr; gap: 32px; }
+    .hero-visual { aspect-ratio: 4/3; }
+    .trust-badge { width: 100px; height: 100px; top: 14px; right: 14px; }
+    .trust-badge .shariah { font-size: 12px; }
+    .trust-badge .compliant { font-size: 9px; }
+    .steps, .cards { grid-template-columns: 1fr; }
+    .proof-grid { grid-template-columns: 1fr 1fr; }
+  }
   @media (max-width: 768px) {
     body { padding-bottom: 76px; font-size: 16px; }
-    .hero { padding: 32px 0 40px; }
+    .hero { padding: 28px 0 40px; }
     section { padding: 44px 0; }
-    .two { grid-template-columns: 1fr; }
+    .two, .trust, .proof-grid { grid-template-columns: 1fr; }
+    form { padding: 20px; }
+    .head-wa span { display: none; }
+    .head-wa { padding: 0 12px; }
     .mobile-bar {
       display: flex; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
       padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
@@ -164,7 +228,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .mobile-bar .btn { flex: 1; min-height: 48px; padding: 0 12px; font-size: 16px; }
   }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .trust-badge, .trust-badge-inner { animation: none; }
+  }
 </style>
 </head>
 <body>
@@ -173,63 +240,90 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+</svg>
+
 <header>
   <div class="wrap">
     <a href="/"><img src="/logo-english.png" alt="Aqiqah Sheba" width="253" height="160"></a>
-    <a class="head-wa" href="https://wa.me/8801733311019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad">WhatsApp us</a>
+    <a class="btn btn-wa head-wa" href="https://wa.me/8801733311019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad" aria-label="WhatsApp us"><svg class="wa-icon" aria-hidden="true"><use href="#wa"/></svg><span>WhatsApp us</span></a>
   </div>
 </header>
 
 <main>
   <section class="hero">
     <div class="wrap">
-      <h1>Your child's aqiqah, done properly in Bangladesh while you're abroad.</h1>
-      <p class="sub">We buy a healthy goat, perform the slaughter by Islamic rules in your child's name, and give the meat to families in need in Dhaka. With Medium and Large, you see it done on video.</p>
-      <div class="ctas">
-        <a href="#packages" class="btn btn-main">See packages and prices</a>
-        <a href="https://wa.me/8801733311019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad" class="btn btn-wa">Ask on WhatsApp</a>
+      <div class="hero-text">
+        <h1>Your child's aqiqah, done properly in Bangladesh while you're abroad.</h1>
+        <p class="sub">We buy a healthy goat, perform the slaughter by Islamic rules in your child's name, and deliver the meat to your home in Dhaka or give it to families in need. With Medium and Large, you see it done on video.</p>
+        <div class="ctas">
+          <a href="#packages" class="btn btn-main">See packages and prices</a>
+        </div>
+        <p class="price-line">Fixed price from <strong id="heroPrice">৳16,000</strong> per goat. You pay from your home country.</p>
+        <div class="trust">
+          <div><strong>Shariah-compliant</strong>Facing the qibla, with Bismillah, one clean cut.</div>
+          <div><strong>Video proof</strong>On WhatsApp within 24 hours (Medium and Large).</div>
+          <div><strong>Delivery</strong>We deliver the meat to your home in Dhaka, or give it to the poor, as you wish.</div>
+        </div>
       </div>
-      <p class="price-line">Fixed price from <strong>৳16,000 (about $130)</strong> per goat. You pay from your home country.</p>
-      <div class="trust">
-        <div><strong>Shariah-compliant slaughter</strong>Facing the qibla, with Bismillah, one clean cut.</div>
-        <div><strong>Video proof</strong>Sent on WhatsApp within 24 hours (Medium and Large).</div>
-        <div><strong>Meat to those in need</strong>Orphans, madrasa students and poor families in Dhaka.</div>
+      <div class="hero-visual">
+        <div class="hero-visual-inner"></div>
+        <div class="trust-badge">
+          <div class="trust-badge-inner">
+            <div class="shariah">Shariah<br>Compliant</div>
+            <div class="compliant">100% HALAL</div>
+          </div>
+        </div>
+        <div class="hero-visual-caption">
+          <div class="tag">With video proof</div>
+          <div class="text">"Your aqiqah, performed correctly — and you'll see it happen."</div>
+        </div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <h2>How it works</h2>
-      <p class="lead">Three steps. Most of it happens on WhatsApp.</p>
+      <div class="sec-head">
+        <h2>How it works</h2>
+        <p>Three steps. Most of it happens on WhatsApp.</p>
+      </div>
       <div class="steps">
         <div class="step"><h3>Choose a package</h3><p>Pick a goat size and tell us your child's name and the date you want.</p></div>
         <div class="step"><h3>Confirm on WhatsApp</h3><p>We reply to confirm the details and share how to pay from your country.</p></div>
-        <div class="step"><h3>We perform the aqiqah</h3><p>The slaughter is done on your date, the meat is distributed, and the proof is sent to you.</p></div>
+        <div class="step"><h3>We perform the aqiqah</h3><p>The slaughter is done on your date, the meat is delivered or distributed, and the proof is sent to you.</p></div>
+      </div>
+      <div class="ask-wa">
+        <a href="https://wa.me/8801733311019?text=As-salaamu%20alaikum%2C%20I%20have%20a%20question%20about%20arranging%20an%20aqiqah%20from%20abroad" class="btn btn-wa"><svg class="wa-icon" aria-hidden="true"><use href="#wa"/></svg>Have a question? Connect with us live on WhatsApp</a>
       </div>
     </div>
   </section>
 
   <section id="packages" class="packages">
     <div class="wrap">
-      <h2>Packages and prices</h2>
-      <p class="lead">One goat for a girl, two goats for a boy. Fixed price, no hidden fees.</p>
-      <div class="toggle" role="radiogroup" aria-label="Your child">
-        <button type="button" role="radio" aria-checked="true" data-g="girl">Girl</button>
-        <button type="button" role="radio" aria-checked="false" data-g="boy">Boy</button>
+      <div class="sec-head">
+        <h2>Packages and prices</h2>
+        <p>One goat for a girl, two goats for a boy. Fixed price, no hidden fees.</p>
       </div>
-      <p class="toggle-note" id="toggleNote">Showing the price for 1 goat.</p>
+      <div class="toggle-wrap">
+        <div class="toggle" role="radiogroup" aria-label="Your child">
+          <button type="button" role="radio" aria-checked="true" data-g="girl">Girl</button>
+          <button type="button" role="radio" aria-checked="false" data-g="boy">Boy</button>
+        </div>
+        <p class="toggle-note" id="toggleNote">Showing the price for 1 goat.</p>
+      </div>
 
       <div class="cards">
         <div class="card">
           <h3>Small</h3>
           <div class="size">15–19 kg goat</div>
           <div class="price">৳<span class="p" data-bdt="16000">16,000</span></div>
-          <div class="usd">about $<span class="u" data-usd="130">130</span></div>
+          <div class="local" data-bdt="16000"></div>
           <ul>
             <li>Shariah-compliant slaughter</li>
             <li>Professional butchering and clean packing</li>
-            <li>Meat distributed to families in need</li>
+            <li>Meat given to families in need</li>
             <li class="no">Video proof not included</li>
           </ul>
           <button type="button" class="btn btn-main pick" data-pkg="small">Choose Small</button>
@@ -239,11 +333,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3>Medium</h3>
           <div class="size">20–25 kg goat</div>
           <div class="price">৳<span class="p" data-bdt="22000">22,000</span></div>
-          <div class="usd">about $<span class="u" data-usd="180">180</span></div>
+          <div class="local" data-bdt="22000"></div>
           <ul>
             <li>Everything in Small</li>
             <li>Video proof of the slaughter on WhatsApp</li>
-            <li>Free delivery to family in Dhaka, if you want it</li>
+            <li>Free home delivery in Dhaka City, if you want it</li>
           </ul>
           <button type="button" class="btn btn-main pick" data-pkg="medium">Choose Medium</button>
         </div>
@@ -251,7 +345,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3>Large</h3>
           <div class="size">26–30 kg goat</div>
           <div class="price">৳<span class="p" data-bdt="28000">28,000</span></div>
-          <div class="usd">about $<span class="u" data-usd="230">230</span></div>
+          <div class="local" data-bdt="28000"></div>
           <ul>
             <li>Everything in Medium</li>
             <li>Meat packed in 3 portions (family, relatives, poor)</li>
@@ -265,8 +359,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section>
     <div class="wrap">
-      <h2>Why families abroad use us</h2>
-      <p class="lead">You can't be there, so we make sure you can see it was done right.</p>
+      <div class="sec-head">
+        <h2>Why families abroad use us</h2>
+        <p>You can't be there, so we make sure you can see it was done right.</p>
+      </div>
       <div class="proof-grid">
         <div><h3>Done in your child's name</h3><p>The intention is made for your child by name at the time of slaughter.</p></div>
         <div><h3>You see the proof</h3><p>A short slaughter video, plus photos of the meat being handed out with a card showing your baby's name.</p></div>
@@ -278,8 +374,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section id="order" class="order">
     <div class="wrap">
-      <h2>Book your aqiqah</h2>
-      <p class="lead">Takes about a minute. Your order opens in WhatsApp so we can confirm it with you.</p>
+      <div class="sec-head">
+        <h2>Book your aqiqah</h2>
+        <p>Takes about a minute. Your order opens in WhatsApp so we can confirm it with you.</p>
+      </div>
 
       <form id="orderForm" novalidate>
         <fieldset>
@@ -291,11 +389,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </fieldset>
 
         <fieldset>
-          <legend>Package</legend>
+          <legend>Package (goat size)</legend>
           <div class="opt-row">
-            <label class="opt"><input type="radio" name="pkg" value="small"> <span>Small<small class="opt-price" data-bdt="16000">৳16,000</small></span></label>
-            <label class="opt"><input type="radio" name="pkg" value="medium" checked> <span>Medium<small class="opt-price" data-bdt="22000">৳22,000</small></span></label>
-            <label class="opt"><input type="radio" name="pkg" value="large"> <span>Large<small class="opt-price" data-bdt="28000">৳28,000</small></span></label>
+            <label class="opt"><input type="radio" name="pkg" value="small"> <span>Small<small>15–19 kg</small><small class="opt-price" data-bdt="16000">৳16,000</small></span></label>
+            <label class="opt"><input type="radio" name="pkg" value="medium" checked> <span>Medium<small>20–25 kg</small><small class="opt-price" data-bdt="22000">৳22,000</small></span></label>
+            <label class="opt"><input type="radio" name="pkg" value="large"> <span>Large<small>26–30 kg</small><small class="opt-price" data-bdt="28000">৳28,000</small></span></label>
           </div>
         </fieldset>
 
@@ -315,14 +413,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <legend>What should we do with the meat?</legend>
           <div class="opt-row">
             <label class="opt"><input type="radio" name="dist" value="full-charity" checked> <span>Give it all to the needy</span></label>
-            <label class="opt"><input type="radio" name="dist" value="family-dhaka"> <span>Deliver to my family in Dhaka</span></label>
+            <label class="opt"><input type="radio" name="dist" value="home-delivery"> <span>Home Delivery</span></label>
           </div>
         </fieldset>
-        <div class="field hidden" id="f-addr">
-          <label class="lbl" for="addr">Family's address in Dhaka</label>
-          <textarea id="addr"></textarea>
-          <div class="hint hidden" id="smallDelivery">Delivery is an add-on with the Small package. We'll confirm the cost on WhatsApp.</div>
-          <div class="err">Please add the delivery address.</div>
+        <div id="homeBox" class="hidden">
+          <p class="note">Home Delivery is only available within Dhaka City, Bangladesh.</p>
+          <div class="field" id="f-addr">
+            <label class="lbl" for="addr">Delivery address in Dhaka City</label>
+            <textarea id="addr"></textarea>
+            <div class="hint hidden" id="smallDelivery">Delivery is an add-on with the Small package. We'll confirm the cost on WhatsApp.</div>
+            <div class="err">Please add the delivery address.</div>
+          </div>
         </div>
 
         <div class="two">
@@ -339,29 +440,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="field" id="f-phone">
           <label class="lbl" for="phone">WhatsApp number</label>
-          <input id="phone" type="tel" autocomplete="tel" placeholder="+44 7700 900123" required>
-          <div class="hint">Include your country code.</div>
+          <div class="phone-row">
+            <select id="cc" aria-label="Country code" required></select>
+            <input id="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="Phone number" required>
+          </div>
           <div class="err">Please add your WhatsApp number.</div>
         </div>
 
         <div class="total">
           <span>Total</span>
-          <div><strong id="tBdt">৳22,000</strong><small id="tUsd">about $180</small></div>
+          <div><strong id="tBdt">৳22,000</strong><small id="tLocal"></small></div>
         </div>
-        <button type="submit" class="btn btn-wa">Send my order on WhatsApp</button>
-        <p class="after">No payment now. We confirm your order first, then share payment options.</p>
+
+        <div class="pay">
+          <p class="pay-title">Ways to pay</p>
+          <ul class="pay-list" aria-label="Accepted payment methods">
+            <li data-logo="bkash">bKash</li>
+            <li data-logo="visa">Visa</li>
+            <li data-logo="mastercard">Mastercard</li>
+            <li data-logo="paypal">PayPal</li>
+            <li data-logo="wise">Wise</li>
+            <li data-logo="payoneer">Payoneer</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h18M5 10v8M9 10v8M15 10v8M19 10v8M3 21h18M12 3l9 5H3z"/></svg>Bank transfer</li>
+          </ul>
+        </div>
+
+        <button type="submit" class="btn btn-wa"><svg class="wa-icon" aria-hidden="true"><use href="#wa"/></svg>Send my order on WhatsApp</button>
+        <p class="after">No payment now. We confirm your order first, then share payment details.</p>
       </form>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <h2>Questions</h2>
-      <details><summary>How do I pay from abroad?</summary><p>After you send your order, we confirm the details on WhatsApp and share the payment options for your country.</p></details>
-      <details><summary>When will the aqiqah be done?</summary><p>On the date you choose wherever possible. If the date is very close, tell us on WhatsApp and we will prioritise it.</p></details>
-      <details><summary>What proof will I get?</summary><p>With Medium and Large, a short video of the slaughter is sent to you on WhatsApp within 24 hours, along with photos of the meat being distributed with a card showing your baby's name.</p></details>
-      <details><summary>Where does the meat go?</summary><p>By default, to orphans, madrasa students and poor families in Dhaka. You can also have it delivered to your family in Dhaka instead.</p></details>
-      <details><summary>Why two goats for a boy?</summary><p>The sunnah is two goats for a boy and one goat for a girl, so a boy's aqiqah costs double.</p></details>
+      <div class="sec-head"><h2>Questions</h2></div>
+      <div class="faq">
+        <details><summary>How do I pay from abroad?</summary><p>You can pay by bKash, Visa, Mastercard, PayPal, Wise, Payoneer or bank transfer. After you send your order, we confirm the details on WhatsApp and share the payment details.</p></details>
+        <details><summary>When will the aqiqah be done?</summary><p>On the date you choose wherever possible. If the date is very close, tell us on WhatsApp and we will prioritise it.</p></details>
+        <details><summary>What proof will I get?</summary><p>With Medium and Large, a short video of the slaughter is sent to you on WhatsApp within 24 hours, along with photos of the meat being distributed with a card showing your baby's name.</p></details>
+        <details><summary>Where does the meat go?</summary><p>Your choice. We can deliver it to your home anywhere in Dhaka City, or give it all to orphans, madrasa students and poor families in Dhaka.</p></details>
+        <details><summary>Why two goats for a boy?</summary><p>The sunnah is two goats for a boy and one goat for a girl, so a boy's aqiqah costs double.</p></details>
+      </div>
     </div>
   </section>
 </main>
@@ -375,24 +494,75 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="mobile-bar">
   <a href="#order" class="btn btn-main">Book now</a>
-  <a href="https://wa.me/8801733311019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad" class="btn btn-wa">WhatsApp</a>
+  <a href="https://wa.me/8801733311019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad" class="btn btn-wa"><svg class="wa-icon" aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
 </div>
 
 <script>
 (function () {
   var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwdiFxHiiepL0RlM6_406Xx5tE2t2I4CSAdPYdxZ_dBX8KAUwvLXnimPTLVv7L4aApO/exec';
   var WA = '8801733311019';
-  var PKG = { small: { name: 'Small', bdt: 16000, usd: 130 }, medium: { name: 'Medium', bdt: 22000, usd: 180 }, large: { name: 'Large', bdt: 28000, usd: 230 } };
+  var PKG = { small: { name: 'Small', size: '15–19 kg', bdt: 16000 }, medium: { name: 'Medium', size: '20–25 kg', bdt: 22000 }, large: { name: 'Large', size: '26–30 kg', bdt: 28000 } };
+
+  /* ---------- Visitor country and currency ----------
+     Country comes from the visitor's device time zone (no tracking, no extra request),
+     with the browser language as a fallback.
+     RATES = taka per 1 unit (Oct 2026). Update now and then; prices are shown as "around". */
+  var RATES = { USD: 123, CAD: 88, AUD: 87, NZD: 72, EUR: 142, GBP: 166 };
+  var SYMBOL = { USD: '$', CAD: 'C$', AUD: 'A$', NZD: 'NZ$', EUR: '€', GBP: '£' };
+  var EURO = 'AT BE BG HR CY EE FI FR DE GR IE IT LV LT LU MT NL PT SK SI ES MC SM VA AD ME XK'.split(' ');
+  var COUNTRIES = 'AF|Afghanistan|93;AL|Albania|355;DZ|Algeria|213;AS|American Samoa|1;AD|Andorra|376;AO|Angola|244;AI|Anguilla|1;AG|Antigua & Barbuda|1;AR|Argentina|54;AM|Armenia|374;AW|Aruba|297;AU|Australia|61;AT|Austria|43;AZ|Azerbaijan|994;BS|Bahamas|1;BH|Bahrain|973;BD|Bangladesh|880;BB|Barbados|1;BY|Belarus|375;BE|Belgium|32;BZ|Belize|501;BJ|Benin|229;BM|Bermuda|1;BT|Bhutan|975;BO|Bolivia|591;BA|Bosnia & Herzegovina|387;BW|Botswana|267;BR|Brazil|55;IO|British Indian Ocean Territory|246;VG|British Virgin Islands|1;BN|Brunei|673;BG|Bulgaria|359;BF|Burkina Faso|226;BI|Burundi|257;CV|Cabo Verde|238;KH|Cambodia|855;CM|Cameroon|237;CA|Canada|1;BQ|Caribbean Netherlands|599;KY|Cayman Islands|1;CF|Central African Republic|236;TD|Chad|235;CL|Chile|56;CN|China|86;CX|Christmas Island|61;CC|Cocos (Keeling) Islands|61;CO|Colombia|57;KM|Comoros|269;CG|Congo|242;CK|Cook Islands|682;CR|Costa Rica|506;HR|Croatia|385;CU|Cuba|53;CW|Curaçao|599;CY|Cyprus|357;CZ|Czechia|420;CI|Côte d\'Ivoire|225;CD|DR Congo|243;DK|Denmark|45;DJ|Djibouti|253;DM|Dominica|1;DO|Dominican Republic|1;EC|Ecuador|593;EG|Egypt|20;SV|El Salvador|503;GQ|Equatorial Guinea|240;ER|Eritrea|291;EE|Estonia|372;SZ|Eswatini|268;ET|Ethiopia|251;FK|Falkland Islands|500;FO|Faroe Islands|298;FJ|Fiji|679;FI|Finland|358;FR|France|33;GF|French Guiana|594;PF|French Polynesia|689;GA|Gabon|241;GM|Gambia|220;GE|Georgia|995;DE|Germany|49;GH|Ghana|233;GI|Gibraltar|350;GR|Greece|30;GL|Greenland|299;GD|Grenada|1;GP|Guadeloupe|590;GU|Guam|1;GT|Guatemala|502;GG|Guernsey|44;GN|Guinea|224;GW|Guinea-Bissau|245;GY|Guyana|592;HT|Haiti|509;HN|Honduras|504;HK|Hong Kong|852;HU|Hungary|36;IS|Iceland|354;IN|India|91;ID|Indonesia|62;IR|Iran|98;IQ|Iraq|964;IE|Ireland|353;IM|Isle of Man|44;IL|Israel|972;IT|Italy|39;JM|Jamaica|1;JP|Japan|81;JE|Jersey|44;JO|Jordan|962;KZ|Kazakhstan|7;KE|Kenya|254;KI|Kiribati|686;XK|Kosovo|383;KW|Kuwait|965;KG|Kyrgyzstan|996;LA|Laos|856;LV|Latvia|371;LB|Lebanon|961;LS|Lesotho|266;LR|Liberia|231;LY|Libya|218;LI|Liechtenstein|423;LT|Lithuania|370;LU|Luxembourg|352;MO|Macao|853;MG|Madagascar|261;MW|Malawi|265;MY|Malaysia|60;MV|Maldives|960;ML|Mali|223;MT|Malta|356;MH|Marshall Islands|692;MQ|Martinique|596;MR|Mauritania|222;MU|Mauritius|230;YT|Mayotte|262;MX|Mexico|52;FM|Micronesia|691;MD|Moldova|373;MC|Monaco|377;MN|Mongolia|976;ME|Montenegro|382;MS|Montserrat|1;MA|Morocco|212;MZ|Mozambique|258;MM|Myanmar|95;NA|Namibia|264;NR|Nauru|674;NP|Nepal|977;NL|Netherlands|31;NC|New Caledonia|687;NZ|New Zealand|64;NI|Nicaragua|505;NE|Niger|227;NG|Nigeria|234;NU|Niue|683;NF|Norfolk Island|672;KP|North Korea|850;MK|North Macedonia|389;MP|Northern Mariana Islands|1;NO|Norway|47;OM|Oman|968;PK|Pakistan|92;PW|Palau|680;PS|Palestine|970;PA|Panama|507;PG|Papua New Guinea|675;PY|Paraguay|595;PE|Peru|51;PH|Philippines|63;PL|Poland|48;PT|Portugal|351;PR|Puerto Rico|1;QA|Qatar|974;RO|Romania|40;RU|Russia|7;RW|Rwanda|250;RE|Réunion|262;WS|Samoa|685;SM|San Marino|378;SA|Saudi Arabia|966;SN|Senegal|221;RS|Serbia|381;SC|Seychelles|248;SL|Sierra Leone|232;SG|Singapore|65;SX|Sint Maarten|1;SK|Slovakia|421;SI|Slovenia|386;SB|Solomon Islands|677;SO|Somalia|252;ZA|South Africa|27;KR|South Korea|82;SS|South Sudan|211;ES|Spain|34;LK|Sri Lanka|94;BL|St Barthélemy|590;SH|St Helena|290;KN|St Kitts & Nevis|1;LC|St Lucia|1;MF|St Martin|590;PM|St Pierre & Miquelon|508;VC|St Vincent & Grenadines|1;SD|Sudan|249;SR|Suriname|597;SJ|Svalbard and Jan Mayen|47;SE|Sweden|46;CH|Switzerland|41;SY|Syria|963;ST|São Tomé & Príncipe|239;TW|Taiwan|886;TJ|Tajikistan|992;TZ|Tanzania|255;TH|Thailand|66;TL|Timor-Leste|670;TG|Togo|228;TK|Tokelau|690;TO|Tonga|676;TT|Trinidad & Tobago|1;TN|Tunisia|216;TM|Turkmenistan|993;TC|Turks & Caicos|1;TV|Tuvalu|688;TR|Türkiye|90;VI|US Virgin Islands|1;UG|Uganda|256;UA|Ukraine|380;AE|United Arab Emirates|971;GB|United Kingdom|44;US|United States|1;UY|Uruguay|598;UZ|Uzbekistan|998;VU|Vanuatu|678;VA|Vatican City|39;VE|Venezuela|58;VN|Vietnam|84;WF|Wallis & Futuna|681;EH|Western Sahara|212;YE|Yemen|967;ZM|Zambia|260;ZW|Zimbabwe|263;AX|Åland Islands|358'.split(';').map(function (r) { var p = r.split('|'); return { iso: p[0], name: p[1], dial: p[2] }; });
+  var TZ = {};
+  'AD=Europe/Andorra;AE=Asia/Dubai;AF=Asia/Kabul;AG=America/Antigua;AI=America/Anguilla;AL=Europe/Tirane;AM=Asia/Yerevan;AO=Africa/Luanda;AQ=Antarctica/Casey,Antarctica/Davis,Antarctica/DumontDUrville,Antarctica/Mawson,Antarctica/McMurdo,Antarctica/Palmer,Antarctica/Rothera,Antarctica/South_Pole,Antarctica/Syowa,Antarctica/Troll,Antarctica/Vostok;AR=America/Argentina/Buenos_Aires,America/Argentina/Catamarca,America/Argentina/ComodRivadavia,America/Argentina/Cordoba,America/Argentina/Jujuy,America/Argentina/La_Rioja,America/Argentina/Mendoza,America/Argentina/Rio_Gallegos,America/Argentina/Salta,America/Argentina/San_Juan,America/Argentina/San_Luis,America/Argentina/Tucuman,America/Argentina/Ushuaia,America/Buenos_Aires,America/Catamarca,America/Cordoba,America/Jujuy,America/Mendoza,America/Rosario;AS=Pacific/Pago_Pago,Pacific/Samoa,US/Samoa;AT=Europe/Vienna;AU=Antarctica/Macquarie,Australia/ACT,Australia/Adelaide,Australia/Brisbane,Australia/Broken_Hill,Australia/Canberra,Australia/Currie,Australia/Darwin,Australia/Eucla,Australia/Hobart,Australia/LHI,Australia/Lindeman,Australia/Lord_Howe,Australia/Melbourne,Australia/NSW,Australia/North,Australia/Perth,Australia/Queensland,Australia/South,Australia/Sydney,Australia/Tasmania,Australia/Victoria,Australia/West,Australia/Yancowinna;AW=America/Aruba;AX=Europe/Mariehamn;AZ=Asia/Baku;BA=Europe/Sarajevo;BB=America/Barbados;BD=Asia/Dacca,Asia/Dhaka;BE=Europe/Brussels;BF=Africa/Ouagadougou;BG=Europe/Sofia;BH=Asia/Bahrain;BI=Africa/Bujumbura;BJ=Africa/Porto-Novo;BL=America/St_Barthelemy;BM=Atlantic/Bermuda;BN=Asia/Brunei;BO=America/La_Paz;BQ=America/Kralendijk;BR=America/Araguaina,America/Bahia,America/Belem,America/Boa_Vista,America/Campo_Grande,America/Cuiaba,America/Eirunepe,America/Fortaleza,America/Maceio,America/Manaus,America/Noronha,America/Porto_Acre,America/Porto_Velho,America/Recife,America/Rio_Branco,America/Santarem,America/Sao_Paulo,Brazil/Acre,Brazil/DeNoronha,Brazil/East,Brazil/West;BS=America/Nassau;BT=Asia/Thimbu,Asia/Thimphu;BW=Africa/Gaborone;BY=Europe/Minsk;BZ=America/Belize;CA=America/Atikokan,America/Blanc-Sablon,America/Cambridge_Bay,America/Coral_Harbour,America/Creston,America/Dawson,America/Dawson_Creek,America/Edmonton,America/Fort_Nelson,America/Glace_Bay,America/Goose_Bay,America/Halifax,America/Inuvik,America/Iqaluit,America/Moncton,America/Montreal,America/Nipigon,America/Pangnirtung,America/Rainy_River,America/Rankin_Inlet,America/Regina,America/Resolute,America/St_Johns,America/Swift_Current,America/Thunder_Bay,America/Toronto,America/Vancouver,America/Whitehorse,America/Winnipeg,America/Yellowknife,Canada/Atlantic,Canada/Central,Canada/Eastern,Canada/Mountain,Canada/Newfoundland,Canada/Pacific,Canada/Saskatchewan,Canada/Yukon;CC=Indian/Cocos;CD=Africa/Kinshasa,Africa/Lubumbashi;CF=Africa/Bangui;CG=Africa/Brazzaville;CH=Europe/Zurich;CI=Africa/Abidjan;CK=Pacific/Rarotonga;CL=America/Coyhaique,America/Punta_Arenas,America/Santiago,Chile/Continental,Chile/EasterIsland,Pacific/Easter;CM=Africa/Douala;CN=Asia/Chongqing,Asia/Chungking,Asia/Harbin,Asia/Kashgar,Asia/Shanghai,Asia/Urumqi,PRC;CO=America/Bogota;CR=America/Costa_Rica;CU=America/Havana,Cuba;CV=Atlantic/Cape_Verde;CW=America/Curacao;CX=Indian/Christmas;CY=Asia/Famagusta,Asia/Nicosia,Europe/Nicosia;CZ=Europe/Prague;DE=Europe/Berlin,Europe/Busingen;DJ=Africa/Djibouti;DK=Europe/Copenhagen;DM=America/Dominica;DO=America/Santo_Domingo;DZ=Africa/Algiers;EC=America/Guayaquil,Pacific/Galapagos;EE=Europe/Tallinn;EG=Africa/Cairo,Egypt;EH=Africa/El_Aaiun;ER=Africa/Asmara,Africa/Asmera;ES=Africa/Ceuta,Atlantic/Canary,Europe/Madrid;ET=Africa/Addis_Ababa;FI=Europe/Helsinki;FJ=Pacific/Fiji;FK=Atlantic/Stanley;FM=Pacific/Chuuk,Pacific/Kosrae,Pacific/Pohnpei,Pacific/Ponape,Pacific/Truk,Pacific/Yap;FO=Atlantic/Faeroe,Atlantic/Faroe;FR=Europe/Paris;GA=Africa/Libreville;GB=Europe/Belfast,Europe/London,GB,GB-Eire;GD=America/Grenada;GE=Asia/Tbilisi;GF=America/Cayenne;GG=Europe/Guernsey;GH=Africa/Accra;GI=Europe/Gibraltar;GL=America/Danmarkshavn,America/Godthab,America/Nuuk,America/Scoresbysund,America/Thule;GM=Africa/Banjul;GN=Africa/Conakry;GP=America/Guadeloupe;GQ=Africa/Malabo;GR=Europe/Athens;GS=Atlantic/South_Georgia;GT=America/Guatemala;GU=Pacific/Guam;GW=Africa/Bissau;GY=America/Guyana;HK=Asia/Hong_Kong,Hongkong;HN=America/Tegucigalpa;HR=Europe/Zagreb;HT=America/Port-au-Prince;HU=Europe/Budapest;ID=Asia/Jakarta,Asia/Jayapura,Asia/Makassar,Asia/Pontianak,Asia/Ujung_Pandang;IE=Eire,Europe/Dublin;IL=Asia/Jerusalem,Asia/Tel_Aviv,Israel;IM=Europe/Isle_of_Man;IN=Asia/Calcutta,Asia/Kolkata;IO=Indian/Chagos;IQ=Asia/Baghdad;IR=Asia/Tehran,Iran;IS=Atlantic/Reykjavik,Iceland;IT=Europe/Rome;JE=Europe/Jersey;JM=America/Jamaica,Jamaica;JO=Asia/Amman;JP=Asia/Tokyo,Japan;KE=Africa/Nairobi;KG=Asia/Bishkek;KH=Asia/Phnom_Penh;KI=Pacific/Enderbury,Pacific/Kanton,Pacific/Kiritimati,Pacific/Tarawa;KM=Indian/Comoro;KN=America/St_Kitts;KP=Asia/Pyongyang;KR=Asia/Seoul,ROK;KW=Asia/Kuwait;KY=America/Cayman;KZ=Asia/Almaty,Asia/Aqtau,Asia/Aqtobe,Asia/Atyrau,Asia/Oral,Asia/Qostanay,Asia/Qyzylorda;LA=Asia/Vientiane;LB=Asia/Beirut;LC=America/St_Lucia;LI=Europe/Vaduz;LK=Asia/Colombo;LR=Africa/Monrovia;LS=Africa/Maseru;LT=Europe/Vilnius;LU=Europe/Luxembourg;LV=Europe/Riga;LY=Africa/Tripoli,Libya;MA=Africa/Casablanca;MC=Europe/Monaco;MD=Europe/Chisinau,Europe/Tiraspol;ME=Europe/Podgorica;MF=America/Marigot;MG=Indian/Antananarivo;MH=Kwajalein,Pacific/Kwajalein,Pacific/Majuro;MK=Europe/Skopje;ML=Africa/Bamako,Africa/Timbuktu;MM=Asia/Rangoon,Asia/Yangon;MN=Asia/Choibalsan,Asia/Hovd,Asia/Ulaanbaatar,Asia/Ulan_Bator;MO=Asia/Macao,Asia/Macau;MP=Pacific/Saipan;MQ=America/Martinique;MR=Africa/Nouakchott;MS=America/Montserrat;MT=Europe/Malta;MU=Indian/Mauritius;MV=Indian/Maldives;MW=Africa/Blantyre;MX=America/Bahia_Banderas,America/Cancun,America/Chihuahua,America/Ciudad_Juarez,America/Ensenada,America/Hermosillo,America/Matamoros,America/Mazatlan,America/Merida,America/Mexico_City,America/Monterrey,America/Ojinaga,America/Santa_Isabel,America/Tijuana,Mexico/BajaNorte,Mexico/BajaSur,Mexico/General;MY=Asia/Kuala_Lumpur,Asia/Kuching;MZ=Africa/Maputo;NA=Africa/Windhoek;NC=Pacific/Noumea;NE=Africa/Niamey;NF=Pacific/Norfolk;NG=Africa/Lagos;NI=America/Managua;NL=Europe/Amsterdam;NO=Atlantic/Jan_Mayen,Europe/Oslo;NP=Asia/Kathmandu,Asia/Katmandu;NR=Pacific/Nauru;NU=Pacific/Niue;NZ=NZ,NZ-CHAT,Pacific/Auckland,Pacific/Chatham;OM=Asia/Muscat;PA=America/Panama;PE=America/Lima;PF=Pacific/Gambier,Pacific/Marquesas,Pacific/Tahiti;PG=Pacific/Bougainville,Pacific/Port_Moresby;PH=Asia/Manila;PK=Asia/Karachi;PL=Europe/Warsaw,Poland;PM=America/Miquelon;PN=Pacific/Pitcairn;PR=America/Puerto_Rico;PS=Asia/Gaza,Asia/Hebron;PT=Atlantic/Azores,Atlantic/Madeira,Europe/Lisbon,Portugal;PW=Pacific/Palau;PY=America/Asuncion;QA=Asia/Qatar;RE=Indian/Reunion;RO=Europe/Bucharest;RS=Europe/Belgrade;RU=Asia/Anadyr,Asia/Barnaul,Asia/Chita,Asia/Irkutsk,Asia/Kamchatka,Asia/Khandyga,Asia/Krasnoyarsk,Asia/Magadan,Asia/Novokuznetsk,Asia/Novosibirsk,Asia/Omsk,Asia/Sakhalin,Asia/Srednekolymsk,Asia/Tomsk,Asia/Ust-Nera,Asia/Vladivostok,Asia/Yakutsk,Asia/Yekaterinburg,Europe/Astrakhan,Europe/Kaliningrad,Europe/Kirov,Europe/Moscow,Europe/Samara,Europe/Saratov,Europe/Ulyanovsk,Europe/Volgograd,W-SU;RW=Africa/Kigali;SA=Asia/Riyadh;SB=Pacific/Guadalcanal;SC=Indian/Mahe;SD=Africa/Khartoum;SE=Europe/Stockholm;SG=Asia/Singapore,Singapore;SH=Atlantic/St_Helena;SI=Europe/Ljubljana;SJ=Arctic/Longyearbyen;SK=Europe/Bratislava;SL=Africa/Freetown;SM=Europe/San_Marino;SN=Africa/Dakar;SO=Africa/Mogadishu;SR=America/Paramaribo;SS=Africa/Juba;ST=Africa/Sao_Tome;SV=America/El_Salvador;SX=America/Lower_Princes;SY=Asia/Damascus;SZ=Africa/Mbabane;TC=America/Grand_Turk;TD=Africa/Ndjamena;TF=Indian/Kerguelen;TG=Africa/Lome;TH=Asia/Bangkok;TJ=Asia/Dushanbe;TK=Pacific/Fakaofo;TL=Asia/Dili;TM=Asia/Ashgabat,Asia/Ashkhabad;TN=Africa/Tunis;TO=Pacific/Tongatapu;TR=Asia/Istanbul,Europe/Istanbul,Turkey;TT=America/Port_of_Spain;TV=Pacific/Funafuti;TW=Asia/Taipei,ROC;TZ=Africa/Dar_es_Salaam;UA=Europe/Kiev,Europe/Kyiv,Europe/Simferopol,Europe/Uzhgorod,Europe/Zaporozhye;UG=Africa/Kampala;UM=Pacific/Midway,Pacific/Wake;US=America/Adak,America/Anchorage,America/Atka,America/Boise,America/Chicago,America/Denver,America/Detroit,America/Fort_Wayne,America/Indiana/Indianapolis,America/Indiana/Knox,America/Indiana/Marengo,America/Indiana/Petersburg,America/Indiana/Tell_City,America/Indiana/Vevay,America/Indiana/Vincennes,America/Indiana/Winamac,America/Indianapolis,America/Juneau,America/Kentucky/Louisville,America/Kentucky/Monticello,America/Knox_IN,America/Los_Angeles,America/Louisville,America/Menominee,America/Metlakatla,America/New_York,America/Nome,America/North_Dakota/Beulah,America/North_Dakota/Center,America/North_Dakota/New_Salem,America/Phoenix,America/Shiprock,America/Sitka,America/Yakutat,Navajo,Pacific/Honolulu,Pacific/Johnston,US/Alaska,US/Aleutian,US/Arizona,US/Central,US/East-Indiana,US/Eastern,US/Hawaii,US/Indiana-Starke,US/Michigan,US/Mountain,US/Pacific;UY=America/Montevideo;UZ=Asia/Samarkand,Asia/Tashkent;VA=Europe/Vatican;VC=America/St_Vincent;VE=America/Caracas;VG=America/Tortola;VI=America/St_Thomas,America/Virgin;VN=Asia/Ho_Chi_Minh,Asia/Saigon;VU=Pacific/Efate;WF=Pacific/Wallis;WS=Pacific/Apia;YE=Asia/Aden;YT=Indian/Mayotte;ZA=Africa/Johannesburg;ZM=Africa/Lusaka;ZW=Africa/Harare'.split(';').forEach(function (r) { var p = r.split('='); p[1].split(',').forEach(function (z) { TZ[z] = p[0]; }); });
+  var byIso = {}; COUNTRIES.forEach(function (c) { byIso[c.iso] = c; });
+
+  function detectCountry() {
+    try {
+      var z = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (z && TZ[z] && byIso[TZ[z]]) return TZ[z];
+    } catch (e) {}
+    var langs = navigator.languages || [navigator.language || ''];
+    for (var i = 0; i < langs.length; i++) {
+      var m = /-([A-Za-z]{2})$/.exec(langs[i] || '');
+      if (m && byIso[m[1].toUpperCase()]) return m[1].toUpperCase();
+    }
+    return 'US';
+  }
+  var visitor = detectCountry();
+  var currency = visitor === 'BD' ? 'BDT'
+    : visitor === 'US' ? 'USD' : visitor === 'CA' ? 'CAD' : visitor === 'AU' ? 'AUD' : visitor === 'NZ' ? 'NZD'
+    : (['GB', 'GG', 'JE', 'IM'].indexOf(visitor) !== -1) ? 'GBP'
+    : (EURO.indexOf(visitor) !== -1) ? 'EUR' : 'USD';
+
   var fmt = function (n) { return n.toLocaleString('en-US'); };
+  function approx(bdt) {
+    if (currency === 'BDT') return '';
+    var v = bdt / RATES[currency];
+    v = v < 50 ? Math.round(v) : Math.round(v / 5) * 5;
+    return 'around ' + SYMBOL[currency] + fmt(v);
+  }
+
   var form = document.getElementById('orderForm');
   var $ = function (s) { return document.querySelector(s); };
+
+  // Phone country codes: visitor's country selected by default
+  var ccSel = $('#cc');
+  var top = ['US', 'GB', 'CA', 'AU', 'NZ', 'IE', 'DE', 'FR', 'IT', 'SE', 'SA', 'AE', 'QA', 'KW', 'OM', 'MY', 'BD'];
+  function opt(c) { var o = document.createElement('option'); o.value = c.iso; o.textContent = '+' + c.dial + ' · ' + c.name; return o; }
+  var g1 = document.createElement('optgroup'); g1.label = 'Common';
+  top.forEach(function (iso) { if (byIso[iso]) g1.appendChild(opt(byIso[iso])); });
+  var g2 = document.createElement('optgroup'); g2.label = 'All countries';
+  COUNTRIES.forEach(function (c) { g2.appendChild(opt(c)); });
+  ccSel.appendChild(g1); ccSel.appendChild(g2);
+  ccSel.value = visitor;
+  if (visitor !== 'BD' && byIso[visitor]) $('#country').value = byIso[visitor].name;
 
   function goats() { return form.gender.value === 'boy' ? 2 : 1; }
 
   function render() {
     var g = goats();
+    $('#heroPrice').textContent = currency === 'BDT' ? '৳16,000' : approx(16000);
     document.querySelectorAll('.p[data-bdt]').forEach(function (el) { el.textContent = fmt(+el.dataset.bdt * g); });
-    document.querySelectorAll('.u[data-usd]').forEach(function (el) { el.textContent = fmt(+el.dataset.usd * g); });
+    document.querySelectorAll('.local[data-bdt]').forEach(function (el) { el.textContent = approx(+el.dataset.bdt * g); });
     document.querySelectorAll('.opt-price[data-bdt]').forEach(function (el) { el.textContent = '৳' + fmt(+el.dataset.bdt * g); });
     document.querySelectorAll('.toggle button').forEach(function (b) {
       b.setAttribute('aria-checked', b.dataset.g === form.gender.value ? 'true' : 'false');
@@ -400,18 +570,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     $('#toggleNote').textContent = g === 2 ? 'Showing the price for 2 goats.' : 'Showing the price for 1 goat.';
     var p = PKG[form.pkg.value];
     $('#tBdt').textContent = '৳' + fmt(p.bdt * g);
-    $('#tUsd').textContent = 'about $' + fmt(p.usd * g);
-    $('#f-addr').classList.toggle('hidden', form.dist.value !== 'family-dhaka');
+    $('#tLocal').textContent = approx(p.bdt * g);
+    $('#homeBox').classList.toggle('hidden', form.dist.value !== 'home-delivery');
     $('#smallDelivery').classList.toggle('hidden', form.pkg.value !== 'small');
   }
 
-  // Packages section toggle and form gender stay in sync
   document.querySelectorAll('.toggle button').forEach(function (b) {
     b.addEventListener('click', function () { form.gender.value = b.dataset.g; render(); });
   });
   form.addEventListener('change', render);
+  // Clear an error as soon as the visitor fixes that field
+  form.addEventListener('input', function (e) { var f = e.target.closest('.field'); if (f) f.classList.remove('has-error'); });
+  form.addEventListener('change', function (e) { var f = e.target.closest('.field'); if (f) f.classList.remove('has-error'); });
 
-  // "Choose" buttons pick the package and jump to the form
   document.querySelectorAll('.pick').forEach(function (b) {
     b.addEventListener('click', function () {
       form.pkg.value = b.dataset.pkg; render();
@@ -420,32 +591,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
-  // Don't allow past dates
   var today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
   $('#aqDate').min = today.toISOString().slice(0, 10);
 
   function check(id, ok) { document.getElementById(id).classList.toggle('has-error', !ok); return ok; }
+  function fullPhone() {
+    var raw = $('#phone').value.trim();
+    if (raw.charAt(0) === '+') return raw.replace(/[^\d+]/g, '');
+    var digits = raw.replace(/\D/g, '');
+    if (ccSel.value !== 'IT') digits = digits.replace(/^0+/, '');
+    return '+' + byIso[ccSel.value].dial + digits;
+  }
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var date = $('#aqDate').value, name = $('#pName').value.trim(), country = $('#country').value.trim(),
-        phone = $('#phone').value.trim(), addr = $('#addr').value.trim(), baby = $('#babyName').value.trim();
-    var toFamily = form.dist.value === 'family-dhaka';
+        addr = $('#addr').value.trim(), baby = $('#babyName').value.trim();
+    var toHome = form.dist.value === 'home-delivery';
     var ok = [check('f-date', !!date), check('f-name', !!name), check('f-country', !!country),
-              check('f-phone', phone.replace(/\D/g, '').length >= 7), check('f-addr', !toFamily || !!addr)];
+              check('f-phone', !!ccSel.value && $('#phone').value.replace(/\D/g, '').length >= 6),
+              check('f-addr', !toHome || !!addr)];
     if (ok.indexOf(false) !== -1) {
-      var first = form.querySelector('.has-error input, .has-error textarea');
+      var first = form.querySelector('.has-error input, .has-error textarea, .has-error select');
       if (first) first.focus();
       return;
     }
-    var g = goats(), p = PKG[form.pkg.value], total = p.bdt * g;
-    var distText = toFamily ? 'Deliver to my family in Dhaka' : 'Give it all to the needy';
+    var g = goats(), p = PKG[form.pkg.value], total = p.bdt * g, phone = fullPhone();
+    var local = approx(total);
+    var distText = toHome ? 'Home Delivery (Dhaka City)' : 'Give it all to the needy';
 
-    // Log to the orders sheet (same sheet as the main order form)
     var payload = {
       lang: 'en', gender: form.gender.value, goats: g, package: p.name, price: total,
       babyName: baby, babyDob: '', deliveryDate: date, parentName: name, phone: phone,
-      address: 'Country: ' + country + (toFamily ? ' | Dhaka delivery: ' + addr : ''),
+      address: 'Country: ' + country + (toHome ? ' | Dhaka delivery: ' + addr : ''),
       distribution: form.dist.value, source: 'funnel-abroad-en'
     };
     try { navigator.sendBeacon(SHEET_URL, JSON.stringify(payload)); } catch (err) {
@@ -456,22 +634,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       'As-salaamu alaikum! I would like to book an aqiqah from abroad.',
       '',
       'Child: ' + (g === 2 ? 'Boy (2 goats)' : 'Girl (1 goat)') + (baby ? ' — ' + baby : ''),
-      'Package: ' + p.name + ' — ৳' + fmt(total) + ' (about $' + fmt(p.usd * g) + ')',
+      'Package: ' + p.name + ' (' + p.size + ') — ৳' + fmt(total) + (local ? ' (' + local + ')' : ''),
       'Preferred date: ' + date,
-      'Meat: ' + distText + (toFamily ? '\nDhaka address: ' + addr : ''),
+      'Meat: ' + distText + (toHome ? '\nDelivery address: ' + addr : ''),
       '',
       'Name: ' + name,
       'Country: ' + country,
       'WhatsApp: ' + phone,
       '',
-      'Please confirm and share payment options. JazakAllahu khairan.'
+      'Please confirm and share payment details. JazakAllahu khairan.'
     ];
     var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(lines.join('\n'));
     var gone = false;
     function go() { if (!gone) { gone = true; window.location.href = url; } }
     // Tell Google Tag Manager about the order, then open WhatsApp (waits at most 1.5s for tags)
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'order_submit', form: 'aqiqah-funnel', lang: 'en', package: p.name, value: total, currency: 'BDT', eventCallback: go, eventTimeout: 1500 });
+    window.dataLayer.push({ event: 'order_submit', form: 'aqiqah-funnel', lang: 'en', package: p.name, value: total, currency: 'BDT', visitor_country: visitor, eventCallback: go, eventTimeout: 1500 });
     setTimeout(go, 1500);
   });
 
