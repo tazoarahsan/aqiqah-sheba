@@ -10,6 +10,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-578K6CLB');</script>
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+/* Country flag emojis on Windows: loads a small flag-only font when the device can't show flags.
+   Based on country-flag-emoji-polyfill by TalkJS (MIT). Flag artwork: Twemoji by Twitter, CC-BY 4.0. */
+(function () {
+  function shows(s) {
+    var c = document.createElement('canvas'); c.width = c.height = 1;
+    var x = c.getContext('2d', { willReadFrequently: true });
+    x.textBaseline = 'top'; x.font = '100px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif'; x.scale(0.01, 0.01);
+    function px(col) { x.clearRect(0, 0, 100, 100); x.fillStyle = col; x.fillText(s, 0, 0); return x.getImageData(0, 0, 1, 1).data.join(','); }
+    var w = px('#fff'), b = px('#000');
+    return b === w && b.indexOf('0,0,0,') !== 0;
+  }
+  try {
+    if (shows('\uD83D\uDE0A') && !shows('\uD83C\uDDE8\uD83C\uDDED')) {
+      var st = document.createElement('style');
+      st.textContent = '@font-face{font-family:"Twemoji Country Flags";unicode-range:U+1F1E6-1F1FF,U+1F3F4,U+E0062-E0063,U+E0065,U+E0067,U+E006C,U+E006E,U+E0073-E0074,U+E0077,U+E007F;src:url(/fonts/TwemojiCountryFlags.woff2) format("woff2");font-display:swap}';
+      document.head.appendChild(st);
+    }
+  } catch (e) {}
+})();
+</script>
 <title>Aqiqah from Abroad — Done in Bangladesh, Proof Sent to You | Aqiqah Sheba</title>
 <meta name="description" content="Living abroad? We perform your child's aqiqah in Dhaka the Islamic way, deliver the meat to your family or give it to families in need, and send you video proof. Fixed price from ৳16,000.">
 <link rel="canonical" href="https://aqiqahsheba.com/aqiqah-from-abroad/">
@@ -41,10 +62,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Twemoji Country Flags", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--ink); background: var(--cream-light); line-height: 1.55; font-size: 17px;
   }
-  h1, h2 { font-family: Georgia, "Times New Roman", serif; color: var(--green-900); line-height: 1.15; }
+  h1, h2 { font-family: "Twemoji Country Flags", Georgia, "Times New Roman", serif; color: var(--green-900); line-height: 1.15; }
   a { color: inherit; }
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
   .wa-icon { width: 22px; height: 22px; flex: none; }
@@ -132,15 +153,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .toggle button { border: 0; background: transparent; padding: 10px 24px; border-radius: 999px; font: inherit; font-weight: 700; cursor: pointer; color: var(--green-900); }
   .toggle button[aria-checked="true"] { background: var(--green-900); color: var(--cream); }
   .toggle-note { font-size: 14px; color: var(--muted); margin-bottom: 26px; }
-  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; }
-  .card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 24px; position: relative; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 24px; position: relative; display: flex; flex-direction: column; }
   .card.featured { border: 2px solid var(--green-900); }
   .card .tag { position: absolute; top: -13px; left: 24px; background: var(--gold); color: var(--green-900); font-size: 13px; font-weight: 700; padding: 4px 12px; border-radius: 999px; }
   .card h3 { font-size: 22px; color: var(--green-900); }
   .card .size { font-size: 14px; color: var(--muted); margin-top: 2px; }
   .card .price { margin-top: 14px; font-size: 34px; font-weight: 800; color: var(--green-900); }
   .card .local { font-size: 15px; color: var(--muted); min-height: 1.4em; }
-  .card ul { list-style: none; margin: 16px 0 20px; font-size: 15px; }
+  .card ul { list-style: none; margin: 16px 0 20px; font-size: 15px; flex: 1; }
   .card li { padding: 6px 0 6px 26px; position: relative; border-top: 1px solid var(--line); }
   .card li::before { content: "✓"; position: absolute; left: 2px; color: var(--gold-text); font-weight: 800; }
   .card li.no { color: #646a66; }
@@ -173,7 +194,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .field textarea { min-height: 80px; }
   .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .phone-row { display: grid; grid-template-columns: minmax(130px, 42%) 1fr; gap: 8px; }
+  .phone-row { display: grid; grid-template-columns: auto 1fr; gap: 8px; }
+  .cc { position: relative; }
+  .cc-btn {
+    height: 48px; min-width: 112px; display: inline-flex; align-items: center; gap: 8px; padding: 0 12px;
+    border: 1.5px solid var(--line); border-radius: 10px; background: #fff; font: inherit; font-size: 16px; color: var(--ink); cursor: pointer;
+  }
+  .cc-flag { font-size: 22px; line-height: 1; }
+  .cc-caret { margin-left: auto; color: var(--muted); font-size: 12px; }
+  .cc-panel {
+    position: absolute; z-index: 30; top: calc(100% + 6px); left: 0; width: min(340px, 86vw);
+    background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 18px 40px -16px rgba(15, 30, 23, 0.35); padding: 8px;
+  }
+  .cc-panel input { width: 100%; min-height: 44px; padding: 8px 12px; border: 1.5px solid var(--line); border-radius: 8px; font: inherit; font-size: 16px; }
+  .cc-panel ul { list-style: none; max-height: 260px; overflow-y: auto; margin-top: 6px; }
+  .cc-panel li { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; cursor: pointer; font-size: 15px; }
+  .cc-panel li .f { font-size: 20px; line-height: 1; }
+  .cc-panel li .d { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .cc-panel li[aria-selected="true"] { font-weight: 700; }
+  .cc-panel li.active, .cc-panel li:hover { background: var(--cream); }
+  .cc-panel li.sep { height: 1px; padding: 0; margin: 6px 4px; background: var(--line); pointer-events: none; }
+  .cc-panel .none { padding: 10px; color: var(--muted); font-size: 14px; }
+  .nowa { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 14px; color: var(--muted); cursor: pointer; }
+  .nowa input { width: 16px; height: 16px; accent-color: var(--green-900); }
+  .thanks { background: #fff; border-radius: 14px; padding: 32px 28px; max-width: 680px; margin: 0 auto; text-align: center; }
+  .thanks h3 { font-family: Georgia, serif; font-size: 26px; color: var(--green-900); margin-bottom: 8px; }
+  .thanks p { color: var(--muted); }
   .hint { font-size: 13px; color: var(--muted); margin-top: 4px; }
   .note { font-size: 14px; color: var(--green-900); background: var(--cream-light); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin: -6px 0 14px; }
   .err { display: none; color: #a4161a; font-size: 14px; margin-top: 4px; font-weight: 600; }
@@ -186,8 +232,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .pay { border-top: 1px solid var(--line); padding-top: 14px; margin-bottom: 18px; }
   .pay-title { font-size: 14px; font-weight: 700; color: var(--green-900); margin-bottom: 8px; text-align: center; }
   .pay-list { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; list-style: none; }
-  .pay-list li { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--cream-light); font-size: 14px; font-weight: 700; color: var(--ink); }
-  .pay-list img { height: 20px; width: auto; display: block; }
+  .pay-list li { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 40px; min-width: 64px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; font-size: 14px; font-weight: 700; color: var(--ink); }
+  .pay-list img { height: 22px; width: auto; display: block; }
+  .pay-list img[alt="Mastercard"] { height: 28px; }
   .pay-list svg { width: 18px; height: 18px; }
   form .btn { width: 100%; }
   .after { font-size: 14px; color: var(--muted); margin-top: 10px; text-align: center; }
@@ -255,7 +302,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <h1>Your child's aqiqah, done properly in Bangladesh while you're abroad.</h1>
+        <h1>Your child's aqiqah, done properly in Bangladesh 🇧🇩 while you're abroad.</h1>
         <p class="sub">We buy a healthy goat, perform the slaughter by Islamic rules in your child's name, and deliver the meat to your home in Dhaka or give it to families in need. With Medium and Large, you see it done on video.</p>
         <div class="ctas">
           <a href="#packages" class="btn btn-main">See packages and prices</a>
@@ -439,12 +486,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="field" id="f-phone">
-          <label class="lbl" for="phone">WhatsApp number</label>
+          <label class="lbl" for="phone">Phone number</label>
           <div class="phone-row">
-            <select id="cc" aria-label="Country code" required></select>
+            <div class="cc" id="ccBox">
+              <button type="button" class="cc-btn" id="ccBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Country code"><span class="cc-flag" id="ccFlag"></span><span id="ccDial"></span><span class="cc-caret" aria-hidden="true">▾</span></button>
+              <div class="cc-panel hidden" id="ccPanel">
+                <input type="search" id="ccSearch" placeholder="Search country or code" aria-label="Search country or code" autocomplete="off">
+                <ul id="ccList" role="listbox" aria-label="Country codes"></ul>
+              </div>
+            </div>
             <input id="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="Phone number" required>
           </div>
-          <div class="err">Please add your WhatsApp number.</div>
+          <label class="nowa"><input type="checkbox" id="noWa"> I don't have WhatsApp</label>
+          <div class="err">Please add your phone number.</div>
+        </div>
+        <div class="field hidden" id="f-email">
+          <label class="lbl" for="email">Email address</label>
+          <input id="email" type="email" autocomplete="email" placeholder="you@example.com">
+          <div class="hint">We'll confirm your order and send updates by email.</div>
+          <div class="err">Please add a valid email address.</div>
         </div>
 
         <div class="total">
@@ -455,19 +515,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="pay">
           <p class="pay-title">Ways to pay</p>
           <ul class="pay-list" aria-label="Accepted payment methods">
-            <li data-logo="bkash">bKash</li>
-            <li data-logo="visa">Visa</li>
-            <li data-logo="mastercard">Mastercard</li>
-            <li data-logo="paypal">PayPal</li>
-            <li data-logo="wise">Wise</li>
-            <li data-logo="payoneer">Payoneer</li>
+            <li><img src="/assets/payments/bkash.webp" alt="bKash" width="108" height="48" loading="lazy"></li>
+            <li><img src="/assets/payments/visa.webp" alt="Visa" width="148" height="48" loading="lazy"></li>
+            <li><img src="/assets/payments/mastercard.webp" alt="Mastercard" width="62" height="48" loading="lazy"></li>
+            <li><img src="/assets/payments/paypal.webp" alt="PayPal" width="195" height="48" loading="lazy"></li>
+            <li><img src="/assets/payments/wise.webp" alt="Wise" width="211" height="48" loading="lazy"></li>
+            <li><img src="/assets/payments/payoneer.webp" alt="Payoneer" width="241" height="48" loading="lazy"></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h18M5 10v8M9 10v8M15 10v8M19 10v8M3 21h18M12 3l9 5H3z"/></svg>Bank transfer</li>
           </ul>
         </div>
 
-        <button type="submit" class="btn btn-wa"><svg class="wa-icon" aria-hidden="true"><use href="#wa"/></svg>Send my order on WhatsApp</button>
+        <button type="submit" class="btn btn-wa" id="submitBtn"><svg class="wa-icon" id="submitIcon" aria-hidden="true"><use href="#wa"/></svg><span id="submitText">Confirm order on WhatsApp</span></button>
         <p class="after">No payment now. We confirm your order first, then share payment details.</p>
       </form>
+      <div class="thanks hidden" id="thanks" role="status" tabindex="-1">
+        <h3>Thank you, your order is in.</h3>
+        <p>We'll contact you by email to confirm the details and share payment details. If you don't hear from us within a day, please check your spam folder.</p>
+      </div>
     </div>
   </section>
 
@@ -546,17 +610,87 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var form = document.getElementById('orderForm');
   var $ = function (s) { return document.querySelector(s); };
 
-  // Phone country codes: visitor's country selected by default
-  var ccSel = $('#cc');
-  var top = ['US', 'GB', 'CA', 'AU', 'NZ', 'IE', 'DE', 'FR', 'IT', 'SE', 'SA', 'AE', 'QA', 'KW', 'OM', 'MY', 'BD'];
-  function opt(c) { var o = document.createElement('option'); o.value = c.iso; o.textContent = '+' + c.dial + ' · ' + c.name; return o; }
-  var g1 = document.createElement('optgroup'); g1.label = 'Common';
-  top.forEach(function (iso) { if (byIso[iso]) g1.appendChild(opt(byIso[iso])); });
-  var g2 = document.createElement('optgroup'); g2.label = 'All countries';
-  COUNTRIES.forEach(function (c) { g2.appendChild(opt(c)); });
-  ccSel.appendChild(g1); ccSel.appendChild(g2);
-  ccSel.value = visitor;
+  // Phone country code picker: flags, search by country name or number, visitor's country pre-selected
+  function flag(iso) { return String.fromCodePoint.apply(null, iso.split('').map(function (c) { return 127397 + c.charCodeAt(0); })); }
+  var common = ['US', 'GB', 'CA', 'AU', 'NZ', 'IE', 'DE', 'FR', 'IT', 'SE', 'SA', 'AE', 'QA', 'KW', 'OM', 'MY', 'BD'];
+  var ccIso = byIso[visitor] ? visitor : 'US';
+  var ccBtn = $('#ccBtn'), ccPanel = $('#ccPanel'), ccSearch = $('#ccSearch'), ccList = $('#ccList');
+  function setCc(iso) {
+    ccIso = iso;
+    $('#ccFlag').textContent = flag(iso);
+    $('#ccDial').textContent = '+' + byIso[iso].dial;
+    ccBtn.setAttribute('aria-label', 'Country code: ' + byIso[iso].name + ' +' + byIso[iso].dial);
+  }
+  function li(c) {
+    var el = document.createElement('li');
+    el.setAttribute('role', 'option'); el.dataset.iso = c.iso;
+    el.setAttribute('aria-selected', c.iso === ccIso ? 'true' : 'false');
+    el.innerHTML = '<span class="f"></span><span class="n"></span><span class="d"></span>';
+    el.children[0].textContent = flag(c.iso); el.children[1].textContent = c.name; el.children[2].textContent = '+' + c.dial;
+    return el;
+  }
+  function fillList(q) {
+    ccList.innerHTML = '';
+    q = (q || '').trim().toLowerCase();
+    var digits = q.replace(/[^\d]/g, '');
+    var list;
+    if (!q) {
+      common.forEach(function (iso) { if (byIso[iso]) ccList.appendChild(li(byIso[iso])); });
+      var sep = document.createElement('li'); sep.className = 'sep'; sep.setAttribute('role', 'presentation'); ccList.appendChild(sep);
+      list = COUNTRIES;
+    } else if (digits && /^[+\d\s]+$/.test(q)) {
+      list = COUNTRIES.filter(function (c) { return c.dial.indexOf(digits) === 0; })
+        .sort(function (x, y) { return (x.dial === digits ? 0 : 1) - (y.dial === digits ? 0 : 1) || x.dial.length - y.dial.length
+          || (common.indexOf(x.iso) === -1 ? 99 : common.indexOf(x.iso)) - (common.indexOf(y.iso) === -1 ? 99 : common.indexOf(y.iso)); });
+    } else {
+      list = COUNTRIES.filter(function (c) { return c.name.toLowerCase().indexOf(q) !== -1 || c.iso.toLowerCase() === q; })
+        .sort(function (x, y) { return (x.name.toLowerCase().indexOf(q) === 0 ? 0 : 1) - (y.name.toLowerCase().indexOf(q) === 0 ? 0 : 1); });
+    }
+    list.forEach(function (c) { ccList.appendChild(li(c)); });
+    if (!ccList.querySelector('[role=option]')) { var n = document.createElement('li'); n.className = 'none'; n.textContent = 'No match. Try the country name or code.'; ccList.appendChild(n); }
+    var first = ccList.querySelector('[role=option]'); if (first) first.classList.add('active');
+  }
+  function openCc() {
+    ccPanel.classList.remove('hidden'); ccBtn.setAttribute('aria-expanded', 'true');
+    ccSearch.value = ''; fillList('');
+    var sel = ccList.querySelector('[aria-selected="true"]');
+    ccSearch.focus();
+    if (sel) { ccList.querySelectorAll('.active').forEach(function (e) { e.classList.remove('active'); }); sel.classList.add('active'); sel.scrollIntoView({ block: 'nearest' }); }
+  }
+  function closeCc(focusBtn) { ccPanel.classList.add('hidden'); ccBtn.setAttribute('aria-expanded', 'false'); if (focusBtn) ccBtn.focus(); }
+  function pick(iso) { setCc(iso); closeCc(false); document.getElementById('f-phone').classList.remove('has-error'); $('#phone').focus(); }
+  ccBtn.addEventListener('click', function () { ccPanel.classList.contains('hidden') ? openCc() : closeCc(true); });
+  ccSearch.addEventListener('input', function () { fillList(ccSearch.value); });
+  ccList.addEventListener('click', function (e) { var o = e.target.closest('[role=option]'); if (o) pick(o.dataset.iso); });
+  ccSearch.addEventListener('keydown', function (e) {
+    var opts = Array.prototype.slice.call(ccList.querySelectorAll('[role=option]'));
+    var i = opts.indexOf(ccList.querySelector('.active'));
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (opts[i]) opts[i].classList.remove('active');
+      i = e.key === 'ArrowDown' ? Math.min(opts.length - 1, i + 1) : Math.max(0, i - 1);
+      if (opts[i]) { opts[i].classList.add('active'); opts[i].scrollIntoView({ block: 'nearest' }); }
+    } else if (e.key === 'Enter') {
+      e.preventDefault(); if (opts[i]) pick(opts[i].dataset.iso);
+    } else if (e.key === 'Escape') {
+      e.preventDefault(); closeCc(true);
+    }
+  });
+  document.addEventListener('click', function (e) { if (!ccPanel.classList.contains('hidden') && !$('#ccBox').contains(e.target)) closeCc(false); });
+  setCc(ccIso);
   if (visitor !== 'BD' && byIso[visitor]) $('#country').value = byIso[visitor].name;
+
+  // "I don't have WhatsApp": ask for email instead, and confirm on the page
+  var noWa = $('#noWa');
+  function waMode() {
+    var off = noWa.checked;
+    $('#f-email').classList.toggle('hidden', !off);
+    $('#email').required = off;
+    $('#submitText').textContent = off ? 'Confirm order' : 'Confirm order on WhatsApp';
+    $('#submitIcon').style.display = off ? 'none' : '';
+    $('#submitBtn').className = off ? 'btn btn-main' : 'btn btn-wa';
+  }
+  noWa.addEventListener('change', waMode);
 
   function goats() { return form.gender.value === 'boy' ? 2 : 1; }
 
@@ -601,20 +735,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var raw = $('#phone').value.trim();
     if (raw.charAt(0) === '+') return raw.replace(/[^\d+]/g, '');
     var digits = raw.replace(/\D/g, '');
-    if (ccSel.value !== 'IT') digits = digits.replace(/^0+/, '');
-    return '+' + byIso[ccSel.value].dial + digits;
+    if (ccIso !== 'IT') digits = digits.replace(/^0+/, '');
+    return '+' + byIso[ccIso].dial + digits;
   }
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var date = $('#aqDate').value, name = $('#pName').value.trim(), country = $('#country').value.trim(),
-        addr = $('#addr').value.trim(), baby = $('#babyName').value.trim();
+        addr = $('#addr').value.trim(), baby = $('#babyName').value.trim(),
+        email = noWa.checked ? $('#email').value.trim() : '';
     var toHome = form.dist.value === 'home-delivery';
     var ok = [check('f-date', !!date), check('f-name', !!name), check('f-country', !!country),
-              check('f-phone', !!ccSel.value && $('#phone').value.replace(/\D/g, '').length >= 6),
+              check('f-phone', !!ccIso && $('#phone').value.replace(/\D/g, '').length >= 6),
+              check('f-email', !noWa.checked || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('#email').value.trim())),
               check('f-addr', !toHome || !!addr)];
     if (ok.indexOf(false) !== -1) {
-      var first = form.querySelector('.has-error input, .has-error textarea, .has-error select');
+      var first = form.querySelector('.has-error input, .has-error textarea, .has-error button');
       if (first) first.focus();
       return;
     }
@@ -625,11 +761,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var payload = {
       lang: 'en', gender: form.gender.value, goats: g, package: p.name, price: total,
       babyName: baby, babyDob: '', deliveryDate: date, parentName: name, phone: phone,
-      address: 'Country: ' + country + (toHome ? ' | Dhaka delivery: ' + addr : ''),
-      distribution: form.dist.value, source: 'funnel-abroad-en'
+      address: (email ? 'Email: ' + email + ' | ' : '') + 'Country: ' + country + (toHome ? ' | Dhaka delivery: ' + addr : ''),
+      distribution: form.dist.value, source: email ? 'funnel-abroad-en (no WhatsApp)' : 'funnel-abroad-en'
     };
-    try { navigator.sendBeacon(SHEET_URL, JSON.stringify(payload)); } catch (err) {
-      try { fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(payload) }); } catch (e2) {}
+    var body = JSON.stringify(payload), sent = false;
+    try { sent = navigator.sendBeacon(SHEET_URL, body); } catch (err) {}
+    if (!sent) { try { fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body: body, keepalive: true }); } catch (e2) {} }
+
+    window.dataLayer = window.dataLayer || [];
+    if (email) {
+      // No WhatsApp: the order is saved to the sheet and confirmed on the page
+      window.dataLayer.push({ event: 'order_submit', form: 'aqiqah-funnel', lang: 'en', package: p.name, value: total, currency: 'BDT', visitor_country: visitor, contact_method: 'email' });
+      form.classList.add('hidden');
+      var t = $('#thanks'); t.classList.remove('hidden'); t.focus();
+      document.getElementById('order').scrollIntoView();
+      return;
     }
 
     var lines = [
@@ -650,8 +796,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var gone = false;
     function go() { if (!gone) { gone = true; window.location.href = url; } }
     // Tell Google Tag Manager about the order, then open WhatsApp (waits at most 1.5s for tags)
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'order_submit', form: 'aqiqah-funnel', lang: 'en', package: p.name, value: total, currency: 'BDT', visitor_country: visitor, eventCallback: go, eventTimeout: 1500 });
+    window.dataLayer.push({ event: 'order_submit', form: 'aqiqah-funnel', lang: 'en', package: p.name, value: total, currency: 'BDT', visitor_country: visitor, contact_method: 'whatsapp', eventCallback: go, eventTimeout: 1500 });
     setTimeout(go, 1500);
   });
 
