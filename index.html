@@ -10,6 +10,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-578K6CLB');</script>
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>
+/* Country flag emojis on Windows: loads a small flag-only font when the device can't show flags.
+   Based on country-flag-emoji-polyfill by TalkJS (MIT). Flag artwork: Twemoji by Twitter, CC-BY 4.0. */
+(function () {
+  function shows(s) {
+    var c = document.createElement('canvas'); c.width = c.height = 1;
+    var x = c.getContext('2d', { willReadFrequently: true });
+    x.textBaseline = 'top'; x.font = '100px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif'; x.scale(0.01, 0.01);
+    function px(col) { x.clearRect(0, 0, 100, 100); x.fillStyle = col; x.fillText(s, 0, 0); return x.getImageData(0, 0, 1, 1).data.join(','); }
+    var w = px('#fff'), b = px('#000');
+    return b === w && b.indexOf('0,0,0,') !== 0;
+  }
+  try {
+    if (shows('\uD83D\uDE0A') && !shows('\uD83C\uDDE8\uD83C\uDDED')) {
+      var st = document.createElement('style');
+      st.textContent = '@font-face{font-family:"Twemoji Country Flags";unicode-range:U+1F1E6-1F1FF,U+1F3F4,U+E0062-E0063,U+E0065,U+E0067,U+E006C,U+E006E,U+E0073-E0074,U+E0077,U+E007F;src:url(/fonts/TwemojiCountryFlags.woff2) format("woff2");font-display:swap}';
+      document.head.appendChild(st);
+    }
+  } catch (e) {}
+})();
+</script>
 <title>Aqiqah Sheba — Aqiqah Service from Bangladesh for the Global Muslim Diaspora</title>
 <meta name="description" content="Fulfil your child's aqiqah from abroad. We handle Shariah-compliant slaughter in Bangladesh and distribute meat to orphans, madrasa students, and families in need — with full video proof sent to you." />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -1295,6 +1316,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* Show the hero straight away (faster first view, no waiting for fade-ins) */
   .hero-content, .hero-content *, .hero-title .line { animation: none !important; opacity: 1 !important; transform: none !important; }
+
+  /* === Countries strip (after hero) === */
+  .countries { padding: 48px 20px; background: var(--cream-light); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .countries-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+  .countries-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 3.4vw, 34px); color: var(--green-900); margin-bottom: 22px; font-weight: 600; }
+  .country-list { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .country-list li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: #fff; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; font-weight: 500; color: var(--ink); }
+  .country-list .cf { font-family: "Twemoji Country Flags", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; font-size: 20px; line-height: 1; }
+  .country-list .more { background: var(--green-900); color: var(--cream); border-color: var(--green-900); font-weight: 700; }
 </style>
 </head>
 <body>
@@ -1309,13 +1339,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="nav-links">
     <a href="#why">Why Us</a>
     <a href="#process">Process</a>
-    <a href="/packages.html">Packages</a>
-    <a href="/sadaqah.html">Sadaqah</a>
-    <a href="/kaffara.html">Kaffara</a>
+    <a href="/packages">Packages</a>
+    <a href="/sadaqah">Sadaqah</a>
+    <a href="/kaffara">Kaffara</a>
     <a href="/blog/?ui=en">Blog</a>
     <a href="#faq">FAQ</a>
     <a href="/bn/" class="lang-toggle bn">বাংলা</a>
-    <a href="/order.html" class="nav-cta">Start Order</a>
+    <a href="/order" class="nav-cta">Start Order</a>
   </div>
 </nav>
 <main>
@@ -1338,11 +1368,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         See prices — from ৳16,000 (≈ $135)
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="https://wa.me/8801733311019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad" class="btn btn-secondary">
+      <a href="https://wa.me/8801733311019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad" class="btn btn-secondary" target="_blank" rel="noopener">
         Ask on WhatsApp
       </a>
     </div>
-    <p class="hero-price-line">Fixed price, no hidden fees · Video proof with Medium and Large</p>
+    <p class="hero-price-line">Fixed price, no hidden fees · Video proof and free Dhaka delivery with every package</p>
     <div class="hero-proof">
       <div class="proof-item">
         <div class="num">100%</div>
@@ -1371,6 +1401,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="tag">WITH VIDEO PROOF</div>
       <div class="text">"Your aqiqah, performed correctly — and you'll see it happen."</div>
     </div>
+  </div>
+</section>
+
+<!-- COUNTRIES -->
+<section class="countries" aria-labelledby="countries-title">
+  <div class="countries-inner">
+    <h2 id="countries-title" class="countries-title">Families order from all over the world</h2>
+    <ul class="country-list">
+      <li><span class="cf" aria-hidden="true">🇧🇩</span>Bangladesh</li>
+      <li><span class="cf" aria-hidden="true">🇺🇸</span>USA</li>
+      <li><span class="cf" aria-hidden="true">🇬🇧</span>UK</li>
+      <li><span class="cf" aria-hidden="true">🇨🇦</span>Canada</li>
+      <li><span class="cf" aria-hidden="true">🇦🇺</span>Australia</li>
+      <li><span class="cf" aria-hidden="true">🇳🇿</span>New Zealand</li>
+      <li><span class="cf" aria-hidden="true">🇮🇪</span>Ireland</li>
+      <li><span class="cf" aria-hidden="true">🇩🇪</span>Germany</li>
+      <li><span class="cf" aria-hidden="true">🇫🇷</span>France</li>
+      <li><span class="cf" aria-hidden="true">🇮🇹</span>Italy</li>
+      <li><span class="cf" aria-hidden="true">🇪🇸</span>Spain</li>
+      <li><span class="cf" aria-hidden="true">🇵🇹</span>Portugal</li>
+      <li><span class="cf" aria-hidden="true">🇳🇱</span>Netherlands</li>
+      <li><span class="cf" aria-hidden="true">🇸🇪</span>Sweden</li>
+      <li><span class="cf" aria-hidden="true">🇸🇦</span>Saudi Arabia</li>
+      <li><span class="cf" aria-hidden="true">🇦🇪</span>UAE</li>
+      <li><span class="cf" aria-hidden="true">🇶🇦</span>Qatar</li>
+      <li><span class="cf" aria-hidden="true">🇰🇼</span>Kuwait</li>
+      <li><span class="cf" aria-hidden="true">🇲🇾</span>Malaysia</li>
+      <li><span class="cf" aria-hidden="true">🇸🇬</span>Singapore</li>
+      <li class="more">+ 174 countries</li>
+    </ul>
   </div>
 </section>
 
@@ -1405,15 +1465,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="price-local" data-base-usd="235">≈ $235 USD</div>
         <div class="price-fixed">All-inclusive · no extras</div>
         <ul class="price-features">
-          <li>Shariah-compliant sourcing</li>
           <li>Shariah-compliant slaughter</li>
           <li>Professional butchering</li>
           <li>Hygienic packaging</li>
-          <li>Free doorstep delivery</li>
-          <li>Slaughter video proof</li>
-          <li>3-part split · priority slot · certificate</li>
+          <li>Free doorstep delivery in Dhaka</li>
+          <li>Video proof of the sacrifice</li>
         </ul>
-        <a href="/order.html?pkg=large" class="price-cta">Order Large</a>
+        <a href="/order?pkg=large" class="price-cta">Order Large</a>
       </div>
 
       <div class="price-card featured">
@@ -1428,14 +1486,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="price-local" data-base-usd="185">≈ $185 USD</div>
         <div class="price-fixed">All-inclusive · no extras</div>
         <ul class="price-features">
-          <li>Shariah-compliant sourcing</li>
           <li>Shariah-compliant slaughter</li>
           <li>Professional butchering</li>
           <li>Hygienic packaging</li>
-          <li>Free doorstep delivery</li>
-          <li>Slaughter video proof</li>
+          <li>Free doorstep delivery in Dhaka</li>
+          <li>Video proof of the sacrifice</li>
         </ul>
-        <a href="/order.html?pkg=medium" class="price-cta">Order Medium</a>
+        <a href="/order?pkg=medium" class="price-cta">Order Medium</a>
       </div>
 
       <div class="price-card">
@@ -1450,14 +1507,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="price-local" data-base-usd="135">≈ $135 USD</div>
         <div class="price-fixed">All-inclusive · no extras</div>
         <ul class="price-features">
-          <li>Shariah-compliant sourcing</li>
           <li>Shariah-compliant slaughter</li>
           <li>Professional butchering</li>
           <li>Hygienic packaging</li>
-          <li>Doorstep delivery (add-on)</li>
-
+          <li>Free doorstep delivery in Dhaka</li>
+          <li>Video proof of the sacrifice</li>
         </ul>
-        <a href="/order.html?pkg=small" class="price-cta">Order Small</a>
+        <a href="/order?pkg=small" class="price-cta">Order Small</a>
       </div>
     </div>
 
@@ -1465,77 +1521,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       Not sure which to choose? <em style="color: var(--gold-500);">Most families choose Medium or Large.</em>
     </p>
 
-    <div class="compare-wrap">
-      <h3 class="compare-title"><em>Detailed comparison</em></h3>
-      <div class="compare-scroll">
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Large<span class="th-en">৳<span class="th-price" data-base="28000">28,000</span></span></th>
-              <th class="th-featured">Medium<span class="th-en">৳<span class="th-price" data-base="22000">22,000</span></span></th>
-              <th>Small<span class="th-en">৳<span class="th-price" data-base="16000">16,000</span></span></th>
-            </tr>
-          </thead>
-          <tbody>
-        <tr>
-          <td class="feat-name">Shariah-compliant sourcing</td>
-          <td><span class="check">✓</span></td>
-          <td><span class="check">✓</span></td>
-          <td><span class="check">✓</span></td>
-        </tr>
-        <tr>
-          <td class="feat-name">Shariah-compliant slaughter</td>
-          <td><span class="check">✓</span></td>
-          <td><span class="check">✓</span></td>
-          <td><span class="check">✓</span></td>
-        </tr>
-        <tr>
-          <td class="feat-name">Professional butchering</td>
-          <td><span class="check">✓</span></td>
-          <td><span class="check">✓</span></td>
-          <td><span class="check">✓</span></td>
-        </tr>
-        <tr>
-          <td class="feat-name">Hygienic packaging</td>
-          <td><span class="check">✓</span></td>
-          <td><span class="check">✓</span></td>
-          <td><span class="check">✓</span></td>
-        </tr>
-        <tr>
-          <td class="feat-name">Doorstep delivery</td>
-          <td><span class="check">✓</span></td>
-          <td><span class="check">✓</span></td>
-          <td class="cell-addon">Add-on (location-based)</td>
-        </tr>
-        <tr>
-          <td class="feat-name">Slaughter video proof</td>
-          <td><span class="check">✓</span></td>
-          <td><span class="check">✓</span></td>
-          <td><span class="cross">✕</span></td>
-        </tr>
-        <tr>
-          <td class="feat-name">3-part split packaging (family / relatives / poor)</td>
-          <td><span class="check">✓</span></td>
-          <td><span class="cross">✕</span></td>
-          <td><span class="cross">✕</span></td>
-        </tr>
-        <tr>
-          <td class="feat-name">Priority delivery slot</td>
-          <td><span class="check">✓</span></td>
-          <td><span class="cross">✕</span></td>
-          <td><span class="cross">✕</span></td>
-        </tr>
-        <tr>
-          <td class="feat-name">Certificate of Aqiqah</td>
-          <td><span class="check">✓</span></td>
-          <td><span class="cross">✕</span></td>
-          <td><span class="cross">✕</span></td>
-        </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1748,7 +1733,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="faq-toggle"></span>
         </button>
         <div class="faq-answer">
-          We offer three fixed-price packages: Small (৳16,000, about $135), Medium (৳22,000, about $185), and Large (৳28,000, about $235). All three include Shariah-compliant sourcing, slaughter, butchering, and packaging; Medium and Large additionally include video proof and free Dhaka delivery, while Large further adds 3-part split packaging, a priority delivery slot, and an aqiqah certificate. These prices are for one goat (a girl's aqiqah) — for a boy the sunnah is two goats, so the package price is double. Use the Girl/Boy toggle in the pricing section to see both. No weight-based surprises, no hidden fees.
+          We offer three fixed-price packages: Small (৳16,000, about $135), Medium (৳22,000, about $185), and Large (৳28,000, about $235). All three include the same full service: Shariah-compliant slaughter, professional butchering, hygienic packaging, free doorstep delivery in Dhaka and video proof of the sacrifice. Only the goat size changes. These prices are for one goat (a girl's aqiqah) — for a boy the sunnah is two goats, so the package price is double. Use the Girl/Boy toggle in the pricing section to see both. No weight-based surprises, no hidden fees.
         </div>
       </div>
 
@@ -1799,7 +1784,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="cta-band">
   <h2>Your child is here. The <em>sunnah</em> is waiting. <br/>Leave the rest to us.</h2>
   <p>Message us on WhatsApp in any language. We'll quote in your currency, confirm the date, and guide you through payment — then send you proof at every step.</p>
-  <a href="https://wa.me/8801733311019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad" class="btn btn-primary">
+  <a href="https://wa.me/8801733311019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad" class="btn btn-primary" target="_blank" rel="noopener">
     Start on WhatsApp
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
@@ -1819,9 +1804,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul>
         <li><a href="#why">Why Us</a></li>
         <li><a href="#process">How It Works</a></li>
-        <li><a href="/packages.html">Packages</a></li>
-        <li><a href="/sadaqah.html">Sadaqah</a></li>
-        <li><a href="/kaffara.html">Kaffara</a></li>
+        <li><a href="/packages">Packages</a></li>
+        <li><a href="/sadaqah">Sadaqah</a></li>
+        <li><a href="/kaffara">Kaffara</a></li>
         <li><a href="/blog/?ui=en">Blog</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="/bn/" class="bn">বাংলা সাইট</a></li>
@@ -1830,7 +1815,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="footer-col">
       <h2>Contact</h2>
       <ul>
-        <li><a href="https://wa.me/8801733311019">WhatsApp</a></li>
+        <li><a href="https://wa.me/8801733311019" target="_blank" rel="noopener">WhatsApp</a></li>
         <li><a href="https://facebook.com/aqiqahsheba">Facebook</a></li>
         <li><a href="mailto:hello@aqiqahsheba.com">Email</a></li>
         <li><a href="tel:+8801733311019">+880 1733-311019</a></li>
@@ -1853,7 +1838,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/8801733311019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad" class="whatsapp-float" aria-label="WhatsApp">
+<a href="https://wa.me/8801733311019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad" class="whatsapp-float" aria-label="WhatsApp" target="_blank" rel="noopener">
   <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
@@ -1927,8 +1912,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- MOBILE ORDER BAR -->
 <div class="mobile-order-bar">
-  <a href="/order.html" class="mob-order">Order now</a>
-  <a href="https://wa.me/8801733311019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad" class="mob-wa">WhatsApp</a>
+  <a href="/order" class="mob-order">Order now</a>
+  <a href="https://wa.me/8801733311019?text=As-salaamu%20alaikum%2C%20I%27d%20like%20to%20arrange%20an%20aqiqah%20from%20abroad" class="mob-wa" target="_blank" rel="noopener">WhatsApp</a>
 </div>
 </body>
 </html>

@@ -39,7 +39,7 @@ Opening paragraph.
 
 ## First section heading
 
-Normal text. **Bold** like this, [a link](https://aqiqahsheba.com/en/packages.html) like this.
+Normal text. **Bold** like this, [a link](https://aqiqahsheba.com/en/packages) like this.
 
 - A list item
 - Another item

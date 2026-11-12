@@ -66,7 +66,7 @@ Complete the occasion by asking Allah to protect, guide, and bless your child. T
 
 ## If you would rather delegate
 
-If arranging all of this yourself is difficult — common for families living abroad or without facilities to slaughter at home — a [trusted aqiqah service](/en/packages.html) can carry out each step on your behalf, fully in keeping with the Sunnah.
+If arranging all of this yourself is difficult — common for families living abroad or without facilities to slaughter at home — a [trusted aqiqah service](/en/packages) can carry out each step on your behalf, fully in keeping with the Sunnah.
 
 ## Related reading
 

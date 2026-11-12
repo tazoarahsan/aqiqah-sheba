@@ -19,7 +19,7 @@ bn:
   cta_packages: প্যাকেজ দেখুন
   cta_ask: WhatsApp-এ প্রশ্ন করুন
   wa_text: "আসসালামু%20আলাইকুম%2C%20আকিকা%20সম্পর্কে%20জানতে%20চাই"
-  packages_url: /bn/packages.html
+  packages_url: /bn/packages
 en:
   site_name: Aqiqah Sheba
   locale: en_US
@@ -40,4 +40,4 @@ en:
   cta_packages: View packages
   cta_ask: Ask on WhatsApp
   wa_text: "Assalamu%20alaikum%2C%20I%20have%20a%20question%20about%20aqiqah"
-  packages_url: /packages.html
+  packages_url: /packages

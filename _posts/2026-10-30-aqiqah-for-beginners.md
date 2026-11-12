@@ -47,7 +47,7 @@ For most scholars it is a strongly recommended Sunnah; in the Hanafi school (com
 
 ## How much does it cost?
 
-The cost depends mainly on the price of the animal, plus slaughter and distribution. Prices vary with the market, so it is worth checking current local rates or asking a [trusted service](/en/packages.html) for a clear, all-inclusive quote.
+The cost depends mainly on the price of the animal, plus slaughter and distribution. Prices vary with the market, so it is worth checking current local rates or asking a [trusted service](/en/packages) for a clear, all-inclusive quote.
 
 ## Can someone do it for me?
 

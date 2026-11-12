@@ -77,7 +77,7 @@ Aqiqah matters because it combines several of the values a parent hopes to insti
 
 ## Performing Your Aqiqah: Yourself or Through a Service
 
-Families can fulfil this Sunnah in two valid ways: performing the aqiqah themselves, or appointing a trustworthy party to carry it out on their behalf. Delegation is entirely legitimate in Islam, and for many families — especially those living abroad or without the facilities to slaughter at home — a [reputable service](/en/packages.html) that sources a healthy animal, performs genuine halal slaughter, and distributes the meat to the poor is a sound and convenient way to honour the Sunnah correctly.
+Families can fulfil this Sunnah in two valid ways: performing the aqiqah themselves, or appointing a trustworthy party to carry it out on their behalf. Delegation is entirely legitimate in Islam, and for many families — especially those living abroad or without the facilities to slaughter at home — a [reputable service](/en/packages) that sources a healthy animal, performs genuine halal slaughter, and distributes the meat to the poor is a sound and convenient way to honour the Sunnah correctly.
 
 ## Explore Aqiqah in Detail
 
