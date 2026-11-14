@@ -1427,6 +1427,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* Show the hero straight away (faster first view, no waiting for fade-ins) */
   .hero-content, .hero-content *, .hero-title .line { animation: none !important; opacity: 1 !important; transform: none !important; }
+
+  /* How It Works icons */
+  .process-grid::before { top: 92px; } /* line runs through the numbers, below the icons (50px icon + 14px gap + 28px) */
+  .process-step .step-icon { display: block; height: 50px; width: auto; margin: 0 auto 14px; }
 </style>
 </head>
 <body>
@@ -1687,29 +1691,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="process-grid">
       <div class="process-step">
+        <img class="step-icon" src="/assets/how/1-order.webp" alt="" width="75" height="50" loading="lazy">
         <div class="dot">১</div>
         <h3>অর্ডার</h3>
-        <p>WhatsApp-এ প্যাকেজ ও ডেলিভারির তারিখ জানান।</p>
+        <p>WhatsApp-এ প্যাকেজ ও পছন্দের তারিখ জানান।</p>
       </div>
       <div class="process-step">
+        <img class="step-icon" src="/assets/how/2-payment.webp" alt="" width="100" height="50" loading="lazy">
         <div class="dot">২</div>
+        <h3>পেমেন্ট</h3>
+        <p>বিকাশ, কার্ড বা ব্যাংক ট্রান্সফারে পেমেন্ট করুন — আমরা সাথে সাথে কনফার্ম করি।</p>
+      </div>
+      <div class="process-step">
+        <img class="step-icon" src="/assets/how/3-sourcing.webp" alt="" width="75" height="50" loading="lazy">
+        <div class="dot">৩</div>
         <h3>সোর্সিং</h3>
         <p>সুস্থ, সঠিক বয়সের ছাগল নিজে গিয়ে পছন্দ করি।</p>
       </div>
       <div class="process-step">
-        <div class="dot">৩</div>
+        <img class="step-icon" src="/assets/how/4-slaughter.webp" alt="" width="75" height="50" loading="lazy">
+        <div class="dot">৪</div>
         <h3>যবাই</h3>
         <p>সম্পূর্ণ শরিয়ত পদ্ধতিতে। ভিডিও আপনাকে পাঠানো হয়।</p>
       </div>
       <div class="process-step">
-        <div class="dot">৪</div>
-        <h3>প্যাকেজিং</h3>
-        <p>৩ ভাগে আলাদা প্যাকেট — পরিষ্কার ও তারিখসহ।</p>
-      </div>
-      <div class="process-step">
+        <img class="step-icon" src="/assets/how/5-distribution.webp" alt="" width="100" height="50" loading="lazy">
         <div class="dot">৫</div>
-        <h3>ডেলিভারি</h3>
-        <p>ফুড-গ্রেড প্যাকেজিংসহ বাসায় পৌঁছে দেওয়া।</p>
+        <h3>বিতরণ ও ডেলিভারি</h3>
+        <p>ঢাকায় আপনার বাসায় পৌঁছে দিই, অথবা গরিবদের মাঝে বিতরণ করি।</p>
       </div>
     </div>
   </div>

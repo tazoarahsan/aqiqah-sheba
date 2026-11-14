@@ -1,0 +1,44 @@
+---
+layout: null
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- assign pairs = "|,packages|packages,order|order,sadaqah|sadaqah,kaffara|kaffara" | split: "," -%}
+{%- for pair in pairs -%}
+{%- assign p = pair | split: "|" -%}
+{%- assign en = p[0] | default: "" -%}
+{%- assign en_url = site.url | append: "/" | append: en -%}
+{%- assign bn_url = site.url | append: "/bn/" | append: en -%}
+  <url>
+    <loc>{{ en_url }}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ en_url }}"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="{{ bn_url }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ en_url }}"/>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+  </url>
+  <url>
+    <loc>{{ bn_url }}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ en_url }}"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="{{ bn_url }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ en_url }}"/>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+  </url>
+{%- endfor %}
+  <url>
+    <loc>{{ site.url }}/aqiqah-from-abroad/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+  </url>
+  <url>
+    <loc>{{ site.url }}/blog/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+  </url>
+{%- for post in site.posts %}
+{%- unless post.sitemap == false or post.published == false %}
+  <url>
+    <loc>{{ post.url | absolute_url }}</loc>
+    <lastmod>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</lastmod>
+  </url>
+{%- endunless %}
+{%- endfor %}
+</urlset>
