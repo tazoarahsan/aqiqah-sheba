@@ -4,7 +4,6 @@
 {%- assign _img = page.image | default: "/preview.jpg" | absolute_url -%}
 {%- assign _url = page.url | absolute_url -%}
 {%- assign _author = page.author | default: t.author -%}
-<meta charset="UTF-8">
 {%- if page.dual_ui %}
 <script>(function(){try{var q=new URLSearchParams(location.search).get('ui');if(q==='bn'||q==='en'){localStorage.setItem('blogUi',q);}var u=(q==='bn'||q==='en')?q:(localStorage.getItem('blogUi')||'en');document.documentElement.setAttribute('data-ui',u);}catch(e){}})();</script>
 {%- endif %}

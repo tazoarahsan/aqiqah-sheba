@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Consent Mode v2: UK, EEA and Switzerland are asked first (banner); everyone else is measured by default -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500, region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH'] });
+gtag('consent', 'default', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' });
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', true);
+try { var asc = localStorage.getItem('as_consent'); if (asc) { var v = asc === 'granted' ? 'granted' : 'denied'; gtag('consent', 'update', { ad_storage: v, ad_user_data: v, ad_personalization: v, analytics_storage: v }); } } catch (e) {}
+</script>
+<script src="/assets/consent.js" defer></script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -775,7 +786,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.dataLayer = window.dataLayer || [];
     if (email) {
       // No WhatsApp: the order is saved to the sheet and confirmed on the page
-      window.dataLayer.push({ event: 'order_submit', form: 'aqiqah-funnel', lang: 'en', package: p.name, value: total, currency: 'BDT', visitor_country: visitor, contact_method: 'email' });
+      window.dataLayer.push({ event: 'order_submit', form: 'aqiqah-funnel', lang: 'en', package: p.name, value: total, currency: 'BDT', visitor_country: visitor, contact_method: 'email', user_data: (function () { var u = {}; var ph = phone; if (ph) u.phone_number = ph; var em = email; if (em) u.email = em.toLowerCase(); return u; })() });
       form.classList.add('hidden');
       var t = $('#thanks'); t.classList.remove('hidden'); t.focus();
       document.getElementById('order').scrollIntoView();
@@ -798,7 +809,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ];
     var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(lines.join('\n'));
     // Tell Google Tag Manager about the order, then open WhatsApp in a new tab (this page stays open to edit)
-    window.dataLayer.push({ event: 'order_submit', form: 'aqiqah-funnel', lang: 'en', package: p.name, value: total, currency: 'BDT', visitor_country: visitor, contact_method: 'whatsapp' });
+    window.dataLayer.push({ event: 'order_submit', form: 'aqiqah-funnel', lang: 'en', package: p.name, value: total, currency: 'BDT', visitor_country: visitor, contact_method: 'whatsapp', user_data: (function () { var u = {}; var ph = phone; if (ph) u.phone_number = ph; var em = email; if (em) u.email = em.toLowerCase(); return u; })() });
     var w = window.open(url, '_blank');
     if (w) { try { w.opener = null; } catch (e3) {} } else { window.location.href = url; }
   });
