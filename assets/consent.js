@@ -15,10 +15,12 @@
   var T = bn ? {
     label: 'কুকি সম্মতি',
     text: 'কোন বিজ্ঞাপন থেকে পরিবারগুলো আমাদের কাছে আসছে তা বুঝতে ও সাইট উন্নত করতে আমরা কুকি ব্যবহার করি। না বললেও সাইট একইভাবে কাজ করবে।',
+    more: 'গোপনীয়তা নীতি', href: '/bn/privacy',
     yes: 'সম্মতি দিন', no: 'না, ধন্যবাদ'
   } : {
     label: 'Cookie consent',
     text: 'We use cookies to see which ads bring families to us and to improve this site. The site works the same if you say no.',
+    more: 'Privacy Policy', href: '/privacy',
     yes: 'Accept', no: 'Reject'
   };
 
@@ -52,7 +54,9 @@
   box.setAttribute('role', 'dialog');
   box.setAttribute('aria-label', T.label);
   box.innerHTML = '<p></p><div class="as-btns"><button type="button" class="as-no"></button><button type="button" class="as-yes"></button></div>';
-  box.querySelector('p').textContent = T.text;
+  box.querySelector('p').textContent = T.text + ' ';
+  var more = document.createElement('a'); more.href = T.href; more.textContent = T.more; more.style.color = '#1a3d2e'; more.style.fontWeight = '600';
+  box.querySelector('p').appendChild(more);
   box.querySelector('.as-no').textContent = T.no;
   box.querySelector('.as-yes').textContent = T.yes;
   box.querySelector('.as-yes').addEventListener('click', function () { save('granted'); });
