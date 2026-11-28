@@ -13,6 +13,7 @@ gtag('set', 'url_passthrough', true);
 try { var asc = localStorage.getItem('as_consent'); if (asc) { var v = asc === 'granted' ? 'granted' : 'denied'; gtag('consent', 'update', { ad_storage: v, ad_user_data: v, ad_personalization: v, analytics_storage: v }); } } catch (e) {}
 </script>
 <script src="/assets/consent.js" defer></script>
+<script src="/assets/currency.js" defer></script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -815,6 +816,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .whatsapp-float { display: none !important; }
     body { padding-bottom: 76px; }
   }
+
+  .package-price-local { font-size: 15px; font-weight: 600; color: var(--muted); margin: -4px 0 6px; }
+  .package-card.featured .package-price-local { color: rgba(247, 241, 227, 0.8); }
 </style>
 </head>
 <body>
@@ -861,6 +865,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="package-currency">৳</span>
             <span class="package-price">28,000</span>
           </div>
+          <div class="package-price-local" data-local-bdt="28000" hidden></div>
           <div class="package-fixed">Fixed price — all-inclusive</div>
         </div>
         <div class="package-right">
@@ -914,6 +919,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="package-currency">৳</span>
             <span class="package-price">22,000</span>
           </div>
+          <div class="package-price-local" data-local-bdt="22000" hidden></div>
           <div class="package-fixed">Fixed price — all-inclusive</div>
         </div>
         <div class="package-right">
@@ -967,6 +973,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="package-currency">৳</span>
             <span class="package-price">16,000</span>
           </div>
+          <div class="package-price-local" data-local-bdt="16000" hidden></div>
           <div class="package-fixed">Fixed price — all-inclusive</div>
         </div>
         <div class="package-right">

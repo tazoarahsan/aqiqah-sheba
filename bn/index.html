@@ -13,6 +13,7 @@ gtag('set', 'url_passthrough', true);
 try { var asc = localStorage.getItem('as_consent'); if (asc) { var v = asc === 'granted' ? 'granted' : 'denied'; gtag('consent', 'update', { ad_storage: v, ad_user_data: v, ad_personalization: v, analytics_storage: v }); } } catch (e) {}
 </script>
 <script src="/assets/consent.js" defer></script>
+<script src="/assets/currency.js" defer></script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1442,6 +1443,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* How It Works icons */
   .process-grid::before { top: 92px; } /* line runs through the numbers, below the icons (50px icon + 14px gap + 28px) */
   .process-step .step-icon { display: block; height: 50px; width: auto; margin: 0 auto 14px; }
+
+  .price-local { font-size: 14px; color: var(--muted); margin-top: 4px; font-weight: 500; }
 </style>
 </head>
 <body>
@@ -1549,6 +1552,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="price-currency">৳</span>
           <span class="price-amount" data-base="28000">২৮,০০০</span>
         </div>
+        <div class="price-local" data-local-bdt="28000" hidden></div>
         <div class="price-fixed">নির্দিষ্ট — সব কিছু অন্তর্ভুক্ত</div>
         <ul class="price-features">
           <li>শরিয়তসম্মত যবাই</li>
@@ -1569,6 +1573,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="price-currency">৳</span>
           <span class="price-amount" data-base="22000">২২,০০০</span>
         </div>
+        <div class="price-local" data-local-bdt="22000" hidden></div>
         <div class="price-fixed">নির্দিষ্ট — সব কিছু অন্তর্ভুক্ত</div>
         <ul class="price-features">
           <li>শরিয়তসম্মত যবাই</li>
@@ -1589,6 +1594,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="price-currency">৳</span>
           <span class="price-amount" data-base="16000">১৬,০০০</span>
         </div>
+        <div class="price-local" data-local-bdt="16000" hidden></div>
         <div class="price-fixed">নির্দিষ্ট — সব কিছু অন্তর্ভুক্ত</div>
         <ul class="price-features">
           <li>শরিয়তসম্মত যবাই</li>
@@ -1981,6 +1987,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       document.querySelectorAll('.price-goat-size[data-girl][data-boy]').forEach(el => {
         el.textContent = gender === 'boy' ? el.dataset.boy : el.dataset.girl;
       });
+      document.querySelectorAll('.price-local[data-local-bdt]').forEach(el => { el.dataset.count = count; });
+      if (window.ASLocal) window.ASLocal.update();
       if (note) note.textContent = gender === 'boy' ? note.dataset.boy : note.dataset.girl;
 
       ctas.forEach(a => {
